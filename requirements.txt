@@ -1,0 +1,8 @@
+jupyter
+numpy
+pandas
+scikit-learn
+matplotlib
+statsmodels
+scikit-image
+folium
