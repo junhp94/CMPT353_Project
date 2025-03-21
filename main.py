@@ -8,6 +8,61 @@ import numpy as np
 import math
 import folium as fl
 
+def input_field():
+    
+    # Ask for theme
+    themes = ["food", "nature", "history", "science", "art", "entertainment"]
+    while True:
+        theme = input(f"Enter a theme ({', '.join(themes)}): ").strip().lower()
+        if theme in themes:
+            break
+        print(f"Invalid choice. Please select from: {', '.join(themes)}.")
+
+    # Ask for the number of amenities
+    while True:
+        try:
+            num_amenities = input("Enter the number of amenities you want to visit: ").strip()
+            if num_amenities:
+                num_amenities = int(num_amenities)
+                if num_amenities > 0:
+                    break
+            print("Please enter a valid positive number.")
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+    # Ask for the starting location (latitude and longitude), can be changed later to ask for location rather than lat and lon
+    while True:
+        try:
+            start_lat = input("Enter your starting latitude: ").strip()
+            start_lon = input("Enter your starting longitude: ").strip()
+            if start_lat and start_lon:
+                start_lat, start_lon = float(start_lat), float(start_lon)
+                break
+            print("Latitude and longitude are required.")
+        except ValueError:
+            print("Invalid input. Please enter valid numeric values for latitude and longitude.")
+
+    # Ask for mode of transportation
+    transport_modes = ["walk", "drive", "bike"]
+    while True:
+        transportation = input(f"Choose your mode of transportation ({', '.join(transport_modes)}): ").strip().lower()
+        if transportation in transport_modes:
+            break
+        print(f"Invalid choice. Please select from: {', '.join(transport_modes)}.")
+
+    # Ask if they need a hotel stay
+    while True:
+        stay_hotel = input("Do you need a hotel stay? (yes/no): ").strip().lower()
+        if stay_hotel == "yes":
+            stay_hotel = True
+            break
+        elif stay_hotel == "no":
+            stay_hotel = False
+            break
+        print("Invalid input. Please enter 'yes' or 'no'.")
+
+    return theme, num_amenities, start_lat, start_lon, transportation, stay_hotel
+
 def haversine(lat1, lon1, lat2, lon2):
     lat1, lon1, lat2, lon2 = map(np.radians, [lat1, lon1, lat2, lon2])
 
@@ -55,13 +110,13 @@ def create_tour_map(points, route):
 def filter_by_theme(data, theme):
 
     themes = {
-        "Nature": ["park", "watering_place", "fountain", "ranger_station", "hunting_stand", "observation_platform"],
-        "Food": ["cafe", "fast_food", "bbq", "restaurant", "pub", "bar", "food_court", "ice_cream", "juice_bar", "bistro", "biergarten"],
-        "History": ["place_of_worship", "monastery", "courthouse", "townhall"],
-        "Science": ["research_institute", "science", "healthcare", "hospital", "pharmacy", "clinic", "veterinary", "chiropractor", "ATLAS_clean_room"],
-        "Art": ["arts_centre", "theatre", "studio", "music_school"],
-        "Entertainment": ["cinema", "nightclub", "stripclub", "gambling", "casino", "events_venue", "marketplace", "spa", "events_venue", "internet_cafe", "lounge", "shop|clothes", "leisure"],
-        "Mode of Travel": ["car_rental", "bicycle_rental", "car_sharing", "taxi", "bus_station", "ferry_terminal", "seaplane_terminal", "motorcycle_rental", "parking", "charging_station", "EVSE"]
+        "nature": ["park", "watering_place", "fountain", "ranger_station", "hunting_stand", "observation_platform"],
+        "food": ["cafe", "fast_food", "bbq", "restaurant", "pub", "bar", "food_court", "ice_cream", "juice_bar", "bistro", "biergarten"],
+        "history": ["place_of_worship", "monastery", "courthouse", "townhall"],
+        "science": ["research_institute", "science", "healthcare", "hospital", "pharmacy", "clinic", "veterinary", "chiropractor", "ATLAS_clean_room"],
+        "art": ["arts_centre", "theatre", "studio", "music_school"],
+        "entertainment": ["cinema", "nightclub", "stripclub", "gambling", "casino", "events_venue", "marketplace", "spa", "events_venue", "internet_cafe", "lounge", "shop|clothes", "leisure"],
+        "mode of travel": ["car_rental", "bicycle_rental", "car_sharing", "taxi", "bus_station", "ferry_terminal", "seaplane_terminal", "motorcycle_rental", "parking", "charging_station", "EVSE"]
     }
     if theme in themes:
         return data[data['amenity'].isin(themes[theme])]
@@ -95,7 +150,10 @@ def main():
     ]
     starting_points = data[data['amenity'].isin(transit_and_housing)]
     
-    tour_points = filter_by_theme(interesting_data, "Food").head(30)
+    # Takes inputs
+    theme, num_amenities, start_lat, start_lon, transportation, stay_hotel = input_field()
+    
+    tour_points = filter_by_theme(interesting_data, theme).head(num_amenities)
     
      # Create a list of [lat, lon] pairs for route calculation
     points_list = [[row['lat'], row['lon']] for idx, row in tour_points.iterrows()]
