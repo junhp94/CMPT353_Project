@@ -1,0 +1,3860 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c6e66e8d96a13ca32f9f3b183f90ce59 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c6e66e8d96a13ca32f9f3b183f90ce59" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c6e66e8d96a13ca32f9f3b183f90ce59 = L.map(
+                "map_c6e66e8d96a13ca32f9f3b183f90ce59",
+                {
+                    center: [49.2805221, -123.116967],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4fe3b8f9ad4687a73fb6cf9b04f9cef7 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4fe3b8f9ad4687a73fb6cf9b04f9cef7.addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+            var marker_45cba36797e7267e3243e444fe6eae84 = L.marker(
+                [49.2805221, -123.116967],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_c5bb8b20cd6a5d5114980db4fbbb53b4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_46b6f1ec55ad80f0b0a4a2f61908ed24 = $(`<div id="html_46b6f1ec55ad80f0b0a4a2f61908ed24" style="width: 100.0%; height: 100.0%;">L' Hermitage</div>`)[0];
+                popup_c5bb8b20cd6a5d5114980db4fbbb53b4.setContent(html_46b6f1ec55ad80f0b0a4a2f61908ed24);
+            
+        
+
+        marker_45cba36797e7267e3243e444fe6eae84.bindPopup(popup_c5bb8b20cd6a5d5114980db4fbbb53b4)
+        ;
+
+        
+    
+    
+            var marker_5dc297ef7cd8031fdb0ddf2d955af252 = L.marker(
+                [49.2788858, -123.11296],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_b0112218f5c349a789d0fda689dd3d15 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_91dc92546d2f312b2564abac98952c66 = $(`<div id="html_91dc92546d2f312b2564abac98952c66" style="width: 100.0%; height: 100.0%;">Sandman Hotel Vancouver City Centre</div>`)[0];
+                popup_b0112218f5c349a789d0fda689dd3d15.setContent(html_91dc92546d2f312b2564abac98952c66);
+            
+        
+
+        marker_5dc297ef7cd8031fdb0ddf2d955af252.bindPopup(popup_b0112218f5c349a789d0fda689dd3d15)
+        ;
+
+        
+    
+    
+            var marker_26b67d618ed9fafdc4c774fb45efe49a = L.marker(
+                [49.2783539, -123.1130745],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_405aaf32d28d5ee3ef808112e8cd12de = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_43417d97f4ca74b4d86554703ab49a19 = $(`<div id="html_43417d97f4ca74b4d86554703ab49a19" style="width: 100.0%; height: 100.0%;">YWCA Hotel / Residence</div>`)[0];
+                popup_405aaf32d28d5ee3ef808112e8cd12de.setContent(html_43417d97f4ca74b4d86554703ab49a19);
+            
+        
+
+        marker_26b67d618ed9fafdc4c774fb45efe49a.bindPopup(popup_405aaf32d28d5ee3ef808112e8cd12de)
+        ;
+
+        
+    
+    
+            var marker_79b62cdef0067959a4b207b5bc086116 = L.marker(
+                [49.2780805, -123.113659],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_47b56e4aef40fd573084b0012a41e165 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_88b2628840a606949a515f89837d78c9 = $(`<div id="html_88b2628840a606949a515f89837d78c9" style="width: 100.0%; height: 100.0%;">Georgian Court Hotel</div>`)[0];
+                popup_47b56e4aef40fd573084b0012a41e165.setContent(html_88b2628840a606949a515f89837d78c9);
+            
+        
+
+        marker_79b62cdef0067959a4b207b5bc086116.bindPopup(popup_47b56e4aef40fd573084b0012a41e165)
+        ;
+
+        
+    
+    
+            var marker_a913cb1ea08399cb3ae58e732560ff01 = L.marker(
+                [49.277907, -123.113987],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_f915837c8f5d725b30e2cc60419c43df = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_914178dd8419758f7a7bd2b79d7662e3 = $(`<div id="html_914178dd8419758f7a7bd2b79d7662e3" style="width: 100.0%; height: 100.0%;">Hampton Inn & Suites by Hilton Vancouver-Downtown</div>`)[0];
+                popup_f915837c8f5d725b30e2cc60419c43df.setContent(html_914178dd8419758f7a7bd2b79d7662e3);
+            
+        
+
+        marker_a913cb1ea08399cb3ae58e732560ff01.bindPopup(popup_f915837c8f5d725b30e2cc60419c43df)
+        ;
+
+        
+    
+    
+            var marker_67e94b1519af808ce2709f2973e3a0e1 = L.marker(
+                [49.2784828, -123.1256597],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_5f0d3c9edfdb4e8b66eb19a7861a4116 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ce76c1268c5d8bcaa248552cf858aabf = $(`<div id="html_ce76c1268c5d8bcaa248552cf858aabf" style="width: 100.0%; height: 100.0%;">Holiday Inn and Suites Downtown</div>`)[0];
+                popup_5f0d3c9edfdb4e8b66eb19a7861a4116.setContent(html_ce76c1268c5d8bcaa248552cf858aabf);
+            
+        
+
+        marker_67e94b1519af808ce2709f2973e3a0e1.bindPopup(popup_5f0d3c9edfdb4e8b66eb19a7861a4116)
+        ;
+
+        
+    
+    
+            var marker_e83c18e6df29a7b682f40baa6f5124cf = L.marker(
+                [49.2783489, -123.116222],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_8f7057b6d93bb67c249aaaa3e26edfbb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fae02bfc31dc873c8e6b213c5010fd12 = $(`<div id="html_fae02bfc31dc873c8e6b213c5010fd12" style="width: 100.0%; height: 100.0%;">Rosedale on Robson Suite Hotel</div>`)[0];
+                popup_8f7057b6d93bb67c249aaaa3e26edfbb.setContent(html_fae02bfc31dc873c8e6b213c5010fd12);
+            
+        
+
+        marker_e83c18e6df29a7b682f40baa6f5124cf.bindPopup(popup_8f7057b6d93bb67c249aaaa3e26edfbb)
+        ;
+
+        
+    
+    
+            var marker_34126eeeea0feaa047cf595864e118d8 = L.marker(
+                [49.2808331, -123.1270521],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_b9989ee7f6ab0028ad3abc781b2b7d12 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cda55248e228df627b000a9d38ae15ef = $(`<div id="html_cda55248e228df627b000a9d38ae15ef" style="width: 100.0%; height: 100.0%;">Century Plaza Hotel and Spa</div>`)[0];
+                popup_b9989ee7f6ab0028ad3abc781b2b7d12.setContent(html_cda55248e228df627b000a9d38ae15ef);
+            
+        
+
+        marker_34126eeeea0feaa047cf595864e118d8.bindPopup(popup_b9989ee7f6ab0028ad3abc781b2b7d12)
+        ;
+
+        
+    
+    
+            var marker_59045a16d48115d0db9253a70edb72f5 = L.marker(
+                [49.282958, -123.124276],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_b04a9b255b3a14fb45ab599bac2a107c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fe9d5f6d879f5b7b701970ee80f554a0 = $(`<div id="html_fe9d5f6d879f5b7b701970ee80f554a0" style="width: 100.0%; height: 100.0%;">The Sutton Place Hotel</div>`)[0];
+                popup_b04a9b255b3a14fb45ab599bac2a107c.setContent(html_fe9d5f6d879f5b7b701970ee80f554a0);
+            
+        
+
+        marker_59045a16d48115d0db9253a70edb72f5.bindPopup(popup_b04a9b255b3a14fb45ab599bac2a107c)
+        ;
+
+        
+    
+    
+            var marker_e8b6229fb35d539b008c3532857ac1bb = L.marker(
+                [49.2872256, -123.1291922],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_4ab6c4a063d037d7b68c9aa73466f0c1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_545b9ba3fad7cbe6b4ce9dc58cdde0d3 = $(`<div id="html_545b9ba3fad7cbe6b4ce9dc58cdde0d3" style="width: 100.0%; height: 100.0%;">The Listel Hotel</div>`)[0];
+                popup_4ab6c4a063d037d7b68c9aa73466f0c1.setContent(html_545b9ba3fad7cbe6b4ce9dc58cdde0d3);
+            
+        
+
+        marker_e8b6229fb35d539b008c3532857ac1bb.bindPopup(popup_4ab6c4a063d037d7b68c9aa73466f0c1)
+        ;
+
+        
+    
+    
+            var marker_34e47a3ca4290193edc872482c0f3979 = L.marker(
+                [49.2864636, -123.127255],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_46a2c44042c2a1f516050a9420d2ad39 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_58961799109f8c3fd3c7ce575f7931e2 = $(`<div id="html_58961799109f8c3fd3c7ce575f7931e2" style="width: 100.0%; height: 100.0%;">Blue Horizon Hotel</div>`)[0];
+                popup_46a2c44042c2a1f516050a9420d2ad39.setContent(html_58961799109f8c3fd3c7ce575f7931e2);
+            
+        
+
+        marker_34e47a3ca4290193edc872482c0f3979.bindPopup(popup_46a2c44042c2a1f516050a9420d2ad39)
+        ;
+
+        
+    
+    
+            var marker_15d819c52916be8eb6dfea95525becbb = L.marker(
+                [49.2880994, -123.116883],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_da07ecae0a38ac3a7ba97ddb9588dcc6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a2f8fb814a967daa453a9340b2e363a9 = $(`<div id="html_a2f8fb814a967daa453a9340b2e363a9" style="width: 100.0%; height: 100.0%;">Fairmont Pacific Rim</div>`)[0];
+                popup_da07ecae0a38ac3a7ba97ddb9588dcc6.setContent(html_a2f8fb814a967daa453a9340b2e363a9);
+            
+        
+
+        marker_15d819c52916be8eb6dfea95525becbb.bindPopup(popup_da07ecae0a38ac3a7ba97ddb9588dcc6)
+        ;
+
+        
+    
+    
+            var marker_c275d95b04b707869fb10296055e934e = L.marker(
+                [49.2872705, -123.113634],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_54cae5731d2bddc0d94f41056c2813f8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1ddbd3edc37abaa96ed87847e0280a48 = $(`<div id="html_1ddbd3edc37abaa96ed87847e0280a48" style="width: 100.0%; height: 100.0%;">Fairmont Waterfront</div>`)[0];
+                popup_54cae5731d2bddc0d94f41056c2813f8.setContent(html_1ddbd3edc37abaa96ed87847e0280a48);
+            
+        
+
+        marker_c275d95b04b707869fb10296055e934e.bindPopup(popup_54cae5731d2bddc0d94f41056c2813f8)
+        ;
+
+        
+    
+    
+            var marker_60fadce5cf6579433468e028f8ab55ea = L.marker(
+                [49.2878972, -123.113048],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_6d6647d22734ab7a513c85c625e492a9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7e33b5fb2213d8c0c54026e81499a2dc = $(`<div id="html_7e33b5fb2213d8c0c54026e81499a2dc" style="width: 100.0%; height: 100.0%;">Pan Pacific Vancouver</div>`)[0];
+                popup_6d6647d22734ab7a513c85c625e492a9.setContent(html_7e33b5fb2213d8c0c54026e81499a2dc);
+            
+        
+
+        marker_60fadce5cf6579433468e028f8ab55ea.bindPopup(popup_6d6647d22734ab7a513c85c625e492a9)
+        ;
+
+        
+    
+    
+            var marker_7744f18c0bb52bbe7668ed4faba8dc7f = L.marker(
+                [49.27458, -123.122482],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_26be7e10a9ae67a0a11feca5a1c28d22 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7b98f6735dee778b6181dadfb1b26187 = $(`<div id="html_7b98f6735dee778b6181dadfb1b26187" style="width: 100.0%; height: 100.0%;">Opus</div>`)[0];
+                popup_26be7e10a9ae67a0a11feca5a1c28d22.setContent(html_7b98f6735dee778b6181dadfb1b26187);
+            
+        
+
+        marker_7744f18c0bb52bbe7668ed4faba8dc7f.bindPopup(popup_26be7e10a9ae67a0a11feca5a1c28d22)
+        ;
+
+        
+    
+    
+            var marker_e3872c525adc7f50edd3db1ae89c6c14 = L.marker(
+                [49.2921331, -123.129135],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_5f91c9d09a76332ee037ff54435a9ce5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6a29d641e912b0c9a549b197a9beb5fc = $(`<div id="html_6a29d641e912b0c9a549b197a9beb5fc" style="width: 100.0%; height: 100.0%;">Westin Bayshore</div>`)[0];
+                popup_5f91c9d09a76332ee037ff54435a9ce5.setContent(html_6a29d641e912b0c9a549b197a9beb5fc);
+            
+        
+
+        marker_e3872c525adc7f50edd3db1ae89c6c14.bindPopup(popup_5f91c9d09a76332ee037ff54435a9ce5)
+        ;
+
+        
+    
+    
+            var marker_b3393bf013b5ec8371db657dbbc614bc = L.marker(
+                [49.2789109, -123.122843],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_3a396edb8f0379dcae76e904d6552048 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d8be9ff599c174ac79539bc40c885c89 = $(`<div id="html_d8be9ff599c174ac79539bc40c885c89" style="width: 100.0%; height: 100.0%;">Hotel Belmont Vancouver</div>`)[0];
+                popup_3a396edb8f0379dcae76e904d6552048.setContent(html_d8be9ff599c174ac79539bc40c885c89);
+            
+        
+
+        marker_b3393bf013b5ec8371db657dbbc614bc.bindPopup(popup_3a396edb8f0379dcae76e904d6552048)
+        ;
+
+        
+    
+    
+            var marker_00be7180cdb493ed9b1a358b031bd423 = L.marker(
+                [49.2857066, -123.124856],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_a35bd8054896965e052f683fcfa4ab45 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d49eb92ab744188f7fc5cabaec115737 = $(`<div id="html_d49eb92ab744188f7fc5cabaec115737" style="width: 100.0%; height: 100.0%;">Carmana Plaza</div>`)[0];
+                popup_a35bd8054896965e052f683fcfa4ab45.setContent(html_d49eb92ab744188f7fc5cabaec115737);
+            
+        
+
+        marker_00be7180cdb493ed9b1a358b031bd423.bindPopup(popup_a35bd8054896965e052f683fcfa4ab45)
+        ;
+
+        
+    
+    
+            var marker_276d428584dd2a9a2772e19fea1857a5 = L.marker(
+                [49.2781605, -123.114459],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_6982a0eda4a737f74da6419b4b4db203 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e47a03576451e261b927b71cd613ba9b = $(`<div id="html_e47a03576451e261b927b71cd613ba9b" style="width: 100.0%; height: 100.0%;">Blu Hotel</div>`)[0];
+                popup_6982a0eda4a737f74da6419b4b4db203.setContent(html_e47a03576451e261b927b71cd613ba9b);
+            
+        
+
+        marker_276d428584dd2a9a2772e19fea1857a5.bindPopup(popup_6982a0eda4a737f74da6419b4b4db203)
+        ;
+
+        
+    
+    
+            var marker_3e657cd28cc5f0d8202fac318d57c579 = L.marker(
+                [49.2813793, -123.0452068],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_c601db0ee2c55eeb4c7edfce360e4fc9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c4aa527710dfae93e6cc3e5a9f809ac = $(`<div id="html_5c4aa527710dfae93e6cc3e5a9f809ac" style="width: 100.0%; height: 100.0%;">Atrium Hotel Vancouver</div>`)[0];
+                popup_c601db0ee2c55eeb4c7edfce360e4fc9.setContent(html_5c4aa527710dfae93e6cc3e5a9f809ac);
+            
+        
+
+        marker_3e657cd28cc5f0d8202fac318d57c579.bindPopup(popup_c601db0ee2c55eeb4c7edfce360e4fc9)
+        ;
+
+        
+    
+    
+            var marker_d536a094d7f7795ec61e79ebe6ff4a77 = L.marker(
+                [49.2877656, -123.1292409],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_b324d3c098d8ced773b5869378c3e908 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8e5742dca9637f3c93d08a0a0ebcf806 = $(`<div id="html_8e5742dca9637f3c93d08a0a0ebcf806" style="width: 100.0%; height: 100.0%;">Tropicana Suite Hotel</div>`)[0];
+                popup_b324d3c098d8ced773b5869378c3e908.setContent(html_8e5742dca9637f3c93d08a0a0ebcf806);
+            
+        
+
+        marker_d536a094d7f7795ec61e79ebe6ff4a77.bindPopup(popup_b324d3c098d8ced773b5869378c3e908)
+        ;
+
+        
+    
+    
+            var marker_5f7299610e7d6ef3790d5293f987293d = L.marker(
+                [49.278899, -123.125222],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_f3428a78dbf421f7e372532b9770b45a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e61f906ee24b3f7c65c8b638a2566613 = $(`<div id="html_e61f906ee24b3f7c65c8b638a2566613" style="width: 100.0%; height: 100.0%;">Executive Hotels & Real Estate</div>`)[0];
+                popup_f3428a78dbf421f7e372532b9770b45a.setContent(html_e61f906ee24b3f7c65c8b638a2566613);
+            
+        
+
+        marker_5f7299610e7d6ef3790d5293f987293d.bindPopup(popup_f3428a78dbf421f7e372532b9770b45a)
+        ;
+
+        
+    
+    
+            var marker_2a290f23c8dab9748ea418ca98da7183 = L.marker(
+                [49.2917164, -123.1355903],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_fab26ae9da12f3976e035edd14d6ef6c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3d82a6e889eb5d7900d3af5f08814f8f = $(`<div id="html_3d82a6e889eb5d7900d3af5f08814f8f" style="width: 100.0%; height: 100.0%;">Times Square Suites Hotel</div>`)[0];
+                popup_fab26ae9da12f3976e035edd14d6ef6c.setContent(html_3d82a6e889eb5d7900d3af5f08814f8f);
+            
+        
+
+        marker_2a290f23c8dab9748ea418ca98da7183.bindPopup(popup_fab26ae9da12f3976e035edd14d6ef6c)
+        ;
+
+        
+    
+    
+            var marker_84babdadf2e722198bce65e0ed88e51f = L.marker(
+                [49.2794963, -123.120444],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_c73c07b3d28374fea3e345505b79706d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d2ef8fa752b487de196afcdda776ebec = $(`<div id="html_d2ef8fa752b487de196afcdda776ebec" style="width: 100.0%; height: 100.0%;">Moda Hotel</div>`)[0];
+                popup_c73c07b3d28374fea3e345505b79706d.setContent(html_d2ef8fa752b487de196afcdda776ebec);
+            
+        
+
+        marker_84babdadf2e722198bce65e0ed88e51f.bindPopup(popup_c73c07b3d28374fea3e345505b79706d)
+        ;
+
+        
+    
+    
+            var marker_7e230f92b8e0a3451293621092b0535a = L.marker(
+                [49.2781552, -123.122394],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_f137da71a24a1bae361d552375893e22 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_121fa18a566e86805396938548cbecb9 = $(`<div id="html_121fa18a566e86805396938548cbecb9" style="width: 100.0%; height: 100.0%;">Level</div>`)[0];
+                popup_f137da71a24a1bae361d552375893e22.setContent(html_121fa18a566e86805396938548cbecb9);
+            
+        
+
+        marker_7e230f92b8e0a3451293621092b0535a.bindPopup(popup_f137da71a24a1bae361d552375893e22)
+        ;
+
+        
+    
+    
+            var marker_dabdd41bc8397d698fe648e5eed3a59d = L.marker(
+                [49.2814894, -123.074332],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_e51af4248ce1b4a2994131d32720b132 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f915cf15932868668e77940ed3fc322e = $(`<div id="html_f915cf15932868668e77940ed3fc322e" style="width: 100.0%; height: 100.0%;">Hotel At The Waldorf</div>`)[0];
+                popup_e51af4248ce1b4a2994131d32720b132.setContent(html_f915cf15932868668e77940ed3fc322e);
+            
+        
+
+        marker_dabdd41bc8397d698fe648e5eed3a59d.bindPopup(popup_e51af4248ce1b4a2994131d32720b132)
+        ;
+
+        
+    
+    
+            var marker_a2d470e7dac9b8c2f3d76e5675f035c3 = L.marker(
+                [49.283245, -123.1094244],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_c802e986326db69d8ce38588138c7365 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_539fa2a53952cc05af0493224fbb5479 = $(`<div id="html_539fa2a53952cc05af0493224fbb5479" style="width: 100.0%; height: 100.0%;">Danny's Inn</div>`)[0];
+                popup_c802e986326db69d8ce38588138c7365.setContent(html_539fa2a53952cc05af0493224fbb5479);
+            
+        
+
+        marker_a2d470e7dac9b8c2f3d76e5675f035c3.bindPopup(popup_c802e986326db69d8ce38588138c7365)
+        ;
+
+        
+    
+    
+            var marker_f4d2941edf45cf9285cc33f5d970eef6 = L.marker(
+                [49.2797517, -123.12574],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_d289cf51d729f89c4e4f21dfffd3e2cb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_363be853273eaffe09391ebd4e9ad7ea = $(`<div id="html_363be853273eaffe09391ebd4e9ad7ea" style="width: 100.0%; height: 100.0%;">WorldMark Vancouver - The Canadian</div>`)[0];
+                popup_d289cf51d729f89c4e4f21dfffd3e2cb.setContent(html_363be853273eaffe09391ebd4e9ad7ea);
+            
+        
+
+        marker_f4d2941edf45cf9285cc33f5d970eef6.bindPopup(popup_d289cf51d729f89c4e4f21dfffd3e2cb)
+        ;
+
+        
+    
+    
+            var marker_c404820f68b7431e433b3c55a94b20a4 = L.marker(
+                [49.2851852, -123.120638],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_b99f5729cbd15c7e7407697c66ea0ce2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_56275a13b84a15f2d0eeee0b0d1d7a8e = $(`<div id="html_56275a13b84a15f2d0eeee0b0d1d7a8e" style="width: 100.0%; height: 100.0%;">Hyatt Regency Vancouver</div>`)[0];
+                popup_b99f5729cbd15c7e7407697c66ea0ce2.setContent(html_56275a13b84a15f2d0eeee0b0d1d7a8e);
+            
+        
+
+        marker_c404820f68b7431e433b3c55a94b20a4.bindPopup(popup_b99f5729cbd15c7e7407697c66ea0ce2)
+        ;
+
+        
+    
+    
+            var marker_7137d29c64167f0234aa273eef9c00e9 = L.marker(
+                [49.2837268, -123.10482],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_0c2e9a10e062764eca6f6963174a93d8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d99d87823647651b6a638efa3e72cd8a = $(`<div id="html_d99d87823647651b6a638efa3e72cd8a" style="width: 100.0%; height: 100.0%;">The Packing House</div>`)[0];
+                popup_0c2e9a10e062764eca6f6963174a93d8.setContent(html_d99d87823647651b6a638efa3e72cd8a);
+            
+        
+
+        marker_7137d29c64167f0234aa273eef9c00e9.bindPopup(popup_0c2e9a10e062764eca6f6963174a93d8)
+        ;
+
+        
+    
+    
+            var marker_1813bc1722893f9edc5a2077eb8f5093 = L.marker(
+                [49.2753903, -123.112766],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_dc435cdcf61d81ef2135f50c64d54f2f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b787f327530c8f3269a06d093173f653 = $(`<div id="html_b787f327530c8f3269a06d093173f653" style="width: 100.0%; height: 100.0%;">JW Marriott parq Vancouver</div>`)[0];
+                popup_dc435cdcf61d81ef2135f50c64d54f2f.setContent(html_b787f327530c8f3269a06d093173f653);
+            
+        
+
+        marker_1813bc1722893f9edc5a2077eb8f5093.bindPopup(popup_dc435cdcf61d81ef2135f50c64d54f2f)
+        ;
+
+        
+    
+    
+            var marker_16055667f84b453319602548287429a8 = L.marker(
+                [49.2757138, -123.1139417],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_c5defc60ffa41119c4640301455d3f08 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_610b98dd733aecbbaecf1d0567d8222f = $(`<div id="html_610b98dd733aecbbaecf1d0567d8222f" style="width: 100.0%; height: 100.0%;">the DOUGLAS, Autograph Collection</div>`)[0];
+                popup_c5defc60ffa41119c4640301455d3f08.setContent(html_610b98dd733aecbbaecf1d0567d8222f);
+            
+        
+
+        marker_16055667f84b453319602548287429a8.bindPopup(popup_c5defc60ffa41119c4640301455d3f08)
+        ;
+
+        
+    
+    
+            var marker_43cf7f48ea4a1ad1a80d74307ebdf858 = L.marker(
+                [49.2865686, -123.115258],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_6e7e1faf1355a2faf30db930c0603ddc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_401ba8f04b17893b846342053a601541 = $(`<div id="html_401ba8f04b17893b846342053a601541" style="width: 100.0%; height: 100.0%;">Auberge Hotel Vancouver</div>`)[0];
+                popup_6e7e1faf1355a2faf30db930c0603ddc.setContent(html_401ba8f04b17893b846342053a601541);
+            
+        
+
+        marker_43cf7f48ea4a1ad1a80d74307ebdf858.bindPopup(popup_6e7e1faf1355a2faf30db930c0603ddc)
+        ;
+
+        
+    
+    
+            var marker_e59a466c3295a6929363185d609f73d5 = L.marker(
+                [49.286925, -123.1240507],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_7ea7902dfede4d9c1643fbe4284e8bc2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3f83049991126cc67368e252e26c3962 = $(`<div id="html_3f83049991126cc67368e252e26c3962" style="width: 100.0%; height: 100.0%;">Paradox Main Entrance</div>`)[0];
+                popup_7ea7902dfede4d9c1643fbe4284e8bc2.setContent(html_3f83049991126cc67368e252e26c3962);
+            
+        
+
+        marker_e59a466c3295a6929363185d609f73d5.bindPopup(popup_7ea7902dfede4d9c1643fbe4284e8bc2)
+        ;
+
+        
+    
+    
+            var marker_6258ce2c4e88ebbe75c60a7849ec58c2 = L.marker(
+                [49.2856155, -123.115708],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_c65618423f7055a6cf52f6f0d942a1e7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ab7de4812bffdb5208f92e8fa21a5f5b = $(`<div id="html_ab7de4812bffdb5208f92e8fa21a5f5b" style="width: 100.0%; height: 100.0%;">Exchange Hotel Vancouver</div>`)[0];
+                popup_c65618423f7055a6cf52f6f0d942a1e7.setContent(html_ab7de4812bffdb5208f92e8fa21a5f5b);
+            
+        
+
+        marker_6258ce2c4e88ebbe75c60a7849ec58c2.bindPopup(popup_c65618423f7055a6cf52f6f0d942a1e7)
+        ;
+
+        
+    
+    
+            var marker_aafe2dc9feca590a5f8640c1e6b5ba8c = L.marker(
+                [49.2805081, -123.125404],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_215dbec6172298b4d47a6f3120a44726 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bce6496a03bb61544ac7bba7bc4797b5 = $(`<div id="html_bce6496a03bb61544ac7bba7bc4797b5" style="width: 100.0%; height: 100.0%;">Embarc Vancouver</div>`)[0];
+                popup_215dbec6172298b4d47a6f3120a44726.setContent(html_bce6496a03bb61544ac7bba7bc4797b5);
+            
+        
+
+        marker_aafe2dc9feca590a5f8640c1e6b5ba8c.bindPopup(popup_215dbec6172298b4d47a6f3120a44726)
+        ;
+
+        
+    
+    
+            var marker_5bab21f0305d9b7dc752d71e6d49f023 = L.marker(
+                [49.2884061, -123.130403],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_b34bc9108e6a38eeb0f2c3eb340bbcc4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_de7e29afafd043f5cc906a993e314080 = $(`<div id="html_de7e29afafd043f5cc906a993e314080" style="width: 100.0%; height: 100.0%;">Divya Sutra Suites on Robson Downtown Vancouver</div>`)[0];
+                popup_b34bc9108e6a38eeb0f2c3eb340bbcc4.setContent(html_de7e29afafd043f5cc906a993e314080);
+            
+        
+
+        marker_5bab21f0305d9b7dc752d71e6d49f023.bindPopup(popup_b34bc9108e6a38eeb0f2c3eb340bbcc4)
+        ;
+
+        
+    
+    
+            var marker_6951818e0564a46abf658f34a656919f = L.marker(
+                [49.2761123, -123.1283603],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_f4c25673787e994067c0fe07044c2812 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_18034a433930b942d4a20f5c6277b720 = $(`<div id="html_18034a433930b942d4a20f5c6277b720" style="width: 100.0%; height: 100.0%;">GEC Granville Suites</div>`)[0];
+                popup_f4c25673787e994067c0fe07044c2812.setContent(html_18034a433930b942d4a20f5c6277b720);
+            
+        
+
+        marker_6951818e0564a46abf658f34a656919f.bindPopup(popup_f4c25673787e994067c0fe07044c2812)
+        ;
+
+        
+    
+    
+            var marker_e804ea49b42a5f83a490127107de3e8e = L.marker(
+                [49.2809751, -123.106143],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_14ee96b3e44a116a5b77db0df6353e7d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_400ddf82dcc9a915f54757caab0311ea = $(`<div id="html_400ddf82dcc9a915f54757caab0311ea" style="width: 100.0%; height: 100.0%;">Skwachàys Lodge</div>`)[0];
+                popup_14ee96b3e44a116a5b77db0df6353e7d.setContent(html_400ddf82dcc9a915f54757caab0311ea);
+            
+        
+
+        marker_e804ea49b42a5f83a490127107de3e8e.bindPopup(popup_14ee96b3e44a116a5b77db0df6353e7d)
+        ;
+
+        
+    
+    
+            var marker_300d5ed47d69de56fc37a286cd53765b = L.marker(
+                [49.2635214, -123.120439],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_70b48aff7927d2ba3ecce11cd9ca750b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_908bedbac5ed505891877323256db964 = $(`<div id="html_908bedbac5ed505891877323256db964" style="width: 100.0%; height: 100.0%;">Holiday Inn Vancouver-Centre (Broadway)</div>`)[0];
+                popup_70b48aff7927d2ba3ecce11cd9ca750b.setContent(html_908bedbac5ed505891877323256db964);
+            
+        
+
+        marker_300d5ed47d69de56fc37a286cd53765b.bindPopup(popup_70b48aff7927d2ba3ecce11cd9ca750b)
+        ;
+
+        
+    
+    
+            var marker_a0c589fc7aa00d917f8daec28c9e4766 = L.marker(
+                [49.2814701, -123.0951511],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_8fd7ab65a6f959b776a13900445a271d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f28af30e63415a9c79edbbf24a4b3f31 = $(`<div id="html_f28af30e63415a9c79edbbf24a4b3f31" style="width: 100.0%; height: 100.0%;">Patricia Hotel</div>`)[0];
+                popup_8fd7ab65a6f959b776a13900445a271d.setContent(html_f28af30e63415a9c79edbbf24a4b3f31);
+            
+        
+
+        marker_a0c589fc7aa00d917f8daec28c9e4766.bindPopup(popup_8fd7ab65a6f959b776a13900445a271d)
+        ;
+
+        
+    
+    
+            var marker_b65f2f4e623fdb9b8224531a6783392a = L.marker(
+                [49.2921694, -123.141371],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_e4916f52961b05ad65c23adbb9397619 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_64b0ea82548054737bb880febdf906a5 = $(`<div id="html_64b0ea82548054737bb880febdf906a5" style="width: 100.0%; height: 100.0%;">Rosellen Suites at Stanley Park</div>`)[0];
+                popup_e4916f52961b05ad65c23adbb9397619.setContent(html_64b0ea82548054737bb880febdf906a5);
+            
+        
+
+        marker_b65f2f4e623fdb9b8224531a6783392a.bindPopup(popup_e4916f52961b05ad65c23adbb9397619)
+        ;
+
+        
+    
+    
+            var marker_bbf2af3dd82025aae8e2c9db94bacdbc = L.marker(
+                [49.2884423, -123.138761],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_69d29f9d8ca1a73505c6c4ef0dda2978 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5781ad3832961501f3eb7d6537332994 = $(`<div id="html_5781ad3832961501f3eb7d6537332994" style="width: 100.0%; height: 100.0%;">Sonder at Revival</div>`)[0];
+                popup_69d29f9d8ca1a73505c6c4ef0dda2978.setContent(html_5781ad3832961501f3eb7d6537332994);
+            
+        
+
+        marker_bbf2af3dd82025aae8e2c9db94bacdbc.bindPopup(popup_69d29f9d8ca1a73505c6c4ef0dda2978)
+        ;
+
+        
+    
+    
+            var marker_49fcd3ae4a7643434323586d9f152ba0 = L.marker(
+                [49.2830039, -123.1041],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_24570a4e23b908121ac53e9856e6c5e0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5b1bdd2c36fd1fd2973c7a1fdb15ff8e = $(`<div id="html_5b1bdd2c36fd1fd2973c7a1fdb15ff8e" style="width: 100.0%; height: 100.0%;">Glory Hotel</div>`)[0];
+                popup_24570a4e23b908121ac53e9856e6c5e0.setContent(html_5b1bdd2c36fd1fd2973c7a1fdb15ff8e);
+            
+        
+
+        marker_49fcd3ae4a7643434323586d9f152ba0.bindPopup(popup_24570a4e23b908121ac53e9856e6c5e0)
+        ;
+
+        
+    
+    
+            var marker_1469853dc3f9c171f356de48b7d8d69d = L.marker(
+                [49.27976257239122, -123.12752482602629],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_7f34f9d4986eed7830629dffdb9c15d8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6d4687bea05c0aa61a351af6d4a93c6b = $(`<div id="html_6d4687bea05c0aa61a351af6d4a93c6b" style="width: 100.0%; height: 100.0%;">The Burrard</div>`)[0];
+                popup_7f34f9d4986eed7830629dffdb9c15d8.setContent(html_6d4687bea05c0aa61a351af6d4a93c6b);
+            
+        
+
+        marker_1469853dc3f9c171f356de48b7d8d69d.bindPopup(popup_7f34f9d4986eed7830629dffdb9c15d8)
+        ;
+
+        
+    
+    
+            var marker_64547461d3a362b0771afb3e8b60a70f = L.marker(
+                [49.27613812348853, -123.1302108128021],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_753f91a35b26ec1a0491479b8d0c1318 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_19a41f99a29082497a6a5b2ecd358629 = $(`<div id="html_19a41f99a29082497a6a5b2ecd358629" style="width: 100.0%; height: 100.0%;">The Parker Hotel Vancouver</div>`)[0];
+                popup_753f91a35b26ec1a0491479b8d0c1318.setContent(html_19a41f99a29082497a6a5b2ecd358629);
+            
+        
+
+        marker_64547461d3a362b0771afb3e8b60a70f.bindPopup(popup_753f91a35b26ec1a0491479b8d0c1318)
+        ;
+
+        
+    
+    
+            var marker_a93e0423416adf66fb14adcfbc881b62 = L.marker(
+                [49.28571640236776, -123.12376911470905],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_d73411c7d64c091c55ccc32311cf8e5f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0274bf8c57e6ddb82e9c7b79efb0e94a = $(`<div id="html_0274bf8c57e6ddb82e9c7b79efb0e94a" style="width: 100.0%; height: 100.0%;">Shangri-La Vancouver</div>`)[0];
+                popup_d73411c7d64c091c55ccc32311cf8e5f.setContent(html_0274bf8c57e6ddb82e9c7b79efb0e94a);
+            
+        
+
+        marker_a93e0423416adf66fb14adcfbc881b62.bindPopup(popup_d73411c7d64c091c55ccc32311cf8e5f)
+        ;
+
+        
+    
+    
+            var marker_6e70bc8bfd529a9635f845b3e06cab5c = L.marker(
+                [49.27777382725244, -123.12467721723301],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_256aa60e68b1fb470992e0a47c0e42b9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8098186c0f7fce8632c0f7fb08289cc3 = $(`<div id="html_8098186c0f7fce8632c0f7fb08289cc3" style="width: 100.0%; height: 100.0%;">Best Western Premier Chateau Granville Hotel & Suites & Conference Centre</div>`)[0];
+                popup_256aa60e68b1fb470992e0a47c0e42b9.setContent(html_8098186c0f7fce8632c0f7fb08289cc3);
+            
+        
+
+        marker_6e70bc8bfd529a9635f845b3e06cab5c.bindPopup(popup_256aa60e68b1fb470992e0a47c0e42b9)
+        ;
+
+        
+    
+    
+            var marker_2044591bc6e232c796d9f3fce72512d0 = L.marker(
+                [49.269438674869605, -123.1310494450858],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_956ce74af2d078384361696220abf9f2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_69ab56772d3aecec8eb154af5ad0698f = $(`<div id="html_69ab56772d3aecec8eb154af5ad0698f" style="width: 100.0%; height: 100.0%;">Granville Island Hotel</div>`)[0];
+                popup_956ce74af2d078384361696220abf9f2.setContent(html_69ab56772d3aecec8eb154af5ad0698f);
+            
+        
+
+        marker_2044591bc6e232c796d9f3fce72512d0.bindPopup(popup_956ce74af2d078384361696220abf9f2)
+        ;
+
+        
+    
+    
+            var marker_253335dfa6cbab5464e4ab0f3fdeee4e = L.marker(
+                [49.28007500525723, -123.1324384182144],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_03b1bd5b58bcf6c3de9daed14c462329 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_448a9cf44a029a99a48d55f2a5a689df = $(`<div id="html_448a9cf44a029a99a48d55f2a5a689df" style="width: 100.0%; height: 100.0%;">Sunset Inn & Suites</div>`)[0];
+                popup_03b1bd5b58bcf6c3de9daed14c462329.setContent(html_448a9cf44a029a99a48d55f2a5a689df);
+            
+        
+
+        marker_253335dfa6cbab5464e4ab0f3fdeee4e.bindPopup(popup_03b1bd5b58bcf6c3de9daed14c462329)
+        ;
+
+        
+    
+    
+            var marker_098c1db4e597d157c3bf1d6e86fed1f1 = L.marker(
+                [49.282990826169105, -123.1159166107863],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_289a7047296fbc7813f92a8c159b94e3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8ecd73407dacd17cd1c32f5f75442210 = $(`<div id="html_8ecd73407dacd17cd1c32f5f75442210" style="width: 100.0%; height: 100.0%;">St. Regis Hotel</div>`)[0];
+                popup_289a7047296fbc7813f92a8c159b94e3.setContent(html_8ecd73407dacd17cd1c32f5f75442210);
+            
+        
+
+        marker_098c1db4e597d157c3bf1d6e86fed1f1.bindPopup(popup_289a7047296fbc7813f92a8c159b94e3)
+        ;
+
+        
+    
+    
+            var marker_517b5d8a05e71d780c84ff4fdbe64928 = L.marker(
+                [49.2835481636599, -123.11904312398697],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_feff029853be03120b8731328d13a3e0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4b417fecdf218910362f022da96e829d = $(`<div id="html_4b417fecdf218910362f022da96e829d" style="width: 100.0%; height: 100.0%;">Rosewood Hotel Georgia</div>`)[0];
+                popup_feff029853be03120b8731328d13a3e0.setContent(html_4b417fecdf218910362f022da96e829d);
+            
+        
+
+        marker_517b5d8a05e71d780c84ff4fdbe64928.bindPopup(popup_feff029853be03120b8731328d13a3e0)
+        ;
+
+        
+    
+    
+            var marker_46e76574ee5ae5b119b89bf82d3fad1b = L.marker(
+                [49.28375344997881, -123.12108709718687],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_83f16f4c1b6cc1be353216ab2558dd5d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ad8d4514cf09061e1b838fae84fa4e73 = $(`<div id="html_ad8d4514cf09061e1b838fae84fa4e73" style="width: 100.0%; height: 100.0%;">Fairmont Hotel Vancouver</div>`)[0];
+                popup_83f16f4c1b6cc1be353216ab2558dd5d.setContent(html_ad8d4514cf09061e1b838fae84fa4e73);
+            
+        
+
+        marker_46e76574ee5ae5b119b89bf82d3fad1b.bindPopup(popup_83f16f4c1b6cc1be353216ab2558dd5d)
+        ;
+
+        
+    
+    
+            var marker_8fb2726901ea800cae9b5f4d592e9452 = L.marker(
+                [49.284010583663076, -123.11832328484806],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_21d501cf44f617dde2a2942aa08f1667 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0bdf78269d3c7ec72d2588cb52bb1b94 = $(`<div id="html_0bdf78269d3c7ec72d2588cb52bb1b94" style="width: 100.0%; height: 100.0%;">Metropolitan Hotel Vancouver</div>`)[0];
+                popup_21d501cf44f617dde2a2942aa08f1667.setContent(html_0bdf78269d3c7ec72d2588cb52bb1b94);
+            
+        
+
+        marker_8fb2726901ea800cae9b5f4d592e9452.bindPopup(popup_21d501cf44f617dde2a2942aa08f1667)
+        ;
+
+        
+    
+    
+            var marker_fd2dd318eb7e29589a31d68c0a3a3a1a = L.marker(
+                [49.28851306841813, -123.12073446053164],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_9f3567e6f61f29dab2c0b51012b7935a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1a5e5694fa8ecd6c7438bbeace9ada65 = $(`<div id="html_1a5e5694fa8ecd6c7438bbeace9ada65" style="width: 100.0%; height: 100.0%;">Pinnacle Hotel Harbourfront</div>`)[0];
+                popup_9f3567e6f61f29dab2c0b51012b7935a.setContent(html_1a5e5694fa8ecd6c7438bbeace9ada65);
+            
+        
+
+        marker_fd2dd318eb7e29589a31d68c0a3a3a1a.bindPopup(popup_9f3567e6f61f29dab2c0b51012b7935a)
+        ;
+
+        
+    
+    
+            var marker_c5801ba7499460de51bb9fcb83ddddab = L.marker(
+                [49.28794132294604, -123.12085580310763],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_a6a9ab729442efab8134f1aaa6bb02c1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_42320c6d06b8885eb4441ea904da9602 = $(`<div id="html_42320c6d06b8885eb4441ea904da9602" style="width: 100.0%; height: 100.0%;">Marriott Pinnacle Downtown</div>`)[0];
+                popup_a6a9ab729442efab8134f1aaa6bb02c1.setContent(html_42320c6d06b8885eb4441ea904da9602);
+            
+        
+
+        marker_c5801ba7499460de51bb9fcb83ddddab.bindPopup(popup_a6a9ab729442efab8134f1aaa6bb02c1)
+        ;
+
+        
+    
+    
+            var marker_d19cb5f8ff67ef09c02b53963d5e8d08 = L.marker(
+                [49.28835403345515, -123.12219129376003],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_ab8e4c39a73d2d0521ccf4b230583fb4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e1fef716c59231c8884fc16f56e99666 = $(`<div id="html_e1fef716c59231c8884fc16f56e99666" style="width: 100.0%; height: 100.0%;">Coast Coal Harbour Hotel by APA</div>`)[0];
+                popup_ab8e4c39a73d2d0521ccf4b230583fb4.setContent(html_e1fef716c59231c8884fc16f56e99666);
+            
+        
+
+        marker_d19cb5f8ff67ef09c02b53963d5e8d08.bindPopup(popup_ab8e4c39a73d2d0521ccf4b230583fb4)
+        ;
+
+        
+    
+    
+            var marker_73e3e00fca08df2fc0608e6f1cabe5d0 = L.marker(
+                [49.28102680442949, -123.13275445276429],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_6fb1a31fbaf9cde46ebac3f175d9ec2c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d76f6b94d165ac7b49f52d83f661f448 = $(`<div id="html_d76f6b94d165ac7b49f52d83f661f448" style="width: 100.0%; height: 100.0%;">Sandman Suites Vancouver on Davie</div>`)[0];
+                popup_6fb1a31fbaf9cde46ebac3f175d9ec2c.setContent(html_d76f6b94d165ac7b49f52d83f661f448);
+            
+        
+
+        marker_73e3e00fca08df2fc0608e6f1cabe5d0.bindPopup(popup_6fb1a31fbaf9cde46ebac3f175d9ec2c)
+        ;
+
+        
+    
+    
+            var marker_31a95b367a7fa3c647761dc1f7fa3303 = L.marker(
+                [49.28209719434917, -123.10248384697059],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_913b9957c27b84b995c4d2db4f4967c2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2f9f923f16626f0bdf8449ff4d6c6acd = $(`<div id="html_2f9f923f16626f0bdf8449ff4d6c6acd" style="width: 100.0%; height: 100.0%;">Columbia Hotel</div>`)[0];
+                popup_913b9957c27b84b995c4d2db4f4967c2.setContent(html_2f9f923f16626f0bdf8449ff4d6c6acd);
+            
+        
+
+        marker_31a95b367a7fa3c647761dc1f7fa3303.bindPopup(popup_913b9957c27b84b995c4d2db4f4967c2)
+        ;
+
+        
+    
+    
+            var marker_48d7ed7ef0ba5b897feed350187a1c6e = L.marker(
+                [49.28335907596599, -123.11229249253672],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_50d865ebdd9033edb9c2646a3e6cce99 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d694bbaa8aa0aada8f5ea61cae90d4dd = $(`<div id="html_d694bbaa8aa0aada8f5ea61cae90d4dd" style="width: 100.0%; height: 100.0%;">Ramada Limited Downtown Vancouver</div>`)[0];
+                popup_50d865ebdd9033edb9c2646a3e6cce99.setContent(html_d694bbaa8aa0aada8f5ea61cae90d4dd);
+            
+        
+
+        marker_48d7ed7ef0ba5b897feed350187a1c6e.bindPopup(popup_50d865ebdd9033edb9c2646a3e6cce99)
+        ;
+
+        
+    
+    
+            var marker_41332bef89af7aead1b4c59273013633 = L.marker(
+                [49.28081291428567, -123.11734815816799],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_34cd72630b93dcf04213f3efa92b2c49 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_94cfc0b4d8cc99730fd7f12c9fbeae30 = $(`<div id="html_94cfc0b4d8cc99730fd7f12c9fbeae30" style="width: 100.0%; height: 100.0%;">Kingston Hotel</div>`)[0];
+                popup_34cd72630b93dcf04213f3efa92b2c49.setContent(html_94cfc0b4d8cc99730fd7f12c9fbeae30);
+            
+        
+
+        marker_41332bef89af7aead1b4c59273013633.bindPopup(popup_34cd72630b93dcf04213f3efa92b2c49)
+        ;
+
+        
+    
+    
+            var marker_3c32df8df9a060ed3fd30ce156ca7097 = L.marker(
+                [49.27711349794841, -123.12684766739335],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_b26f4250c1889e92e3a8e34535b90058 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_be25ae9fb83ef56f82bc2d3a1078083d = $(`<div id="html_be25ae9fb83ef56f82bc2d3a1078083d" style="width: 100.0%; height: 100.0%;">Quality Inn & Suites Downtown Vancouver</div>`)[0];
+                popup_b26f4250c1889e92e3a8e34535b90058.setContent(html_be25ae9fb83ef56f82bc2d3a1078083d);
+            
+        
+
+        marker_3c32df8df9a060ed3fd30ce156ca7097.bindPopup(popup_b26f4250c1889e92e3a8e34535b90058)
+        ;
+
+        
+    
+    
+            var marker_653ca43e0e2a35d0a4093182a39d1afd = L.marker(
+                [49.276751240619895, -123.12622585556922],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_84bcddb24fec34ded58f530dd22a7f8b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d80157bd245c48da76d7f4f67cd4b953 = $(`<div id="html_d80157bd245c48da76d7f4f67cd4b953" style="width: 100.0%; height: 100.0%;">Ambassador Hotel</div>`)[0];
+                popup_84bcddb24fec34ded58f530dd22a7f8b.setContent(html_d80157bd245c48da76d7f4f67cd4b953);
+            
+        
+
+        marker_653ca43e0e2a35d0a4093182a39d1afd.bindPopup(popup_84bcddb24fec34ded58f530dd22a7f8b)
+        ;
+
+        
+    
+    
+            var marker_67dea00b3f3724480fdf5cb4e7e459e7 = L.marker(
+                [49.277828338938704, -123.1285221034446],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_d87fbc0326029ffdc4fb074be2616baa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bd2a73c29d5cd16c563f322443689f0f = $(`<div id="html_bd2a73c29d5cd16c563f322443689f0f" style="width: 100.0%; height: 100.0%;">Residence Inn Vancouver Downtown</div>`)[0];
+                popup_d87fbc0326029ffdc4fb074be2616baa.setContent(html_bd2a73c29d5cd16c563f322443689f0f);
+            
+        
+
+        marker_67dea00b3f3724480fdf5cb4e7e459e7.bindPopup(popup_d87fbc0326029ffdc4fb074be2616baa)
+        ;
+
+        
+    
+    
+            var marker_3ad565ea281e4a14f32184cdebf59372 = L.marker(
+                [49.27807480189528, -123.12816729230734],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_e71202e90bf76429f528db327b3d0815 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_76508fd6026e5b56ddd701c91a0bb372 = $(`<div id="html_76508fd6026e5b56ddd701c91a0bb372" style="width: 100.0%; height: 100.0%;">The Landis Hotel & Suites</div>`)[0];
+                popup_e71202e90bf76429f528db327b3d0815.setContent(html_76508fd6026e5b56ddd701c91a0bb372);
+            
+        
+
+        marker_3ad565ea281e4a14f32184cdebf59372.bindPopup(popup_e71202e90bf76429f528db327b3d0815)
+        ;
+
+        
+    
+    
+            var marker_1804a93c6705eb614a86b5d4b72d5f22 = L.marker(
+                [49.282364332384255, -123.12277373159223],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_065c135cfa873ea19aa16dcdd0828347 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_158c9cd1fd465e08935f99e8f7c0d4c7 = $(`<div id="html_158c9cd1fd465e08935f99e8f7c0d4c7" style="width: 100.0%; height: 100.0%;">Wedgewood Hotel & Spa</div>`)[0];
+                popup_065c135cfa873ea19aa16dcdd0828347.setContent(html_158c9cd1fd465e08935f99e8f7c0d4c7);
+            
+        
+
+        marker_1804a93c6705eb614a86b5d4b72d5f22.bindPopup(popup_065c135cfa873ea19aa16dcdd0828347)
+        ;
+
+        
+    
+    
+            var marker_e72cc301a04b3282d3ce95ba484f929d = L.marker(
+                [49.28732900361975, -123.1296746711029],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_078547fa5ac3cd202d859555671da5e0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bae9fb97965f8b37fb5ccfc65cf4eda1 = $(`<div id="html_bae9fb97965f8b37fb5ccfc65cf4eda1" style="width: 100.0%; height: 100.0%;">Barclay Hotel</div>`)[0];
+                popup_078547fa5ac3cd202d859555671da5e0.setContent(html_bae9fb97965f8b37fb5ccfc65cf4eda1);
+            
+        
+
+        marker_e72cc301a04b3282d3ce95ba484f929d.bindPopup(popup_078547fa5ac3cd202d859555671da5e0)
+        ;
+
+        
+    
+    
+            var marker_8d888ae81ed83f4add733b50cdb5dd4d = L.marker(
+                [49.28687979316611, -123.14085477577379],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_7f6994951303904b97ed314fb7201fc4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b9fb54c6de62dda5c3394fa4eb3fa22b = $(`<div id="html_b9fb54c6de62dda5c3394fa4eb3fa22b" style="width: 100.0%; height: 100.0%;">Best Western Plus Sands</div>`)[0];
+                popup_7f6994951303904b97ed314fb7201fc4.setContent(html_b9fb54c6de62dda5c3394fa4eb3fa22b);
+            
+        
+
+        marker_8d888ae81ed83f4add733b50cdb5dd4d.bindPopup(popup_7f6994951303904b97ed314fb7201fc4)
+        ;
+
+        
+    
+    
+            var marker_6188853d82d7eb8a8b4a15f36e5f9684 = L.marker(
+                [49.2880057, -123.12946149999999],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_0e62eaaf44892b2a3efdafeba127b050 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f3ada048657b1392077814899480b62 = $(`<div id="html_4f3ada048657b1392077814899480b62" style="width: 100.0%; height: 100.0%;">Greenbrier Hotel</div>`)[0];
+                popup_0e62eaaf44892b2a3efdafeba127b050.setContent(html_4f3ada048657b1392077814899480b62);
+            
+        
+
+        marker_6188853d82d7eb8a8b4a15f36e5f9684.bindPopup(popup_0e62eaaf44892b2a3efdafeba127b050)
+        ;
+
+        
+    
+    
+            var marker_2b55e24d873e08142751939de7ea4051 = L.marker(
+                [49.29313913880788, -123.13533425023685],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_e45e2c97ef27394a2739a3caa3d5270d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_68c052103698bebde8aa5b558e9de5b8 = $(`<div id="html_68c052103698bebde8aa5b558e9de5b8" style="width: 100.0%; height: 100.0%;">Lord Stanley Suites On The Park</div>`)[0];
+                popup_e45e2c97ef27394a2739a3caa3d5270d.setContent(html_68c052103698bebde8aa5b558e9de5b8);
+            
+        
+
+        marker_2b55e24d873e08142751939de7ea4051.bindPopup(popup_e45e2c97ef27394a2739a3caa3d5270d)
+        ;
+
+        
+    
+    
+            var marker_1ccace6dcc11017e469cd801baca4d4f = L.marker(
+                [49.287652868494696, -123.14087584610458],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_3bc56bc29c42b67aae0c40086b9c8bea = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fa7e26f20712508203ab44d2dd61cfae = $(`<div id="html_fa7e26f20712508203ab44d2dd61cfae" style="width: 100.0%; height: 100.0%;">English Bay Hotel</div>`)[0];
+                popup_3bc56bc29c42b67aae0c40086b9c8bea.setContent(html_fa7e26f20712508203ab44d2dd61cfae);
+            
+        
+
+        marker_1ccace6dcc11017e469cd801baca4d4f.bindPopup(popup_3bc56bc29c42b67aae0c40086b9c8bea)
+        ;
+
+        
+    
+    
+            var marker_459e61104bef24eff96a22cf6821f363 = L.marker(
+                [49.28912620903488, -123.13978836720688],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_8ad9b643964fcec943509fcf7b725dbd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f8c8175b9dc0f2886ee03e0816e74522 = $(`<div id="html_f8c8175b9dc0f2886ee03e0816e74522" style="width: 100.0%; height: 100.0%;">Shato Inn</div>`)[0];
+                popup_8ad9b643964fcec943509fcf7b725dbd.setContent(html_f8c8175b9dc0f2886ee03e0816e74522);
+            
+        
+
+        marker_459e61104bef24eff96a22cf6821f363.bindPopup(popup_8ad9b643964fcec943509fcf7b725dbd)
+        ;
+
+        
+    
+    
+            var marker_802714dee235c0342cbe5c28927c0e9c = L.marker(
+                [49.288668605295435, -123.14244172561101],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_facfe4c8710fb1767c0cac8c535055f7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4a03d288b6fefb351e7330f50faf55da = $(`<div id="html_4a03d288b6fefb351e7330f50faf55da" style="width: 100.0%; height: 100.0%;">Sylvia Hotel</div>`)[0];
+                popup_facfe4c8710fb1767c0cac8c535055f7.setContent(html_4a03d288b6fefb351e7330f50faf55da);
+            
+        
+
+        marker_802714dee235c0342cbe5c28927c0e9c.bindPopup(popup_facfe4c8710fb1767c0cac8c535055f7)
+        ;
+
+        
+    
+    
+            var marker_91067338e7e1c2bc2a8c2ab275c1152e = L.marker(
+                [49.28632017992651, -123.11686935346448],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_074f75bda268ab31d307b3b0340c4b64 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b181cb899d3bf826b39ea3537f100743 = $(`<div id="html_b181cb899d3bf826b39ea3537f100743" style="width: 100.0%; height: 100.0%;">Days Inn Downtown</div>`)[0];
+                popup_074f75bda268ab31d307b3b0340c4b64.setContent(html_b181cb899d3bf826b39ea3537f100743);
+            
+        
+
+        marker_91067338e7e1c2bc2a8c2ab275c1152e.bindPopup(popup_074f75bda268ab31d307b3b0340c4b64)
+        ;
+
+        
+    
+    
+            var marker_5989fe21f964746cd61ab3474dd7eec2 = L.marker(
+                [49.23602557097954, -123.03963726007791],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_68327d1aaf7fe88400b31decba5f0076 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8171057fcad389c06c9172b339007d3a = $(`<div id="html_8171057fcad389c06c9172b339007d3a" style="width: 100.0%; height: 100.0%;">Cassandra Hotel</div>`)[0];
+                popup_68327d1aaf7fe88400b31decba5f0076.setContent(html_8171057fcad389c06c9172b339007d3a);
+            
+        
+
+        marker_5989fe21f964746cd61ab3474dd7eec2.bindPopup(popup_68327d1aaf7fe88400b31decba5f0076)
+        ;
+
+        
+    
+    
+            var marker_997d7c5a8d1a03a8bc9542b9c46e30c4 = L.marker(
+                [49.28240604368877, -123.11213672894941],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_08d6008e8c2a2347ed165fdc0b18d88c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e564c2136959fb515899056d3d981ebc = $(`<div id="html_e564c2136959fb515899056d3d981ebc" style="width: 100.0%; height: 100.0%;">Victorian Hotel</div>`)[0];
+                popup_08d6008e8c2a2347ed165fdc0b18d88c.setContent(html_e564c2136959fb515899056d3d981ebc);
+            
+        
+
+        marker_997d7c5a8d1a03a8bc9542b9c46e30c4.bindPopup(popup_08d6008e8c2a2347ed165fdc0b18d88c)
+        ;
+
+        
+    
+    
+            var marker_bffd9d80f3b22c98258148b6937126be = L.marker(
+                [49.2816529906591, -123.10687025264089],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_fb6d45932649b9230c6571e4224bebc9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_44b26f2ec6c1766daab37f56a6167e12 = $(`<div id="html_44b26f2ec6c1766daab37f56a6167e12" style="width: 100.0%; height: 100.0%;">Grand Union Hotel</div>`)[0];
+                popup_fb6d45932649b9230c6571e4224bebc9.setContent(html_44b26f2ec6c1766daab37f56a6167e12);
+            
+        
+
+        marker_bffd9d80f3b22c98258148b6937126be.bindPopup(popup_fb6d45932649b9230c6571e4224bebc9)
+        ;
+
+        
+    
+    
+            var marker_bd0d1984ac761666f108887a860739d7 = L.marker(
+                [49.28415423678778, -123.11267650209516],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_3ff0db368159d26238a6fba7c9d4bad5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_49d011cf1f2f19e7e4f5a7a77cd058ae = $(`<div id="html_49d011cf1f2f19e7e4f5a7a77cd058ae" style="width: 100.0%; height: 100.0%;">Delta Hotels Vancouver Downtown Suites</div>`)[0];
+                popup_3ff0db368159d26238a6fba7c9d4bad5.setContent(html_49d011cf1f2f19e7e4f5a7a77cd058ae);
+            
+        
+
+        marker_bd0d1984ac761666f108887a860739d7.bindPopup(popup_3ff0db368159d26238a6fba7c9d4bad5)
+        ;
+
+        
+    
+    
+            var marker_aa0cd1eb6c07e194b10e5b2e610b82bf = L.marker(
+                [49.204849160083675, -123.13083465383336],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_db1e5a04b0b7817184999767fbf889d4 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_964a84013f7dc73dc274387d7c1fc536 = $(`<div id="html_964a84013f7dc73dc274387d7c1fc536" style="width: 100.0%; height: 100.0%;">Best Western Plus Vancouver Airport Hotel</div>`)[0];
+                popup_db1e5a04b0b7817184999767fbf889d4.setContent(html_964a84013f7dc73dc274387d7c1fc536);
+            
+        
+
+        marker_aa0cd1eb6c07e194b10e5b2e610b82bf.bindPopup(popup_db1e5a04b0b7817184999767fbf889d4)
+        ;
+
+        
+    
+    
+            var marker_f4431d02fedd65dd0a7e40c9b069510a = L.marker(
+                [49.28758199026199, -123.12316478094498],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_e1813fc114fc87fda3b905ba4a2e64fa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2fc1ff56d103bad1ba13393d36c18985 = $(`<div id="html_2fc1ff56d103bad1ba13393d36c18985" style="width: 100.0%; height: 100.0%;">Loden Hotel</div>`)[0];
+                popup_e1813fc114fc87fda3b905ba4a2e64fa.setContent(html_2fc1ff56d103bad1ba13393d36c18985);
+            
+        
+
+        marker_f4431d02fedd65dd0a7e40c9b069510a.bindPopup(popup_e1813fc114fc87fda3b905ba4a2e64fa)
+        ;
+
+        
+    
+    
+            var marker_f27b2eb505ea02ccdb051ebbc36c2bb6 = L.marker(
+                [49.27986486655374, -123.11692600198012],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_179f279e9bbda49d9b22fd735d2a7c25 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a0f38ea79c0ddcdb288269193e6cf257 = $(`<div id="html_a0f38ea79c0ddcdb288269193e6cf257" style="width: 100.0%; height: 100.0%;">Hilton Vancouver Downtown</div>`)[0];
+                popup_179f279e9bbda49d9b22fd735d2a7c25.setContent(html_a0f38ea79c0ddcdb288269193e6cf257);
+            
+        
+
+        marker_f27b2eb505ea02ccdb051ebbc36c2bb6.bindPopup(popup_179f279e9bbda49d9b22fd735d2a7c25)
+        ;
+
+        
+    
+    
+            var marker_41649738290ba5979428d36ff4f1059f = L.marker(
+                [49.28589619093978, -123.11622081403775],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_cef35868024fbc52ab0d600db86f9d73 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0c5a966fbeb016660b25f09be09e4b40 = $(`<div id="html_0c5a966fbeb016660b25f09be09e4b40" style="width: 100.0%; height: 100.0%;">Azur Legacy Collection Hotel</div>`)[0];
+                popup_cef35868024fbc52ab0d600db86f9d73.setContent(html_0c5a966fbeb016660b25f09be09e4b40);
+            
+        
+
+        marker_41649738290ba5979428d36ff4f1059f.bindPopup(popup_cef35868024fbc52ab0d600db86f9d73)
+        ;
+
+        
+    
+    
+            var marker_05e2d45c0f930152afac100f673a734f = L.marker(
+                [49.28530805226575, -123.11831521834164],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_91a3d3c0606ca4ca64db982139d19147 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2455f15e04416ed781652880a4a2341a = $(`<div id="html_2455f15e04416ed781652880a4a2341a" style="width: 100.0%; height: 100.0%;">Le Soleil Hotel and Suites</div>`)[0];
+                popup_91a3d3c0606ca4ca64db982139d19147.setContent(html_2455f15e04416ed781652880a4a2341a);
+            
+        
+
+        marker_05e2d45c0f930152afac100f673a734f.bindPopup(popup_91a3d3c0606ca4ca64db982139d19147)
+        ;
+
+        
+    
+    
+            var marker_c516424ab8eec59dd0e85c08ab7e202f = L.marker(
+                [49.280311745611385, -123.12626697902435],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_a52dc49f95d482ccf6939b2afd310792 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a0a4968cba5ab80c03f0898288607de5 = $(`<div id="html_a0a4968cba5ab80c03f0898288607de5" style="width: 100.0%; height: 100.0%;">Sheraton Vancouver Wall Centre Hotel</div>`)[0];
+                popup_a52dc49f95d482ccf6939b2afd310792.setContent(html_a0a4968cba5ab80c03f0898288607de5);
+            
+        
+
+        marker_c516424ab8eec59dd0e85c08ab7e202f.bindPopup(popup_a52dc49f95d482ccf6939b2afd310792)
+        ;
+
+        
+    
+    
+            var marker_aa72fae0a9786f70e3eccfaa7b4fbbfd = L.marker(
+                [49.1950162, -122.801592],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_c0d57e0a48099baa6e30715a2f071e7b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_337c712b96e5ac485c0df8c4528487bb = $(`<div id="html_337c712b96e5ac485c0df8c4528487bb" style="width: 100.0%; height: 100.0%;">Sandman Suites Surrey-Guildford</div>`)[0];
+                popup_c0d57e0a48099baa6e30715a2f071e7b.setContent(html_337c712b96e5ac485c0df8c4528487bb);
+            
+        
+
+        marker_aa72fae0a9786f70e3eccfaa7b4fbbfd.bindPopup(popup_c0d57e0a48099baa6e30715a2f071e7b)
+        ;
+
+        
+    
+    
+            var marker_50baab88fb42e91075e1830e0553922d = L.marker(
+                [49.1921242, -122.783617],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_3645f6bdd27eda1752ec1d3ac3577936 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9dbb732e4214be4b6e27ff6d811ac93d = $(`<div id="html_9dbb732e4214be4b6e27ff6d811ac93d" style="width: 100.0%; height: 100.0%;">Four Points by Sheraton Surrey</div>`)[0];
+                popup_3645f6bdd27eda1752ec1d3ac3577936.setContent(html_9dbb732e4214be4b6e27ff6d811ac93d);
+            
+        
+
+        marker_50baab88fb42e91075e1830e0553922d.bindPopup(popup_3645f6bdd27eda1752ec1d3ac3577936)
+        ;
+
+        
+    
+    
+            var marker_a6b055b011de6f9dd550015138ff5bfa = L.marker(
+                [49.1904199, -122.848328],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_c72bce218e85ebaf4bac8d2f00b0efe1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6e3ebf56bb08e8e6dd5eac9f3ba975a0 = $(`<div id="html_6e3ebf56bb08e8e6dd5eac9f3ba975a0" style="width: 100.0%; height: 100.0%;">Civic Hotel</div>`)[0];
+                popup_c72bce218e85ebaf4bac8d2f00b0efe1.setContent(html_6e3ebf56bb08e8e6dd5eac9f3ba975a0);
+            
+        
+
+        marker_a6b055b011de6f9dd550015138ff5bfa.bindPopup(popup_c72bce218e85ebaf4bac8d2f00b0efe1)
+        ;
+
+        
+    
+    
+            var marker_167b499c24ab60573a71eb12319b657c = L.marker(
+                [49.19206671785192, -122.79878124297875],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_1ae5c6628dc27d2c59c8cf9871c5e333 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_44ce5691b45e3c9f2aa0205860f0cb77 = $(`<div id="html_44ce5691b45e3c9f2aa0205860f0cb77" style="width: 100.0%; height: 100.0%;">Sheraton Guildford Hotel</div>`)[0];
+                popup_1ae5c6628dc27d2c59c8cf9871c5e333.setContent(html_44ce5691b45e3c9f2aa0205860f0cb77);
+            
+        
+
+        marker_167b499c24ab60573a71eb12319b657c.bindPopup(popup_1ae5c6628dc27d2c59c8cf9871c5e333)
+        ;
+
+        
+    
+    
+            var marker_9703cc47147882188bfeccecca14c0cf = L.marker(
+                [49.2067221501337, -122.8781856146409],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_a9114fba5fd86d80c5be6f5e192900ac = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ed6a6f0e92d3f44e5a4c9164d2136dcd = $(`<div id="html_ed6a6f0e92d3f44e5a4c9164d2136dcd" style="width: 100.0%; height: 100.0%;">Turf Hotel</div>`)[0];
+                popup_a9114fba5fd86d80c5be6f5e192900ac.setContent(html_ed6a6f0e92d3f44e5a4c9164d2136dcd);
+            
+        
+
+        marker_9703cc47147882188bfeccecca14c0cf.bindPopup(popup_a9114fba5fd86d80c5be6f5e192900ac)
+        ;
+
+        
+    
+    
+            var marker_11a526323c767303ad0c748f34bf23d1 = L.marker(
+                [49.10393702512512, -122.73409558122373],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_a7f4bc65cce35d516f084ea91ac416f1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5278a301c847c2be2a8127e845e6840f = $(`<div id="html_5278a301c847c2be2a8127e845e6840f" style="width: 100.0%; height: 100.0%;">Clydesdale Inn</div>`)[0];
+                popup_a7f4bc65cce35d516f084ea91ac416f1.setContent(html_5278a301c847c2be2a8127e845e6840f);
+            
+        
+
+        marker_11a526323c767303ad0c748f34bf23d1.bindPopup(popup_a7f4bc65cce35d516f084ea91ac416f1)
+        ;
+
+        
+    
+    
+            var marker_d9c5551f96cc9a189d56ab1c70e3eb8f = L.marker(
+                [49.105238234543386, -122.69040879128876],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_2439f88d4688e8bcec5bcb7edb3a054c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_208ae2b010d75b772ab9dc3055548716 = $(`<div id="html_208ae2b010d75b772ab9dc3055548716" style="width: 100.0%; height: 100.0%;">Ramada by Wyndham</div>`)[0];
+                popup_2439f88d4688e8bcec5bcb7edb3a054c.setContent(html_208ae2b010d75b772ab9dc3055548716);
+            
+        
+
+        marker_d9c5551f96cc9a189d56ab1c70e3eb8f.bindPopup(popup_2439f88d4688e8bcec5bcb7edb3a054c)
+        ;
+
+        
+    
+    
+            var marker_4da00f2da063b470ff9bcbf18f5777df = L.marker(
+                [49.10793172382928, -122.68252660728696],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_635de438e57d69260376061821267a31 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2d8402f78e7326bc0b8d028429971a65 = $(`<div id="html_2d8402f78e7326bc0b8d028429971a65" style="width: 100.0%; height: 100.0%;">Hampton Inn & Suites by Hilton Langley-Surrey</div>`)[0];
+                popup_635de438e57d69260376061821267a31.setContent(html_2d8402f78e7326bc0b8d028429971a65);
+            
+        
+
+        marker_4da00f2da063b470ff9bcbf18f5777df.bindPopup(popup_635de438e57d69260376061821267a31)
+        ;
+
+        
+    
+    
+            var marker_a230b1789fca61b12a0a17e802854aac = L.marker(
+                [49.19110332882571, -122.78390874708906],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_4a996ba15b8ad002b015f0b5b7672a90 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_76bf05382835248f9c6e1f4005dc1dad = $(`<div id="html_76bf05382835248f9c6e1f4005dc1dad" style="width: 100.0%; height: 100.0%;">Holiday Inn Express & Suites Surrey</div>`)[0];
+                popup_4a996ba15b8ad002b015f0b5b7672a90.setContent(html_76bf05382835248f9c6e1f4005dc1dad);
+            
+        
+
+        marker_a230b1789fca61b12a0a17e802854aac.bindPopup(popup_4a996ba15b8ad002b015f0b5b7672a90)
+        ;
+
+        
+    
+    
+            var marker_320240d0481a27e430933a20e0612a51 = L.marker(
+                [49.20330441802401, -122.85098369023869],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_c7bc85434aef16c0e9b2a730e7eec803 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_951490ab4406df577864cbbe116fa483 = $(`<div id="html_951490ab4406df577864cbbe116fa483" style="width: 100.0%; height: 100.0%;">Days Inn by Wyndham Surrey</div>`)[0];
+                popup_c7bc85434aef16c0e9b2a730e7eec803.setContent(html_951490ab4406df577864cbbe116fa483);
+            
+        
+
+        marker_320240d0481a27e430933a20e0612a51.bindPopup(popup_c7bc85434aef16c0e9b2a730e7eec803)
+        ;
+
+        
+    
+    
+            var marker_e4fe3d4f68400cb998ede24715763cea = L.marker(
+                [49.173755283883644, -122.84499136647568],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_77e24c24618ab0031d49a7c3a1faa853 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b6718d44037ae9078eb15442b25cf5cf = $(`<div id="html_b6718d44037ae9078eb15442b25cf5cf" style="width: 100.0%; height: 100.0%;">Grouse Creek Motel</div>`)[0];
+                popup_77e24c24618ab0031d49a7c3a1faa853.setContent(html_b6718d44037ae9078eb15442b25cf5cf);
+            
+        
+
+        marker_e4fe3d4f68400cb998ede24715763cea.bindPopup(popup_77e24c24618ab0031d49a7c3a1faa853)
+        ;
+
+        
+    
+    
+            var marker_ab81dee775764354dc4ea8dad4fb9f14 = L.marker(
+                [49.0433062804823, -122.79166531383373],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_eed059ddb7c9a467063403f06be4bfdf = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e1857d101eadd42eadbac5bc567fccc1 = $(`<div id="html_e1857d101eadd42eadbac5bc567fccc1" style="width: 100.0%; height: 100.0%;">Best Western</div>`)[0];
+                popup_eed059ddb7c9a467063403f06be4bfdf.setContent(html_e1857d101eadd42eadbac5bc567fccc1);
+            
+        
+
+        marker_ab81dee775764354dc4ea8dad4fb9f14.bindPopup(popup_eed059ddb7c9a467063403f06be4bfdf)
+        ;
+
+        
+    
+    
+            var marker_2da4f9482234a4a5e891b34a0fb2efb9 = L.marker(
+                [49.1183721388888, -122.73706245861632],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_d4097204066b4d2da0e2b5015c9be05b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ac59672e429006d1a8657cc6d6804898 = $(`<div id="html_ac59672e429006d1a8657cc6d6804898" style="width: 100.0%; height: 100.0%;">Holiday Inn</div>`)[0];
+                popup_d4097204066b4d2da0e2b5015c9be05b.setContent(html_ac59672e429006d1a8657cc6d6804898);
+            
+        
+
+        marker_2da4f9482234a4a5e891b34a0fb2efb9.bindPopup(popup_d4097204066b4d2da0e2b5015c9be05b)
+        ;
+
+        
+    
+    
+            var marker_15f97c66113aa3c86ba4748c2cd9fa37 = L.marker(
+                [49.15238982841536, -122.76209525507943],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_133d82bee050cc35effb8d31725f48c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3889f6d90eee26b7cd3e89c0e8989192 = $(`<div id="html_3889f6d90eee26b7cd3e89c0e8989192" style="width: 100.0%; height: 100.0%;">Comfort Inn & Suites Surrey</div>`)[0];
+                popup_133d82bee050cc35effb8d31725f48c5.setContent(html_3889f6d90eee26b7cd3e89c0e8989192);
+            
+        
+
+        marker_15f97c66113aa3c86ba4748c2cd9fa37.bindPopup(popup_133d82bee050cc35effb8d31725f48c5)
+        ;
+
+        
+    
+    
+            var marker_c1c93f9f7d35113ed9d8a43200296ea6 = L.marker(
+                [49.14870552715046, -122.84657317110899],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_d903f28948baddfd4dd4e29d0dbdc347 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a01e7a5e6c9a23f9a2226f17340036b8 = $(`<div id="html_a01e7a5e6c9a23f9a2226f17340036b8" style="width: 100.0%; height: 100.0%;">Best Western King George Inn & Suites</div>`)[0];
+                popup_d903f28948baddfd4dd4e29d0dbdc347.setContent(html_a01e7a5e6c9a23f9a2226f17340036b8);
+            
+        
+
+        marker_c1c93f9f7d35113ed9d8a43200296ea6.bindPopup(popup_d903f28948baddfd4dd4e29d0dbdc347)
+        ;
+
+        
+    
+    
+            var marker_1dced87f6bb2206addeb5309c26e5c52 = L.marker(
+                [49.1922149, -123.12745],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_216e92f175f7a92c780743e2c34fbb62 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_49b342396fe1b19f3a8045387b5fa899 = $(`<div id="html_49b342396fe1b19f3a8045387b5fa899" style="width: 100.0%; height: 100.0%;">Hampton Inn Vancouver Airport</div>`)[0];
+                popup_216e92f175f7a92c780743e2c34fbb62.setContent(html_49b342396fe1b19f3a8045387b5fa899);
+            
+        
+
+        marker_1dced87f6bb2206addeb5309c26e5c52.bindPopup(popup_216e92f175f7a92c780743e2c34fbb62)
+        ;
+
+        
+    
+    
+            var marker_49fd13637b90a2f757490ef8eec18120 = L.marker(
+                [49.1253348, -123.1859705],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_5ad71b7a81761729d952c907277a997e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c1f961a757ba08cae073864bc86fea7c = $(`<div id="html_c1f961a757ba08cae073864bc86fea7c" style="width: 100.0%; height: 100.0%;">Steveston Hotel</div>`)[0];
+                popup_5ad71b7a81761729d952c907277a997e.setContent(html_c1f961a757ba08cae073864bc86fea7c);
+            
+        
+
+        marker_49fd13637b90a2f757490ef8eec18120.bindPopup(popup_5ad71b7a81761729d952c907277a997e)
+        ;
+
+        
+    
+    
+            var marker_bbed3b3daf9bd137e186b6b0b3577d1d = L.marker(
+                [49.192637, -123.1277313],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_f45d6ef47a021686128184ecc3154d9b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7dc38b659d84066f534d08e22d8a2687 = $(`<div id="html_7dc38b659d84066f534d08e22d8a2687" style="width: 100.0%; height: 100.0%;">Days Inn</div>`)[0];
+                popup_f45d6ef47a021686128184ecc3154d9b.setContent(html_7dc38b659d84066f534d08e22d8a2687);
+            
+        
+
+        marker_bbed3b3daf9bd137e186b6b0b3577d1d.bindPopup(popup_f45d6ef47a021686128184ecc3154d9b)
+        ;
+
+        
+    
+    
+            var marker_92e8e9c9d66f373c8e162f49d3ea33e9 = L.marker(
+                [49.1876688, -123.1099702],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_56be99f5fd85c1710158062a03af2128 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fbcc729cfc3dc2843d336a6e4df27beb = $(`<div id="html_fbcc729cfc3dc2843d336a6e4df27beb" style="width: 100.0%; height: 100.0%;">Sandman Signature Vancouver Airport Hotel & Resort</div>`)[0];
+                popup_56be99f5fd85c1710158062a03af2128.setContent(html_fbcc729cfc3dc2843d336a6e4df27beb);
+            
+        
+
+        marker_92e8e9c9d66f373c8e162f49d3ea33e9.bindPopup(popup_56be99f5fd85c1710158062a03af2128)
+        ;
+
+        
+    
+    
+            var marker_11c749a09757fa99ae603b3e31e8acc2 = L.marker(
+                [49.1704466, -123.1451494],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_6aeee65cb620e6bed5b9a89105df5a67 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_271414c74cca64883171865286d8fe73 = $(`<div id="html_271414c74cca64883171865286d8fe73" style="width: 100.0%; height: 100.0%;">Executive Airport Plaza Hotel Richmond</div>`)[0];
+                popup_6aeee65cb620e6bed5b9a89105df5a67.setContent(html_271414c74cca64883171865286d8fe73);
+            
+        
+
+        marker_11c749a09757fa99ae603b3e31e8acc2.bindPopup(popup_6aeee65cb620e6bed5b9a89105df5a67)
+        ;
+
+        
+    
+    
+            var marker_55c24679cf2f31dacfb868f3ac289ca5 = L.marker(
+                [49.1699071, -123.1448997],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_6c1f2cf9fd70e6263999959550ff6d02 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_47891517967f233a730f1f793c876022 = $(`<div id="html_47891517967f233a730f1f793c876022" style="width: 100.0%; height: 100.0%;">Ramada</div>`)[0];
+                popup_6c1f2cf9fd70e6263999959550ff6d02.setContent(html_47891517967f233a730f1f793c876022);
+            
+        
+
+        marker_55c24679cf2f31dacfb868f3ac289ca5.bindPopup(popup_6c1f2cf9fd70e6263999959550ff6d02)
+        ;
+
+        
+    
+    
+            var marker_ec9b42b157ab597f5e5f7b7d23167a51 = L.marker(
+                [49.1699891, -123.1443181],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_a405f19e5a23e5f59449dd1910fc0e27 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1eab533e26f62f9c4f6877da8393d17a = $(`<div id="html_1eab533e26f62f9c4f6877da8393d17a" style="width: 100.0%; height: 100.0%;">Quality Hotel Airport (South)</div>`)[0];
+                popup_a405f19e5a23e5f59449dd1910fc0e27.setContent(html_1eab533e26f62f9c4f6877da8393d17a);
+            
+        
+
+        marker_ec9b42b157ab597f5e5f7b7d23167a51.bindPopup(popup_a405f19e5a23e5f59449dd1910fc0e27)
+        ;
+
+        
+    
+    
+            var marker_a05eb238909ca49680f882216fe22bd8 = L.marker(
+                [49.1907689, -123.1332647],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_4fed322494e431c21c522b159749becc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_701726d56b092fcd2cef9cc42003cde4 = $(`<div id="html_701726d56b092fcd2cef9cc42003cde4" style="width: 100.0%; height: 100.0%;">The Westin Wall Centre Vancouver Airport</div>`)[0];
+                popup_4fed322494e431c21c522b159749becc.setContent(html_701726d56b092fcd2cef9cc42003cde4);
+            
+        
+
+        marker_a05eb238909ca49680f882216fe22bd8.bindPopup(popup_4fed322494e431c21c522b159749becc)
+        ;
+
+        
+    
+    
+            var marker_bf624ec05e9e58d574a01e194325f9e3 = L.marker(
+                [49.1450075, -123.1274522],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_f7d68e713ef8982ec6617d6a5dd6b1f1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b7b3aac9e99ab826e6f544511da450e8 = $(`<div id="html_b7b3aac9e99ab826e6f544511da450e8" style="width: 100.0%; height: 100.0%;">Vickie's Bed & Breakfast</div>`)[0];
+                popup_f7d68e713ef8982ec6617d6a5dd6b1f1.setContent(html_b7b3aac9e99ab826e6f544511da450e8);
+            
+        
+
+        marker_bf624ec05e9e58d574a01e194325f9e3.bindPopup(popup_f7d68e713ef8982ec6617d6a5dd6b1f1)
+        ;
+
+        
+    
+    
+            var marker_9bafe05b5f6d6da3e59e2fdc7dbcbacc = L.marker(
+                [49.1478403, -123.1138983],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_81dbee465caf870b46ab1ae832fafd64 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_963efbea206bcf039000d21ed1785020 = $(`<div id="html_963efbea206bcf039000d21ed1785020" style="width: 100.0%; height: 100.0%;">Charming Family Hotel for You by Elevate Rooms</div>`)[0];
+                popup_81dbee465caf870b46ab1ae832fafd64.setContent(html_963efbea206bcf039000d21ed1785020);
+            
+        
+
+        marker_9bafe05b5f6d6da3e59e2fdc7dbcbacc.bindPopup(popup_81dbee465caf870b46ab1ae832fafd64)
+        ;
+
+        
+    
+    
+            var marker_b9a54b350672e8ac4a5ef9641b910388 = L.marker(
+                [49.1850533, -123.135539],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_fb35171bdf738fe2e470d256c875b037 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_219e859d98897a8337b63fef617f636b = $(`<div id="html_219e859d98897a8337b63fef617f636b" style="width: 100.0%; height: 100.0%;">Radisson Hotel Vancouver Airport</div>`)[0];
+                popup_fb35171bdf738fe2e470d256c875b037.setContent(html_219e859d98897a8337b63fef617f636b);
+            
+        
+
+        marker_b9a54b350672e8ac4a5ef9641b910388.bindPopup(popup_fb35171bdf738fe2e470d256c875b037)
+        ;
+
+        
+    
+    
+            var marker_d6c8a916f8688a7f655fcffdaf979e39 = L.marker(
+                [49.1631076, -123.1363364],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_81ff0a65c02f8105ffbc620b8da8fc73 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bba0349fdb2d2882573af95a03ba4118 = $(`<div id="html_bba0349fdb2d2882573af95a03ba4118" style="width: 100.0%; height: 100.0%;">Panda Pod Hotel</div>`)[0];
+                popup_81ff0a65c02f8105ffbc620b8da8fc73.setContent(html_bba0349fdb2d2882573af95a03ba4118);
+            
+        
+
+        marker_d6c8a916f8688a7f655fcffdaf979e39.bindPopup(popup_81ff0a65c02f8105ffbc620b8da8fc73)
+        ;
+
+        
+    
+    
+            var marker_6e29f1fee0797e3489622fd2a3a216cd = L.marker(
+                [49.194735, -123.1759761],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_490820027a17b9fa302c9dd74e74f7b9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_432d60da6ccad4f713caccf12baacf36 = $(`<div id="html_432d60da6ccad4f713caccf12baacf36" style="width: 100.0%; height: 100.0%;">Fairmont Vancouver Airport</div>`)[0];
+                popup_490820027a17b9fa302c9dd74e74f7b9.setContent(html_432d60da6ccad4f713caccf12baacf36);
+            
+        
+
+        marker_6e29f1fee0797e3489622fd2a3a216cd.bindPopup(popup_490820027a17b9fa302c9dd74e74f7b9)
+        ;
+
+        
+    
+    
+            var marker_176ffcce57e905eeb4f94684670df903 = L.marker(
+                [49.19092201911388, -123.14036916317012],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_84a8e32755fb16a7e03361eb733c0b8e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0a894bf92476623338a3451557bf9837 = $(`<div id="html_0a894bf92476623338a3451557bf9837" style="width: 100.0%; height: 100.0%;">Radisson Blu Vancouver Airport Hotel & Marina</div>`)[0];
+                popup_84a8e32755fb16a7e03361eb733c0b8e.setContent(html_0a894bf92476623338a3451557bf9837);
+            
+        
+
+        marker_176ffcce57e905eeb4f94684670df903.bindPopup(popup_84a8e32755fb16a7e03361eb733c0b8e)
+        ;
+
+        
+    
+    
+            var marker_7edd638d9572d674697a0a2a26e84667 = L.marker(
+                [49.19247668748477, -123.11981906427245],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_c96ee3329f59fb4ea7f67c634e4286a9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e995ccc9b2c2ebbcd601d2b6ab4e6894 = $(`<div id="html_e995ccc9b2c2ebbcd601d2b6ab4e6894" style="width: 100.0%; height: 100.0%;">Holiday Inn Express Vancouver Airport - Richmond</div>`)[0];
+                popup_c96ee3329f59fb4ea7f67c634e4286a9.setContent(html_e995ccc9b2c2ebbcd601d2b6ab4e6894);
+            
+        
+
+        marker_7edd638d9572d674697a0a2a26e84667.bindPopup(popup_c96ee3329f59fb4ea7f67c634e4286a9)
+        ;
+
+        
+    
+    
+            var marker_da50a90bdc79513af598e682ea5c06e1 = L.marker(
+                [49.19165246201168, -123.1208281698735],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_97ec4e1ac8c955d6947e7ecd79a9243a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c498ef70a7d64891596df2d487cf205 = $(`<div id="html_5c498ef70a7d64891596df2d487cf205" style="width: 100.0%; height: 100.0%;">Abercorn Hotel, Trademark Collection by Wyndham</div>`)[0];
+                popup_97ec4e1ac8c955d6947e7ecd79a9243a.setContent(html_5c498ef70a7d64891596df2d487cf205);
+            
+        
+
+        marker_da50a90bdc79513af598e682ea5c06e1.bindPopup(popup_97ec4e1ac8c955d6947e7ecd79a9243a)
+        ;
+
+        
+    
+    
+            var marker_0fe1ac9d3410c331a567f43e3fc1f732 = L.marker(
+                [49.19137298923561, -123.11441111503419],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_39d565c8f1928725ca1f7824f29e512a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e7f118529b2839c16fa5f1af6590a941 = $(`<div id="html_e7f118529b2839c16fa5f1af6590a941" style="width: 100.0%; height: 100.0%;">Sandman Hotel Vancouver Airport</div>`)[0];
+                popup_39d565c8f1928725ca1f7824f29e512a.setContent(html_e7f118529b2839c16fa5f1af6590a941);
+            
+        
+
+        marker_0fe1ac9d3410c331a567f43e3fc1f732.bindPopup(popup_39d565c8f1928725ca1f7824f29e512a)
+        ;
+
+        
+    
+    
+            var marker_32df5a5265b8b886d59e4d2fb7fc6350 = L.marker(
+                [49.183633218249824, -123.10431046033757],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_446b58c04b8d80b22a55b1011c13d501 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f65c8d58a5eb0ce4d5afaec49753a57a = $(`<div id="html_f65c8d58a5eb0ce4d5afaec49753a57a" style="width: 100.0%; height: 100.0%;">Holiday Inn Vancouver Airport - Richmond</div>`)[0];
+                popup_446b58c04b8d80b22a55b1011c13d501.setContent(html_f65c8d58a5eb0ce4d5afaec49753a57a);
+            
+        
+
+        marker_32df5a5265b8b886d59e4d2fb7fc6350.bindPopup(popup_446b58c04b8d80b22a55b1011c13d501)
+        ;
+
+        
+    
+    
+            var marker_b7c9eef6238b8ac3a54f1bae760d9985 = L.marker(
+                [49.185286383790036, -123.10697556839128],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_fd5700260b3557c83ffd5a080b5ccece = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0ed35ffb5000db0a8ae46e44f288fdf2 = $(`<div id="html_0ed35ffb5000db0a8ae46e44f288fdf2" style="width: 100.0%; height: 100.0%;">Accent Inns Vancouver Airport</div>`)[0];
+                popup_fd5700260b3557c83ffd5a080b5ccece.setContent(html_0ed35ffb5000db0a8ae46e44f288fdf2);
+            
+        
+
+        marker_b7c9eef6238b8ac3a54f1bae760d9985.bindPopup(popup_fd5700260b3557c83ffd5a080b5ccece)
+        ;
+
+        
+    
+    
+            var marker_cb8fc7f559a720ca809e3bb0e0b4c099 = L.marker(
+                [49.177614462393436, -123.1312564728607],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_5df66cc8f985323115852dc8bbfab1dc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ed04d7b08f46f15b41d3aaaf7322b962 = $(`<div id="html_ed04d7b08f46f15b41d3aaaf7322b962" style="width: 100.0%; height: 100.0%;">Grand Park Hotel Vancouver Airport</div>`)[0];
+                popup_5df66cc8f985323115852dc8bbfab1dc.setContent(html_ed04d7b08f46f15b41d3aaaf7322b962);
+            
+        
+
+        marker_cb8fc7f559a720ca809e3bb0e0b4c099.bindPopup(popup_5df66cc8f985323115852dc8bbfab1dc)
+        ;
+
+        
+    
+    
+            var marker_b9a65f5ae97453b2855b050246f29bea = L.marker(
+                [49.136227375901676, -123.06849218784025],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_ac01cd5d1d4a143d395bbcc494a3cca0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a3343132116f6590c092e82135b432c0 = $(`<div id="html_a3343132116f6590c092e82135b432c0" style="width: 100.0%; height: 100.0%;">Holiday Inn Express & Suites Riverport Richmond</div>`)[0];
+                popup_ac01cd5d1d4a143d395bbcc494a3cca0.setContent(html_a3343132116f6590c092e82135b432c0);
+            
+        
+
+        marker_b9a65f5ae97453b2855b050246f29bea.bindPopup(popup_ac01cd5d1d4a143d395bbcc494a3cca0)
+        ;
+
+        
+    
+    
+            var marker_c007e70d73aedde931587d9c7bfe0384 = L.marker(
+                [49.17171390875847, -123.14063738532168],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_252ea1b5b461f037bf21f7eda6d82e32 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a7a6fc24a9626e40459d9031fa01840d = $(`<div id="html_a7a6fc24a9626e40459d9031fa01840d" style="width: 100.0%; height: 100.0%;">Hilton Vancouver Airport Hotel</div>`)[0];
+                popup_252ea1b5b461f037bf21f7eda6d82e32.setContent(html_a7a6fc24a9626e40459d9031fa01840d);
+            
+        
+
+        marker_c007e70d73aedde931587d9c7bfe0384.bindPopup(popup_252ea1b5b461f037bf21f7eda6d82e32)
+        ;
+
+        
+    
+    
+            var marker_847163906e0d56b26a7f43f5fb1849c0 = L.marker(
+                [49.19140125014462, -123.11321533561262],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_56ce4bb0266b4abd5ef82a568e86ab7c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_72c144ae95aa67abd14173f90c8e5620 = $(`<div id="html_72c144ae95aa67abd14173f90c8e5620" style="width: 100.0%; height: 100.0%;">Travelodge by Wyndham Vancouver Airport</div>`)[0];
+                popup_56ce4bb0266b4abd5ef82a568e86ab7c.setContent(html_72c144ae95aa67abd14173f90c8e5620);
+            
+        
+
+        marker_847163906e0d56b26a7f43f5fb1849c0.bindPopup(popup_56ce4bb0266b4abd5ef82a568e86ab7c)
+        ;
+
+        
+    
+    
+            var marker_42cfd9d63985b5a0f2f32f8328c17cad = L.marker(
+                [49.170541217839855, -123.1406221151155],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_aa815ab16c8e9812d89c57e938a2ee3f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fcae67d660c2227b0b4e5908c276a0d5 = $(`<div id="html_fcae67d660c2227b0b4e5908c276a0d5" style="width: 100.0%; height: 100.0%;">Vancouver Airport Marriott Hotel</div>`)[0];
+                popup_aa815ab16c8e9812d89c57e938a2ee3f.setContent(html_fcae67d660c2227b0b4e5908c276a0d5);
+            
+        
+
+        marker_42cfd9d63985b5a0f2f32f8328c17cad.bindPopup(popup_aa815ab16c8e9812d89c57e938a2ee3f)
+        ;
+
+        
+    
+    
+            var marker_1ca636882e1f3caf5daacd397c92c39e = L.marker(
+                [49.17766792972228, -123.1272252180687],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_d35b342d285e3bf36bf55994b413f98e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d7c23832fe15579a5f48c23ca37dd7f6 = $(`<div id="html_d7c23832fe15579a5f48c23ca37dd7f6" style="width: 100.0%; height: 100.0%;">La Quinta Inn Vancouver Airport</div>`)[0];
+                popup_d35b342d285e3bf36bf55994b413f98e.setContent(html_d7c23832fe15579a5f48c23ca37dd7f6);
+            
+        
+
+        marker_1ca636882e1f3caf5daacd397c92c39e.bindPopup(popup_d35b342d285e3bf36bf55994b413f98e)
+        ;
+
+        
+    
+    
+            var marker_7f01ea2f288d2acab8c39d2f0514f25a = L.marker(
+                [49.17103456187937, -123.14203189458802],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_429b92a1447b64ca807edeb24f776e76 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_90b5c0021d1058bfb0f351dc2e8fefaf = $(`<div id="html_90b5c0021d1058bfb0f351dc2e8fefaf" style="width: 100.0%; height: 100.0%;">Sheraton Vancouver Airport Hotel</div>`)[0];
+                popup_429b92a1447b64ca807edeb24f776e76.setContent(html_90b5c0021d1058bfb0f351dc2e8fefaf);
+            
+        
+
+        marker_7f01ea2f288d2acab8c39d2f0514f25a.bindPopup(popup_429b92a1447b64ca807edeb24f776e76)
+        ;
+
+        
+    
+    
+            var marker_18d38377711ca81fce0302ec7dd25dd4 = L.marker(
+                [49.19519060404622, -123.17543044249403],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_e23dd68adff662d43cc8cbfed5db2258 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9d90605a34f67e2753ab51719d58f381 = $(`<div id="html_9d90605a34f67e2753ab51719d58f381" style="width: 100.0%; height: 100.0%;">Fairmont Vancouver Airport Hotel</div>`)[0];
+                popup_e23dd68adff662d43cc8cbfed5db2258.setContent(html_9d90605a34f67e2753ab51719d58f381);
+            
+        
+
+        marker_18d38377711ca81fce0302ec7dd25dd4.bindPopup(popup_e23dd68adff662d43cc8cbfed5db2258)
+        ;
+
+        
+    
+    
+            var marker_0baeb55668a43334ac9b3f8d0ee720d2 = L.marker(
+                [49.195943254234145, -123.12640593231194],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_b156d5c6b683ae5ed8ebfd0e274b3f61 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_60c70ff3e509af19bc58843bb7ec46af = $(`<div id="html_60c70ff3e509af19bc58843bb7ec46af" style="width: 100.0%; height: 100.0%;">The Hotel at River Rock</div>`)[0];
+                popup_b156d5c6b683ae5ed8ebfd0e274b3f61.setContent(html_60c70ff3e509af19bc58843bb7ec46af);
+            
+        
+
+        marker_0baeb55668a43334ac9b3f8d0ee720d2.bindPopup(popup_b156d5c6b683ae5ed8ebfd0e274b3f61)
+        ;
+
+        
+    
+    
+            var marker_0dcdbbb310048b9411baa6a6be689598 = L.marker(
+                [49.19227714454227, -123.1313856104693],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_0b760359fa307292801bc921ee661f9c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b5d670551666642715248553530795ed = $(`<div id="html_b5d670551666642715248553530795ed" style="width: 100.0%; height: 100.0%;">Versante Hotel</div>`)[0];
+                popup_0b760359fa307292801bc921ee661f9c.setContent(html_b5d670551666642715248553530795ed);
+            
+        
+
+        marker_0dcdbbb310048b9411baa6a6be689598.bindPopup(popup_0b760359fa307292801bc921ee661f9c)
+        ;
+
+        
+    
+    
+            var marker_6533b8522ef468d37f301b25790fd0ec = L.marker(
+                [49.2264758, -123.0043014],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_58d9cb7af931787e69f6f4bb67b8d7db = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_08e0937f6dab752b5c03caf968c479d0 = $(`<div id="html_08e0937f6dab752b5c03caf968c479d0" style="width: 100.0%; height: 100.0%;">Holiday Inn Express Vancouver-Metrotown (Burnaby)</div>`)[0];
+                popup_58d9cb7af931787e69f6f4bb67b8d7db.setContent(html_08e0937f6dab752b5c03caf968c479d0);
+            
+        
+
+        marker_6533b8522ef468d37f301b25790fd0ec.bindPopup(popup_58d9cb7af931787e69f6f4bb67b8d7db)
+        ;
+
+        
+    
+    
+            var marker_e3b8ed05ea68913715ea33c994e8aeb7 = L.marker(
+                [49.230615, -123.003854],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_6082b8d6aaed88c2c53447ec7a667739 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_50007cff627ae582cc668c40b3b4d2bb = $(`<div id="html_50007cff627ae582cc668c40b3b4d2bb" style="width: 100.0%; height: 100.0%;">Element Vancouver Metrotown</div>`)[0];
+                popup_6082b8d6aaed88c2c53447ec7a667739.setContent(html_50007cff627ae582cc668c40b3b4d2bb);
+            
+        
+
+        marker_e3b8ed05ea68913715ea33c994e8aeb7.bindPopup(popup_6082b8d6aaed88c2c53447ec7a667739)
+        ;
+
+        
+    
+    
+            var marker_27ff3e56969395f62971b4588f4261de = L.marker(
+                [49.2565918, -123.0064516],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_a223a6364ed2c8b1dbbe7b884eae2061 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_86159f88256896bede0823c53b2ba73a = $(`<div id="html_86159f88256896bede0823c53b2ba73a" style="width: 100.0%; height: 100.0%;">Delta Burnaby Hotel and Conference Centre</div>`)[0];
+                popup_a223a6364ed2c8b1dbbe7b884eae2061.setContent(html_86159f88256896bede0823c53b2ba73a);
+            
+        
+
+        marker_27ff3e56969395f62971b4588f4261de.bindPopup(popup_a223a6364ed2c8b1dbbe7b884eae2061)
+        ;
+
+        
+    
+    
+            var marker_72a1c60424e44d305f75a9b84e95290b = L.marker(
+                [49.2513009, -122.9674826],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_8a26f73551d82103e0f021e223d06d13 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_804e5d26a8111ec20bf2468f5ea4b811 = $(`<div id="html_804e5d26a8111ec20bf2468f5ea4b811" style="width: 100.0%; height: 100.0%;">The Lodge at Fortius Sport & Health</div>`)[0];
+                popup_8a26f73551d82103e0f021e223d06d13.setContent(html_804e5d26a8111ec20bf2468f5ea4b811);
+            
+        
+
+        marker_72a1c60424e44d305f75a9b84e95290b.bindPopup(popup_8a26f73551d82103e0f021e223d06d13)
+        ;
+
+        
+    
+    
+            var marker_8607f0173c4e6b34c0465fdd074bdb9f = L.marker(
+                [49.2288848, -123.004362],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_1cd9fdd2dd4f1e8aeef60c7b8c06bdbd = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7c58e3e522c6e25c79e546e1afb5fded = $(`<div id="html_7c58e3e522c6e25c79e546e1afb5fded" style="width: 100.0%; height: 100.0%;">Hilton Vancouver Metrotown</div>`)[0];
+                popup_1cd9fdd2dd4f1e8aeef60c7b8c06bdbd.setContent(html_7c58e3e522c6e25c79e546e1afb5fded);
+            
+        
+
+        marker_8607f0173c4e6b34c0465fdd074bdb9f.bindPopup(popup_1cd9fdd2dd4f1e8aeef60c7b8c06bdbd)
+        ;
+
+        
+    
+    
+            var marker_ea1d6d723f1527ab9e38ce9e32df2ef5 = L.marker(
+                [49.25766, -123.023168],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_c0d2c5954a152825018d2fa99e5ee50a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e36ac249988e73fa76c59e5f5e9cae3d = $(`<div id="html_e36ac249988e73fa76c59e5f5e9cae3d" style="width: 100.0%; height: 100.0%;">Coast Metro Vancouver Hotel</div>`)[0];
+                popup_c0d2c5954a152825018d2fa99e5ee50a.setContent(html_e36ac249988e73fa76c59e5f5e9cae3d);
+            
+        
+
+        marker_ea1d6d723f1527ab9e38ce9e32df2ef5.bindPopup(popup_c0d2c5954a152825018d2fa99e5ee50a)
+        ;
+
+        
+    
+    
+            var marker_bddbe1ce10e197c207fa0c5cde78739c = L.marker(
+                [49.26757, -123.0106465],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_89c539e0d626faae19d68d0a2dc5e9ca = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_92b8f69a94582ac35f6069218c7f7059 = $(`<div id="html_92b8f69a94582ac35f6069218c7f7059" style="width: 100.0%; height: 100.0%;">Executive Suites Hotel & Conference Centre Burnaby</div>`)[0];
+                popup_89c539e0d626faae19d68d0a2dc5e9ca.setContent(html_92b8f69a94582ac35f6069218c7f7059);
+            
+        
+
+        marker_bddbe1ce10e197c207fa0c5cde78739c.bindPopup(popup_89c539e0d626faae19d68d0a2dc5e9ca)
+        ;
+
+        
+    
+    
+            var marker_5b2f07c0d03a5f16a23bba848feac361 = L.marker(
+                [49.22463320441771, -122.98578840784513],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_b0ba8e0abe1c07cf199f8f96b94f159f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9f63720386eacbd49a0d6d921e5dafe6 = $(`<div id="html_9f63720386eacbd49a0d6d921e5dafe6" style="width: 100.0%; height: 100.0%;">Best Western Plus Burnaby Hotel</div>`)[0];
+                popup_b0ba8e0abe1c07cf199f8f96b94f159f.setContent(html_9f63720386eacbd49a0d6d921e5dafe6);
+            
+        
+
+        marker_5b2f07c0d03a5f16a23bba848feac361.bindPopup(popup_b0ba8e0abe1c07cf199f8f96b94f159f)
+        ;
+
+        
+    
+    
+            var marker_51748dc88679e6c64e0974e616a504bf = L.marker(
+                [49.226241966599886, -122.93623719959692],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_307f6c573e9c7479f79a4b63198b188f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aa57f44c1bc218143a2a7cdac0e54573 = $(`<div id="html_aa57f44c1bc218143a2a7cdac0e54573" style="width: 100.0%; height: 100.0%;">Happy Day Inn</div>`)[0];
+                popup_307f6c573e9c7479f79a4b63198b188f.setContent(html_aa57f44c1bc218143a2a7cdac0e54573);
+            
+        
+
+        marker_51748dc88679e6c64e0974e616a504bf.bindPopup(popup_307f6c573e9c7479f79a4b63198b188f)
+        ;
+
+        
+    
+    
+            var marker_bf7008eb0139388ec40e087026d79ad9 = L.marker(
+                [49.24669710757751, -122.89140192840408],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_8e6e19881d4d84cdff6ccb65ba049d5a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7e70f57f85dac097cf7312fdcd085e98 = $(`<div id="html_7e70f57f85dac097cf7312fdcd085e98" style="width: 100.0%; height: 100.0%;">Executive Plaza Hotel</div>`)[0];
+                popup_8e6e19881d4d84cdff6ccb65ba049d5a.setContent(html_7e70f57f85dac097cf7312fdcd085e98);
+            
+        
+
+        marker_bf7008eb0139388ec40e087026d79ad9.bindPopup(popup_8e6e19881d4d84cdff6ccb65ba049d5a)
+        ;
+
+        
+    
+    
+            var marker_a7093b69ea74f815d59d131f4c055055 = L.marker(
+                [49.24211639252376, -122.88461547675368],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_5b133bedd192b4a90cab8aedb1f58995 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5ef98ffa558c60689b378ba3b2c2953a = $(`<div id="html_5ef98ffa558c60689b378ba3b2c2953a" style="width: 100.0%; height: 100.0%;">Ramada by Wyndham Coquitlam</div>`)[0];
+                popup_5b133bedd192b4a90cab8aedb1f58995.setContent(html_5ef98ffa558c60689b378ba3b2c2953a);
+            
+        
+
+        marker_a7093b69ea74f815d59d131f4c055055.bindPopup(popup_5b133bedd192b4a90cab8aedb1f58995)
+        ;
+
+        
+    
+    
+            var marker_8071493f2d7b727cd01c8e0adc4b24dc = L.marker(
+                [49.033467888607035, -123.06923906905539],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_48a1026fb0ae77b25c25ada8f17d2a1d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_42ef6cd7e25a5062e95d415d6e088c81 = $(`<div id="html_42ef6cd7e25a5062e95d415d6e088c81" style="width: 100.0%; height: 100.0%;">Coast Tsawwassen Inn</div>`)[0];
+                popup_48a1026fb0ae77b25c25ada8f17d2a1d.setContent(html_42ef6cd7e25a5062e95d415d6e088c81);
+            
+        
+
+        marker_8071493f2d7b727cd01c8e0adc4b24dc.bindPopup(popup_48a1026fb0ae77b25c25ada8f17d2a1d)
+        ;
+
+        
+    
+    
+            var marker_a358cade35b32b43abf8df381db1a53f = L.marker(
+                [49.10999156239992, -123.05634669879326],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_66043a0dde63a50faf41aa3511913106 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f7c1690b31bdc6ff451fc1853800596e = $(`<div id="html_f7c1690b31bdc6ff451fc1853800596e" style="width: 100.0%; height: 100.0%;">Delta Hotels by Marriott Vancouver Delta</div>`)[0];
+                popup_66043a0dde63a50faf41aa3511913106.setContent(html_f7c1690b31bdc6ff451fc1853800596e);
+            
+        
+
+        marker_a358cade35b32b43abf8df381db1a53f.bindPopup(popup_66043a0dde63a50faf41aa3511913106)
+        ;
+
+        
+    
+    
+            var marker_85e4adfe46653d986702ac7ffbfe8c4d = L.marker(
+                [49.216485512117266, -122.62182101696642],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_43312ac5e2f52da0f317ba6665ea8037 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5e6de1f7b58c55764c0f0ef957a549d5 = $(`<div id="html_5e6de1f7b58c55764c0f0ef957a549d5" style="width: 100.0%; height: 100.0%;">Best Western Maple Ridge Hotel</div>`)[0];
+                popup_43312ac5e2f52da0f317ba6665ea8037.setContent(html_5e6de1f7b58c55764c0f0ef957a549d5);
+            
+        
+
+        marker_85e4adfe46653d986702ac7ffbfe8c4d.bindPopup(popup_43312ac5e2f52da0f317ba6665ea8037)
+        ;
+
+        
+    
+    
+            var marker_e5115bcd24eeb160b19250c54f9e18fc = L.marker(
+                [49.01696826575107, -122.78992383705054],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_957edd91188812e967edc110982c6bab = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eb8306fedf781cb4a4dc77c3e80cfa12 = $(`<div id="html_eb8306fedf781cb4a4dc77c3e80cfa12" style="width: 100.0%; height: 100.0%;">Ocean Promenade Hotel</div>`)[0];
+                popup_957edd91188812e967edc110982c6bab.setContent(html_eb8306fedf781cb4a4dc77c3e80cfa12);
+            
+        
+
+        marker_e5115bcd24eeb160b19250c54f9e18fc.bindPopup(popup_957edd91188812e967edc110982c6bab)
+        ;
+
+        
+    
+    
+            var marker_5e0e1a7fcf23ca2ec5bb6ea85cca9405 = L.marker(
+                [49.0457836, -122.408099],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_32398f7201e115047489d967c999c105 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d704cac4ed2db2f6e9af8e0c5f92132b = $(`<div id="html_d704cac4ed2db2f6e9af8e0c5f92132b" style="width: 100.0%; height: 100.0%;">Brookside Inn Boutique Hotel</div>`)[0];
+                popup_32398f7201e115047489d967c999c105.setContent(html_d704cac4ed2db2f6e9af8e0c5f92132b);
+            
+        
+
+        marker_5e0e1a7fcf23ca2ec5bb6ea85cca9405.bindPopup(popup_32398f7201e115047489d967c999c105)
+        ;
+
+        
+    
+    
+            var marker_68abc7a0452db1f3a6622b10d3d7de5b = L.marker(
+                [49.03520575861788, -122.26861220798231],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_e685de84a087a40bb405542933509650 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee3a83bb76e5f47729ee566eef13c547 = $(`<div id="html_ee3a83bb76e5f47729ee566eef13c547" style="width: 100.0%; height: 100.0%;">Travelodge by Wyndham Abbotsford Bakerview</div>`)[0];
+                popup_e685de84a087a40bb405542933509650.setContent(html_ee3a83bb76e5f47729ee566eef13c547);
+            
+        
+
+        marker_68abc7a0452db1f3a6622b10d3d7de5b.bindPopup(popup_e685de84a087a40bb405542933509650)
+        ;
+
+        
+    
+    
+            var marker_4ddb95d5f8d4577daa27f7888c26d1d4 = L.marker(
+                [49.05246833508416, -122.31697112646732],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_8d9eee879e0959ccddfab073c29380a5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9f41db18c2580c2c04119d50053c6e78 = $(`<div id="html_9f41db18c2580c2c04119d50053c6e78" style="width: 100.0%; height: 100.0%;">Sandman Hotel & Suites Abbotsford</div>`)[0];
+                popup_8d9eee879e0959ccddfab073c29380a5.setContent(html_9f41db18c2580c2c04119d50053c6e78);
+            
+        
+
+        marker_4ddb95d5f8d4577daa27f7888c26d1d4.bindPopup(popup_8d9eee879e0959ccddfab073c29380a5)
+        ;
+
+        
+    
+    
+            var marker_3900a68c3dabbe378de9f7c21feb3f28 = L.marker(
+                [49.03768386853999, -122.33467811590279],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_1cfb3a96c74c1dea89fa58d22360f0a9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4b308f59c7957270966a78e4300ce18e = $(`<div id="html_4b308f59c7957270966a78e4300ce18e" style="width: 100.0%; height: 100.0%;">Best Western Plus Regency Inn & Conference Centre</div>`)[0];
+                popup_1cfb3a96c74c1dea89fa58d22360f0a9.setContent(html_4b308f59c7957270966a78e4300ce18e);
+            
+        
+
+        marker_3900a68c3dabbe378de9f7c21feb3f28.bindPopup(popup_1cfb3a96c74c1dea89fa58d22360f0a9)
+        ;
+
+        
+    
+    
+            var marker_2bcc99787fe048f8a2a9db0cc2bb3482 = L.marker(
+                [49.03902810633409, -122.26818778750054],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_4da2dc5788e9d115b1ec9f9e9465f6b7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3794d4a27cfd3a1eb6ccf875980e56ca = $(`<div id="html_3794d4a27cfd3a1eb6ccf875980e56ca" style="width: 100.0%; height: 100.0%;">The Coast Abbotsford Hotel & Suites</div>`)[0];
+                popup_4da2dc5788e9d115b1ec9f9e9465f6b7.setContent(html_3794d4a27cfd3a1eb6ccf875980e56ca);
+            
+        
+
+        marker_2bcc99787fe048f8a2a9db0cc2bb3482.bindPopup(popup_4da2dc5788e9d115b1ec9f9e9465f6b7)
+        ;
+
+        
+    
+    
+            var marker_b1e4b8e7d344db4ed34d73130d529318 = L.marker(
+                [49.0398445827209, -122.3381969701954],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_dec5222d245f4767f071d3976a27c95b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_60f5e4d2546e55fecf4614676f05ad65 = $(`<div id="html_60f5e4d2546e55fecf4614676f05ad65" style="width: 100.0%; height: 100.0%;">Abbotsford Hotel</div>`)[0];
+                popup_dec5222d245f4767f071d3976a27c95b.setContent(html_60f5e4d2546e55fecf4614676f05ad65);
+            
+        
+
+        marker_b1e4b8e7d344db4ed34d73130d529318.bindPopup(popup_dec5222d245f4767f071d3976a27c95b)
+        ;
+
+        
+    
+    
+            var marker_7c090fa30c9d55e8ecaa0f2ac2f98889 = L.marker(
+                [49.0367719344966, -122.22694396765344],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_9954d8c7bbb7cec9576225f620850cf0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_208686153a1729911d385cff3cccf1dd = $(`<div id="html_208686153a1729911d385cff3cccf1dd" style="width: 100.0%; height: 100.0%;">Clarion Hotel & Conference Centre</div>`)[0];
+                popup_9954d8c7bbb7cec9576225f620850cf0.setContent(html_208686153a1729911d385cff3cccf1dd);
+            
+        
+
+        marker_7c090fa30c9d55e8ecaa0f2ac2f98889.bindPopup(popup_9954d8c7bbb7cec9576225f620850cf0)
+        ;
+
+        
+    
+    
+            var marker_a5bd66e1e102e24294c3aa6df6a01202 = L.marker(
+                [49.05643477166694, -122.38034129651733],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_3eb48f355eb869bad27b13a4a40d585e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4c2749c9b3d0f824a9aade6d54353d2c = $(`<div id="html_4c2749c9b3d0f824a9aade6d54353d2c" style="width: 100.0%; height: 100.0%;">Sandman Hotel Abbotsford Airport</div>`)[0];
+                popup_3eb48f355eb869bad27b13a4a40d585e.setContent(html_4c2749c9b3d0f824a9aade6d54353d2c);
+            
+        
+
+        marker_a5bd66e1e102e24294c3aa6df6a01202.bindPopup(popup_3eb48f355eb869bad27b13a4a40d585e)
+        ;
+
+        
+    
+    
+            var marker_0f120ff7247d80033d72fc4920d913ad = L.marker(
+                [49.1059383, -122.6557987],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_a76dbbd60fe108b2c160647fc0ce411b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_908d0abfde78fd7373c2b2c322a02939 = $(`<div id="html_908d0abfde78fd7373c2b2c322a02939" style="width: 100.0%; height: 100.0%;">Coast Hotel and Convention Centre</div>`)[0];
+                popup_a76dbbd60fe108b2c160647fc0ce411b.setContent(html_908d0abfde78fd7373c2b2c322a02939);
+            
+        
+
+        marker_0f120ff7247d80033d72fc4920d913ad.bindPopup(popup_a76dbbd60fe108b2c160647fc0ce411b)
+        ;
+
+        
+    
+    
+            var marker_338f107a3f5c1e44a8b53ea08a1f428b = L.marker(
+                [49.10917562386022, -122.66196636492029],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_5a58cf2e9fa2ca1213a20a9cef26b18a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f8fa57a1eebda7d662b34e61de0c0392 = $(`<div id="html_f8fa57a1eebda7d662b34e61de0c0392" style="width: 100.0%; height: 100.0%;">Days Inn & Suites by Wyndham Langley</div>`)[0];
+                popup_5a58cf2e9fa2ca1213a20a9cef26b18a.setContent(html_f8fa57a1eebda7d662b34e61de0c0392);
+            
+        
+
+        marker_338f107a3f5c1e44a8b53ea08a1f428b.bindPopup(popup_5a58cf2e9fa2ca1213a20a9cef26b18a)
+        ;
+
+        
+    
+    
+            var marker_def5491bddc1664832d0461055fe065f = L.marker(
+                [49.110877978518126, -122.64604276328834],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_20ed57239730c8d660e2b5e815fa861f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c0677a419dd98fc19693848485c63674 = $(`<div id="html_c0677a419dd98fc19693848485c63674" style="width: 100.0%; height: 100.0%;">Best Western Plus Langley Inn</div>`)[0];
+                popup_20ed57239730c8d660e2b5e815fa861f.setContent(html_c0677a419dd98fc19693848485c63674);
+            
+        
+
+        marker_def5491bddc1664832d0461055fe065f.bindPopup(popup_20ed57239730c8d660e2b5e815fa861f)
+        ;
+
+        
+    
+    
+            var marker_7aa3f8f1c5c7df53a5c45a842a4efc34 = L.marker(
+                [49.3102749, -123.081921],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_b2741db042ae7946fe8a381f9f6f4cec = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c22e051359f6c4cb96611b32ead8fcca = $(`<div id="html_c22e051359f6c4cb96611b32ead8fcca" style="width: 100.0%; height: 100.0%;">Lonsdale Quay Hotel</div>`)[0];
+                popup_b2741db042ae7946fe8a381f9f6f4cec.setContent(html_c22e051359f6c4cb96611b32ead8fcca);
+            
+        
+
+        marker_7aa3f8f1c5c7df53a5c45a842a4efc34.bindPopup(popup_b2741db042ae7946fe8a381f9f6f4cec)
+        ;
+
+        
+    
+    
+            var marker_3aa1eded081606a0c6c5fc52b0626cb0 = L.marker(
+                [49.31054545307703, -123.07905082605798],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_6a2631eb5830dfca674c94534b5a9988 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_aac6d9ea876ff0eb1cdda6947f2af89c = $(`<div id="html_aac6d9ea876ff0eb1cdda6947f2af89c" style="width: 100.0%; height: 100.0%;">Pinnacle Hotel at the Pier</div>`)[0];
+                popup_6a2631eb5830dfca674c94534b5a9988.setContent(html_aac6d9ea876ff0eb1cdda6947f2af89c);
+            
+        
+
+        marker_3aa1eded081606a0c6c5fc52b0626cb0.bindPopup(popup_6a2631eb5830dfca674c94534b5a9988)
+        ;
+
+        
+    
+    
+            var marker_0c19a2eb7d2b63c0f6fce8985566fa19 = L.marker(
+                [49.30971396878762, -123.07864465209433],
+                {
+}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+    
+        var popup_a9570909493b2d64dc44267f72404074 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_857757c1c4740a96d0a36f08d0a72add = $(`<div id="html_857757c1c4740a96d0a36f08d0a72add" style="width: 100.0%; height: 100.0%;">Seaside Hotel</div>`)[0];
+                popup_a9570909493b2d64dc44267f72404074.setContent(html_857757c1c4740a96d0a36f08d0a72add);
+            
+        
+
+        marker_0c19a2eb7d2b63c0f6fce8985566fa19.bindPopup(popup_a9570909493b2d64dc44267f72404074)
+        ;
+
+        
+    
+    
+            var poly_line_f54b31a0d560d506fa60731230965c9c = L.polyline(
+                [[49.2805221, -123.116967], [49.28081291428567, -123.11734815816799], [49.27986486655374, -123.11692600198012], [49.2783489, -123.116222], [49.2781605, -123.114459], [49.277907, -123.113987], [49.2780805, -123.113659], [49.2783539, -123.1130745], [49.2788858, -123.11296], [49.2757138, -123.1139417], [49.2753903, -123.112766], [49.27458, -123.122482], [49.276751240619895, -123.12622585556922], [49.27711349794841, -123.12684766739335], [49.27807480189528, -123.12816729230734], [49.277828338938704, -123.1285221034446], [49.2761123, -123.1283603], [49.27613812348853, -123.1302108128021], [49.2784828, -123.1256597], [49.278899, -123.125222], [49.2797517, -123.12574], [49.280311745611385, -123.12626697902435], [49.2805081, -123.125404], [49.2808331, -123.1270521], [49.27976257239122, -123.12752482602629], [49.27777382725244, -123.12467721723301], [49.2781552, -123.122394], [49.2789109, -123.122843], [49.2794963, -123.120444], [49.282364332384255, -123.12277373159223], [49.282958, -123.124276], [49.28375344997881, -123.12108709718687], [49.2835481636599, -123.11904312398697], [49.284010583663076, -123.11832328484806], [49.28530805226575, -123.11831521834164], [49.28632017992651, -123.11686935346448], [49.28589619093978, -123.11622081403775], [49.2856155, -123.115708], [49.2865686, -123.115258], [49.2872705, -123.113634], [49.2878972, -123.113048], [49.2880994, -123.116883], [49.28851306841813, -123.12073446053164], [49.28794132294604, -123.12085580310763], [49.28835403345515, -123.12219129376003], [49.28758199026199, -123.12316478094498], [49.286925, -123.1240507], [49.28571640236776, -123.12376911470905], [49.2857066, -123.124856], [49.2864636, -123.127255], [49.2872256, -123.1291922], [49.28732900361975, -123.1296746711029], [49.2877656, -123.1292409], [49.2880057, -123.12946149999999], [49.2884061, -123.130403], [49.2921331, -123.129135], [49.29313913880788, -123.13533425023685], [49.2917164, -123.1355903], [49.28912620903488, -123.13978836720688], [49.2884423, -123.138761], [49.287652868494696, -123.14087584610458], [49.28687979316611, -123.14085477577379], [49.288668605295435, -123.14244172561101], [49.2921694, -123.141371], [49.28102680442949, -123.13275445276429], [49.28007500525723, -123.1324384182144], [49.2851852, -123.120638], [49.282990826169105, -123.1159166107863], [49.28335907596599, -123.11229249253672], [49.28415423678778, -123.11267650209516], [49.28240604368877, -123.11213672894941], [49.283245, -123.1094244], [49.2816529906591, -123.10687025264089], [49.2809751, -123.106143], [49.2830039, -123.1041], [49.2837268, -123.10482], [49.28209719434917, -123.10248384697059], [49.2814701, -123.0951511], [49.2814894, -123.074332], [49.2813793, -123.0452068], [49.26757, -123.0106465], [49.2565918, -123.0064516], [49.25766, -123.023168], [49.23602557097954, -123.03963726007791], [49.230615, -123.003854], [49.2288848, -123.004362], [49.2264758, -123.0043014], [49.22463320441771, -122.98578840784513], [49.2513009, -122.9674826], [49.226241966599886, -122.93623719959692], [49.24669710757751, -122.89140192840408], [49.24211639252376, -122.88461547675368], [49.2067221501337, -122.8781856146409], [49.20330441802401, -122.85098369023869], [49.1904199, -122.848328], [49.173755283883644, -122.84499136647568], [49.14870552715046, -122.84657317110899], [49.19206671785192, -122.79878124297875], [49.1950162, -122.801592], [49.1921242, -122.783617], [49.19110332882571, -122.78390874708906], [49.15238982841536, -122.76209525507943], [49.1183721388888, -122.73706245861632], [49.10393702512512, -122.73409558122373], [49.105238234543386, -122.69040879128876], [49.10793172382928, -122.68252660728696], [49.10917562386022, -122.66196636492029], [49.1059383, -122.6557987], [49.110877978518126, -122.64604276328834], [49.216485512117266, -122.62182101696642], [49.0433062804823, -122.79166531383373], [49.01696826575107, -122.78992383705054], [49.033467888607035, -123.06923906905539], [49.10999156239992, -123.05634669879326], [49.136227375901676, -123.06849218784025], [49.1478403, -123.1138983], [49.1450075, -123.1274522], [49.1631076, -123.1363364], [49.170541217839855, -123.1406221151155], [49.17103456187937, -123.14203189458802], [49.17171390875847, -123.14063738532168], [49.1699891, -123.1443181], [49.1699071, -123.1448997], [49.1704466, -123.1451494], [49.177614462393436, -123.1312564728607], [49.17766792972228, -123.1272252180687], [49.1850533, -123.135539], [49.1907689, -123.1332647], [49.19227714454227, -123.1313856104693], [49.192637, -123.1277313], [49.1922149, -123.12745], [49.195943254234145, -123.12640593231194], [49.19247668748477, -123.11981906427245], [49.19165246201168, -123.1208281698735], [49.19137298923561, -123.11441111503419], [49.19140125014462, -123.11321533561262], [49.1876688, -123.1099702], [49.185286383790036, -123.10697556839128], [49.183633218249824, -123.10431046033757], [49.19092201911388, -123.14036916317012], [49.204849160083675, -123.13083465383336], [49.19519060404622, -123.17543044249403], [49.194735, -123.1759761], [49.1253348, -123.1859705], [49.2635214, -123.120439], [49.269438674869605, -123.1310494450858], [49.3102749, -123.081921], [49.31054545307703, -123.07905082605798], [49.30971396878762, -123.07864465209433], [49.0457836, -122.408099], [49.05643477166694, -122.38034129651733], [49.0398445827209, -122.3381969701954], [49.03768386853999, -122.33467811590279], [49.05246833508416, -122.31697112646732], [49.03902810633409, -122.26818778750054], [49.03520575861788, -122.26861220798231], [49.0367719344966, -122.22694396765344]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_c6e66e8d96a13ca32f9f3b183f90ce59);
+        
+</script>
+</html>
