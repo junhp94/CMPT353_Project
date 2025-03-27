@@ -104,36 +104,59 @@ def filter_amenities_by_theme(amenities, selected_theme):
         return amenities  # Show all if no theme is selected
     
 # Goes through a list of places, searching for hotels in each place and extracting their name and coordinates
-def get_hotel(place):
+def get_hotels(places):
+    
     df_list = []
     tags = {'tourism': 'hotel'}
     
-    print(f"Retrieving hotels for {place}...")
-    try:
-        gdf = ox.features_from_place(place, tags)
-
-        def extract_coords(geom):
-            if geom.geom_type == 'Point':
-                return geom.y, geom.x
-            else:
-                return geom.centroid.y, geom.centroid.x
-                
-        gdf['lat'] = gdf['geometry'].apply(lambda geom: extract_coords(geom)[0])
-        gdf['lon'] = gdf['geometry'].apply(lambda geom: extract_coords(geom)[1])
-
-        if 'name' not in gdf.columns:
-            gdf['name'] = "Hotel"
-        else:
-            gdf = gdf[gdf['name'].notna()]
+    for place in places:
+        print(f"Retrieving hotels for {place}...")
+        try:
+            gdf = ox.features_from_place(place, tags)
             
-        hotels_df = gdf[['name', 'lat', 'lon']].reset_index(drop=True)
-        print(f"Retrieved {len(hotels_df)} hotels for {place}.")
-        
-        return hotels_df
-    
-    except Exception as e:
-        print(f"Error retrieving hotels for {place}: {e}")
+            def extract_coords(geom):
+                if geom.geom_type == 'Point':
+                    return geom.y, geom.x
+                else:
+                    return geom.centroid.y, geom.centroid.x
+                    
+            gdf['lat'] = gdf['geometry'].apply(lambda geom: extract_coords(geom)[0])
+            gdf['lon'] = gdf['geometry'].apply(lambda geom: extract_coords(geom)[1])
+            
+            if 'name' not in gdf.columns:
+                gdf['name'] = "Hotel"
+            else:
+                gdf = gdf[gdf['name'].notna()]
+            hotels_df = gdf[['name', 'lat', 'lon']].reset_index(drop=True)
+            print(f"Retrieved {len(hotels_df)} hotels for {place}.")
+            df_list.append(hotels_df)
+            
+        except Exception as e:
+            print(f"Error retrieving hotels for {place}: {e}")
+            
+    if df_list:
+        combined = pd.concat(df_list, ignore_index=True)
+        print(f"Total hotels retrieved: {len(combined)}")
+        return combined
+    else:
         return pd.DataFrame()
+    
+def get_combined_graph(places, network_type):
+    
+    graphs = []
+    for place in places:
+        try:
+            print(f"Downloading graph for {place}...")
+            G = ox.graph_from_place(place, network_type=network_type)
+            graphs.append(G)
+        except Exception as e:
+            print(f"Error downloading graph for {place}: {e}")
+    if graphs:
+        combined_graph = ox.graph_to_gdfs(nx.compose_all(graphs), nodes=True, edges=True)
+        G = ox.graph_from_gdfs(combined_graph[0], combined_graph[1])
+        return G
+    else:
+        return None
     
 def create_tour_map(points, route, start_coords):
     # Create a map centered on the first point
@@ -183,6 +206,13 @@ def get_street_route(G, points_list):
         full_route.extend(segment)
 
     return full_route
+
+regions = [
+    "Metro Vancouver, British Columbia, Canada",
+    #"Fraser Valley, British Columbia, Canada"
+    "Abbotsford, British Columbia, Canada",
+    "Mission, British Columbia, Canada"
+    ]
     
 def main():
     data = pd.read_json("amenities-vancouver.json.gz", compression="gzip", lines=True)
@@ -198,22 +228,42 @@ def main():
     route_points = [[start_coords[0], start_coords[1]]] + nearest_amenities[['lat', 'lon']].values.tolist()
     
     if stay_hotel:
+        housing = data[data['amenity'] == 'housing co-op']
         last_point = route_points[-1]
-        hotel = get_hotel(location)
-        
-        if not hotel.empty:
-            hotel["distance"] = hotel.apply(lambda row: haversine(last_point[0], last_point[1], row["lat"], row["lon"]), axis=1)
-            nearest_hotel = hotel.nsmallest(1, "distance").iloc[0]
-            route_points.append([nearest_hotel["lat"], nearest_hotel["lon"]])
-            nearest_amenities = pd.concat([nearest_amenities, nearest_hotel.to_frame().T], ignore_index=True)
+        hotels = get_hotels(regions)
+
+        if not hotels.empty or not housing.empty:
+            # Combine hotels and housing
+            lodging_points = pd.concat([housing, hotels], ignore_index=True)
+
+            # Calculate distance to the last amenity
+            lodging_points["distance"] = lodging_points.apply(
+                lambda row: haversine(last_point[0], last_point[1], row["lat"], row["lon"]), axis=1
+            )
+
+            # Get the closest lodging (housing or hotel)
+            nearest_lodging = lodging_points.nsmallest(1, "distance").iloc[0]
+
+            # Add the nearest lodging to the route
+            route_points.append([nearest_lodging["lat"], nearest_lodging["lon"]])
+
+            # Add to the list of visited amenities
+            nearest_amenities = pd.concat([nearest_amenities, nearest_lodging.to_frame().T], ignore_index=True)
         else:
-            print("No hotels found.")
+            print("No lodging found.")
+            
+    Graph = ox.graph_from_place(regions, network_type=transportation, simplify=True)
+    print("stage 0")
+    G_undirected = Graph.to_undirected()
+    print("stage 1")
+    largest_component = max(nx.connected_components(G_undirected), key=len)
+    print("stage 2")
+    Graph = G_undirected.subgraph(largest_component).copy()
+    print("stage 3")
     
     # Vancouver so far
-    Graph = ox.graph_from_place(location, network_type=transportation, simplify=True)
-    route = get_street_route(Graph, route_points)
 
-    # Generate map
+    route = get_street_route(Graph, route_points)
     tour_map = create_tour_map(nearest_amenities, route=route, start_coords=start_coords)
     tour_map.save("nearest_amenities_tour.html")
 
