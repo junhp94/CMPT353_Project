@@ -21,7 +21,7 @@ def input_field():
         print("Invalid number. Please enter length of tour in days: ")
     
     # Ask for theme
-    themes = ["food", "nature", "history", "science", "art", "entertainment"]
+    themes = ["food", "nature", "history", "science", "art", "entertainment", "random"]
     while True:
         theme = input(f"Enter a theme ({', '.join(themes)}): ").strip().lower()
         if theme in themes:
@@ -303,32 +303,44 @@ def main():
     # Get inputs
     tour_length, theme, num_amenities, start_coords, transportation, stay_hotel = input_field()
     
-    filtered_amenities = filter_amenities_by_theme(data, theme)
-    popular_amenities = filter_popular_amenities(filtered_amenities,min_tags=5)
+    if theme == 'random':
+        popular_amenities = filter_popular_amenities(data,min_tags=5) # Popular amenities have 5 or more tags
+    else:
+        filtered_amenities = filter_amenities_by_theme(data, theme)
+        popular_amenities = filter_popular_amenities(filtered_amenities,min_tags=5) # Popular amenities have 5 or more tags
     
     nearest_amenities = find_nearest_amenities(popular_amenities, start_coords, num_amenities)
 
     route_points = [[start_coords[0], start_coords[1]]] + nearest_amenities[['lat', 'lon']].values.tolist()
     
     restaurants = get_restaurants(regions)
+    
+    if stay_hotel:
+        housing = data[data['amenity'] == 'housing co-op']
+        hotels = get_hotels(regions)
+
+        if not hotels.empty or not housing.empty:
+            # Combine hotels and housing
+            lodging_points = pd.concat([housing, hotels], ignore_index=True)
 
     if not restaurants.empty:
         updated_route_points = [route_points[0]]  # Start point
         updated_amenities = pd.DataFrame([nearest_amenities.iloc[0]])  # First point
 
         amenities_per_day = num_amenities // tour_length  # Number of amenities per day
-        day_index = 0  # Track how many stops have been added in the current day
+        day_index = 0  # Track amenities count per day
+        restaurant_count = 0  # Track how many restaurants added per day
 
         for i in range(1, len(route_points)):
             updated_route_points.append(route_points[i])
-            
+
             if i < len(nearest_amenities):
                 updated_amenities = pd.concat([updated_amenities, nearest_amenities.iloc[[i]]], ignore_index=True)
-            
+
             day_index += 1
 
-            # Insert restaurant every 3 amenities or at the end of the day
-            if day_index % 3 == 0 or (day_index == amenities_per_day and amenities_per_day < 3):
+            # Ensure exactly 3 restaurants per day
+            if restaurant_count < 3:
                 last_point = route_points[i]
 
                 if not restaurants.empty:
@@ -341,37 +353,28 @@ def main():
                     nearest_restaurant["type"] = "restaurant"
                     updated_amenities = pd.concat([updated_amenities, nearest_restaurant.to_frame().T], ignore_index=True)
 
+                    restaurant_count += 1
+
+            # End of the day: Reset counters and add a hotel
             if day_index >= amenities_per_day:
-                day_index = 0  # Reset for next day
+                restaurant_count = 0  # Reset restaurant count for next day
+                day_index = 0  # Reset amenity count for next day
+
+                if stay_hotel and not lodging_points.empty:  # Add hotel at the end of each day
+                    last_point = updated_route_points[-1]  # Get the last stop of the day
+
+                    lodging_points["distance"] = lodging_points.apply(
+                        lambda row: haversine(last_point[0], last_point[1], row["lat"], row["lon"]), axis=1
+                    )
+
+                    nearest_lodging = lodging_points.nsmallest(1, "distance").iloc[0]
+                    updated_route_points.append([nearest_lodging["lat"], nearest_lodging["lon"]])
+
+                    nearest_lodging["type"] = "hotel"
+                    updated_amenities = pd.concat([updated_amenities, nearest_lodging.to_frame().T], ignore_index=True)
 
         route_points = updated_route_points
         nearest_amenities = updated_amenities
-    
-    if stay_hotel:
-        housing = data[data['amenity'] == 'housing co-op']
-        last_point = route_points[-1]
-        hotels = get_hotels(regions)
-
-        if not hotels.empty or not housing.empty:
-            # Combine hotels and housing
-            lodging_points = pd.concat([housing, hotels], ignore_index=True)
-
-            # Calculate distance to the last amenity
-            lodging_points["distance"] = lodging_points.apply(
-                lambda row: haversine(last_point[0], last_point[1], row["lat"], row["lon"]), axis=1
-            )
-
-            # Get the closest lodging (housing or hotel)
-            nearest_lodging = lodging_points.nsmallest(1, "distance").iloc[0]
-
-            # Add the nearest lodging to the route
-            route_points.append([nearest_lodging["lat"], nearest_lodging["lon"]])
-
-            # Add to the list of visited amenities
-            nearest_lodging["type"] = "hotel"
-            nearest_amenities = pd.concat([nearest_amenities, nearest_lodging.to_frame().T], ignore_index=True)
-        else:
-            print("No lodging found.")
             
     Graph = ox.graph_from_place(regions, network_type=transportation, simplify=True)
     print("stage 0")
