@@ -108,12 +108,12 @@ def find_nearest_amenities(amenities, start_coords, num_amenities):
 
 def filter_amenities_by_theme(amenities, selected_theme):
     themes = {
-        "nature": ["park", "watering_place", "fountain", "ranger_station", "hunting_stand", "observation_platform"],
+        "nature": ["park", "watering_place", "fountain", "ranger_station", "hunting_stand", "observation_platform", "water_point"],
         "food": ["cafe", "bbq", "restaurant", "pub", "bar", "food_court", "ice_cream", "juice_bar", "bistro", "biergarten"],
-        "history": ["place_of_worship", "monastery", "courthouse", "townhall"],
-        "science": ["research_institute", "science", "healthcare", "hospital", "pharmacy", "clinic", "veterinary", "chiropractor", "ATLAS_clean_room"],
-        "art": ["arts_centre", "theatre", "studio", "music_school"],
-        "entertainment": ["cinema", "nightclub", "stripclub", "gambling", "casino", "events_venue", "marketplace", "spa", "events_venue", "internet_cafe", "lounge", "shop|clothes", "leisure"],
+        "history": ["place_of_worship", "monastery", "courthouse", "townhall", "clock"],
+        "science": ["research_institute", "science", "ATLAS_clean_room"],
+        "art": ["arts_centre", "theatre", "studio"],
+        "entertainment": ["cinema", "nightclub", "stripclub", "gambling", "casino", "marketplace", "spa", "events_venue", "internet_cafe", "lounge", "shop|clothes", "leisure", "Observation Platform", "photo_booth"],
         "mode of travel": ["car_rental", "bicycle_rental", "car_sharing", "taxi", "bus_station", "ferry_terminal", "seaplane_terminal", "motorcycle_rental", "parking", "charging_station", "EVSE"]
     }
     
@@ -295,11 +295,29 @@ regions = [
     "Abbotsford, British Columbia, Canada",
     "Mission, British Columbia, Canada"
     ]
-    
-def main():
-    data = pd.read_json("amenities-vancouver.json.gz", compression="gzip", lines=True)
-    data = data[~data["name"].isna()]
 
+interesting_amenities = ['cafe', 'bbq', 'place_of_worship', 
+    'restaurant', 'pub', 'community_centre', 'public_building', 'cinema', 'theatre',
+    'ferry_terminal', 'bar', 'library', 'car_rental',
+    'car_sharing', 'bicycle_rental', 'public_bookcase',
+    'university', 'dojo', 'food_court', 'seaplane terminal', 'arts_centre',
+    'ice_cream', 'fountain',
+    'photo_booth', 'nightclub', 'social_facility', 'taxi',
+    'bus_station', 'clock', 'marketplace', 'stripclub',
+    'gambling', 'family_centre', 'townhall',
+    'bistro', 'playground', 'boat_rental', 'spa', 'events_venue', 'science', 
+    'ATLAS_clean_room', 'juice_bar', 'internet_cafe', 'social_centre', 'EVSE', 'studio',
+    'ranger_station', 'watering_place', 'lounge', 'water_point',
+    'Observation Platform', 'housing co-op', 'gym',
+    'park', 'biergarten', 'casino', 'hunting_stand', 'shop|clothes', 'research_institute',
+    'motorcycle_rental', "observation_platform", "monastery", "courthouse", "leisure", "seaplane_terminal", 
+    "parking", "charging_station"]
+
+def main():
+    original_data = pd.read_json("amenities-vancouver.json.gz", compression="gzip", lines=True)
+    data = original_data[~original_data["name"].isna()]
+    data = data[data["amenity"].isin(interesting_amenities)]
+    
     # Get inputs
     tour_length, theme, num_amenities, start_coords, transportation, stay_hotel = input_field()
     
