@@ -109,7 +109,7 @@ def find_nearest_amenities(amenities, start_coords, num_amenities):
 def filter_amenities_by_theme(amenities, selected_theme):
     themes = {
         "nature": ["park", "watering_place", "fountain", "ranger_station", "hunting_stand", "observation_platform"],
-        "food": ["cafe", "fast_food", "bbq", "restaurant", "pub", "bar", "food_court", "ice_cream", "juice_bar", "bistro", "biergarten"],
+        "food": ["cafe", "bbq", "restaurant", "pub", "bar", "food_court", "ice_cream", "juice_bar", "bistro", "biergarten"],
         "history": ["place_of_worship", "monastery", "courthouse", "townhall"],
         "science": ["research_institute", "science", "healthcare", "hospital", "pharmacy", "clinic", "veterinary", "chiropractor", "ATLAS_clean_room"],
         "art": ["arts_centre", "theatre", "studio", "music_school"],
@@ -165,7 +165,7 @@ def get_hotels(places):
 def get_restaurants(places):
     
     df_list = []
-    tags = {'amenity': 'restaurant'}  # Change the tag to fetch restaurants
+    tags = { 'amenity': [ "bbq", "restaurant", "pub", "bar", "bistro"]}
     
     for place in places:
         print(f"Retrieving restaurants for {place}...")
@@ -304,6 +304,10 @@ def main():
     tour_length, theme, num_amenities, start_coords, transportation, stay_hotel = input_field()
     
     if theme == 'random':
+        # Filters out big chains
+        data = data[data['amenity'] != 'fast_food']
+        data = data[data['name'] != 'Starbucks']
+        data = data[~data['name'].isin(['Tim Hortons', 'Tim_Hortons'])]
         popular_amenities = filter_popular_amenities(data,min_tags=5) # Popular amenities have 5 or more tags
     else:
         filtered_amenities = filter_amenities_by_theme(data, theme)
