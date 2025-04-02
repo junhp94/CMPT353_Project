@@ -199,6 +199,45 @@ def get_restaurants(places):
         return combined
     else:
         return pd.DataFrame()
+
+# If the user selects that they are walking, then find some place of transportation.
+def get_rental(places):
+    
+    df_list = []
+    tags = { 'amenity': ["car_rental", "bicycle_rental", "bus_station", "motorcycle_rental"]}
+    
+    for place in places:
+        print(f"Retrieving rentals for {place}...")
+        try:
+            gdf = ox.features_from_place(place, tags)
+            
+            def extract_coords(geom):
+                if geom.geom_type == 'Point':
+                    return geom.y, geom.x
+                else:
+                    return geom.centroid.y, geom.centroid.x
+                    
+            gdf['lat'] = gdf['geometry'].apply(lambda geom: extract_coords(geom)[0])
+            gdf['lon'] = gdf['geometry'].apply(lambda geom: extract_coords(geom)[1])
+            
+            if 'name' not in gdf.columns:
+                gdf['name'] = "Rentals"
+            else:
+                gdf = gdf[gdf['name'].notna()]
+                
+            rentals_df = gdf[['name', 'lat', 'lon']].reset_index(drop=True)
+            print(f"Retrieved {len(rentals_df)} rentals for {place}.")
+            df_list.append(rentals_df)
+            
+        except Exception as e:
+            print(f"Error retrieving rentals for {place}: {e}")
+            
+    if df_list:
+        combined = pd.concat(df_list, ignore_index=True)
+        print(f"Total rentals retrieved: {len(combined)}")
+        return combined
+    else:
+        return pd.DataFrame()
     
 def get_combined_graph(places, network_type):
     
@@ -242,6 +281,8 @@ def create_tour_map(points, route, start_coords):
                 marker_color = "orange"
             elif row["type"] == "hotel":
                 marker_color = "green"
+            elif row["type"] == "rental":
+                marker_color = "black"
         
         # Add the marker with the corresponding color
         fl.Marker(
@@ -337,6 +378,10 @@ def main():
     
     restaurants = get_restaurants(regions)
     
+    # Adds a rental if transportation is walking
+    if transportation == 'walk':
+        rentals = get_rental(regions)
+                    
     if stay_hotel:
         housing = data[data['amenity'] == 'housing co-op']
         hotels = get_hotels(regions)
@@ -346,12 +391,25 @@ def main():
             lodging_points = pd.concat([housing, hotels], ignore_index=True)
 
     if not restaurants.empty:
-        updated_route_points = [route_points[0]]  # Start point
+        updated_route_points = [route_points[0]]  # Start point remains the same
         updated_amenities = pd.DataFrame([nearest_amenities.iloc[0]])  # First point
 
         amenities_per_day = num_amenities // tour_length  # Number of amenities per day
         day_index = 0  # Track amenities count per day
         restaurant_count = 0  # Track how many restaurants added per day
+        
+        # Ensure that the rental is the closest to the starting point using haversine
+        if not rentals.empty:
+            rentals["distance"] = rentals.apply(
+                lambda row: haversine(start_coords[0], start_coords[1], row["lat"], row["lon"]), axis=1
+            )
+            
+            # Find the nearest rental
+            nearest_rental = rentals.nsmallest(1, "distance").iloc[0]
+            # Insert the nearest rental at the start of route_points
+            updated_route_points.append([nearest_rental["lat"], nearest_rental["lon"]])
+            nearest_rental["type"] = "rental"
+            updated_amenities = pd.concat([updated_amenities, nearest_rental.to_frame().T], ignore_index=True)
 
         for i in range(1, len(route_points)):
             updated_route_points.append(route_points[i])
