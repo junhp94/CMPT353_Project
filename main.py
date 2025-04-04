@@ -10,6 +10,9 @@ import folium as fl
 import osmnx as ox
 import networkx as nx
 from SPARQLWrapper import SPARQLWrapper, JSON
+from geopy.geocoders import Nominatim
+
+geolocator = Nominatim(user_agent="CMPT353-Project")
 
 def input_field():
     # Ask user how long their tour is
@@ -42,22 +45,29 @@ def input_field():
 
     # Ask for the starting location (latitude and longitude), can be changed later to ask for location rather than lat and lon
     while True:
-        try:
-            start_lat = input("Enter your starting latitude: ").strip()
-            start_lon = input("Enter your starting longitude: ").strip()
-            if start_lat and start_lon:
-                start_lat, start_lon = float(start_lat), float(start_lon)
-                break
-            print("Latitude and longitude are required.")
-        except ValueError:
-            print("Invalid input. Please enter valid numeric values for latitude and longitude.")
+        address = input("Please enter your current address (Ex. 1234 Mountain Drive Vancouver BC V1N 5Z6): ")
+        location = geolocator.geocode(address)
+        start_lat = location.latitude
+        start_lon = location.longitude
+        if start_lat and start_lon:
+            start_lat, start_lon = float(start_lat), float(start_lon)
+            break
+        print("Invalid Address")
 
     # Ask for mode of transportation
     transport_modes = ["walk", "drive", "bike"]
+    options = ["yes", "no"]
     while True:
         transportation = input(f"Choose your mode of transportation ({', '.join(transport_modes)}): ").strip().lower()
         if transportation in transport_modes:
-            break
+            if transportation == "walk":
+                while True:
+                    want_rental = input("Do you want to rent a form of transportation? (yes or no): ").strip().lower()
+                    if want_rental in options:
+                        break
+            else: 
+                want_rental = "no"
+                break
         print(f"Invalid choice. Please select from: {', '.join(transport_modes)}.")
 
     # Ask if they need a hotel to stay at
@@ -71,7 +81,7 @@ def input_field():
             break
         print("Invalid input. Please enter 'yes' or 'no'.")
 
-    return tour_length, theme, num_amenities, (start_lat, start_lon), transportation, stay_hotel
+    return tour_length, theme, num_amenities, (start_lat, start_lon), transportation, want_rental, stay_hotel
 
 def haversine(lat1, lon1, lat2, lon2):
     lat1, lon1, lat2, lon2 = map(np.radians, [lat1, lon1, lat2, lon2])
@@ -360,7 +370,7 @@ def main():
     data = data[data["amenity"].isin(interesting_amenities)]
     
     # Get inputs
-    tour_length, theme, num_amenities, start_coords, transportation, stay_hotel = input_field()
+    tour_length, theme, num_amenities, start_coords, transportation, want_rental, stay_hotel = input_field()
     
     if theme == 'random':
         # Filters out big chains
@@ -379,7 +389,7 @@ def main():
     restaurants = get_restaurants(regions)
     
     # Adds a rental if transportation is walking
-    if transportation == 'walk':
+    if transportation == 'walk' and want_rental == 'yes':
         rentals = get_rental(regions)
                     
     if stay_hotel:
@@ -399,7 +409,7 @@ def main():
         restaurant_count = 0  # Track how many restaurants added per day
         
         # Ensure that the rental is the closest to the starting point using haversine
-        if not rentals.empty:
+        if want_rental == 'yes':
             rentals["distance"] = rentals.apply(
                 lambda row: haversine(start_coords[0], start_coords[1], row["lat"], row["lon"]), axis=1
             )
