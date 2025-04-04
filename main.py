@@ -1,7 +1,7 @@
 # CMPT 353 Project
 #
 #   Eric Li 301436381
-#   
+#   Steven Duong 301552606
 #
 import pandas as pd
 import numpy as np
@@ -10,6 +10,83 @@ import folium as fl
 import osmnx as ox
 import networkx as nx
 from SPARQLWrapper import SPARQLWrapper, JSON
+from geopy.geocoders import Nominatim
+
+geolocator = Nominatim(user_agent="CMPT353-Project")
+
+def input_field():
+    # Ask user how long their tour is
+    while True:
+        tour_length = input("Enter length of tour in days: ").strip()
+        try:
+            tour_length = int(tour_length)
+            if tour_length > 0:
+                break
+            else:
+                print("Invalid number. Please enter a positive integer.")
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+    
+    # Ask for theme
+    themes = ["food", "nature", "history", "science", "art", "entertainment", "random"]
+    while True:
+        theme = input(f"Enter a theme ({', '.join(themes)}): ").strip().lower()
+        if theme in themes:
+            break
+        print(f"Invalid choice. Please select from: {', '.join(themes)}.")
+
+    # Ask for the number of amenities
+    while True:
+        num_amenities = input("Enter the total number of amenities you want to visit: ").strip()
+        if not num_amenities:
+            print("Input cannot be empty. Please enter a valid positive number.")
+            continue
+        try:
+            num_amenities = int(num_amenities)
+            if num_amenities > 0:
+                break
+            else:
+                print("Please enter a valid positive number.")
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
+    # Ask for the starting location (latitude and longitude), can be changed later to ask for location rather than lat and lon
+    while True:
+        address = input("Please enter your current address (Ex. 1234 Mountain Drive Vancouver BC V1N 5Z6): ")
+        location = geolocator.geocode(address)
+        if location:
+            start_lat, start_lon = float(location.latitude), float(location.longitude)
+            break
+        print("Invalid address. Please try again.")
+
+    # Ask for mode of transportation
+    transport_modes = ["walk", "drive", "bike"]
+    options = ["yes", "no"]
+    while True:
+        transportation = input(f"Choose your mode of transportation ({', '.join(transport_modes)}): ").strip().lower()
+        if transportation in transport_modes:
+            if transportation == "walk":
+                while True:
+                    want_rental = input("Do you want to rent a form of transportation? (yes or no): ").strip().lower()
+                    if want_rental in options:
+                        break
+            else: 
+                want_rental = "no"
+            break        
+        print(f"Invalid choice. Please select from: {', '.join(transport_modes)}.")
+
+    # Ask if they need a hotel to stay at
+    while True:
+        stay_hotel = input("Do you need a hotel? (yes/no): ").strip().lower()
+        if stay_hotel == "yes":
+            stay_hotel = True
+            break
+        elif stay_hotel == "no":
+            stay_hotel = False
+            break
+        print("Invalid input. Please enter 'yes' or 'no'.")
+
+    return tour_length, theme, num_amenities, (start_lat, start_lon), transportation, want_rental, stay_hotel
 
 def haversine(lat1, lon1, lat2, lon2):
     lat1, lon1, lat2, lon2 = map(np.radians, [lat1, lon1, lat2, lon2])
@@ -23,87 +100,44 @@ def haversine(lat1, lon1, lat2, lon2):
     return R*c
 
 # Finds a route by pathing to the nearest neighbour based on ['lat, lon'] pairs
-def nearest_neighbor_route(points):
-
-    route = [points[0]]
-    unvisited = points[1:]
+def find_nearest_amenities(amenities, start_coords, num_amenities):
+    amenities_copy = amenities.copy()
+    route = []
+    current_location = start_coords
     
-    while unvisited:
-        last = route[-1]
-        # Find the point in unvisited that's closest to the last visited point
-        next_point = min(unvisited, key=lambda point: haversine(last[0], last[1], point[0], point[1]))
-        route.append(next_point)
-        unvisited.remove(next_point)
+    for _ in range(num_amenities):
+        if amenities_copy.empty:
+            break
         
-    return route
-
-
-def create_tour_map(points, route):
-    # Create a map centered on the first point
-    map_center = [points.iloc[0]['lat'], points.iloc[0]['lon']]
-    tour_map = fl.Map(location=map_center, zoom_start=13)
+        amenities_copy["distance"] = amenities_copy.apply(
+            lambda row: haversine(current_location[0], current_location[1], row["lat"], row["lon"]), axis=1
+        )
+        nearest_amenity = amenities_copy.nsmallest(1, "distance").iloc[0]
+        
+        route.append(nearest_amenity)
+        current_location = (nearest_amenity["lat"], nearest_amenity["lon"])
+        
+        amenities_copy = amenities_copy.drop(nearest_amenity.name)
     
-    # Add markers for each point
-    for idx, row in points.iterrows():
-        lat = row['lat']
-        lon = row['lon']
-        name = row.get('name', 'No Name')
-        fl.Marker(location=[lat, lon], popup=name).add_to(tour_map)
+    return pd.DataFrame(route)
 
-    # draws the path connecting each point
-    if route:
-        fl.PolyLine(locations=route, color='blue', weight=2.5, opacity=1).add_to(tour_map)
-    else:
-        print("No valid route found.")
-    
-    return tour_map
-
-# filter data to only include amenities in each theme.
-def filter_by_theme(data, theme):
-
+def filter_amenities_by_theme(amenities, selected_theme):
     themes = {
-        "Nature": ["park", "watering_place", "fountain", "ranger_station", "hunting_stand", "observation_platform"],
-        "Food": ["cafe", "fast_food", "bbq", "restaurant", "pub", "bar", "food_court", "ice_cream", "juice_bar", "bistro", "biergarten"],
-        "History": ["place_of_worship", "monastery", "courthouse", "townhall"],
-        "Science": ["research_institute", "science", "healthcare", "hospital", "pharmacy", "clinic", "veterinary", "chiropractor", "ATLAS_clean_room"],
-        "Art": ["arts_centre", "theatre", "studio", "music_school"],
-        "Entertainment": ["cinema", "nightclub", "stripclub", "gambling", "casino", "events_venue", "marketplace", "spa", "events_venue", "internet_cafe", "lounge", "shop|clothes", "leisure"],
-        "Mode of Travel": ["car_rental", "bicycle_rental", "car_sharing", "taxi", "bus_station", "ferry_terminal", "seaplane_terminal", "motorcycle_rental", "parking", "charging_station", "EVSE"]
+        "nature": ["park", "watering_place", "fountain", "ranger_station", "hunting_stand", "observation_platform", "water_point"],
+        "food": ["cafe", "bbq", "restaurant", "pub", "bar", "food_court", "ice_cream", "juice_bar", "bistro", "biergarten"],
+        "history": ["place_of_worship", "monastery", "courthouse", "townhall", "clock"],
+        "science": ["research_institute", "science", "ATLAS_clean_room"],
+        "art": ["arts_centre", "theatre", "studio"],
+        "entertainment": ["cinema", "nightclub", "stripclub", "gambling", "casino", "marketplace", "spa", "events_venue", "internet_cafe", "lounge", "shop|clothes", "leisure", "Observation Platform", "photo_booth"],
+        "mode of travel": ["car_rental", "bicycle_rental", "car_sharing", "taxi", "bus_station", "ferry_terminal", "seaplane_terminal", "motorcycle_rental", "parking", "charging_station", "EVSE"]
     }
     
-    if theme in themes:
-        return data[data['amenity'].isin(themes[theme])]
+    if selected_theme in themes:
+        relevant_amenities = themes[selected_theme]
+        return amenities[amenities["amenity"].isin(relevant_amenities)]
     else:
-        print(f"Warning: Theme '{themes}' not found. Available themes: {list(themes)}")
-    return data[data['amenity'].isin(themes)]
-
-
-# Finds proper paths between points using street network graph
-def get_street_route(G, points_list):
-    full_route = []
-    for i in range(len(points_list) - 1):
-        start_lat, start_lon = points_list[i]
-        end_lat, end_lon = points_list[i+1]
-        start_node = ox.distance.nearest_nodes(G, start_lon, start_lat)
-        end_node = ox.distance.nearest_nodes(G, end_lon, end_lat)
-        if not nx.has_path(G, start_node, end_node):
-            print(f"No route found between {points_list[i]} and {points_list[i+1]}. Skipping.")
-            continue
-        try:
-            path_nodes = nx.shortest_path(G, start_node, end_node, weight='length')
-        except Exception as e:
-            print(f"Error finding path between {points_list[i]} and {points_list[i+1]}: {e}")
-            continue
-        segment = []
-        for node in path_nodes:
-            node_data = G.nodes[node]
-            segment.append([node_data['y'], node_data['x']])
-        if i > 0 and segment:
-            segment = segment[1:]
-        full_route.extend(segment)
-
-    return full_route
-
+        return amenities  # Show all if no theme is selected
+    
 # Goes through a list of places, searching for hotels in each place and extracting their name and coordinates
 def get_hotels(places):
     
@@ -142,8 +176,85 @@ def get_hotels(places):
     else:
         return pd.DataFrame()
 
-# For each city, download their street network and then combine them
-def get_combined_graph(places, network_type='drive'):
+# Goes through a list of places, searching for restaurants in each place and extracting their name and coordinates
+def get_restaurants(places):
+    
+    df_list = []
+    tags = { 'amenity': [ "bbq", "restaurant", "pub", "bar", "bistro"]}
+    
+    for place in places:
+        print(f"Retrieving restaurants for {place}...")
+        try:
+            gdf = ox.features_from_place(place, tags)
+            
+            def extract_coords(geom):
+                if geom.geom_type == 'Point':
+                    return geom.y, geom.x
+                else:
+                    return geom.centroid.y, geom.centroid.x
+                    
+            gdf['lat'] = gdf['geometry'].apply(lambda geom: extract_coords(geom)[0])
+            gdf['lon'] = gdf['geometry'].apply(lambda geom: extract_coords(geom)[1])
+            
+            if 'name' not in gdf.columns:
+                gdf['name'] = "Restaurant"
+            else:
+                gdf = gdf[gdf['name'].notna()]
+                
+            restaurants_df = gdf[['name', 'lat', 'lon']].reset_index(drop=True)
+            print(f"Retrieved {len(restaurants_df)} restaurants for {place}.")
+            df_list.append(restaurants_df)
+            
+        except Exception as e:
+            print(f"Error retrieving restaurants for {place}: {e}")
+            
+    if df_list:
+        combined = pd.concat(df_list, ignore_index=True)
+        print(f"Total restaurants retrieved: {len(combined)}")
+        return combined
+    else:
+        return pd.DataFrame()
+
+# If the user selects that they are walking, then find some place of transportation.
+def get_rental(places):
+    
+    df_list = []
+    tags = { 'amenity': ["car_rental", "bicycle_rental", "bus_station", "motorcycle_rental"]}
+    
+    for place in places:
+        print(f"Retrieving rentals for {place}...")
+        try:
+            gdf = ox.features_from_place(place, tags)
+            
+            def extract_coords(geom):
+                if geom.geom_type == 'Point':
+                    return geom.y, geom.x
+                else:
+                    return geom.centroid.y, geom.centroid.x
+                    
+            gdf['lat'] = gdf['geometry'].apply(lambda geom: extract_coords(geom)[0])
+            gdf['lon'] = gdf['geometry'].apply(lambda geom: extract_coords(geom)[1])
+            
+            if 'name' not in gdf.columns:
+                gdf['name'] = "Rentals"
+            else:
+                gdf = gdf[gdf['name'].notna()]
+                
+            rentals_df = gdf[['name', 'lat', 'lon']].reset_index(drop=True)
+            print(f"Retrieved {len(rentals_df)} rentals for {place}.")
+            df_list.append(rentals_df)
+            
+        except Exception as e:
+            print(f"Error retrieving rentals for {place}: {e}")
+            
+    if df_list:
+        combined = pd.concat(df_list, ignore_index=True)
+        print(f"Total rentals retrieved: {len(combined)}")
+        return combined
+    else:
+        return pd.DataFrame()
+    
+def get_combined_graph(places, network_type):
     
     graphs = []
     for place in places:
@@ -159,85 +270,208 @@ def get_combined_graph(places, network_type='drive'):
         return G
     else:
         return None
+    
+def create_tour_map(points, route, start_coords):
+    # Create a map centered on the first point
+    map_center = [points.iloc[0]['lat'], points.iloc[0]['lon']]
+    tour_map = fl.Map(location=map_center, zoom_start=13)
+    
+    # Add start location marker
+    fl.Marker(
+        location=start_coords, 
+        popup="Start Location", 
+        icon=fl.Icon(color="red")
+    ).add_to(tour_map)
+    
+    # Add markers for each point
+    for idx, row in points.iterrows():
+        lat = row['lat']
+        lon = row['lon']
+        name = row.get('name', 'No Name')
         
-def main():
-    data = pd.read_json("amenities-vancouver.json.gz", compression="gzip", lines=True)
-    
-    # Small filtering
-    data = data[~data['name'].isna()]
-    
-    # Data with tags that contain wikidata or wikipedia values and other things that may be useful
-    # Some places may not have wikidata or wikipedia, but may be interesting and contain other keys
-    interesting_data = data[data['tags'].apply(lambda x: 'brand:wikidata' in x or 
-                                               'brand:wikipedia' in x or 
-                                               'official_name' in x or
-                                               'opening_hours' in x or
-                                               'cuisine' in x or
-                                               'addr:street' in x or
-                                               'addr:housenumber' in x or
-                                               'website' in x)]
-    places = [
-    "Vancouver, British Columbia, Canada",
-    "Surrey, British Columbia, Canada",
-    "Richmond, British Columbia, Canada",
-    "Burnaby, British Columbia, Canada",
-    "Coquitlam, British Columbia, Canada",
-    "Delta, British Columbia, Canada",
-    "Maple Ridge, British Columbia, Canada",
-    "White Rock, British Columbia, Canada",
-    "Abbotsford, British Columbia, Canada",
-    "Langley City, British Columbia, Canada",
-    "North Vancouver, British Columbia, Canada",
-    "Pitt Meadows, British Columbia, Canada",
-    "Bowen Island, British Columbia, Canada",
-    "West Vancouver, British Columbia, Canada",
-    "Mission, British Columbia, Canada"
-]
+        marker_color = "blue"
 
-    modes_of_travel = filter_by_theme(data, "Mode of Travel")
+        if "type" in row:
+            if row["type"] == "restaurant":
+                marker_color = "orange"
+            elif row["type"] == "hotel":
+                marker_color = "green"
+            elif row["type"] == "rental":
+                marker_color = "black"
+        
+        # Add the marker with the corresponding color
+        fl.Marker(
+            location=[lat, lon], 
+            popup=name, 
+            icon=fl.Icon(color=marker_color)
+        ).add_to(tour_map)
     
-    food_points = filter_by_theme(interesting_data, "Food").head(50)
+    # Draw the path connecting each point
+    fl.PolyLine(locations=route, color='blue', weight=2.5, opacity=1).add_to(tour_map)
     
-    # Create a list of [lat, lon] pairs for route calculation
-    food_points_list = [[row['lat'], row['lon']] for idx, row in food_points.iterrows()]
+    return tour_map
 
-    regions = [
+# Finds proper paths between points using street network graph
+def get_street_route(G, points_list):
+    full_route = []
+    for i in range(len(points_list) - 1):
+        start_lat, start_lon = points_list[i]
+        end_lat, end_lon = points_list[i+1]
+        start_node = ox.distance.nearest_nodes(G, start_lon, start_lat)
+        end_node = ox.distance.nearest_nodes(G, end_lon, end_lat)
+        if not nx.has_path(G, start_node, end_node):
+            print(f"No route found between {points_list[i]} and {points_list[i+1]}. Skipping.")
+            continue
+        try:
+            path_nodes = nx.shortest_path(G, start_node, end_node, weight='length')
+        except Exception as e:
+            print(f"Error finding path between {points_list[i]} and {points_list[i+1]}: {e}")
+            continue
+        segment = []
+        for node in path_nodes:
+            node_data = G.nodes[node]
+            segment.append([node_data['y'], node_data['x']])
+        if i > 0 and segment:
+            segment = segment[1:]
+        full_route.extend(segment)
+
+    return full_route
+
+# Filters "popular" amenities based on number of tags
+def filter_popular_amenities(data, min_tags=5):
+    if 'tags' in data.columns:
+        return data[data['tags'].apply(lambda tags: len(tags) >= min_tags)]
+    else:
+        print("No 'tags' column found in data.")
+        return data  # Return unfiltered data if no 'tags' column is found
+
+regions = [
     "Metro Vancouver, British Columbia, Canada",
     #"Fraser Valley, British Columbia, Canada"
     "Abbotsford, British Columbia, Canada",
     "Mission, British Columbia, Canada"
     ]
-    housing = data[data['amenity'] == 'housing co-op']
-    hotels = get_hotels(regions)
- 
-    if not housing.empty and not hotels.empty:
-        lodging_points = pd.concat([housing, hotels], ignore_index=True)
-    elif not housing.empty:
-        lodging_points = housing
+
+interesting_amenities = ['cafe', 'bbq', 'place_of_worship', 
+    'restaurant', 'pub', 'community_centre', 'public_building', 'cinema', 'theatre',
+    'ferry_terminal', 'bar', 'library', 'car_rental',
+    'car_sharing', 'bicycle_rental', 'public_bookcase',
+    'university', 'dojo', 'food_court', 'seaplane terminal', 'arts_centre',
+    'ice_cream', 'fountain',
+    'photo_booth', 'nightclub', 'social_facility', 'taxi',
+    'bus_station', 'clock', 'marketplace', 'stripclub',
+    'gambling', 'family_centre', 'townhall',
+    'bistro', 'playground', 'boat_rental', 'spa', 'events_venue', 'science', 
+    'ATLAS_clean_room', 'juice_bar', 'internet_cafe', 'social_centre', 'EVSE', 'studio',
+    'ranger_station', 'watering_place', 'lounge', 'water_point',
+    'Observation Platform', 'housing co-op', 'gym',
+    'park', 'biergarten', 'casino', 'hunting_stand', 'shop|clothes', 'research_institute',
+    'motorcycle_rental', "observation_platform", "monastery", "courthouse", "leisure", "seaplane_terminal", 
+    "parking", "charging_station"]
+
+def main():
+    original_data = pd.read_json("amenities-vancouver.json.gz", compression="gzip", lines=True)
+    data = original_data[~original_data["name"].isna()]
+    data = data[data["amenity"].isin(interesting_amenities)]
+    
+    # Get inputs
+    tour_length, theme, num_amenities, start_coords, transportation, want_rental, stay_hotel = input_field()
+    
+    if theme == 'random':
+        # Filters out big chains
+        data = data[data['amenity'] != 'fast_food']
+        data = data[data['name'] != 'Starbucks']
+        data = data[~data['name'].isin(['Tim Hortons', 'Tim_Hortons'])]
+        popular_amenities = filter_popular_amenities(data,min_tags=5) # Popular amenities have 5 or more tags
     else:
-        lodging_points = hotels
+        filtered_amenities = filter_amenities_by_theme(data, theme)
+        popular_amenities = filter_popular_amenities(filtered_amenities,min_tags=5) # Popular amenities have 5 or more tags
+    
+    nearest_amenities = find_nearest_amenities(popular_amenities, start_coords, num_amenities)
+
+    route_points = [[start_coords[0], start_coords[1]]] + nearest_amenities[['lat', 'lon']].values.tolist()
+    
+    restaurants = get_restaurants(regions)
+    
+    # Adds a rental if transportation is walking
+    if transportation == 'walk' and want_rental == 'yes':
+        rentals = get_rental(regions)
+                    
+    if stay_hotel:
+        housing = data[data['amenity'] == 'housing co-op']
+        hotels = get_hotels(regions)
+
+        if not hotels.empty or not housing.empty:
+            # Combine hotels and housing
+            lodging_points = pd.concat([housing, hotels], ignore_index=True)
+
+    if not restaurants.empty:
+        updated_route_points = [route_points[0]]  # Start point remains the same
+        updated_amenities = pd.DataFrame([nearest_amenities.iloc[0]])  # First point
+
+        amenities_per_day = num_amenities // tour_length  # Number of amenities per day
+        day_index = 0  # Track amenities count per day
+        restaurant_count = 0  # Track how many restaurants added per day
         
-    if lodging_points.empty:
-        print("No lodging data found. Exiting.")
-        return
+        # Ensure that the rental is the closest to the starting point using haversine
+        if want_rental == 'yes':
+            rentals["distance"] = rentals.apply(
+                lambda row: haversine(start_coords[0], start_coords[1], row["lat"], row["lon"]), axis=1
+            )
+            
+            # Find the nearest rental
+            nearest_rental = rentals.nsmallest(1, "distance").iloc[0]
+            # Insert the nearest rental at the start of route_points
+            updated_route_points.append([nearest_rental["lat"], nearest_rental["lon"]])
+            nearest_rental["type"] = "rental"
+            updated_amenities = pd.concat([updated_amenities, nearest_rental.to_frame().T], ignore_index=True)
 
-  
-    lodging_coords = [[row['lat'], row['lon']] for idx, row in lodging_points.iterrows()]
-    """
-    combined_graph = get_combined_graph(regions, network_type='drive')
+        for i in range(1, len(route_points)):
+            updated_route_points.append(route_points[i])
 
-    lodging_route = get_street_route(combined_graph, lodging_coords)
-    
-    lodging_map = create_tour_map(lodging_points, route=lodging_route)
-    lodging_map.save("lodging_map_streets.html")
-    
-    lodging_route_2 = get_street_route(combined_graph, lodging_coords)
-    lodging_map_2 = create_tour_map(lodging_points, route=lodging_route_2)
-    lodging_map_2.save("lodging_map_2.html")
-    """
-    print("Downloading street network...")
+            if i < len(nearest_amenities):
+                updated_amenities = pd.concat([updated_amenities, nearest_amenities.iloc[[i]]], ignore_index=True)
 
-    Graph = ox.graph_from_place(regions, network_type='drive', simplify=True)
+            day_index += 1
+
+            # Ensure exactly 3 restaurants per day
+            if restaurant_count < 3:
+                last_point = route_points[i]
+
+                if not restaurants.empty:
+                    restaurants["distance"] = restaurants.apply(
+                        lambda row: haversine(last_point[0], last_point[1], row["lat"], row["lon"]), axis=1
+                    )
+                    nearest_restaurant = restaurants.nsmallest(1, "distance").iloc[0]
+
+                    updated_route_points.append([nearest_restaurant["lat"], nearest_restaurant["lon"]])
+                    nearest_restaurant["type"] = "restaurant"
+                    updated_amenities = pd.concat([updated_amenities, nearest_restaurant.to_frame().T], ignore_index=True)
+
+                    restaurant_count += 1
+
+            # End of the day: Reset counters and add a hotel
+            if day_index >= amenities_per_day:
+                restaurant_count = 0  # Reset restaurant count for next day
+                day_index = 0  # Reset amenity count for next day
+
+                if stay_hotel and not lodging_points.empty:  # Add hotel at the end of each day
+                    last_point = updated_route_points[-1]  # Get the last stop of the day
+
+                    lodging_points["distance"] = lodging_points.apply(
+                        lambda row: haversine(last_point[0], last_point[1], row["lat"], row["lon"]), axis=1
+                    )
+
+                    nearest_lodging = lodging_points.nsmallest(1, "distance").iloc[0]
+                    updated_route_points.append([nearest_lodging["lat"], nearest_lodging["lon"]])
+
+                    nearest_lodging["type"] = "hotel"
+                    updated_amenities = pd.concat([updated_amenities, nearest_lodging.to_frame().T], ignore_index=True)
+
+        route_points = updated_route_points
+        nearest_amenities = updated_amenities
+            
+    Graph = ox.graph_from_place(regions, network_type=transportation, simplify=True)
     print("stage 0")
     G_undirected = Graph.to_undirected()
     print("stage 1")
@@ -245,15 +479,10 @@ def main():
     print("stage 2")
     Graph = G_undirected.subgraph(largest_component).copy()
     print("stage 3")
-    
-    lodging_route_3 = get_street_route(Graph, lodging_coords)
-    lodging_map_3 = create_tour_map(lodging_points, route=lodging_route_3)
-    lodging_map_3.save("lodging_map_3.html")
-    
-    food_route = get_street_route(Graph, food_points_list)
-    print("stage 4")
-    food_tour = create_tour_map(food_points, route=food_route)
-    food_tour.save("food_map_tour.html")
 
-if __name__=='__main__':
+    route = get_street_route(Graph, route_points)
+    tour_map = create_tour_map(nearest_amenities, route=route, start_coords=start_coords)
+    tour_map.save("nearest_amenities_tour.html")
+
+if __name__ == "__main__":
     main()

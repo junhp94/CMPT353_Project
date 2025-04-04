@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_5a1fa4af05899903a9ab4ffb5466c40e {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_5a1fa4af05899903a9ab4ffb5466c40e" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_5a1fa4af05899903a9ab4ffb5466c40e = L.map(
+                "map_5a1fa4af05899903a9ab4ffb5466c40e",
+                {
+                    center: [49.2741986, -123.1098162],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_cac697adea1c32182e5c6ef1a34625f5 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_cac697adea1c32182e5c6ef1a34625f5.addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+            var marker_506b6f3a93d08019993b2507ddc82130 = L.marker(
+                [49.2741986, -123.1098162],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_e569aeec152851693954a3fcdfbd4157 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ae75a9664cc5542b200f6fb5725f9861 = $(`<div id="html_ae75a9664cc5542b200f6fb5725f9861" style="width: 100.0%; height: 100.0%;">Plaza of Nations Dock</div>`)[0];
+                popup_e569aeec152851693954a3fcdfbd4157.setContent(html_ae75a9664cc5542b200f6fb5725f9861);
+            
+        
+
+        marker_506b6f3a93d08019993b2507ddc82130.bindPopup(popup_e569aeec152851693954a3fcdfbd4157)
+        ;
+
+        
+    
+    
+            var marker_ce8655c8788de5d82bcb88ccda1b865b = L.marker(
+                [49.2724874, -123.1056477],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_0191f515879d2d6a90541e1cac3fa22e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_24e01206efbfc7d3177cf1dfb4ae1327 = $(`<div id="html_24e01206efbfc7d3177cf1dfb4ae1327" style="width: 100.0%; height: 100.0%;">Village Dock</div>`)[0];
+                popup_0191f515879d2d6a90541e1cac3fa22e.setContent(html_24e01206efbfc7d3177cf1dfb4ae1327);
+            
+        
+
+        marker_ce8655c8788de5d82bcb88ccda1b865b.bindPopup(popup_0191f515879d2d6a90541e1cac3fa22e)
+        ;
+
+        
+    
+    
+            var marker_379fe00738f0abc10dc957d498f10fcd = L.marker(
+                [49.006194, -123.1294557],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_5ebbe35e5b672386475deea75321dc19 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4a6ff5fc2a5cd115c33acca26877b111 = $(`<div id="html_4a6ff5fc2a5cd115c33acca26877b111" style="width: 100.0%; height: 100.0%;">Tsawwassen Berth 2</div>`)[0];
+                popup_5ebbe35e5b672386475deea75321dc19.setContent(html_4a6ff5fc2a5cd115c33acca26877b111);
+            
+        
+
+        marker_379fe00738f0abc10dc957d498f10fcd.bindPopup(popup_5ebbe35e5b672386475deea75321dc19)
+        ;
+
+        
+    
+    
+            var marker_e60450be2182cbe007f7317e1d7b388c = L.marker(
+                [49.0069336, -123.1332142],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_888d4283facf8a329a6cb48727e42501 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ef23b81cf4cca38dec4a36420fff5b3e = $(`<div id="html_ef23b81cf4cca38dec4a36420fff5b3e" style="width: 100.0%; height: 100.0%;">Tsawwassen Berth 5</div>`)[0];
+                popup_888d4283facf8a329a6cb48727e42501.setContent(html_ef23b81cf4cca38dec4a36420fff5b3e);
+            
+        
+
+        marker_e60450be2182cbe007f7317e1d7b388c.bindPopup(popup_888d4283facf8a329a6cb48727e42501)
+        ;
+
+        
+    
+    
+            var marker_5d2a05d3f7edfc94a17d23668397d58d = L.marker(
+                [49.0065148, -123.132417],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_919e0bc5aee616bf1494a0a7747b7fe3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8a2145130951b4f702013422e24a222f = $(`<div id="html_8a2145130951b4f702013422e24a222f" style="width: 100.0%; height: 100.0%;">Tsawwassen Berth 4</div>`)[0];
+                popup_919e0bc5aee616bf1494a0a7747b7fe3.setContent(html_8a2145130951b4f702013422e24a222f);
+            
+        
+
+        marker_5d2a05d3f7edfc94a17d23668397d58d.bindPopup(popup_919e0bc5aee616bf1494a0a7747b7fe3)
+        ;
+
+        
+    
+    
+            var marker_e7132779b600c03fbaaec28f5c17aa0b = L.marker(
+                [49.0060626, -123.131684],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_5c2ac6cc264586fe3076369474ef229a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1afaa7caee0360f34193a07684cca0f1 = $(`<div id="html_1afaa7caee0360f34193a07684cca0f1" style="width: 100.0%; height: 100.0%;">Tsawwassen Berth 3</div>`)[0];
+                popup_5c2ac6cc264586fe3076369474ef229a.setContent(html_1afaa7caee0360f34193a07684cca0f1);
+            
+        
+
+        marker_e7132779b600c03fbaaec28f5c17aa0b.bindPopup(popup_5c2ac6cc264586fe3076369474ef229a)
+        ;
+
+        
+    
+    
+            var marker_0d31cbed8796582ff3db8a4fbfd8ed7d = L.marker(
+                [49.0062901, -123.1289502],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_922180d459d5fd5f3e10ef663eb3ffde = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_682cf333dc7d0fe685fab51569d39038 = $(`<div id="html_682cf333dc7d0fe685fab51569d39038" style="width: 100.0%; height: 100.0%;">Tsawwassen Berth 1</div>`)[0];
+                popup_922180d459d5fd5f3e10ef663eb3ffde.setContent(html_682cf333dc7d0fe685fab51569d39038);
+            
+        
+
+        marker_0d31cbed8796582ff3db8a4fbfd8ed7d.bindPopup(popup_922180d459d5fd5f3e10ef663eb3ffde)
+        ;
+
+        
+    
+    
+            var marker_399ae330cc57e9b8d284f482c807c93c = L.marker(
+                [49.2870136, -123.1090249],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_c95ae4de8d334d761ed0109fff01c397 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7008a73bf4430a48a058033c3c7b1305 = $(`<div id="html_7008a73bf4430a48a058033c3c7b1305" style="width: 100.0%; height: 100.0%;">Waterfront</div>`)[0];
+                popup_c95ae4de8d334d761ed0109fff01c397.setContent(html_7008a73bf4430a48a058033c3c7b1305);
+            
+        
+
+        marker_399ae330cc57e9b8d284f482c807c93c.bindPopup(popup_c95ae4de8d334d761ed0109fff01c397)
+        ;
+
+        
+    
+    
+            var marker_bcd17ec2b2d8e27a982875f29ef97d98 = L.marker(
+                [49.3095361, -123.0838831],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_da1c9d552d8ec9121f2cea4ecd952ed0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f08507c0cbfea1a268bcbdff27af3662 = $(`<div id="html_f08507c0cbfea1a268bcbdff27af3662" style="width: 100.0%; height: 100.0%;">Lonsdale Quay</div>`)[0];
+                popup_da1c9d552d8ec9121f2cea4ecd952ed0.setContent(html_f08507c0cbfea1a268bcbdff27af3662);
+            
+        
+
+        marker_bcd17ec2b2d8e27a982875f29ef97d98.bindPopup(popup_da1c9d552d8ec9121f2cea4ecd952ed0)
+        ;
+
+        
+    
+    
+            var marker_03ab28efaf9508be92386b1b7a1d25a0 = L.marker(
+                [49.1922685, -122.7234604],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_3091efb6a074cb2498ffdece375e3e32 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a38a9b170ed39d9c02f1ec57b48d57d7 = $(`<div id="html_a38a9b170ed39d9c02f1ec57b48d57d7" style="width: 100.0%; height: 100.0%;">Branston Island</div>`)[0];
+                popup_3091efb6a074cb2498ffdece375e3e32.setContent(html_a38a9b170ed39d9c02f1ec57b48d57d7);
+            
+        
+
+        marker_03ab28efaf9508be92386b1b7a1d25a0.bindPopup(popup_3091efb6a074cb2498ffdece375e3e32)
+        ;
+
+        
+    
+    
+            var marker_ef19d420dee4942043ed42aec70077d2 = L.marker(
+                [49.1919072, -122.7261463],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_9a4e15ab7300bccea8692c7d71f8bc03 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_37af0f9346b302cfa4aa42da73efe345 = $(`<div id="html_37af0f9346b302cfa4aa42da73efe345" style="width: 100.0%; height: 100.0%;">Port Kells</div>`)[0];
+                popup_9a4e15ab7300bccea8692c7d71f8bc03.setContent(html_37af0f9346b302cfa4aa42da73efe345);
+            
+        
+
+        marker_ef19d420dee4942043ed42aec70077d2.bindPopup(popup_9a4e15ab7300bccea8692c7d71f8bc03)
+        ;
+
+        
+    
+    
+            var marker_6de521f0b877e35341364fcf185c8df8 = L.marker(
+                [49.433937, -123.4723417],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_c1d6f52051d87bcca132686984fa5b5b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8dc64281a4e45b85086642197e5547c5 = $(`<div id="html_8dc64281a4e45b85086642197e5547c5" style="width: 100.0%; height: 100.0%;">Langdale</div>`)[0];
+                popup_c1d6f52051d87bcca132686984fa5b5b.setContent(html_8dc64281a4e45b85086642197e5547c5);
+            
+        
+
+        marker_6de521f0b877e35341364fcf185c8df8.bindPopup(popup_c1d6f52051d87bcca132686984fa5b5b)
+        ;
+
+        
+    
+    
+            var marker_2bbc303b873a6c6d75092630830d87f8 = L.marker(
+                [49.2704846, -123.1251929],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_e8480e10323eccea86d88abf50ac9a2c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d1429d3d60f37a75391304f048b432ce = $(`<div id="html_d1429d3d60f37a75391304f048b432ce" style="width: 100.0%; height: 100.0%;">David Lam Park Terminal</div>`)[0];
+                popup_e8480e10323eccea86d88abf50ac9a2c.setContent(html_d1429d3d60f37a75391304f048b432ce);
+            
+        
+
+        marker_2bbc303b873a6c6d75092630830d87f8.bindPopup(popup_e8480e10323eccea86d88abf50ac9a2c)
+        ;
+
+        
+    
+    
+            var marker_ef5f8e2c4ff48c40e9cde1ca5b51010c = L.marker(
+                [49.2724851, -123.133943],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_c20c467b2c902a8892bd3150084b8ea6 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5755c95e7662ac68c9cc8daef715df1b = $(`<div id="html_5755c95e7662ac68c9cc8daef715df1b" style="width: 100.0%; height: 100.0%;">Granville Island Terminal (Aquabus)</div>`)[0];
+                popup_c20c467b2c902a8892bd3150084b8ea6.setContent(html_5755c95e7662ac68c9cc8daef715df1b);
+            
+        
+
+        marker_ef5f8e2c4ff48c40e9cde1ca5b51010c.bindPopup(popup_c20c467b2c902a8892bd3150084b8ea6)
+        ;
+
+        
+    
+    
+            var marker_df168d51d52bd8a07d02f43f1fd2e8f6 = L.marker(
+                [49.2694191, -123.1187582],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_8586dbf725071f5987331407ffb7c1b1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_484cddc097b70ef6572158c49259a696 = $(`<div id="html_484cddc097b70ef6572158c49259a696" style="width: 100.0%; height: 100.0%;">Stamps Landing Dock</div>`)[0];
+                popup_8586dbf725071f5987331407ffb7c1b1.setContent(html_484cddc097b70ef6572158c49259a696);
+            
+        
+
+        marker_df168d51d52bd8a07d02f43f1fd2e8f6.bindPopup(popup_8586dbf725071f5987331407ffb7c1b1)
+        ;
+
+        
+    
+    
+            var marker_b7d4bac015309b7c4d2e773b0b1c13d2 = L.marker(
+                [49.2710109, -123.1155125],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_6187ed02b555ceb06acb446f593690ae = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a87612c48770bb2b410a597ae95702af = $(`<div id="html_a87612c48770bb2b410a597ae95702af" style="width: 100.0%; height: 100.0%;">Spyglass Dock</div>`)[0];
+                popup_6187ed02b555ceb06acb446f593690ae.setContent(html_a87612c48770bb2b410a597ae95702af);
+            
+        
+
+        marker_b7d4bac015309b7c4d2e773b0b1c13d2.bindPopup(popup_6187ed02b555ceb06acb446f593690ae)
+        ;
+
+        
+    
+    
+            var marker_a6eeddf53d450b03004bcbabb9f104c3 = L.marker(
+                [49.3759414, -123.2716129],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_2c8b97cdb90c99ad3bc3fea999cec102 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d1c4320b71478268344990efb550f342 = $(`<div id="html_d1c4320b71478268344990efb550f342" style="width: 100.0%; height: 100.0%;">Horseshoe Bay Berth 2</div>`)[0];
+                popup_2c8b97cdb90c99ad3bc3fea999cec102.setContent(html_d1c4320b71478268344990efb550f342);
+            
+        
+
+        marker_a6eeddf53d450b03004bcbabb9f104c3.bindPopup(popup_2c8b97cdb90c99ad3bc3fea999cec102)
+        ;
+
+        
+    
+    
+            var marker_a5538a3ed449c5a507f4cbe295adb7c7 = L.marker(
+                [49.4337841, -123.4720085],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_fbac69ca5c7b68c08be11b0351bf9696 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c3833cb45c860d06a4e811447be8a652 = $(`<div id="html_c3833cb45c860d06a4e811447be8a652" style="width: 100.0%; height: 100.0%;">Langdale Berth 1</div>`)[0];
+                popup_fbac69ca5c7b68c08be11b0351bf9696.setContent(html_c3833cb45c860d06a4e811447be8a652);
+            
+        
+
+        marker_a5538a3ed449c5a507f4cbe295adb7c7.bindPopup(popup_fbac69ca5c7b68c08be11b0351bf9696)
+        ;
+
+        
+    
+    
+            var marker_bac95617254f90e3cf88750d6b866976 = L.marker(
+                [49.3794889, -123.3313409],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_94869e5cf09d7c60dd79f050cb1d5264 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_560105053cad3d094a120a3f96831871 = $(`<div id="html_560105053cad3d094a120a3f96831871" style="width: 100.0%; height: 100.0%;">Snug Cove</div>`)[0];
+                popup_94869e5cf09d7c60dd79f050cb1d5264.setContent(html_560105053cad3d094a120a3f96831871);
+            
+        
+
+        marker_bac95617254f90e3cf88750d6b866976.bindPopup(popup_94869e5cf09d7c60dd79f050cb1d5264)
+        ;
+
+        
+    
+    
+            var marker_c857736aaac1709c1fab98fe0bdf32dc = L.marker(
+                [49.3756821, -123.2718149],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_9d9cd83b5058ab379cee0d89ac5dc8a5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2c1c6aee52d6f781fc595ddf96c0cd8a = $(`<div id="html_2c1c6aee52d6f781fc595ddf96c0cd8a" style="width: 100.0%; height: 100.0%;">Horseshoe Bay</div>`)[0];
+                popup_9d9cd83b5058ab379cee0d89ac5dc8a5.setContent(html_2c1c6aee52d6f781fc595ddf96c0cd8a);
+            
+        
+
+        marker_c857736aaac1709c1fab98fe0bdf32dc.bindPopup(popup_9d9cd83b5058ab379cee0d89ac5dc8a5)
+        ;
+
+        
+    
+    
+            var marker_6ce51f34d35e9a57f03a6f53ebcd6d82 = L.marker(
+                [49.2787112, -123.1470155],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_45f03d26ffbc558c2613d1d15fb2443a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_636e4f074b8f192ef8d5d4bfd63608af = $(`<div id="html_636e4f074b8f192ef8d5d4bfd63608af" style="width: 100.0%; height: 100.0%;">Maritime Museum Dock (False Creek Ferries)</div>`)[0];
+                popup_45f03d26ffbc558c2613d1d15fb2443a.setContent(html_636e4f074b8f192ef8d5d4bfd63608af);
+            
+        
+
+        marker_6ce51f34d35e9a57f03a6f53ebcd6d82.bindPopup(popup_45f03d26ffbc558c2613d1d15fb2443a)
+        ;
+
+        
+    
+    
+            var marker_88ed17133fa6bafcbbe2e6ceeb0f82d2 = L.marker(
+                [49.2717105, -123.1179512],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_35d26b7386c589ca386ed5b49580fefb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d40af6c554d8662ebacfc8dd19668db5 = $(`<div id="html_d40af6c554d8662ebacfc8dd19668db5" style="width: 100.0%; height: 100.0%;">Yaletown Dock</div>`)[0];
+                popup_35d26b7386c589ca386ed5b49580fefb.setContent(html_d40af6c554d8662ebacfc8dd19668db5);
+            
+        
+
+        marker_88ed17133fa6bafcbbe2e6ceeb0f82d2.bindPopup(popup_35d26b7386c589ca386ed5b49580fefb)
+        ;
+
+        
+    
+    
+            var marker_93e4cf781ad7418820a5306e32ef294f = L.marker(
+                [49.3757362, -123.2721023],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_d40c68133ebee149d120988ed966d55e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f6b7f2be3d3383f624ed8631281630f = $(`<div id="html_4f6b7f2be3d3383f624ed8631281630f" style="width: 100.0%; height: 100.0%;">Horseshoe Bay Berth 1</div>`)[0];
+                popup_d40c68133ebee149d120988ed966d55e.setContent(html_4f6b7f2be3d3383f624ed8631281630f);
+            
+        
+
+        marker_93e4cf781ad7418820a5306e32ef294f.bindPopup(popup_d40c68133ebee149d120988ed966d55e)
+        ;
+
+        
+    
+    
+            var marker_320327c5cb98f0200afeede7a529f1ae = L.marker(
+                [49.3762688, -123.2710213],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_30e80ecb7ab79752d2cd1df591738de1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a3a235df2f0aad80b15c46a15fe9a45b = $(`<div id="html_a3a235df2f0aad80b15c46a15fe9a45b" style="width: 100.0%; height: 100.0%;">Horseshoe Bay Berth 3</div>`)[0];
+                popup_30e80ecb7ab79752d2cd1df591738de1.setContent(html_a3a235df2f0aad80b15c46a15fe9a45b);
+            
+        
+
+        marker_320327c5cb98f0200afeede7a529f1ae.bindPopup(popup_30e80ecb7ab79752d2cd1df591738de1)
+        ;
+
+        
+    
+    
+            var marker_c16287ca463f00519e585d6eb5cb3338 = L.marker(
+                [49.2903053, -123.1163467],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_2b1a308e65ac863e1f22b8e4afdfcb8b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ff26bdb099c4433742ffbdd91d822148 = $(`<div id="html_ff26bdb099c4433742ffbdd91d822148" style="width: 100.0%; height: 100.0%;">V2V Vacations Vancouver Dock</div>`)[0];
+                popup_2b1a308e65ac863e1f22b8e4afdfcb8b.setContent(html_ff26bdb099c4433742ffbdd91d822148);
+            
+        
+
+        marker_c16287ca463f00519e585d6eb5cb3338.bindPopup(popup_2b1a308e65ac863e1f22b8e4afdfcb8b)
+        ;
+
+        
+    
+    
+            var marker_dbc513a7dbabd6a51f02ca753da30cfb = L.marker(
+                [49.2742391, -123.1343703],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_bf98871545d561f8c4f050ade52cb772 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c01bc25b2279901150b5a50c57c5fe26 = $(`<div id="html_c01bc25b2279901150b5a50c57c5fe26" style="width: 100.0%; height: 100.0%;">Hornby Terminal (Aquabus)</div>`)[0];
+                popup_bf98871545d561f8c4f050ade52cb772.setContent(html_c01bc25b2279901150b5a50c57c5fe26);
+            
+        
+
+        marker_dbc513a7dbabd6a51f02ca753da30cfb.bindPopup(popup_bf98871545d561f8c4f050ade52cb772)
+        ;
+
+        
+    
+    
+            var marker_520578198805f9705dd8ac4620a9c689 = L.marker(
+                [49.2765683, -123.1367268],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_4fbf1dc56a3e5735599f9a47c2dc3331 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6ea704db4b270280079c7e9f4fe78aa3 = $(`<div id="html_6ea704db4b270280079c7e9f4fe78aa3" style="width: 100.0%; height: 100.0%;">Aquatic Centre Dock (False Creek Ferries)</div>`)[0];
+                popup_4fbf1dc56a3e5735599f9a47c2dc3331.setContent(html_6ea704db4b270280079c7e9f4fe78aa3);
+            
+        
+
+        marker_520578198805f9705dd8ac4620a9c689.bindPopup(popup_4fbf1dc56a3e5735599f9a47c2dc3331)
+        ;
+
+        
+    
+    
+            var marker_d7702393061a0683ecac625b64463a37 = L.marker(
+                [49.273231, -123.1360331],
+                {
+}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+    
+        var popup_58eeb14008b4839476d124fafa07ee96 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8d3ceb5fc996940ef5c75160fca5d003 = $(`<div id="html_8d3ceb5fc996940ef5c75160fca5d003" style="width: 100.0%; height: 100.0%;">Granville Island Dock (False Creek Ferries)</div>`)[0];
+                popup_58eeb14008b4839476d124fafa07ee96.setContent(html_8d3ceb5fc996940ef5c75160fca5d003);
+            
+        
+
+        marker_d7702393061a0683ecac625b64463a37.bindPopup(popup_58eeb14008b4839476d124fafa07ee96)
+        ;
+
+        
+    
+    
+            var poly_line_4c3896b0e33e8c01b48eb792c71a1ca0 = L.polyline(
+                [[49.2741986, -123.1098162], [49.2724874, -123.1056477], [49.2710109, -123.1155125], [49.2717105, -123.1179512], [49.2694191, -123.1187582], [49.2704846, -123.1251929], [49.2724851, -123.133943], [49.273231, -123.1360331], [49.2742391, -123.1343703], [49.2765683, -123.1367268], [49.2787112, -123.1470155], [49.2903053, -123.1163467], [49.2870136, -123.1090249], [49.3095361, -123.0838831], [49.3762688, -123.2710213], [49.3759414, -123.2716129], [49.3756821, -123.2718149], [49.3757362, -123.2721023], [49.3794889, -123.3313409], [49.4337841, -123.4720085], [49.433937, -123.4723417], [49.0069336, -123.1332142], [49.0065148, -123.132417], [49.0060626, -123.131684], [49.006194, -123.1294557], [49.0062901, -123.1289502], [49.1919072, -122.7261463], [49.1922685, -122.7234604]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1, "smoothFactor": 1.0, "stroke": true, "weight": 2.5}
+            ).addTo(map_5a1fa4af05899903a9ab4ffb5466c40e);
+        
+</script>
+</html>
