@@ -67,7 +67,7 @@ def input_field():
                         break
             else: 
                 want_rental = "no"
-                break
+            break        
         print(f"Invalid choice. Please select from: {', '.join(transport_modes)}.")
 
     # Ask if they need a hotel to stay at
