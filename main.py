@@ -271,7 +271,13 @@ def get_combined_graph(places, network_type):
     else:
         return None
     
-def create_tour_map(points, route, start_coords):
+def create_tour_map(points, route, start_coords, route_points, transportation):
+    # Predetermined average speeds for different modes of travel in km/h
+    speeds = {"walk": 5, "bike": 15, "drive": 50}
+    
+    # Rough amounts of time spent at different amenity types in minutes
+    time_stayed = {"hotel": 660, "restaurant": 60, "rental": 20, "default": 60}
+    
     # Create a map centered on the first point
     map_center = [points.iloc[0]['lat'], points.iloc[0]['lon']]
     tour_map = fl.Map(location=map_center, zoom_start=13)
@@ -283,29 +289,37 @@ def create_tour_map(points, route, start_coords):
         icon=fl.Icon(color="red")
     ).add_to(tour_map)
     
-    # Add markers for each point
-    for idx, row in points.iterrows():
-        lat = row['lat']
-        lon = row['lon']
+    for i in range(1, len(route_points)):
+        coord = route_points[i]
+        try:
+            row = points.iloc[i]
+        except Exception:
+            row = {'name': f"Point {i}", 'type': "default"}
         name = row.get('name', 'No Name')
+        marker_type = row.get('type', 'default')
+        time_spent = time_stayed.get(marker_type, time_stayed["default"])
+        # Calculate travel time from previous point
+        prev = route_points[i-1]
+        distance = haversine(prev[0], prev[1], coord[0], coord[1])
+        speed = speeds.get(transportation, 5)
+        travel_time = (distance / speed) * 60  # in minutes
         
+        travel_time_display = f"{travel_time:.1f}"
+            
+        popup_text = f"Name: {name}\n\nTravel Time: {travel_time_display} min\n\nTime Spent: {time_spent} min"
         marker_color = "blue"
-
-        if "type" in row:
-            if row["type"] == "restaurant":
-                marker_color = "orange"
-            elif row["type"] == "hotel":
-                marker_color = "green"
-            elif row["type"] == "rental":
-                marker_color = "black"
-        
-        # Add the marker with the corresponding color
+        if marker_type == "restaurant":
+            marker_color = "orange"
+        elif marker_type == "hotel":
+            marker_color = "green"
+        elif marker_type == "rental":
+            marker_color = "black"
         fl.Marker(
-            location=[lat, lon], 
-            popup=name, 
+            location=coord, 
+            popup=popup_text, 
             icon=fl.Icon(color=marker_color)
         ).add_to(tour_map)
-    
+
     # Draw the path connecting each point
     fl.PolyLine(locations=route, color='blue', weight=2.5, opacity=1).add_to(tour_map)
     
@@ -369,122 +383,6 @@ interesting_amenities = ['cafe', 'bbq', 'place_of_worship',
     'park', 'biergarten', 'casino', 'hunting_stand', 'shop|clothes', 'research_institute',
     'motorcycle_rental', "observation_platform", "monastery", "courthouse", "leisure", "seaplane_terminal", 
     "parking", "charging_station"]
-
-def add_ferry_edges(G, ferry_terminals):
-    """
-    For each ferry terminal in ferry_terminals, find its nearest node in G.
-    Then, add virtual edges between each pair of ferry nodes with a weight
-    equal to the haversine distance between their coordinates.
-    """
-    ferry_nodes = {}
-    # Map each ferry terminal to the nearest graph node
-    for idx, row in ferry_terminals.iterrows():
-        try:
-            node = ox.distance.nearest_nodes(G, row['lon'], row['lat'])
-            ferry_nodes[idx] = node
-        except Exception as e:
-            print(f"Error finding node for ferry terminal {row['name']}: {e}")
-    
-    ferry_node_ids = list(ferry_nodes.values())
-    # Add virtual ferry edges between every pair of ferry nodes
-    for i in range(len(ferry_node_ids)):
-        for j in range(i + 1, len(ferry_node_ids)):
-            node_i = ferry_node_ids[i]
-            node_j = ferry_node_ids[j]
-            # Get coordinates from the graph
-            coord_i = (G.nodes[node_i]['y'], G.nodes[node_i]['x'])
-            coord_j = (G.nodes[node_j]['y'], G.nodes[node_j]['x'])
-            dist = haversine(coord_i[0], coord_i[1], coord_j[0], coord_j[1])
-            # Add edge in both directions with an attribute to mark it as a ferry edge
-            G.add_edge(node_i, node_j, length=dist, ferry=True)
-            G.add_edge(node_j, node_i, length=dist, ferry=True)
-    return G
-
-
-def get_ferry_terminals(places):
-    df_list = []
-    ferry_tags = {'amenity': 'ferry_terminal'}
-    for place in places:
-        print(f"Retrieving ferry terminals for {place}...")
-        try:
-            gdf = ox.features_from_place(place, ferry_tags)
-            def extract_coords(geom):
-                if geom.geom_type == 'Point':
-                    return geom.y, geom.x
-                else:
-                    return geom.centroid.y, geom.centroid.x
-            gdf['lat'] = gdf['geometry'].apply(lambda geom: extract_coords(geom)[0])
-            gdf['lon'] = gdf['geometry'].apply(lambda geom: extract_coords(geom)[1])
-            if 'name' not in gdf.columns:
-                gdf['name'] = "Ferry Terminal"
-            else:
-                gdf = gdf[gdf['name'].notna()]
-            terminals_df = gdf[['name', 'lat', 'lon']].reset_index(drop=True)
-            print(f"Retrieved {len(terminals_df)} ferry terminals for {place}.")
-            df_list.append(terminals_df)
-        except Exception as e:
-            print(f"Error retrieving ferry terminals for {place}: {e}")
-    if df_list:
-        return pd.concat(df_list, ignore_index=True)
-    return pd.DataFrame()
-
-# New routing function that uses ferry terminals when a street path cannot be found
-def get_street_route_with_ferry(G, points_list, ferry_terminals):
-    full_route = []
-    for i in range(len(points_list) - 1):
-        start = points_list[i]
-        end = points_list[i+1]
-        start_node = ox.distance.nearest_nodes(G, start[1], start[0])
-        end_node = ox.distance.nearest_nodes(G, end[1], end[0])
-        if nx.has_path(G, start_node, end_node):
-            try:
-                path_nodes = nx.shortest_path(G, start_node, end_node, weight='length')
-                segment = []
-                for node in path_nodes:
-                    node_data = G.nodes[node]
-                    segment.append([node_data['y'], node_data['x']])
-                if i > 0 and segment:
-                    segment = segment[1:]
-                full_route.extend(segment)
-            except Exception as e:
-                print(f"Error finding street path between {start} and {end}: {e}")
-                continue
-        else:
-            print(f"No street path found between {start} and {end}. Using ferry routing.")
-            # Find nearest ferry terminal to start
-            ferry_terminals['start_distance'] = ferry_terminals.apply(
-                lambda row: haversine(start[0], start[1], row['lat'], row['lon']), axis=1)
-            start_ferry = ferry_terminals.nsmallest(1, 'start_distance').iloc[0]
-            # Find nearest ferry terminal to end
-            ferry_terminals['end_distance'] = ferry_terminals.apply(
-                lambda row: haversine(end[0], end[1], row['lat'], row['lon']), axis=1)
-            end_ferry = ferry_terminals.nsmallest(1, 'end_distance').iloc[0]
-            # Get graph nodes for ferry terminals
-            start_ferry_node = ox.distance.nearest_nodes(G, start_ferry['lon'], start_ferry['lat'])
-            end_ferry_node = ox.distance.nearest_nodes(G, end_ferry['lon'], end_ferry['lat'])
-            try:
-                # Route from start to starting ferry terminal
-                path_to_ferry = nx.shortest_path(G, start_node, start_ferry_node, weight='length')
-                segment1 = []
-                for node in path_to_ferry:
-                    node_data = G.nodes[node]
-                    segment1.append([node_data['y'], node_data['x']])
-                # Route from ending ferry terminal to destination
-                path_from_ferry = nx.shortest_path(G, end_ferry_node, end_node, weight='length')
-                segment3 = []
-                for node in path_from_ferry:
-                    node_data = G.nodes[node]
-                    segment3.append([node_data['y'], node_data['x']])
-                # Ferry leg: a straight line connecting the two ferry terminals
-                ferry_leg = [[start_ferry['lat'], start_ferry['lon']], [end_ferry['lat'], end_ferry['lon']]]
-                # Combine segments (removing duplicate nodes as needed)
-                full_route.extend(segment1)
-                full_route.extend(ferry_leg)
-                full_route.extend(segment3[1:])  # Remove duplicate ferry terminal point
-            except Exception as e:
-                print(f"Error creating ferry route between {start} and {end}: {e}")
-                continue
-    return full_route
     
 def main():
     original_data = pd.read_json("amenities-vancouver.json.gz", compression="gzip", lines=True)
@@ -598,47 +496,8 @@ def main():
     print("stage 3")
 
     route = get_street_route(Graph, route_points)
-    tour_map = create_tour_map(nearest_amenities, route=route, start_coords=start_coords)
+    tour_map = create_tour_map(nearest_amenities, route=route, start_coords=start_coords, route_points=route_points, transportation=transportation)
     tour_map.save("nearest_amenities_tour.html")
-
-"""
     
-    housing = data[data['amenity'] == 'housing co-op']
-    hotels = get_hotels(regions)
- 
-    if not housing.empty and not hotels.empty:
-        lodging_points = pd.concat([housing, hotels], ignore_index=True)
-    elif not housing.empty:
-        lodging_points = housing
-    else:
-        lodging_points = hotels
-    if lodging_points.empty:
-        print("No lodging data found. Exiting.")
-        return
-
-    lodging_coords = [[row['lat'], row['lon']] for idx, row in lodging_points.iterrows()]
-    print("Downloading street network...")
-
-    Graph = ox.graph_from_place(regions, network_type='drive', simplify=True)
-    print("stage 0")
-    G_undirected = Graph.to_undirected()
-    print("stage 1")
-    largest_component = max(nx.connected_components(G_undirected), key=len)
-    print("stage 2")
-    Graph = G_undirected.subgraph(largest_component).copy()
-    print("stage 3")
-
-    ferry_terminals = data[data['amenity'] == 'ferry_terminal']
-    # If ferry terminals are available, use the new routing function; otherwise, fall back
-    if not ferry_terminals.empty:
-        Graph = add_ferry_edges(Graph, ferry_terminals)
-        lodging_route_3 = get_street_route(Graph, lodging_coords)
-    else:
-        print("No ferrys found.")
-        lodging_route_3 = get_street_route(Graph, lodging_coords)
-
-    lodging_map_3 = create_tour_map(lodging_points, route=lodging_route_3, start_coords=lodging_coords[0])
-    lodging_map_3.save("lodging_map_3.html")
-"""
 if __name__ == "__main__":
     main()
