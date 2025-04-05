@@ -427,6 +427,8 @@ def create_tour_map(schedule, route):
              marker_color = "green"
          elif stop['type'] == "rental":
              marker_color = "black"
+         elif stop['name'] == "Start Location":
+             marker_color = "red"
          fl.Marker(
              location=[stop['lat'], stop['lon']],
              popup=popup_text,
