@@ -615,5 +615,15 @@ def main():
     tour_map = create_tour_map(schedule, route)
     tour_map.save("nearest_amenities_tour.html")
     
+    # Saves into a csv file for amenity order.
+    schedule_df = pd.DataFrame(schedule)
+
+    schedule_df["arrival"] = schedule_df["arrival"].dt.strftime("%H:%M")
+    schedule_df["departure"] = schedule_df["departure"].dt.strftime("%H:%M")
+
+    schedule_df = schedule_df[["name", "arrival", "departure"]]
+
+    schedule_df.to_csv("tour_schedule.csv", index=False)
+    
 if __name__ == "__main__":
     main()
