@@ -279,7 +279,8 @@ def daily_schedule(route_points, amenities, transportation, tour_length):
          "lat": current_location[0],
          "lon": current_location[1],
          "arrival": current_time,
-         "departure": current_time
+         "departure": current_time,
+         "travel_time": 0
     })
 
     # Meal targets for each day (breakfast, lunch, dinner)
@@ -294,45 +295,61 @@ def daily_schedule(route_points, amenities, transportation, tour_length):
          # Calculate travel time (in minutes) from current_location to next_point
          distance = haversine(current_location[0], current_location[1], next_point[0], next_point[1])
          speed = speeds.get(transportation, 5)
-         travel_minutes = (distance / speed) * 60
+         travel_minutes = max((distance / speed) * 60, 1)
          travel_time = timedelta(minutes=travel_minutes)
          arrival_time = current_time + travel_time
 
         # If arrival is after the day's end, force a hotel stop at day_end and then start next day.
          if arrival_time > day_end:
+             # Allow extra time for final amenity before day end
+             if schedule[-1]["type"] != "hotel":
+                 # Extend the last stop until 5 minutes before day_end.
+                 schedule[-1]["departure"] = day_end - timedelta(minutes=5)
+             hotel_arrival = day_end - timedelta(minutes=5)
+             hotel_departure = day_start + timedelta(days=1)
              schedule.append({
                  "day": current_day,
                  "name": "Hotel (End of Day)",
                  "type": "hotel",
                  "lat": current_location[0],
                  "lon": current_location[1],
-                 "arrival": day_end,
-                 "departure": day_end
+                 "arrival": hotel_arrival,
+                 "departure": hotel_departure,
+                 "travel_time": travel_minutes
              })
              current_day += 1
-             # Prepare next day: shift start and end by one day.
              day_start += timedelta(days=1)
              day_end += timedelta(days=1)
+             
              meal_times = {"breakfast": datetime(day_start.year, day_start.month, day_start.day, 9, 0),
                            "lunch":     datetime(day_start.year, day_start.month, day_start.day, 13, 0),
                            "dinner":    datetime(day_start.year, day_start.month, day_start.day, 18, 0)}
              meals_taken = {"breakfast": False, "lunch": False, "dinner": False}
              current_time = day_start
+             
              # Recalc travel from new day's start to next_point.
              distance = haversine(current_location[0], current_location[1], next_point[0], next_point[1])
-             travel_minutes = (distance / speed) * 60
+             travel_minutes = max((distance / speed) * 60,1)
              travel_time = timedelta(minutes=travel_minutes)
              arrival_time = current_time + travel_time
+             
          if i < len(amenities):
             amenity_info = amenities.iloc[i]
-            amenity_type = amenity_info.get('type', 'default')
+            og_type = amenity_info.get('type', None)
+            if og_type is None or (isinstance(og_type, float) and np.isnan(og_type)):
+                amenity_type = amenity_info.get('amenity', 'default')
+            else:
+                amenity_type = og_type
             amenity_name = amenity_info.get('name', f"Point {i}")
          else:
             amenity_type = 'default'
             amenity_name = f"Point {i}"
 
-         duration = time_spent.get(amenity_type, time_spent['default'])
-         visit_time = timedelta(minutes=duration)
+         if amenity_type == "hotel":
+             visit_time = timedelta(0)
+         else:
+             duration = time_spent.get(amenity_type, time_spent['default'])
+             visit_time = timedelta(minutes=duration)
          departure_time = arrival_time + visit_time
 
          # check if time is near a meal time, currently set to be within 30min, and stop tour for a meal
@@ -344,17 +361,20 @@ def daily_schedule(route_points, amenities, transportation, tour_length):
                          duration = time_spent.get("restaurant", 60)
                          visit_time = timedelta(minutes=duration)
                      meals_taken[meal] = True
+                     departure_time = arrival_time + visit_time
                      break
 
          # shortens time spent at amenity so tour can stop at 9pm
-         if departure_time > day_end:
-            visit_time = day_end - arrival_time
-            departure_time = day_end
+         if amenity_type != "hotel" and departure_time > day_end:
+             visit_time = day_end - arrival_time
+             departure_time = day_end
 
          schedule.append({
              "day": current_day,
              "name": amenity_name,
              "type": amenity_type,
+             "travel_time": travel_time,
+             "travel_time": travel_minutes,
              "lat": next_point[0],
              "lon": next_point[1],
              "arrival": arrival_time,
@@ -365,15 +385,19 @@ def daily_schedule(route_points, amenities, transportation, tour_length):
          current_location = next_point
 
         # If little time remains in the day, end the day with a hotel stop.
-         if (day_end - current_time) < timedelta(minutes=30):
+         if (day_end - current_time) < timedelta(minutes=30) and schedule[-1]["type"] != "hotel":
+             schedule[-1]["departure"] = day_end - timedelta(minutes=5)
+             hotel_arrival = day_end - timedelta(minutes=5)
+             hotel_departure = day_start + timedelta(days=1)
              schedule.append({
                  "day": current_day,
                  "name": "Hotel (End of Day)",
                  "type": "hotel",
                  "lat": current_location[0],
                  "lon": current_location[1],
-                 "arrival": day_end,
-                 "departure": day_end
+                 "arrival": hotel_arrival,
+                 "departure": hotel_departure,
+                 "travel_time": 0
              })
              current_day += 1
              day_start += timedelta(days=1)
@@ -385,7 +409,7 @@ def daily_schedule(route_points, amenities, transportation, tour_length):
              current_time = day_start
              
     # Once set tour days have been completed, drops remaining amenities.
-    schedule = [stop for stop in schedule if stop["day"] <= tour_length]
+    schedule = [stop for stop in schedule if stop["day"] < tour_length]
     return schedule
 
 def get_combined_graph(places, network_type):
@@ -413,7 +437,7 @@ def create_tour_map(schedule, route):
     
     # Add markers with popups that show name, type, day, arrival and departure times.
     for stop in schedule:
-         popup_text = (
+        popup_text = (
              f"Name: {stop['name']}\n\n"
              f"Type: {stop['type']}\n\n"
              f"Day: {stop['day']}\n\n"
@@ -427,6 +451,8 @@ def create_tour_map(schedule, route):
              marker_color = "green"
          elif stop['type'] == "rental":
              marker_color = "black"
+         elif stop['name'] == "Start Location":
+             marker_color = "red"
          fl.Marker(
              location=[stop['lat'], stop['lon']],
              popup=popup_text,
@@ -612,6 +638,16 @@ def main():
     schedule = daily_schedule(route_points, nearest_amenities, transportation, tour_length)
     tour_map = create_tour_map(schedule, route)
     tour_map.save("nearest_amenities_tour.html")
-    
+
+    # Saves into a csv file for amenity order.
+    schedule_df = pd.DataFrame(schedule)
+
+    schedule_df["arrival"] = schedule_df["arrival"].dt.strftime("%H:%M")
+    schedule_df["departure"] = schedule_df["departure"].dt.strftime("%H:%M")
+
+    schedule_df = schedule_df[["name", "arrival", "departure"]]
+
+    schedule_df.to_csv("tour_schedule.csv", index=False)
+
 if __name__ == "__main__":
     main()
