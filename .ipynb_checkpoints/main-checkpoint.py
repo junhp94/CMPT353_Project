@@ -11,6 +11,7 @@ import osmnx as ox
 import networkx as nx
 from SPARQLWrapper import SPARQLWrapper, JSON
 from geopy.geocoders import Nominatim
+from datetime import datetime, timedelta
 
 geolocator = Nominatim(user_agent="CMPT353-Project")
 
@@ -253,7 +254,140 @@ def get_rental(places):
         return combined
     else:
         return pd.DataFrame()
+
+# Creates a daily schedule for the tour based on time constraints
+def daily_schedule(route_points, amenities, transportation, tour_length):
+    # Predetermined average speeds for different modes of travel in km/h
+    speeds = {"walk": 5, "bike": 15, "drive": 50}
     
+    # Rough amounts of time spent at different amenity types in minutes
+    time_spent = {"hotel": 720, "restaurant": 60, "rental": 20, "default": 60}
+
+    schedule = []
+    current_day = 1
+
+    # for this system, date doesn't matter, only time
+    day_start = datetime(2025, 1, 1, 9, 0) # Tour days begin 9am
+    day_end = datetime(2025, 1, 1, 21, 0) # Tour days end at 9pm
+    current_time = day_start
+    current_location = route_points[0]
+
+    schedule.append({
+         "day": current_day,
+         "name": "Start Location",
+         "type": "start",
+         "lat": current_location[0],
+         "lon": current_location[1],
+         "arrival": current_time,
+         "departure": current_time
+    })
+
+    # Meal targets for each day (breakfast, lunch, dinner)
+    meal_times = {"breakfast": datetime(current_time.year, current_time.month, current_time.day, 9, 0),
+                  "lunch":     datetime(current_time.year, current_time.month, current_time.day, 13, 0),
+                  "dinner":    datetime(current_time.year, current_time.month, current_time.day, 18, 0)}
+    meals_taken = {"breakfast": False, "lunch": False, "dinner": False}
+
+    # Iterate through each stop (starting from index 1)
+    for i in range(1, len(route_points)):
+         next_point = route_points[i]
+         # Calculate travel time (in minutes) from current_location to next_point
+         distance = haversine(current_location[0], current_location[1], next_point[0], next_point[1])
+         speed = speeds.get(transportation, 5)
+         travel_minutes = (distance / speed) * 60
+         travel_time = timedelta(minutes=travel_minutes)
+         arrival_time = current_time + travel_time
+
+        # If arrival is after the day's end, force a hotel stop at day_end and then start next day.
+         if arrival_time > day_end:
+             schedule.append({
+                 "day": current_day,
+                 "name": "Hotel (End of Day)",
+                 "type": "hotel",
+                 "lat": current_location[0],
+                 "lon": current_location[1],
+                 "arrival": day_end,
+                 "departure": day_end
+             })
+             current_day += 1
+             # Prepare next day: shift start and end by one day.
+             day_start += timedelta(days=1)
+             day_end += timedelta(days=1)
+             meal_times = {"breakfast": datetime(day_start.year, day_start.month, day_start.day, 9, 0),
+                           "lunch":     datetime(day_start.year, day_start.month, day_start.day, 13, 0),
+                           "dinner":    datetime(day_start.year, day_start.month, day_start.day, 18, 0)}
+             meals_taken = {"breakfast": False, "lunch": False, "dinner": False}
+             current_time = day_start
+             # Recalc travel from new day's start to next_point.
+             distance = haversine(current_location[0], current_location[1], next_point[0], next_point[1])
+             travel_minutes = (distance / speed) * 60
+             travel_time = timedelta(minutes=travel_minutes)
+             arrival_time = current_time + travel_time
+         if i < len(amenities):
+            amenity_info = amenities.iloc[i]
+            amenity_type = amenity_info.get('type', 'default')
+            amenity_name = amenity_info.get('name', f"Point {i}")
+         else:
+            amenity_type = 'default'
+            amenity_name = f"Point {i}"
+
+         duration = time_spent.get(amenity_type, time_spent['default'])
+         visit_time = timedelta(minutes=duration)
+         departure_time = arrival_time + visit_time
+
+         # check if time is near a meal time, currently set to be within 30min, and stop tour for a meal
+         for meal, meal_target in meal_times.items():
+             if not meals_taken[meal]:
+                 if meal_target - timedelta(minutes=30) <= arrival_time <= meal_target + timedelta(minutes=30):
+                     if amenity_type != "restaurant":
+                         amenity_type = "restaurant"
+                         duration = time_spent.get("restaurant", 60)
+                         visit_time = timedelta(minutes=duration)
+                     meals_taken[meal] = True
+                     break
+
+         # shortens time spent at amenity so tour can stop at 9pm
+         if departure_time > day_end:
+            visit_time = day_end - arrival_time
+            departure_time = day_end
+
+         schedule.append({
+             "day": current_day,
+             "name": amenity_name,
+             "type": amenity_type,
+             "lat": next_point[0],
+             "lon": next_point[1],
+             "arrival": arrival_time,
+             "departure": departure_time
+          })
+
+         current_time = departure_time
+         current_location = next_point
+
+        # If little time remains in the day, end the day with a hotel stop.
+         if (day_end - current_time) < timedelta(minutes=30):
+             schedule.append({
+                 "day": current_day,
+                 "name": "Hotel (End of Day)",
+                 "type": "hotel",
+                 "lat": current_location[0],
+                 "lon": current_location[1],
+                 "arrival": day_end,
+                 "departure": day_end
+             })
+             current_day += 1
+             day_start += timedelta(days=1)
+             day_end += timedelta(days=1)
+             meal_times = {"breakfast": datetime(day_start.year, day_start.month, day_start.day, 9, 0),
+                           "lunch":     datetime(day_start.year, day_start.month, day_start.day, 13, 0),
+                           "dinner":    datetime(day_start.year, day_start.month, day_start.day, 18, 0)}
+             meals_taken = {"breakfast": False, "lunch": False, "dinner": False}
+             current_time = day_start
+             
+    # Once set tour days have been completed, drops remaining amenities.
+    schedule = [stop for stop in schedule if stop["day"] <= tour_length]
+    return schedule
+
 def get_combined_graph(places, network_type):
     
     graphs = []
@@ -271,58 +405,36 @@ def get_combined_graph(places, network_type):
     else:
         return None
     
-def create_tour_map(points, route, start_coords, route_points, transportation):
-    # Predetermined average speeds for different modes of travel in km/h
-    speeds = {"walk": 5, "bike": 15, "drive": 50}
-    
-    # Rough amounts of time spent at different amenity types in minutes
-    time_stayed = {"hotel": 660, "restaurant": 60, "rental": 20, "default": 60}
-    
+def create_tour_map(schedule, route):
+
     # Create a map centered on the first point
-    map_center = [points.iloc[0]['lat'], points.iloc[0]['lon']]
+    map_center = [schedule[0]['lat'], schedule[0]['lon']]
     tour_map = fl.Map(location=map_center, zoom_start=13)
     
-    # Add start location marker
-    fl.Marker(
-        location=start_coords, 
-        popup="Start Location", 
-        icon=fl.Icon(color="red")
-    ).add_to(tour_map)
+    # Add markers with popups that show name, type, day, arrival and departure times.
+    for stop in schedule:
+         popup_text = (
+             f"Name: {stop['name']}\n\n"
+             f"Type: {stop['type']}\n\n"
+             f"Day: {stop['day']}\n\n"
+             f"Arrival: {stop['arrival'].strftime('%I:%M %p')}\n\n"
+             f"Departure: {stop['departure'].strftime('%I:%M %p')}"
+         )
+         marker_color = "blue"
+         if stop['type'] == "restaurant":
+             marker_color = "orange"
+         elif stop['type'] == "hotel":
+             marker_color = "green"
+         elif stop['type'] == "rental":
+             marker_color = "black"
+         fl.Marker(
+             location=[stop['lat'], stop['lon']],
+             popup=popup_text,
+             icon=fl.Icon(color=marker_color)
+         ).add_to(tour_map)
     
-    for i in range(1, len(route_points)):
-        coord = route_points[i]
-        try:
-            row = points.iloc[i]
-        except Exception:
-            row = {'name': f"Point {i}", 'type': "default"}
-        name = row.get('name', 'No Name')
-        marker_type = row.get('type', 'default')
-        time_spent = time_stayed.get(marker_type, time_stayed["default"])
-        # Calculate travel time from previous point
-        prev = route_points[i-1]
-        distance = haversine(prev[0], prev[1], coord[0], coord[1])
-        speed = speeds.get(transportation, 5)
-        travel_time = (distance / speed) * 60  # in minutes
-        
-        travel_time_display = f"{travel_time:.1f}"
-            
-        popup_text = f"Name: {name}\n\nTravel Time: {travel_time_display} min\n\nTime Spent: {time_spent} min"
-        marker_color = "blue"
-        if marker_type == "restaurant":
-            marker_color = "orange"
-        elif marker_type == "hotel":
-            marker_color = "green"
-        elif marker_type == "rental":
-            marker_color = "black"
-        fl.Marker(
-            location=coord, 
-            popup=popup_text, 
-            icon=fl.Icon(color=marker_color)
-        ).add_to(tour_map)
-
-    # Draw the path connecting each point
+    # Draw the path connecting the scheduled route.
     fl.PolyLine(locations=route, color='blue', weight=2.5, opacity=1).add_to(tour_map)
-    
     return tour_map
 
 # Finds proper paths between points using street network graph
@@ -496,7 +608,9 @@ def main():
     print("stage 3")
 
     route = get_street_route(Graph, route_points)
-    tour_map = create_tour_map(nearest_amenities, route=route, start_coords=start_coords, route_points=route_points, transportation=transportation)
+
+    schedule = daily_schedule(route_points, nearest_amenities, transportation, tour_length)
+    tour_map = create_tour_map(schedule, route)
     tour_map.save("nearest_amenities_tour.html")
     
 if __name__ == "__main__":
