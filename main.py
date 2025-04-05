@@ -371,11 +371,6 @@ interesting_amenities = ['cafe', 'bbq', 'place_of_worship',
     "parking", "charging_station"]
 
 def add_ferry_edges(G, ferry_terminals):
-    """
-    For each ferry terminal in ferry_terminals, find its nearest node in G.
-    Then, add virtual edges between each pair of ferry nodes with a weight
-    equal to the haversine distance between their coordinates.
-    """
     ferry_nodes = {}
     # Map each ferry terminal to the nearest graph node
     for idx, row in ferry_terminals.iterrows():
@@ -600,45 +595,6 @@ def main():
     route = get_street_route(Graph, route_points)
     tour_map = create_tour_map(nearest_amenities, route=route, start_coords=start_coords)
     tour_map.save("nearest_amenities_tour.html")
-
-"""
     
-    housing = data[data['amenity'] == 'housing co-op']
-    hotels = get_hotels(regions)
- 
-    if not housing.empty and not hotels.empty:
-        lodging_points = pd.concat([housing, hotels], ignore_index=True)
-    elif not housing.empty:
-        lodging_points = housing
-    else:
-        lodging_points = hotels
-    if lodging_points.empty:
-        print("No lodging data found. Exiting.")
-        return
-
-    lodging_coords = [[row['lat'], row['lon']] for idx, row in lodging_points.iterrows()]
-    print("Downloading street network...")
-
-    Graph = ox.graph_from_place(regions, network_type='drive', simplify=True)
-    print("stage 0")
-    G_undirected = Graph.to_undirected()
-    print("stage 1")
-    largest_component = max(nx.connected_components(G_undirected), key=len)
-    print("stage 2")
-    Graph = G_undirected.subgraph(largest_component).copy()
-    print("stage 3")
-
-    ferry_terminals = data[data['amenity'] == 'ferry_terminal']
-    # If ferry terminals are available, use the new routing function; otherwise, fall back
-    if not ferry_terminals.empty:
-        Graph = add_ferry_edges(Graph, ferry_terminals)
-        lodging_route_3 = get_street_route(Graph, lodging_coords)
-    else:
-        print("No ferrys found.")
-        lodging_route_3 = get_street_route(Graph, lodging_coords)
-
-    lodging_map_3 = create_tour_map(lodging_points, route=lodging_route_3, start_coords=lodging_coords[0])
-    lodging_map_3.save("lodging_map_3.html")
-"""
 if __name__ == "__main__":
     main()
