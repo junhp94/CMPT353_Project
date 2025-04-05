@@ -89,9 +89,11 @@ You'll then be prompted for the following information:
 - If you want to stay in a hotel
 
 Once your have filled out your information, please wait for a file called
-`nearest_amenities_tour.html`
+- `nearest_amenities_tour.html` and
+- `tour_schedule.csv`
 to be added in your directory
 
 ### 📍 Opening the output file
-To open this file and view the map, press the `Run and Debug` button in VS Code to open it in Google Chrome
+To open this file and view the map, press the `Run and Debug` button in VS Code to open it in Google Chrome.
+Opening the CSV file will give you the order of the amenities for each day.
 
