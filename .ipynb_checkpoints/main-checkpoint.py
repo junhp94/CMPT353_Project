@@ -656,9 +656,11 @@ def main():
     Graph = G_undirected.subgraph(largest_component).copy()
     print("stage 3")
 
-    route = get_street_route(Graph, route_points)
-
     schedule = daily_schedule(route_points, nearest_amenities, transportation, tour_length, lodging_points)
+    
+    scheduled_coords = [[stop["lat"], stop["lon"]] for stop in schedule]
+    route = get_street_route(Graph, scheduled_coords)
+    
     tour_map = create_tour_map(schedule, route)
     tour_map.save("nearest_amenities_tour.html")
 
