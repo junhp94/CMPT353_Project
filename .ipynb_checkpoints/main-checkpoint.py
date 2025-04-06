@@ -314,7 +314,7 @@ def daily_schedule(route_points, amenities, transportation, tour_length, lodging
                  hotel_arrival = current_time + hotel_travel_time
                  lodging_points = lodging_points.drop(nearest_hotel.name)
              else:
-                 hotel_arrival = current_time + travel_delta
+                 hotel_arrival = current_time + travel_time
                  nearest_hotel = {"lat": current_location[0], "lon": current_location[1]}
                  hotel_travel_minutes = travel_minutes
              hotel_departure = day_start + timedelta(days=1)  # Next day start at 9:00
@@ -388,7 +388,7 @@ def daily_schedule(route_points, amenities, transportation, tour_length, lodging
                  hotel_arrival = current_time + hotel_travel_time
                  lodging_points = lodging_points.drop(nearest_hotel.name)
              else:
-                 hotel_arrival = current_time + travel_delta
+                 hotel_arrival = current_time + travel_time
                  nearest_hotel = {"lat": current_location[0], "lon": current_location[1]}
                  hotel_travel_minutes = travel_minutes
              hotel_departure = day_start + timedelta(days=1)
