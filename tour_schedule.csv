@@ -1,6 +1,5 @@
 name,arrival,departure
 Start Location,09:00,09:00
-<<<<<<< HEAD
 PressBox Pub,09:08,10:08
 Phở Don,10:12,11:12
 Le Petit Saigon,11:13,12:13
@@ -12,86 +11,75 @@ Hastings Branch,16:19,17:19
 Bo Laksa King's Bubbles & Bits,17:20,18:20
 Thailicious,18:23,19:23
 The Red Wagon Cafe,19:25,20:25
-Jackalope's Neighborhood Dive,20:27,20:55
-Hotel (End of Day),20:55,09:00
-IPOH Asian House,09:01,10:01
-Atrium Hotel Vancouver,10:12,10:12
-On Lok Restaurant & Wun Tun House,10:26,11:26
-The Red Wagon Cafe,11:27,12:27
-Parallel 49 Tasting Room & Beer Store,12:29,13:29
-On Lok Restaurant & Wun Tun House,13:30,14:30
-Princeton Pub,14:34,15:34
-Parallel 49 Tasting Room & Beer Store,15:35,16:35
-The Pie Shoppe,16:37,17:37
-Slow Hand Tasting Room,17:38,18:38
-Andina Tasting Lounge,18:39,19:39
-Callister Tasting Room,19:45,20:55
-Hotel (End of Day),20:55,09:00
-Korean Community Centre,09:02,10:02
-Earnest Ice Cream,10:04,11:04
-Off The Rail Tasting Room,11:06,12:06
-Hotel At The Waldorf,12:09,12:09
-Vancouver Hack Space,12:14,13:14
-Off The Rail Tasting Room,13:15,14:15
-Downlow Chicken Shack,14:18,15:18
-East Vancouver Brewing,15:20,16:20
-Britianna Sushi,16:21,17:21
-Downlow Chicken Shack,17:22,18:22
-The Reef,18:23,19:23
-Five Elements,19:24,20:24
-Moja Coffee,20:25,20:55
-Hotel (End of Day),20:55,09:00
-Kulinarya Filipino Eatery,09:01,10:01
-VPL Britannia Branch,10:02,11:02
-Turk's,11:03,12:03
-Famoso,12:06,13:06
-Hotel At The Waldorf,13:17,14:17
-Sake Maki Sushi,14:31,15:31
-Famoso,15:32,16:32
-Tandoori Palace,16:33,17:33
-Viet Family Restaurant,17:34,18:34
-Tatsu Japanese Bistro,18:35,19:35
-Tandoori Palace,19:36,20:55
-Hotel (End of Day),20:55,09:00
-Chinese Grace Mennonite Church,09:01,10:01
-La Mezcaleria,10:02,11:02
-Federico's Supper Club,11:03,12:03
-Spade,12:05,13:05
-Belgian Fries,13:06,14:06
-Prado Cafe,14:07,15:07
-Siddhartha's Indian Kitchen,15:08,16:08
-Hotel At The Waldorf,16:28,16:28
-Sushi Ville,16:48,17:48
-Hariyali Express,17:49,18:49
-Cafe Deux Soleils,18:50,19:50
-Sushi Ville,19:51,20:55
-Hotel (End of Day),20:55,09:00
-Tangent Cafe,09:01,10:01
-Chancho Tortilleria,10:02,11:02
-Addis Cafe,11:03,12:03
-Harambe,12:04,13:04
-JJ Bean,13:05,14:05
-Cabrito - Tapas Bebidas,14:06,15:06
-Jamjar Folk Lebanese Food,15:07,16:07
-St Augustine's,16:08,17:08
-Hon's Wonton House,17:09,18:09
-Hotel At The Waldorf,18:33,18:33
-Broadway Station Sushi,18:58,19:58
-Hon's Wonton House,19:59,20:55
-Hotel (End of Day),20:55,09:00
-Commercial Sushi,09:01,10:01
-Kakai Sushi,10:02,11:02
-Jamaican Pizza Jerk,11:03,12:03
-Commercial Sushi,12:04,13:04
-Naruto Sushi,13:05,14:05
-Bandidas Taqueria,14:06,15:06
-Gojo Little Africa Cafe,15:07,16:07
-Bakery Sate,16:08,17:08
-Little Free Library,17:09,18:09
-House of Dosas,18:15,19:15
-Po Kong,19:22,20:22
-Cassandra Hotel,20:59,20:59
-Hotel (End of Day),20:55,09:00
+Hotel (End of Day),20:35,09:00
+IPOH Asian House,09:02,10:02
+On Lok Restaurant & Wun Tun House,10:04,11:04
+Parallel 49 Tasting Room & Beer Store,11:06,12:06
+Princeton Pub,12:10,13:10
+The Pie Shoppe,13:11,14:11
+Slow Hand Tasting Room,14:12,15:12
+Hotel At The Waldorf,15:21,03:21
+Hotel (End of Day),03:22,09:00
+Andina Tasting Lounge,09:07,10:07
+Slow Hand Tasting Room,10:08,11:08
+Callister Tasting Room,11:13,12:13
+Powell Brewery Tasting Room,12:15,13:15
+Korean Community Centre,13:17,14:17
+CowDog Brew Co.,14:18,15:18
+Earnest Ice Cream,15:19,16:19
+Off The Rail Tasting Room,16:22,17:22
+Vancouver Hack Space,17:24,18:24
+Downlow Chicken Shack,18:28,19:28
+Britianna Sushi,19:30,20:30
+Hotel (End of Day),20:38,09:00
+Five Elements,09:01,10:01
+Moja Coffee,10:02,11:02
+Kulinarya Filipino Eatery,11:03,12:03
+VPL Britannia Branch,12:04,13:04
+Turk's,13:05,14:05
+Famoso,14:08,15:08
+Hotel At The Waldorf,15:20,03:20
+Hotel (End of Day),03:21,09:00
+Sake Maki Sushi,09:13,10:13
+Famoso,10:14,11:14
+Tandoori Palace,11:15,12:15
+Viet Family Restaurant,12:16,13:16
+Tatsu Japanese Bistro,13:17,14:17
+Tandoori Palace,14:18,15:18
+Chinese Grace Mennonite Church,15:19,16:19
+La Mezcaleria,16:20,17:20
+Federico's Supper Club,17:21,18:21
+Spade,18:23,19:23
+Belgian Fries,19:24,20:24
+Hotel (End of Day),20:43,09:00
+Siddhartha's Indian Kitchen,09:01,10:01
+Sushi Ville,10:02,11:02
+Cafe Deux Soleils,11:03,12:03
+Tangent Cafe,12:04,13:04
+Addis Cafe,13:05,14:05
+Harambe,14:06,15:06
+Hotel At The Waldorf,15:26,03:26
+Hotel (End of Day),03:27,09:00
+JJ Bean,09:21,10:21
+Harambe,10:22,11:22
+Cabrito - Tapas Bebidas,11:23,12:23
+B House,12:24,13:24
+Jamjar Folk Lebanese Food,13:25,14:25
+Loku Japanese Cuisine,14:26,15:26
+St Augustine's,15:27,16:27
+Hon's Wonton House,16:28,17:28
+Broadway Station Sushi,17:30,18:30
+Commercial Sushi,18:31,19:31
+Jamaican Pizza Jerk,19:32,20:32
+Hotel (End of Day),20:59,09:00
+Bandidas Taqueria,09:02,10:02
+Gojo Little Africa Cafe,10:03,11:03
+Bakery Sate,11:04,12:04
+Little Free Library,12:05,13:05
+House of Dosas,13:10,14:10
+Po Kong,14:18,15:18
+Cassandra Hotel,15:55,03:55
+Hotel (End of Day),03:56,09:00
 VPL Kensington Branch,09:38,10:38
 Po Kong,10:39,11:39
 Phở Thái Hóa,11:41,12:41
@@ -102,37 +90,6 @@ Green Lettuce,15:50,16:50
 Vegan Pizza House,16:53,17:53
 Zamzam Grill,17:56,18:56
 Excellent Dim Sum King Restaurant,18:57,19:57
-Happy Family Restaurant,19:58,20:55
-Hotel (End of Day),20:55,09:00
+Happy Family Restaurant,19:58,20:58
+Hotel (End of Day),21:21,09:00
 Western Lake,09:01,10:01
-Chau Veggie Express,10:07,11:07
-Cassandra Hotel,11:30,11:30
-Amay's House,11:52,12:52
-Chau Veggie Express,12:53,13:53
-Fatty Cow Seafood Hot Pot,13:54,14:54
-Hủ Tiếu Hồng Phát,14:55,15:55
-La Maison Da Nang,15:56,16:56
-Neighbour's Restaurant & Pizza House,16:57,17:57
-Hanoi Old Quarter Restaurant,17:58,18:58
-Kalvin's Szechuan Restaurant,18:59,19:59
-Sandy La Chinese Restaurant,20:00,20:55
-Hotel (End of Day),20:55,09:00
-=======
-Indian Summer Festival,09:13,10:13
-Miso Taco,10:13,11:13
-Aura,11:42,12:42
-Apollinia,12:43,13:43
-Vancouver International Film Centre,14:00,15:00
-Mr. Greek,15:00,16:00
-The Cinematheque,16:01,17:01
-Best Western Premier Chateau Granville Hotel & Suites & Conference Centre,17:02,21:00
-Hotel (End of Day),21:00,21:00
-The Penthouse,09:01,10:01
-Mangos Kitchen Bar,10:02,11:02
-Commodore Ballroom,11:05,12:05
-Heirs Pears,12:06,13:06
-Scotiabank Theatre Vancouver,13:09,14:09
-Dublin Calling,14:10,15:10
-The Sutton Place Hotel,15:13,21:00
-Hotel (End of Day),21:00,21:00
->>>>>>> bf9c205ebf50cd5aeaf1cd447e12d12e5e5904d1
