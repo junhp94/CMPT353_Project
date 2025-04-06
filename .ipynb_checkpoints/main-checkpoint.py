@@ -312,6 +312,7 @@ def daily_schedule(route_points, amenities, transportation, tour_length, lodging
                  hotel_travel_minutes = max((nearest_hotel["hotel_distance"]/speed)*60, 1)
                  hotel_travel_time = timedelta(minutes=hotel_travel_minutes)
                  hotel_arrival = current_time + hotel_travel_time
+                 lodging_points = lodging_points.drop(nearest_hotel.name)
              else:
                  hotel_arrival = current_time + travel_delta
                  nearest_hotel = {"lat": current_location[0], "lon": current_location[1]}
@@ -385,6 +386,7 @@ def daily_schedule(route_points, amenities, transportation, tour_length, lodging
                  hotel_travel_minutes = max((nearest_hotel["hotel_distance"]/speed)*60, 1)
                  hotel_travel_time = timedelta(minutes=hotel_travel_minutes)
                  hotel_arrival = current_time + hotel_travel_time
+                 lodging_points = lodging_points.drop(nearest_hotel.name)
              else:
                  hotel_arrival = current_time + travel_delta
                  nearest_hotel = {"lat": current_location[0], "lon": current_location[1]}
@@ -451,8 +453,14 @@ def create_tour_map(schedule, route):
     map_center = [schedule[0]['lat'], schedule[0]['lon']]
     tour_map = fl.Map(location=map_center, zoom_start=13)
     
+    # Build a dictionary for hotels to group repeated visits.
+    hotel_visits = {}
     for stop in schedule:
-         # Restructure with html popup for cleaner interface
+        if stop['type'] == "hotel":
+            key = (round(stop['lat'], 6), round(stop['lon'], 6))
+            hotel_visits.setdefault(key, []).append(stop['day'])
+    
+    for stop in schedule:
          popup_html = f"""
          <strong>{stop['name']}</strong><br>
          Type: {stop['type']}<br>
@@ -460,8 +468,14 @@ def create_tour_map(schedule, route):
          Arrival: {stop['arrival'].strftime('%I:%M %p')}<br>
          Departure: {stop['departure'].strftime('%I:%M %p')}
          """
+         # If this is a hotel, check if it is visited on multiple days.
+         if stop['type'] == "hotel":
+             key = (round(stop['lat'], 6), round(stop['lon'], 6))
+             days = hotel_visits.get(key, [])
+             if len(days) > 1:
+                 # Append info about all visits.
+                 popup_html += f"<br><em>Visited on days: {', '.join(map(str, days))}</em>"
          popup = fl.Popup(popup_html, max_width=250)
-         # Use a hoverable tooltip to show travel time for less clutter and more separation
          tooltip = f"Travel Time: {stop['travel_time']:.0f} min"
          
          marker_color = "blue"
@@ -481,8 +495,7 @@ def create_tour_map(schedule, route):
              icon=fl.Icon(color=marker_color)
          ).add_to(tour_map)
     
-    # Build line using only scheduled stops.
-    #scheduled_points = [[stop["lat"], stop["lon"]] for stop in schedule]
+    # Use the computed street route for the polyline.
     fl.PolyLine(locations=route, color='blue', weight=2.5, opacity=1).add_to(tour_map)
     return tour_map
 
