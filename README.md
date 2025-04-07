@@ -7,7 +7,7 @@ A personalized tour planning tool that helps users generate a multi-day travel i
 ## Contributors
 - **Eric Li** - 301436381  
 - **Steven Duong** - 301552606
-- **Jun Park** - Enter yours please
+- **Jun Hyeok Park** - 301461661
 
 ---
 
