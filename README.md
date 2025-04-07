@@ -1,4 +1,3 @@
-Document your code and how to run it: required libraries, commands (and arguments), order of execution, files produced/expected. (To be deleted)
 # 🗺️ CMPT 353 Personalized Tour Planner
 
 A personalized tour planning tool that helps users generate a multi-day travel itinerary with selected amenities, restaurants, hotels, and optimized routes using real-world geospatial data.
@@ -88,12 +87,28 @@ You'll then be prompted for the following information:
   - If you choose to walk, you will be asked if you want to rent
 - If you want to stay in a hotel
 
+### ⌕ Order of Execution
+
+1. `amenities-vancouver.json.gz` gets loaded into a dataframe. The data gets filtered to remove rows with empty data and to keep amenities that are interesting.
+
+2. Collect the user's input.
+
+3. Depending on user's theme of choice, filter out fast food chains and filter by popularity with tags. Or just filter by the theme and popularity.
+
+4. Find nearest amenities with the Haversine formula.
+
+5. Add 3 Restaurants throughout the day. Add rental if needed. Add hotels if needed.
+
+6. Create the map and street connections with OSMnx and NetworkX
+
+7. Saves outputs as specified above. 
+
+### Outputs
 Once your have filled out your information, please wait for a file called
 - `nearest_amenities_tour.html` and
 - `tour_schedule.csv`
 to be added in your directory
 
-### 📍 Opening the output file
+### 📍 Opening the output files
 To open this file and view the map, press the `Run and Debug` button in VS Code to open it in Google Chrome.
 Opening the CSV file will give you the order of the amenities for each day.
-
