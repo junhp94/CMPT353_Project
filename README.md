@@ -4,14 +4,28 @@ A personalized tour planning tool that helps users generate a multi-day travel i
 
 ---
 
-## Contributors
+## 📖 Project Overview
+
+This project allows users to:
+- Customize the length and theme of their trip.
+- Select transportation preferences.
+- Enter their location.
+- Automatically receive restaurant suggestions.
+- Include hotel stays if needed.
+- Visualize the entire itinerary on an interactive map.
+
+Built using data from OpenStreetMap and geospatial tools, this planner aims to create convenient and logical tours based on user preferences.
+
+---
+
+## ❗Contributors
 - **Eric Li** - 301436381  
 - **Steven Duong** - 301552606
 - **Jun Hyeok Park** - 301461661
 
 ---
 
-## Features
+## 💻Features
 - Customize tour **length**, **theme**, and **number of stops**
 - Choose **transportation mode** (`walk`, `bike`, or `drive`)
 - Option to **rent a form of transportation**
