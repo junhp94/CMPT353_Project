@@ -160,8 +160,8 @@ def find_nearest_amenities(
             axis=1,
         )
         # Finds the 30th nearest amenity
-        sorted_amenities = amenities_copy.nsmallest(30, "distance")
-        nearest_index = min(29, len(sorted_amenities) - 1)
+        sorted_amenities = amenities_copy.nsmallest(10, "distance")
+        nearest_index = min(9, len(sorted_amenities) - 1)
         nearest_amenity = sorted_amenities.iloc[nearest_index]
 
         route.append(nearest_amenity)
