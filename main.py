@@ -159,11 +159,13 @@ def find_nearest_amenities(
             ),
             axis=1,
         )
-        nearest_amenity = amenities_copy.nsmallest(1, "distance").iloc[0]
+        # Finds the 30th nearest amenity
+        sorted_amenities = amenities_copy.nsmallest(30, "distance")
+        nearest_index = min(29, len(sorted_amenities) - 1)
+        nearest_amenity = sorted_amenities.iloc[nearest_index]
 
         route.append(nearest_amenity)
         current_location = (nearest_amenity["lat"], nearest_amenity["lon"])
-
         amenities_copy = amenities_copy.drop(nearest_amenity.name)
 
     return pd.DataFrame(route)
@@ -819,6 +821,25 @@ interesting_amenities = [
     "charging_station",
 ]
 
+chain_names = [
+    "Starbucks", "Tim Hortons", "Tim_Hortons", "McDonald's", "Subway", "A&W", "Triple O",
+    "Burger King", "Wendy's", "KFC", "Pizza Hut", "Domino's", "Dairy Queen",
+    "Popeyes", "Taco Bell", "Little Caesars", "Panera Bread", "Chipotle", "Five Guys", "Denny's", "IHOP",
+    
+    "Petro-Canada", "Chevron", "Shell", "Esso", "Husky", "7-Eleven", "Circle K",
+    "Mobil", "Ultramar", "Costco Gas", "Super Save", "Fas Gas", "Co-op Gas",
+    
+    "Walmart", "Costco", "Real Canadian Superstore", "No Frills", "Safeway",
+    "Save-On-Foods", "FreshCo", "Shoppers Drug Mart", "London Drugs", "Loblaws",
+    "Canadian Tire", "Home Depot", "Best Buy", "IKEA", "Dollarama", "Metro",
+    "Sobeys", "Thrifty Foods", "Pharmasave",
+    
+    "RBC", "TD Canada Trust", "Scotiabank", "BMO", "CIBC", "HSBC",
+    "National Bank", "Coast Capital", "Vancity",
+    
+    "Rexall", "Guardian", "Pharmachoice"
+]
+
 
 def main():
     original_data = pd.read_json(
@@ -841,8 +862,7 @@ def main():
     if theme == "random":
         # Filters out big chains
         data = data[data["amenity"] != "fast_food"]
-        data = data[data["name"] != "Starbucks"]
-        data = data[~data["name"].isin(["Tim Hortons", "Tim_Hortons"])]
+        data = data[~data["name"].isin(chain_names)]
         popular_amenities = filter_popular_amenities(
             data, min_tags=5
         )  # Popular amenities have 5 or more tags
