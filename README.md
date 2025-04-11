@@ -69,7 +69,6 @@ folium
 osmnx
 networkx
 geopy
-math
 SPARQLWrapper
 ```
 Then to install them
