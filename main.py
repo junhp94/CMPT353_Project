@@ -560,7 +560,7 @@ def create_tour_map(schedule, route):
         }
         TimestampedGeoJson(ts_data,
                            period='PT1S',        
-                           transition_time=1, 
+                           transition_time=50, 
                            auto_play=True,
                            loop=False,
                            add_last_point=False).add_to(tour_map)
