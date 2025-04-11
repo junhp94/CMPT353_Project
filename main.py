@@ -6,7 +6,6 @@
 #
 import pandas as pd
 import numpy as np
-import math
 import folium as fl
 import osmnx as ox
 import networkx as nx
