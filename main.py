@@ -143,7 +143,7 @@ def haversine(lat1, lon1, lat2, lon2):
 
 # Finds a route by pathing to the nearest neighbour based on ['lat, lon'] pairs
 def find_nearest_amenities(
-    amenities, start_coords, num_amenities#, daily_limits, tour_length
+    amenities, start_coords, num_amenities
 ):
     amenities_copy = amenities.copy()
     route = []
@@ -183,7 +183,6 @@ def filter_amenities_by_theme(amenities, selected_theme):
                 "observation_platform",
                 "water_point",
             ],
-            "daily_limits": {},
             "blacklist": [],
         },
         "food": {
@@ -199,7 +198,6 @@ def filter_amenities_by_theme(amenities, selected_theme):
                 "bistro",
                 "biergarten",
             ],
-            "daily_limits": {"cafe": 1, "restaurant": 2},
             "blacklist": ["Starbucks"],  # brand blacklist
         },
         "history": {
@@ -210,17 +208,14 @@ def filter_amenities_by_theme(amenities, selected_theme):
                 "townhall",
                 "clock",
             ],
-            "daily_limits": {},
             "blacklist": [],
         },
         "science": {
             "allowed": ["research_institute", "science", "ATLAS_clean_room"],
-            "daily_limits": {},
             "blacklist": [],
         },
         "art": {
             "allowed": ["arts_centre", "theatre", "studio"],
-            "daily_limits": {},
             "blacklist": [],
         },
         "entertainment": {
@@ -240,7 +235,6 @@ def filter_amenities_by_theme(amenities, selected_theme):
                 "Observation Platform",
                 "photo_booth",
             ],
-            "daily_limits": {},
             "blacklist": [],
         },
         "mode of travel": {
@@ -257,7 +251,6 @@ def filter_amenities_by_theme(amenities, selected_theme):
                 "charging_station",
                 "EVSE",
             ],
-            "daily_limits": {},
             "blacklist": [],
         },
     }
@@ -269,12 +262,10 @@ def filter_amenities_by_theme(amenities, selected_theme):
         ]
         return {
             "filtered_amenities": filtered_amenities,
-            "daily_limits": relevant_amenities["daily_limits"],
         }
     else:
         return {
             "filtered_amenities": amenities,  # Show all amenities if no theme is selected
-            "daily_limits": {},  # No daily limits if no theme is selected
         }
 
 
@@ -869,13 +860,12 @@ def main():
     else:
         filtered_content = filter_amenities_by_theme(data, theme)
         filtered_amenities = filtered_content["filtered_amenities"]
-        daily_limits = filtered_content["daily_limits"]
         popular_amenities = filter_popular_amenities(
             filtered_amenities, min_tags=5
         )  # Popular amenities have 5 or more tags
 
     nearest_amenities = find_nearest_amenities(
-        popular_amenities, start_coords, num_amenities#, daily_limits, tour_length
+        popular_amenities, start_coords, num_amenities
     )
 
     route_points = [[start_coords[0], start_coords[1]]] + nearest_amenities[
