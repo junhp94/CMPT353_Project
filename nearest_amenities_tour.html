@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_23d5aedd3574f9b48c8d05b484d5039a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iso8601-js-period@0.2.1/iso8601.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-timedimension@1.1.1/dist/leaflet.timedimension.control.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_23d5aedd3574f9b48c8d05b484d5039a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_23d5aedd3574f9b48c8d05b484d5039a = L.map(
+                "map_23d5aedd3574f9b48c8d05b484d5039a",
+                {
+                    center: [49.279771749999995, -123.03403197548914],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_f76984eacefb26a19cf54242e7e346f6 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_f76984eacefb26a19cf54242e7e346f6.addTo(map_23d5aedd3574f9b48c8d05b484d5039a);
+        
+    
+            var feature_group_36fb0510566a1567e7f6eb5f28e1297f = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_926374ba4110d40e476c64c9bd7782d4 = L.marker(
+                [49.2830614, -123.0423499],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_8625396e205a64bef4874fe799e47241 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_198c28e0e33fc43b05561bfb3fcd8d95 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a18f2a600fbd7b10e7e56110af50495b = $(`<div id="html_a18f2a600fbd7b10e7e56110af50495b" style="width: 100.0%; height: 100.0%;">          <strong>PressBox Pub</strong><br>          Type: restaurant<br>          Day: 1<br>          Arrival: 09:01 AM<br>          Departure: 10:01 AM          </div>`)[0];
+                popup_198c28e0e33fc43b05561bfb3fcd8d95.setContent(html_a18f2a600fbd7b10e7e56110af50495b);
+            
+        
+
+        marker_926374ba4110d40e476c64c9bd7782d4.bindPopup(popup_198c28e0e33fc43b05561bfb3fcd8d95)
+        ;
+
+        
+    
+    
+            marker_926374ba4110d40e476c64c9bd7782d4.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_926374ba4110d40e476c64c9bd7782d4.setIcon(icon_8625396e205a64bef4874fe799e47241);
+            
+    
+            var marker_e5e03a4a6311b34cc4799f08c1db1cfd = L.marker(
+                [49.2808318, -123.045512],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_8b17059eabbaa738a818bbae972558fe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_65a7cc1e4d3a67036a122bb22753bbba = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_802e448229fb9b659f1a781f1acd865c = $(`<div id="html_802e448229fb9b659f1a781f1acd865c" style="width: 100.0%; height: 100.0%;">          <strong>Phở Don</strong><br>          Type: restaurant<br>          Day: 1<br>          Arrival: 10:02 AM<br>          Departure: 11:02 AM          </div>`)[0];
+                popup_65a7cc1e4d3a67036a122bb22753bbba.setContent(html_802e448229fb9b659f1a781f1acd865c);
+            
+        
+
+        marker_e5e03a4a6311b34cc4799f08c1db1cfd.bindPopup(popup_65a7cc1e4d3a67036a122bb22753bbba)
+        ;
+
+        
+    
+    
+            marker_e5e03a4a6311b34cc4799f08c1db1cfd.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e5e03a4a6311b34cc4799f08c1db1cfd.setIcon(icon_8b17059eabbaa738a818bbae972558fe);
+            
+    
+            var marker_7bc0e4bb6767d2fb06fe969c61975569 = L.marker(
+                [49.2813339, -123.0454428],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_5777c4df3e2638577dabf6d1db418b05 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8adee6cfa659bce4798e08932f42d5de = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_52dd8532e5e28c75013a8ead766479f5 = $(`<div id="html_52dd8532e5e28c75013a8ead766479f5" style="width: 100.0%; height: 100.0%;">          <strong>Le Petit Saigon</strong><br>          Type: restaurant<br>          Day: 1<br>          Arrival: 11:03 AM<br>          Departure: 12:03 PM          </div>`)[0];
+                popup_8adee6cfa659bce4798e08932f42d5de.setContent(html_52dd8532e5e28c75013a8ead766479f5);
+            
+        
+
+        marker_7bc0e4bb6767d2fb06fe969c61975569.bindPopup(popup_8adee6cfa659bce4798e08932f42d5de)
+        ;
+
+        
+    
+    
+            marker_7bc0e4bb6767d2fb06fe969c61975569.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7bc0e4bb6767d2fb06fe969c61975569.setIcon(icon_5777c4df3e2638577dabf6d1db418b05);
+            
+    
+            var marker_0d389f3bf34e2109ae3b06b0cf7b94a8 = L.marker(
+                [49.2808318, -123.045512],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_361fd477791afa50791e813b6d7308cf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_69e75492b19eed48c739deca6199cc2e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e5fe59397421046ebe1518ff6fe556c7 = $(`<div id="html_e5fe59397421046ebe1518ff6fe556c7" style="width: 100.0%; height: 100.0%;">          <strong>Phở Don</strong><br>          Type: restaurant<br>          Day: 1<br>          Arrival: 12:04 PM<br>          Departure: 01:04 PM          </div>`)[0];
+                popup_69e75492b19eed48c739deca6199cc2e.setContent(html_e5fe59397421046ebe1518ff6fe556c7);
+            
+        
+
+        marker_0d389f3bf34e2109ae3b06b0cf7b94a8.bindPopup(popup_69e75492b19eed48c739deca6199cc2e)
+        ;
+
+        
+    
+    
+            marker_0d389f3bf34e2109ae3b06b0cf7b94a8.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0d389f3bf34e2109ae3b06b0cf7b94a8.setIcon(icon_361fd477791afa50791e813b6d7308cf);
+            
+    
+            var marker_ad23c309638a96fdb1c088c99b8d4d33 = L.marker(
+                [49.2812722, -123.0472413],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_d2be32a3bbf55cbdbd7626758b2cabb1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_24e30e8c3fe3ec37de812d9bc4f2e5a6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_336c9705e8b130e98a5611cc90b8d294 = $(`<div id="html_336c9705e8b130e98a5611cc90b8d294" style="width: 100.0%; height: 100.0%;">          <strong>Chatime</strong><br>          Type: restaurant<br>          Day: 1<br>          Arrival: 01:05 PM<br>          Departure: 02:05 PM          </div>`)[0];
+                popup_24e30e8c3fe3ec37de812d9bc4f2e5a6.setContent(html_336c9705e8b130e98a5611cc90b8d294);
+            
+        
+
+        marker_ad23c309638a96fdb1c088c99b8d4d33.bindPopup(popup_24e30e8c3fe3ec37de812d9bc4f2e5a6)
+        ;
+
+        
+    
+    
+            marker_ad23c309638a96fdb1c088c99b8d4d33.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ad23c309638a96fdb1c088c99b8d4d33.setIcon(icon_d2be32a3bbf55cbdbd7626758b2cabb1);
+            
+    
+            var marker_cf91cc1645eb3700eabf6fa3fb33534e = L.marker(
+                [49.2812744, -123.0472726],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_12dc6f1c737ae91424f7a750136457d1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_61c33af9b96b9284cf1f822eed5e4c5d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5c255b73f9e51f37a762b8c6caad398a = $(`<div id="html_5c255b73f9e51f37a762b8c6caad398a" style="width: 100.0%; height: 100.0%;">          <strong>Le Petit Saigon</strong><br>          Type: restaurant<br>          Day: 1<br>          Arrival: 02:06 PM<br>          Departure: 03:06 PM          </div>`)[0];
+                popup_61c33af9b96b9284cf1f822eed5e4c5d.setContent(html_5c255b73f9e51f37a762b8c6caad398a);
+            
+        
+
+        marker_cf91cc1645eb3700eabf6fa3fb33534e.bindPopup(popup_61c33af9b96b9284cf1f822eed5e4c5d)
+        ;
+
+        
+    
+    
+            marker_cf91cc1645eb3700eabf6fa3fb33534e.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cf91cc1645eb3700eabf6fa3fb33534e.setIcon(icon_12dc6f1c737ae91424f7a750136457d1);
+            
+    
+            var marker_2b5fd4e6c0665e79995f18ab7e9c69e3 = L.marker(
+                [49.2809895, -123.0488387],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_195656065ef8f12dee55f46a62309a0a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b996304375263a174442fed8bcf5462f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0a24ba47e9ac44ee2e53b97858b3c99b = $(`<div id="html_0a24ba47e9ac44ee2e53b97858b3c99b" style="width: 100.0%; height: 100.0%;">          <strong>Luda Southern Dishes</strong><br>          Type: restaurant<br>          Day: 1<br>          Arrival: 03:07 PM<br>          Departure: 04:07 PM          </div>`)[0];
+                popup_b996304375263a174442fed8bcf5462f.setContent(html_0a24ba47e9ac44ee2e53b97858b3c99b);
+            
+        
+
+        marker_2b5fd4e6c0665e79995f18ab7e9c69e3.bindPopup(popup_b996304375263a174442fed8bcf5462f)
+        ;
+
+        
+    
+    
+            marker_2b5fd4e6c0665e79995f18ab7e9c69e3.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2b5fd4e6c0665e79995f18ab7e9c69e3.setIcon(icon_195656065ef8f12dee55f46a62309a0a);
+            
+    
+            var marker_d776d57809084cd99cc0e39e40b21712 = L.marker(
+                [49.2808807, -123.0501855],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_a87507906d1b83ef16acdcaf4d373a3d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6e8d91eba612e090ed054ba3b6e6f0b3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aa819cd8ab9246fdb0179a3e4648f96c = $(`<div id="html_aa819cd8ab9246fdb0179a3e4648f96c" style="width: 100.0%; height: 100.0%;">          <strong>Bo Laksa King's Bubbles & Bits</strong><br>          Type: restaurant<br>          Day: 1<br>          Arrival: 05:09 PM<br>          Departure: 06:09 PM          </div>`)[0];
+                popup_6e8d91eba612e090ed054ba3b6e6f0b3.setContent(html_aa819cd8ab9246fdb0179a3e4648f96c);
+            
+        
+
+        marker_d776d57809084cd99cc0e39e40b21712.bindPopup(popup_6e8d91eba612e090ed054ba3b6e6f0b3)
+        ;
+
+        
+    
+    
+            marker_d776d57809084cd99cc0e39e40b21712.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d776d57809084cd99cc0e39e40b21712.setIcon(icon_a87507906d1b83ef16acdcaf4d373a3d);
+            
+    
+            var marker_8d3bec11464c277ac91032366a9bd9b0 = L.marker(
+                [49.2810042, -123.0532903],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_947e0512cfbb89b9fedea87b1dacf107 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9afbace72933d71c85dfdf09f23012cd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_437e7a185cec94b79bfcf70d7f82263d = $(`<div id="html_437e7a185cec94b79bfcf70d7f82263d" style="width: 100.0%; height: 100.0%;">          <strong>Thailicious</strong><br>          Type: restaurant<br>          Day: 1<br>          Arrival: 06:10 PM<br>          Departure: 07:10 PM          </div>`)[0];
+                popup_9afbace72933d71c85dfdf09f23012cd.setContent(html_437e7a185cec94b79bfcf70d7f82263d);
+            
+        
+
+        marker_8d3bec11464c277ac91032366a9bd9b0.bindPopup(popup_9afbace72933d71c85dfdf09f23012cd)
+        ;
+
+        
+    
+    
+            marker_8d3bec11464c277ac91032366a9bd9b0.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8d3bec11464c277ac91032366a9bd9b0.setIcon(icon_947e0512cfbb89b9fedea87b1dacf107);
+            
+    
+            var marker_b79a68352ad3801b26a25d6ff2db3197 = L.marker(
+                [49.2810135, -123.0563034],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_dfc80a38962fd0f4a8350ab8ce01c323 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_04ae76d11145511f83624242d722a7b5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4093c7bde296acdf11be5d46e6e3366f = $(`<div id="html_4093c7bde296acdf11be5d46e6e3366f" style="width: 100.0%; height: 100.0%;">          <strong>The Red Wagon Cafe</strong><br>          Type: restaurant<br>          Day: 1<br>          Arrival: 07:11 PM<br>          Departure: 08:11 PM          </div>`)[0];
+                popup_04ae76d11145511f83624242d722a7b5.setContent(html_4093c7bde296acdf11be5d46e6e3366f);
+            
+        
+
+        marker_b79a68352ad3801b26a25d6ff2db3197.bindPopup(popup_04ae76d11145511f83624242d722a7b5)
+        ;
+
+        
+    
+    
+            marker_b79a68352ad3801b26a25d6ff2db3197.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b79a68352ad3801b26a25d6ff2db3197.setIcon(icon_dfc80a38962fd0f4a8350ab8ce01c323);
+            
+    
+            var marker_3797150525f5f3cd54fb2c45ad933c31 = L.marker(
+                [49.2813183, -123.058906],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_5406595e093f71f5dee226873a3d3f8e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_977a148b951bacf098b1aa9045f76eed = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f04f87bca26909046dd2a60b2e1fd147 = $(`<div id="html_f04f87bca26909046dd2a60b2e1fd147" style="width: 100.0%; height: 100.0%;">          <strong>IPOH Asian House</strong><br>          Type: restaurant<br>          Day: 2<br>          Arrival: 09:01 AM<br>          Departure: 10:01 AM          </div>`)[0];
+                popup_977a148b951bacf098b1aa9045f76eed.setContent(html_f04f87bca26909046dd2a60b2e1fd147);
+            
+        
+
+        marker_3797150525f5f3cd54fb2c45ad933c31.bindPopup(popup_977a148b951bacf098b1aa9045f76eed)
+        ;
+
+        
+    
+    
+            marker_3797150525f5f3cd54fb2c45ad933c31.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3797150525f5f3cd54fb2c45ad933c31.setIcon(icon_5406595e093f71f5dee226873a3d3f8e);
+            
+    
+            var marker_ebfc3124ae65b40c72ea53d5715ec41e = L.marker(
+                [49.2809894, -123.0611103],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_2e51a44bf58817865ef56f5420480c75 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4424d3015d0b856fee061b609a310eef = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e54aa00870fb84f011b2416f9347abc4 = $(`<div id="html_e54aa00870fb84f011b2416f9347abc4" style="width: 100.0%; height: 100.0%;">          <strong>On Lok Restaurant & Wun Tun House</strong><br>          Type: restaurant<br>          Day: 3<br>          Arrival: 09:01 AM<br>          Departure: 10:01 AM          </div>`)[0];
+                popup_4424d3015d0b856fee061b609a310eef.setContent(html_e54aa00870fb84f011b2416f9347abc4);
+            
+        
+
+        marker_ebfc3124ae65b40c72ea53d5715ec41e.bindPopup(popup_4424d3015d0b856fee061b609a310eef)
+        ;
+
+        
+    
+    
+            marker_ebfc3124ae65b40c72ea53d5715ec41e.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ebfc3124ae65b40c72ea53d5715ec41e.setIcon(icon_2e51a44bf58817865ef56f5420480c75);
+            
+    
+            var marker_03875f48607580ee7d563a369427db98 = L.marker(
+                [49.2809895, -123.0611172],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_c8aa118965a67826d167e6798f536ae0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_42e6778ff3cea5da5adf6ad7476e6327 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3f511cc46207a03a4498fd7d9e4404c2 = $(`<div id="html_3f511cc46207a03a4498fd7d9e4404c2" style="width: 100.0%; height: 100.0%;">          <strong>The Red Wagon Cafe</strong><br>          Type: restaurant<br>          Day: 3<br>          Arrival: 10:02 AM<br>          Departure: 11:02 AM          </div>`)[0];
+                popup_42e6778ff3cea5da5adf6ad7476e6327.setContent(html_3f511cc46207a03a4498fd7d9e4404c2);
+            
+        
+
+        marker_03875f48607580ee7d563a369427db98.bindPopup(popup_42e6778ff3cea5da5adf6ad7476e6327)
+        ;
+
+        
+    
+    
+            marker_03875f48607580ee7d563a369427db98.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_03875f48607580ee7d563a369427db98.setIcon(icon_c8aa118965a67826d167e6798f536ae0);
+            
+    
+            var marker_1b49aae9eb8681ee324d93f7b030041b = L.marker(
+                [49.28087512330656, -123.06333457514893],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_b02788d1e5ca89fcb63afc9064389671 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8ac16b6ad73be5ef6ded80942bfb0fab = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c63f95cd5c899315747a4cbcaace098d = $(`<div id="html_c63f95cd5c899315747a4cbcaace098d" style="width: 100.0%; height: 100.0%;">          <strong>On Lok Restaurant & Wun Tun House</strong><br>          Type: restaurant<br>          Day: 3<br>          Arrival: 12:04 PM<br>          Departure: 01:04 PM          </div>`)[0];
+                popup_8ac16b6ad73be5ef6ded80942bfb0fab.setContent(html_c63f95cd5c899315747a4cbcaace098d);
+            
+        
+
+        marker_1b49aae9eb8681ee324d93f7b030041b.bindPopup(popup_8ac16b6ad73be5ef6ded80942bfb0fab)
+        ;
+
+        
+    
+    
+            marker_1b49aae9eb8681ee324d93f7b030041b.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1b49aae9eb8681ee324d93f7b030041b.setIcon(icon_b02788d1e5ca89fcb63afc9064389671);
+            
+    
+            var marker_1fd2b5b7465066ab00af8224a880b4db = L.marker(
+                [49.2837876, -123.0641858],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_1efd567d7868669acdbc4cb4bb4c18ce = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5b97dcab4d182d68e30c07eaa9a38d6f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_07b5d66ec81f72d659c0fdaf10ef4b58 = $(`<div id="html_07b5d66ec81f72d659c0fdaf10ef4b58" style="width: 100.0%; height: 100.0%;">          <strong>Princeton Pub</strong><br>          Type: restaurant<br>          Day: 3<br>          Arrival: 01:05 PM<br>          Departure: 02:05 PM          </div>`)[0];
+                popup_5b97dcab4d182d68e30c07eaa9a38d6f.setContent(html_07b5d66ec81f72d659c0fdaf10ef4b58);
+            
+        
+
+        marker_1fd2b5b7465066ab00af8224a880b4db.bindPopup(popup_5b97dcab4d182d68e30c07eaa9a38d6f)
+        ;
+
+        
+    
+    
+            marker_1fd2b5b7465066ab00af8224a880b4db.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1fd2b5b7465066ab00af8224a880b4db.setIcon(icon_1efd567d7868669acdbc4cb4bb4c18ce);
+            
+    
+            var marker_98163788cc9a28dc76a91c1bed44db47 = L.marker(
+                [49.2837876, -123.0641858],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_35f2a0dc573dd080fdb10acd80334fb1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a10b14b2ff96e89439dc25022146fab9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_43965997949a7a56d0b137a211f54c38 = $(`<div id="html_43965997949a7a56d0b137a211f54c38" style="width: 100.0%; height: 100.0%;">          <strong>Parallel 49 Tasting Room & Beer Store</strong><br>          Type: restaurant<br>          Day: 3<br>          Arrival: 02:06 PM<br>          Departure: 03:06 PM          </div>`)[0];
+                popup_a10b14b2ff96e89439dc25022146fab9.setContent(html_43965997949a7a56d0b137a211f54c38);
+            
+        
+
+        marker_98163788cc9a28dc76a91c1bed44db47.bindPopup(popup_a10b14b2ff96e89439dc25022146fab9)
+        ;
+
+        
+    
+    
+            marker_98163788cc9a28dc76a91c1bed44db47.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_98163788cc9a28dc76a91c1bed44db47.setIcon(icon_35f2a0dc573dd080fdb10acd80334fb1);
+            
+    
+            var marker_8de0ae0c29b24e8a1ea5eb05baaea4ec = L.marker(
+                [49.2834684, -123.0736709],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_91cadc82f73f3d458b660e88d84f47d9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_32ca5d9f73a77bce825f0b9e3af52091 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a9e253eb26711b5619c360276820bd97 = $(`<div id="html_a9e253eb26711b5619c360276820bd97" style="width: 100.0%; height: 100.0%;">          <strong>Callister Tasting Room</strong><br>          Type: restaurant<br>          Day: 3<br>          Arrival: 06:10 PM<br>          Departure: 07:10 PM          </div>`)[0];
+                popup_32ca5d9f73a77bce825f0b9e3af52091.setContent(html_a9e253eb26711b5619c360276820bd97);
+            
+        
+
+        marker_8de0ae0c29b24e8a1ea5eb05baaea4ec.bindPopup(popup_32ca5d9f73a77bce825f0b9e3af52091)
+        ;
+
+        
+    
+    
+            marker_8de0ae0c29b24e8a1ea5eb05baaea4ec.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8de0ae0c29b24e8a1ea5eb05baaea4ec.setIcon(icon_91cadc82f73f3d458b660e88d84f47d9);
+            
+    
+            var marker_ee760bc201b1c9843e75cede339f7c40 = L.marker(
+                [49.2795862, -123.0749371],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_1fd59b8bce62a07cae49806bfb30fa55 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_790a5a7e6cce2b2718830d5ecc0cc1cb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_73e43d62a144890e90df0a2a8050f198 = $(`<div id="html_73e43d62a144890e90df0a2a8050f198" style="width: 100.0%; height: 100.0%;">          <strong>Off The Rail Tasting Room</strong><br>          Type: restaurant<br>          Day: 4<br>          Arrival: 09:01 AM<br>          Departure: 10:01 AM          </div>`)[0];
+                popup_790a5a7e6cce2b2718830d5ecc0cc1cb.setContent(html_73e43d62a144890e90df0a2a8050f198);
+            
+        
+
+        marker_ee760bc201b1c9843e75cede339f7c40.bindPopup(popup_790a5a7e6cce2b2718830d5ecc0cc1cb)
+        ;
+
+        
+    
+    
+            marker_ee760bc201b1c9843e75cede339f7c40.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ee760bc201b1c9843e75cede339f7c40.setIcon(icon_1fd59b8bce62a07cae49806bfb30fa55);
+            
+    
+            var marker_0439e0a3ac5d89cdb46da731deffa9d4 = L.marker(
+                [49.2777606, -123.0760415],
+                {
+}
+            ).addTo(feature_group_36fb0510566a1567e7f6eb5f28e1297f);
+        
+    
+            var icon_acc9b0cd448fefd170b0cba008e04ed8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "cutlery",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3da5e9ad9c23de41df4da9c07cc45b0f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d93a233c64794f06cd4997ef04eb733d = $(`<div id="html_d93a233c64794f06cd4997ef04eb733d" style="width: 100.0%; height: 100.0%;">          <strong>Vancouver Hack Space</strong><br>          Type: restaurant<br>          Day: 5<br>          Arrival: 09:01 AM<br>          Departure: 10:01 AM          </div>`)[0];
+                popup_3da5e9ad9c23de41df4da9c07cc45b0f.setContent(html_d93a233c64794f06cd4997ef04eb733d);
+            
+        
+
+        marker_0439e0a3ac5d89cdb46da731deffa9d4.bindPopup(popup_3da5e9ad9c23de41df4da9c07cc45b0f)
+        ;
+
+        
+    
+    
+            marker_0439e0a3ac5d89cdb46da731deffa9d4.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0439e0a3ac5d89cdb46da731deffa9d4.setIcon(icon_acc9b0cd448fefd170b0cba008e04ed8);
+            
+    
+            feature_group_36fb0510566a1567e7f6eb5f28e1297f.addTo(map_23d5aedd3574f9b48c8d05b484d5039a);
+        
+    
+            var feature_group_c26501783900c9f36186b80de8b815a5 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_b6f5aa3bb05ce930e071c9a645ffb285 = L.marker(
+                [49.2813793, -123.0452068],
+                {
+}
+            ).addTo(feature_group_c26501783900c9f36186b80de8b815a5);
+        
+    
+            var icon_3a87e6197ef1e1ec695e8ac9dd49c8e3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "bed",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_15326a5b4502df638875700ad1b15e8d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9c305bf033a53324d0b3f0f0216a7a6a = $(`<div id="html_9c305bf033a53324d0b3f0f0216a7a6a" style="width: 100.0%; height: 100.0%;">          <strong>Hotel (End of Day)</strong><br>          Type: hotel<br>          Day: 1<br>          Arrival: 08:12 PM<br>          Departure: 09:00 AM          <br><em>Visited on days: 1, 2</em></div>`)[0];
+                popup_15326a5b4502df638875700ad1b15e8d.setContent(html_9c305bf033a53324d0b3f0f0216a7a6a);
+            
+        
+
+        marker_b6f5aa3bb05ce930e071c9a645ffb285.bindPopup(popup_15326a5b4502df638875700ad1b15e8d)
+        ;
+
+        
+    
+    
+            marker_b6f5aa3bb05ce930e071c9a645ffb285.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b6f5aa3bb05ce930e071c9a645ffb285.setIcon(icon_3a87e6197ef1e1ec695e8ac9dd49c8e3);
+            
+    
+            var marker_16d3f999e1ae3da93b7fde61a50b353f = L.marker(
+                [49.2813793, -123.0452068],
+                {
+}
+            ).addTo(feature_group_c26501783900c9f36186b80de8b815a5);
+        
+    
+            var icon_fa253696d4ae531cef9dcc36ffdffa2c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "bed",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_11323fda04b3fc2989437243fd3b0253 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1b1cd89a4fb7c6f4ff2c9ebfd48b2731 = $(`<div id="html_1b1cd89a4fb7c6f4ff2c9ebfd48b2731" style="width: 100.0%; height: 100.0%;">          <strong>Atrium Hotel Vancouver</strong><br>          Type: hotel<br>          Day: 2<br>          Arrival: 10:02 AM<br>          Departure: 10:02 PM          <br><em>Visited on days: 1, 2</em></div>`)[0];
+                popup_11323fda04b3fc2989437243fd3b0253.setContent(html_1b1cd89a4fb7c6f4ff2c9ebfd48b2731);
+            
+        
+
+        marker_16d3f999e1ae3da93b7fde61a50b353f.bindPopup(popup_11323fda04b3fc2989437243fd3b0253)
+        ;
+
+        
+    
+    
+            marker_16d3f999e1ae3da93b7fde61a50b353f.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_16d3f999e1ae3da93b7fde61a50b353f.setIcon(icon_fa253696d4ae531cef9dcc36ffdffa2c);
+            
+    
+            var marker_fb3a78cd9444682966da8690137ff66e = L.marker(
+                [49.2814894, -123.074332],
+                {
+}
+            ).addTo(feature_group_c26501783900c9f36186b80de8b815a5);
+        
+    
+            var icon_3e43e084943548924e9c3182dd348216 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "bed",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bd71ae3ab4e9a8d4a5cefed087bb63fd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c4a4ceb2d414dbe28d51b56aab8350f0 = $(`<div id="html_c4a4ceb2d414dbe28d51b56aab8350f0" style="width: 100.0%; height: 100.0%;">          <strong>Hotel (End of Day)</strong><br>          Type: hotel<br>          Day: 2<br>          Arrival: 10:04 PM<br>          Departure: 09:00 AM          <br><em>Visited on days: 2, 4</em></div>`)[0];
+                popup_bd71ae3ab4e9a8d4a5cefed087bb63fd.setContent(html_c4a4ceb2d414dbe28d51b56aab8350f0);
+            
+        
+
+        marker_fb3a78cd9444682966da8690137ff66e.bindPopup(popup_bd71ae3ab4e9a8d4a5cefed087bb63fd)
+        ;
+
+        
+    
+    
+            marker_fb3a78cd9444682966da8690137ff66e.bindTooltip(
+                `<div>
+                     Travel Time: 3 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fb3a78cd9444682966da8690137ff66e.setIcon(icon_3e43e084943548924e9c3182dd348216);
+            
+    
+            var marker_095ad7f93d9e88603ced55c999bc9c52 = L.marker(
+                [49.2814701, -123.0951511],
+                {
+}
+            ).addTo(feature_group_c26501783900c9f36186b80de8b815a5);
+        
+    
+            var icon_a6fa7014c1917e951eb5e0a1cf906577 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "bed",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2dc451a94cf8bf0b2450f86d63aef738 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a46606e283d760c9ea9a5b035c2cc6db = $(`<div id="html_a46606e283d760c9ea9a5b035c2cc6db" style="width: 100.0%; height: 100.0%;">          <strong>Hotel (End of Day)</strong><br>          Type: hotel<br>          Day: 3<br>          Arrival: 08:13 PM<br>          Departure: 09:00 AM          </div>`)[0];
+                popup_2dc451a94cf8bf0b2450f86d63aef738.setContent(html_a46606e283d760c9ea9a5b035c2cc6db);
+            
+        
+
+        marker_095ad7f93d9e88603ced55c999bc9c52.bindPopup(popup_2dc451a94cf8bf0b2450f86d63aef738)
+        ;
+
+        
+    
+    
+            marker_095ad7f93d9e88603ced55c999bc9c52.bindTooltip(
+                `<div>
+                     Travel Time: 2 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_095ad7f93d9e88603ced55c999bc9c52.setIcon(icon_a6fa7014c1917e951eb5e0a1cf906577);
+            
+    
+            var marker_661873782d3a60bd5deb9159834ad4a7 = L.marker(
+                [49.2814894, -123.074332],
+                {
+}
+            ).addTo(feature_group_c26501783900c9f36186b80de8b815a5);
+        
+    
+            var icon_a0f78433f54f42f04fe3c7cc25364612 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "bed",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2b5ed2eb3e9aff31acbaba929872b2db = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e876429222bab30f288ab600f9458a13 = $(`<div id="html_e876429222bab30f288ab600f9458a13" style="width: 100.0%; height: 100.0%;">          <strong>Hotel At The Waldorf</strong><br>          Type: hotel<br>          Day: 4<br>          Arrival: 10:02 AM<br>          Departure: 10:02 PM          <br><em>Visited on days: 2, 4</em></div>`)[0];
+                popup_2b5ed2eb3e9aff31acbaba929872b2db.setContent(html_e876429222bab30f288ab600f9458a13);
+            
+        
+
+        marker_661873782d3a60bd5deb9159834ad4a7.bindPopup(popup_2b5ed2eb3e9aff31acbaba929872b2db)
+        ;
+
+        
+    
+    
+            marker_661873782d3a60bd5deb9159834ad4a7.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_661873782d3a60bd5deb9159834ad4a7.setIcon(icon_a0f78433f54f42f04fe3c7cc25364612);
+            
+    
+            var marker_113231477d068a5deb7568a1243a6a6b = L.marker(
+                [49.28209719434917, -123.10248384697059],
+                {
+}
+            ).addTo(feature_group_c26501783900c9f36186b80de8b815a5);
+        
+    
+            var icon_e3dc33d34b1bd72bc6e63bba88be0093 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "green",
+  "iconColor": "white",
+  "icon": "bed",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ac7b00edee1dde089a31cc836fbda9eb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1ae5ac79b32dbdc0d636fe998f18be2a = $(`<div id="html_1ae5ac79b32dbdc0d636fe998f18be2a" style="width: 100.0%; height: 100.0%;">          <strong>Hotel (End of Day)</strong><br>          Type: hotel<br>          Day: 4<br>          Arrival: 10:04 PM<br>          Departure: 09:00 AM          </div>`)[0];
+                popup_ac7b00edee1dde089a31cc836fbda9eb.setContent(html_1ae5ac79b32dbdc0d636fe998f18be2a);
+            
+        
+
+        marker_113231477d068a5deb7568a1243a6a6b.bindPopup(popup_ac7b00edee1dde089a31cc836fbda9eb)
+        ;
+
+        
+    
+    
+            marker_113231477d068a5deb7568a1243a6a6b.bindTooltip(
+                `<div>
+                     Travel Time: 2 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_113231477d068a5deb7568a1243a6a6b.setIcon(icon_e3dc33d34b1bd72bc6e63bba88be0093);
+            
+    
+            feature_group_c26501783900c9f36186b80de8b815a5.addTo(map_23d5aedd3574f9b48c8d05b484d5039a);
+        
+    
+            var feature_group_b7f19419f8f4da1d42a86a07f910f738 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            feature_group_b7f19419f8f4da1d42a86a07f910f738.addTo(map_23d5aedd3574f9b48c8d05b484d5039a);
+        
+    
+            var feature_group_4ff6b0ebbe826468f4aa0e2c1ff9d854 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_b03edee3d736be15ee9dda028000c676 = L.marker(
+                [49.279771749999995, -123.03403197548914],
+                {
+}
+            ).addTo(feature_group_4ff6b0ebbe826468f4aa0e2c1ff9d854);
+        
+    
+            var icon_6d2302c1e031213497ff0ad6cd33fc17 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "play",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bd8f27759a7cd03568e5a37e19b4ab20 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_beb2220d52a806af51344e6c67fb7328 = $(`<div id="html_beb2220d52a806af51344e6c67fb7328" style="width: 100.0%; height: 100.0%;">          <strong>Start Location</strong><br>          Type: start<br>          Day: 1<br>          Arrival: 09:00 AM<br>          Departure: 09:00 AM          </div>`)[0];
+                popup_bd8f27759a7cd03568e5a37e19b4ab20.setContent(html_beb2220d52a806af51344e6c67fb7328);
+            
+        
+
+        marker_b03edee3d736be15ee9dda028000c676.bindPopup(popup_bd8f27759a7cd03568e5a37e19b4ab20)
+        ;
+
+        
+    
+    
+            marker_b03edee3d736be15ee9dda028000c676.bindTooltip(
+                `<div>
+                     Travel Time: 0 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b03edee3d736be15ee9dda028000c676.setIcon(icon_6d2302c1e031213497ff0ad6cd33fc17);
+            
+    
+            feature_group_4ff6b0ebbe826468f4aa0e2c1ff9d854.addTo(map_23d5aedd3574f9b48c8d05b484d5039a);
+        
+    
+            var feature_group_23a7dc45355758a29a154c153cbf4ba4 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var marker_b7e8da88d1be51fe0ee733db72e4a62f = L.marker(
+                [49.281406, -123.0498885],
+                {
+}
+            ).addTo(feature_group_23a7dc45355758a29a154c153cbf4ba4);
+        
+    
+            var icon_910c68e43f648b69b3a72a1a49b5121a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "map-marker",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fd626b3331e51610e3e16e993dde11b7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e54167a586cbaf885489032d2f76a35b = $(`<div id="html_e54167a586cbaf885489032d2f76a35b" style="width: 100.0%; height: 100.0%;">          <strong>Hastings Branch</strong><br>          Type: library<br>          Day: 1<br>          Arrival: 04:08 PM<br>          Departure: 05:08 PM          </div>`)[0];
+                popup_fd626b3331e51610e3e16e993dde11b7.setContent(html_e54167a586cbaf885489032d2f76a35b);
+            
+        
+
+        marker_b7e8da88d1be51fe0ee733db72e4a62f.bindPopup(popup_fd626b3331e51610e3e16e993dde11b7)
+        ;
+
+        
+    
+    
+            marker_b7e8da88d1be51fe0ee733db72e4a62f.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b7e8da88d1be51fe0ee733db72e4a62f.setIcon(icon_910c68e43f648b69b3a72a1a49b5121a);
+            
+    
+            var marker_8dbbaf233bda71cf4cbaa3f86ebf9c68 = L.marker(
+                [49.2809119, -123.0634229],
+                {
+}
+            ).addTo(feature_group_23a7dc45355758a29a154c153cbf4ba4);
+        
+    
+            var icon_5f3911f25fbfe777b1c20dbd4cc35a24 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "map-marker",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_72c288fdb9162ee886e57815e72d9e10 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a6b8f79833c095c3fa0a2542af24bcb3 = $(`<div id="html_a6b8f79833c095c3fa0a2542af24bcb3" style="width: 100.0%; height: 100.0%;">          <strong>Parallel 49 Tasting Room & Beer Store</strong><br>          Type: bar<br>          Day: 3<br>          Arrival: 11:03 AM<br>          Departure: 12:03 PM          </div>`)[0];
+                popup_72c288fdb9162ee886e57815e72d9e10.setContent(html_a6b8f79833c095c3fa0a2542af24bcb3);
+            
+        
+
+        marker_8dbbaf233bda71cf4cbaa3f86ebf9c68.bindPopup(popup_72c288fdb9162ee886e57815e72d9e10)
+        ;
+
+        
+    
+    
+            marker_8dbbaf233bda71cf4cbaa3f86ebf9c68.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8dbbaf233bda71cf4cbaa3f86ebf9c68.setIcon(icon_5f3911f25fbfe777b1c20dbd4cc35a24);
+            
+    
+            var marker_544c8f02e1bebf407fda95ce95705f56 = L.marker(
+                [49.2849397, -123.0649633],
+                {
+}
+            ).addTo(feature_group_23a7dc45355758a29a154c153cbf4ba4);
+        
+    
+            var icon_271298870fd7cf1e80befe70784b1f22 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "map-marker",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2fa8bc32ff6d934b2eb85faa038d38b7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_05e031f32b824488c257a1b3e030b527 = $(`<div id="html_05e031f32b824488c257a1b3e030b527" style="width: 100.0%; height: 100.0%;">          <strong>The Pie Shoppe</strong><br>          Type: cafe<br>          Day: 3<br>          Arrival: 03:07 PM<br>          Departure: 04:07 PM          </div>`)[0];
+                popup_2fa8bc32ff6d934b2eb85faa038d38b7.setContent(html_05e031f32b824488c257a1b3e030b527);
+            
+        
+
+        marker_544c8f02e1bebf407fda95ce95705f56.bindPopup(popup_2fa8bc32ff6d934b2eb85faa038d38b7)
+        ;
+
+        
+    
+    
+            marker_544c8f02e1bebf407fda95ce95705f56.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_544c8f02e1bebf407fda95ce95705f56.setIcon(icon_271298870fd7cf1e80befe70784b1f22);
+            
+    
+            var marker_fae1eb74335ddd3ae918ddaee438066c = L.marker(
+                [49.2848648, -123.0659643],
+                {
+}
+            ).addTo(feature_group_23a7dc45355758a29a154c153cbf4ba4);
+        
+    
+            var icon_170a9d5f69c8bd20fda611fb8ca8e58a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "map-marker",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_766070f54e46f7a04df43abacc19cea6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7ebdf006844badf1f7f62f53fdcf4441 = $(`<div id="html_7ebdf006844badf1f7f62f53fdcf4441" style="width: 100.0%; height: 100.0%;">          <strong>Slow Hand Tasting Room</strong><br>          Type: bar<br>          Day: 3<br>          Arrival: 04:08 PM<br>          Departure: 05:08 PM          </div>`)[0];
+                popup_766070f54e46f7a04df43abacc19cea6.setContent(html_7ebdf006844badf1f7f62f53fdcf4441);
+            
+        
+
+        marker_fae1eb74335ddd3ae918ddaee438066c.bindPopup(popup_766070f54e46f7a04df43abacc19cea6)
+        ;
+
+        
+    
+    
+            marker_fae1eb74335ddd3ae918ddaee438066c.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fae1eb74335ddd3ae918ddaee438066c.setIcon(icon_170a9d5f69c8bd20fda611fb8ca8e58a);
+            
+    
+            var marker_06137fda8b37a29588554e2ef719c6bb = L.marker(
+                [49.2842649, -123.0672525],
+                {
+}
+            ).addTo(feature_group_23a7dc45355758a29a154c153cbf4ba4);
+        
+    
+            var icon_33e52d8a0d27a4ac6ac3dfb6e43f1af8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "map-marker",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_19e9e531c39f42aae36d7f900b6e11e7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_248c3ada96eb76876dcaa5f68963f7ca = $(`<div id="html_248c3ada96eb76876dcaa5f68963f7ca" style="width: 100.0%; height: 100.0%;">          <strong>Andina Tasting Lounge</strong><br>          Type: pub<br>          Day: 3<br>          Arrival: 05:09 PM<br>          Departure: 06:09 PM          </div>`)[0];
+                popup_19e9e531c39f42aae36d7f900b6e11e7.setContent(html_248c3ada96eb76876dcaa5f68963f7ca);
+            
+        
+
+        marker_06137fda8b37a29588554e2ef719c6bb.bindPopup(popup_19e9e531c39f42aae36d7f900b6e11e7)
+        ;
+
+        
+    
+    
+            marker_06137fda8b37a29588554e2ef719c6bb.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_06137fda8b37a29588554e2ef719c6bb.setIcon(icon_33e52d8a0d27a4ac6ac3dfb6e43f1af8);
+            
+    
+            var marker_705b47d636ed7163b4bbf756b33537c4 = L.marker(
+                [49.2821452, -123.0762115],
+                {
+}
+            ).addTo(feature_group_23a7dc45355758a29a154c153cbf4ba4);
+        
+    
+            var icon_957afe238b2a87cb1bcfed984ec0bc8f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "map-marker",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_13bf4d51b9f33bfb71f464826b502d80 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ca575bfef3e7ea61b76b35bd74d8818e = $(`<div id="html_ca575bfef3e7ea61b76b35bd74d8818e" style="width: 100.0%; height: 100.0%;">          <strong>Korean Community Centre</strong><br>          Type: community_centre<br>          Day: 3<br>          Arrival: 07:11 PM<br>          Departure: 08:11 PM          </div>`)[0];
+                popup_13bf4d51b9f33bfb71f464826b502d80.setContent(html_ca575bfef3e7ea61b76b35bd74d8818e);
+            
+        
+
+        marker_705b47d636ed7163b4bbf756b33537c4.bindPopup(popup_13bf4d51b9f33bfb71f464826b502d80)
+        ;
+
+        
+    
+    
+            marker_705b47d636ed7163b4bbf756b33537c4.bindTooltip(
+                `<div>
+                     Travel Time: 1 min
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_705b47d636ed7163b4bbf756b33537c4.setIcon(icon_957afe238b2a87cb1bcfed984ec0bc8f);
+            
+    
+            feature_group_23a7dc45355758a29a154c153cbf4ba4.addTo(map_23d5aedd3574f9b48c8d05b484d5039a);
+        
+    
+            var layer_control_0b84325a6e68cd97d3ac44ac8e61dbed_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_f76984eacefb26a19cf54242e7e346f6,
+                },
+                overlays :  {
+                    "Restaurants" : feature_group_36fb0510566a1567e7f6eb5f28e1297f,
+                    "Hotels" : feature_group_c26501783900c9f36186b80de8b815a5,
+                    "Rentals" : feature_group_b7f19419f8f4da1d42a86a07f910f738,
+                    "Start Location" : feature_group_4ff6b0ebbe826468f4aa0e2c1ff9d854,
+                    "Other" : feature_group_23a7dc45355758a29a154c153cbf4ba4,
+                },
+            };
+            let layer_control_0b84325a6e68cd97d3ac44ac8e61dbed = L.control.layers(
+                layer_control_0b84325a6e68cd97d3ac44ac8e61dbed_layers.base_layers,
+                layer_control_0b84325a6e68cd97d3ac44ac8e61dbed_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_23d5aedd3574f9b48c8d05b484d5039a);
+
+        
+    
+            L.Control.TimeDimensionCustom = L.Control.TimeDimension.extend({
+                _getDisplayDateFormat: function(date){
+                    var newdate = new moment(date);
+                    console.log(newdate)
+                    return newdate.format("YYYY-MM-DD HH:mm:ss");
+                }
+            });
+            map_23d5aedd3574f9b48c8d05b484d5039a.timeDimension = L.timeDimension(
+                {
+                    period: "PT1S",
+                }
+            );
+            var timeDimensionControl = new L.Control.TimeDimensionCustom(
+                {
+  "position": "bottomleft",
+  "minSpeed": 0.1,
+  "maxSpeed": 10,
+  "autoPlay": true,
+  "loopButton": false,
+  "timeSliderDragUpdate": false,
+  "speedSlider": true,
+  "playerOptions": {
+  "transitionTime": 50,
+  "loop": false,
+  "startOver": true,
+},
+}
+            );
+            map_23d5aedd3574f9b48c8d05b484d5039a.addControl(this.timeDimensionControl);
+
+            var geoJsonLayer = L.geoJson({"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0335844, 49.2802023], [-123.0362081, 49.2802092]]}, "properties": {"times": ["2025-01-01T09:00:00", "2025-01-01T09:41:52.661871"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0362081, 49.2802092], [-123.038843, 49.2802106]]}, "properties": {"times": ["2025-01-01T09:41:52.661871", "2025-01-01T10:23:45.323741"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.038843, 49.2802106], [-123.041456, 49.2802094]]}, "properties": {"times": ["2025-01-01T10:23:45.323741", "2025-01-01T11:05:37.985612"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.041456, 49.2802094], [-123.0440752, 49.280217]]}, "properties": {"times": ["2025-01-01T11:05:37.985612", "2025-01-01T11:47:30.647482"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0440752, 49.280217], [-123.044085, 49.2811325]]}, "properties": {"times": ["2025-01-01T11:47:30.647482", "2025-01-01T12:29:23.309353"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.044085, 49.2811325], [-123.0440856, 49.2820652]]}, "properties": {"times": ["2025-01-01T12:29:23.309353", "2025-01-01T13:11:15.971223"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0440856, 49.2820652], [-123.0440848, 49.2829011]]}, "properties": {"times": ["2025-01-01T13:11:15.971223", "2025-01-01T13:53:08.633094"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0440848, 49.2829011], [-123.0440856, 49.2820652]]}, "properties": {"times": ["2025-01-01T13:53:08.633094", "2025-01-01T14:35:01.294964"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0440856, 49.2820652], [-123.0466432, 49.2820715]]}, "properties": {"times": ["2025-01-01T14:35:01.294964", "2025-01-01T15:16:53.956835"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0466432, 49.2820715], [-123.0467138, 49.2820266]]}, "properties": {"times": ["2025-01-01T15:16:53.956835", "2025-01-01T15:58:46.618705"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0467138, 49.2820266], [-123.0467093, 49.2816203]]}, "properties": {"times": ["2025-01-01T15:58:46.618705", "2025-01-01T16:40:39.280576"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0467093, 49.2816203], [-123.0467116, 49.2811416]]}, "properties": {"times": ["2025-01-01T16:40:39.280576", "2025-01-01T17:22:31.942446"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0467116, 49.2811416], [-123.0493394, 49.281145]]}, "properties": {"times": ["2025-01-01T17:22:31.942446", "2025-01-01T18:04:24.604317"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0493394, 49.281145], [-123.051965, 49.2811448]]}, "properties": {"times": ["2025-01-01T18:04:24.604317", "2025-01-01T18:46:17.266187"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.051965, 49.2811448], [-123.0519734, 49.2802221]]}, "properties": {"times": ["2025-01-01T18:46:17.266187", "2025-01-01T19:28:09.928058"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0519734, 49.2802221], [-123.0545981, 49.2802345]]}, "properties": {"times": ["2025-01-01T19:28:09.928058", "2025-01-01T20:10:02.589928"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0545981, 49.2802345], [-123.054565, 49.2808151]]}, "properties": {"times": ["2025-01-01T20:10:02.589928", "2025-01-01T20:51:55.251799"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.054565, 49.2808151], [-123.0545981, 49.2802345]]}, "properties": {"times": ["2025-01-01T20:51:55.251799", "2025-01-01T21:33:47.913669"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0545981, 49.2802345], [-123.056517, 49.2802295]]}, "properties": {"times": ["2025-01-01T21:33:47.913669", "2025-01-01T22:15:40.575540"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.056517, 49.2802295], [-123.056509, 49.2811501]]}, "properties": {"times": ["2025-01-01T22:15:40.575540", "2025-01-01T22:57:33.237410"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.056509, 49.2811501], [-123.0545994, 49.28115]]}, "properties": {"times": ["2025-01-01T22:57:33.237410", "2025-01-01T23:39:25.899281"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0545994, 49.28115], [-123.051965, 49.2811448]]}, "properties": {"times": ["2025-01-01T23:39:25.899281", "2025-01-02T00:21:18.561151"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.051965, 49.2811448], [-123.0493394, 49.281145]]}, "properties": {"times": ["2025-01-02T00:21:18.561151", "2025-01-02T01:03:11.223022"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0493394, 49.281145], [-123.0467116, 49.2811416]]}, "properties": {"times": ["2025-01-02T01:03:11.223022", "2025-01-02T01:45:03.884892"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0467116, 49.2811416], [-123.044085, 49.2811325]]}, "properties": {"times": ["2025-01-02T01:45:03.884892", "2025-01-02T02:26:56.546763"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.044085, 49.2811325], [-123.0467116, 49.2811416]]}, "properties": {"times": ["2025-01-02T02:26:56.546763", "2025-01-02T03:08:49.208633"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0467116, 49.2811416], [-123.0493394, 49.281145]]}, "properties": {"times": ["2025-01-02T03:08:49.208633", "2025-01-02T03:50:41.870504"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0493394, 49.281145], [-123.051965, 49.2811448]]}, "properties": {"times": ["2025-01-02T03:50:41.870504", "2025-01-02T04:32:34.532374"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.051965, 49.2811448], [-123.0545994, 49.28115]]}, "properties": {"times": ["2025-01-02T04:32:34.532374", "2025-01-02T05:14:27.194245"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0545994, 49.28115], [-123.056509, 49.2811501]]}, "properties": {"times": ["2025-01-02T05:14:27.194245", "2025-01-02T05:56:19.856115"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.056509, 49.2811501], [-123.056646, 49.2811507]]}, "properties": {"times": ["2025-01-02T05:56:19.856115", "2025-01-02T06:38:12.517986"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.056646, 49.2811507], [-123.0578303, 49.2811562]]}, "properties": {"times": ["2025-01-02T06:38:12.517986", "2025-01-02T07:20:05.179856"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0578303, 49.2811562], [-123.0597789, 49.2811753]]}, "properties": {"times": ["2025-01-02T07:20:05.179856", "2025-01-02T08:01:57.841727"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0597789, 49.2811753], [-123.0578303, 49.2811562]]}, "properties": {"times": ["2025-01-02T08:01:57.841727", "2025-01-02T08:43:50.503597"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0578303, 49.2811562], [-123.056646, 49.2811507]]}, "properties": {"times": ["2025-01-02T08:43:50.503597", "2025-01-02T09:25:43.165468"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.056646, 49.2811507], [-123.056509, 49.2811501]]}, "properties": {"times": ["2025-01-02T09:25:43.165468", "2025-01-02T10:07:35.827338"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.056509, 49.2811501], [-123.0545994, 49.28115]]}, "properties": {"times": ["2025-01-02T10:07:35.827338", "2025-01-02T10:49:28.489209"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0545994, 49.28115], [-123.051965, 49.2811448]]}, "properties": {"times": ["2025-01-02T10:49:28.489209", "2025-01-02T11:31:21.151079"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.051965, 49.2811448], [-123.0493394, 49.281145]]}, "properties": {"times": ["2025-01-02T11:31:21.151079", "2025-01-02T12:13:13.812950"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0493394, 49.281145], [-123.0467116, 49.2811416]]}, "properties": {"times": ["2025-01-02T12:13:13.812950", "2025-01-02T12:55:06.474820"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0467116, 49.2811416], [-123.044085, 49.2811325]]}, "properties": {"times": ["2025-01-02T12:55:06.474820", "2025-01-02T13:36:59.136691"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.044085, 49.2811325], [-123.0467116, 49.2811416]]}, "properties": {"times": ["2025-01-02T13:36:59.136691", "2025-01-02T14:18:51.798561"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0467116, 49.2811416], [-123.0493394, 49.281145]]}, "properties": {"times": ["2025-01-02T14:18:51.798561", "2025-01-02T15:00:44.460432"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0493394, 49.281145], [-123.051965, 49.2811448]]}, "properties": {"times": ["2025-01-02T15:00:44.460432", "2025-01-02T15:42:37.122302"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.051965, 49.2811448], [-123.0545994, 49.28115]]}, "properties": {"times": ["2025-01-02T15:42:37.122302", "2025-01-02T16:24:29.784173"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0545994, 49.28115], [-123.056509, 49.2811501]]}, "properties": {"times": ["2025-01-02T16:24:29.784173", "2025-01-02T17:06:22.446043"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.056509, 49.2811501], [-123.056646, 49.2811507]]}, "properties": {"times": ["2025-01-02T17:06:22.446043", "2025-01-02T17:48:15.107914"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.056646, 49.2811507], [-123.0578303, 49.2811562]]}, "properties": {"times": ["2025-01-02T17:48:15.107914", "2025-01-02T18:30:07.769784"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0578303, 49.2811562], [-123.0597789, 49.2811753]]}, "properties": {"times": ["2025-01-02T18:30:07.769784", "2025-01-02T19:12:00.431655"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0597789, 49.2811753], [-123.0617093, 49.2811789]]}, "properties": {"times": ["2025-01-02T19:12:00.431655", "2025-01-02T19:53:53.093525"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0617093, 49.2811789], [-123.0636426, 49.281186]]}, "properties": {"times": ["2025-01-02T19:53:53.093525", "2025-01-02T20:35:45.755396"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0636426, 49.281186], [-123.065591, 49.2811857]]}, "properties": {"times": ["2025-01-02T20:35:45.755396", "2025-01-02T21:17:38.417266"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.065591, 49.2811857], [-123.0682834, 49.2812117]]}, "properties": {"times": ["2025-01-02T21:17:38.417266", "2025-01-02T21:59:31.079137"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0682834, 49.2812117], [-123.0703368, 49.2812977]]}, "properties": {"times": ["2025-01-02T21:59:31.079137", "2025-01-02T22:41:23.741007"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0703368, 49.2812977], [-123.0704656, 49.2812995]]}, "properties": {"times": ["2025-01-02T22:41:23.741007", "2025-01-02T23:23:16.402878"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0704656, 49.2812995], [-123.0724421, 49.28126]]}, "properties": {"times": ["2025-01-02T23:23:16.402878", "2025-01-03T00:05:09.064748"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0724421, 49.28126], [-123.0726377, 49.2812631]]}, "properties": {"times": ["2025-01-03T00:05:09.064748", "2025-01-03T00:47:01.726619"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0726377, 49.2812631], [-123.0741098, 49.2812812]]}, "properties": {"times": ["2025-01-03T00:47:01.726619", "2025-01-03T01:28:54.388489"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0741098, 49.2812812], [-123.0726377, 49.2812631]]}, "properties": {"times": ["2025-01-03T01:28:54.388489", "2025-01-03T02:10:47.050360"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0726377, 49.2812631], [-123.0724421, 49.28126]]}, "properties": {"times": ["2025-01-03T02:10:47.050360", "2025-01-03T02:52:39.712230"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0724421, 49.28126], [-123.0704656, 49.2812995]]}, "properties": {"times": ["2025-01-03T02:52:39.712230", "2025-01-03T03:34:32.374101"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0704656, 49.2812995], [-123.0703368, 49.2812977]]}, "properties": {"times": ["2025-01-03T03:34:32.374101", "2025-01-03T04:16:25.035971"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0703368, 49.2812977], [-123.0682834, 49.2812117]]}, "properties": {"times": ["2025-01-03T04:16:25.035971", "2025-01-03T04:58:17.697842"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0682834, 49.2812117], [-123.065591, 49.2811857]]}, "properties": {"times": ["2025-01-03T04:58:17.697842", "2025-01-03T05:40:10.359712"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.065591, 49.2811857], [-123.0636426, 49.281186]]}, "properties": {"times": ["2025-01-03T05:40:10.359712", "2025-01-03T06:22:03.021583"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0636426, 49.281186], [-123.0617093, 49.2811789]]}, "properties": {"times": ["2025-01-03T06:22:03.021583", "2025-01-03T07:03:55.683453"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0617093, 49.2811789], [-123.0636426, 49.281186]]}, "properties": {"times": ["2025-01-03T07:03:55.683453", "2025-01-03T07:45:48.345324"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0636426, 49.281186], [-123.0655687, 49.2821367]]}, "properties": {"times": ["2025-01-03T07:45:48.345324", "2025-01-03T08:27:41.007194"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0655687, 49.2821367], [-123.0655537, 49.2830335]]}, "properties": {"times": ["2025-01-03T08:27:41.007194", "2025-01-03T09:09:33.669065"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0655537, 49.2830335], [-123.0636015, 49.2839245]]}, "properties": {"times": ["2025-01-03T09:09:33.669065", "2025-01-03T09:51:26.330935"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0636015, 49.2839245], [-123.0655344, 49.2839405]]}, "properties": {"times": ["2025-01-03T09:51:26.330935", "2025-01-03T10:33:18.992806"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0655344, 49.2839405], [-123.065524, 49.2848245]]}, "properties": {"times": ["2025-01-03T10:33:18.992806", "2025-01-03T11:15:11.654676"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.065524, 49.2848245], [-123.0682116, 49.2842364]]}, "properties": {"times": ["2025-01-03T11:15:11.654676", "2025-01-03T11:57:04.316547"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0682116, 49.2842364], [-123.0703478, 49.2838712]]}, "properties": {"times": ["2025-01-03T11:57:04.316547", "2025-01-03T12:38:56.978417"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0703478, 49.2838712], [-123.0725724, 49.2834928]]}, "properties": {"times": ["2025-01-03T12:38:56.978417", "2025-01-03T13:20:49.640288"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0725724, 49.2834928], [-123.0740525, 49.2832427]]}, "properties": {"times": ["2025-01-03T13:20:49.640288", "2025-01-03T14:02:42.302158"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0740525, 49.2832427], [-123.0769802, 49.2830717]]}, "properties": {"times": ["2025-01-03T14:02:42.302158", "2025-01-03T14:44:34.964029"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0769802, 49.2830717], [-123.077004, 49.2822726]]}, "properties": {"times": ["2025-01-03T14:44:34.964029", "2025-01-03T15:26:27.625899"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.077004, 49.2822726], [-123.0770381, 49.2818646]]}, "properties": {"times": ["2025-01-03T15:26:27.625899", "2025-01-03T16:08:20.287770"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0770381, 49.2818646], [-123.077051, 49.2813777]]}, "properties": {"times": ["2025-01-03T16:08:20.287770", "2025-01-03T16:50:12.949640"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.077051, 49.2813777], [-123.0771862, 49.2813805]]}, "properties": {"times": ["2025-01-03T16:50:12.949640", "2025-01-03T17:32:05.611511"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0771862, 49.2813805], [-123.0782363, 49.2813778]]}, "properties": {"times": ["2025-01-03T17:32:05.611511", "2025-01-03T18:13:58.273381"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0782363, 49.2813778], [-123.0788424, 49.2812138]]}, "properties": {"times": ["2025-01-03T18:13:58.273381", "2025-01-03T18:55:50.935252"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0788424, 49.2812138], [-123.079174, 49.2811293]]}, "properties": {"times": ["2025-01-03T18:55:50.935252", "2025-01-03T19:37:43.597122"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.079174, 49.2811293], [-123.0799658, 49.2809892]]}, "properties": {"times": ["2025-01-03T19:37:43.597122", "2025-01-03T20:19:36.258993"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0799658, 49.2809892], [-123.081295, 49.2810019]]}, "properties": {"times": ["2025-01-03T20:19:36.258993", "2025-01-03T21:01:28.920863"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.081295, 49.2810019], [-123.084791, 49.2810625]]}, "properties": {"times": ["2025-01-03T21:01:28.920863", "2025-01-03T21:43:21.582734"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.084791, 49.2810625], [-123.0871703, 49.2811196]]}, "properties": {"times": ["2025-01-03T21:43:21.582734", "2025-01-03T22:25:14.244604"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0871703, 49.2811196], [-123.0895421, 49.2811621]]}, "properties": {"times": ["2025-01-03T22:25:14.244604", "2025-01-03T23:07:06.906475"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0895421, 49.2811621], [-123.0914914, 49.2811979]]}, "properties": {"times": ["2025-01-03T23:07:06.906475", "2025-01-03T23:48:59.568345"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0914914, 49.2811979], [-123.09344, 49.281232]]}, "properties": {"times": ["2025-01-03T23:48:59.568345", "2025-01-04T00:30:52.230216"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.09344, 49.281232], [-123.0954, 49.2812675]]}, "properties": {"times": ["2025-01-04T00:30:52.230216", "2025-01-04T01:12:44.892086"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0954, 49.2812675], [-123.09344, 49.281232]]}, "properties": {"times": ["2025-01-04T01:12:44.892086", "2025-01-04T01:54:37.553957"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.09344, 49.281232], [-123.0914914, 49.2811979]]}, "properties": {"times": ["2025-01-04T01:54:37.553957", "2025-01-04T02:36:30.215827"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0914914, 49.2811979], [-123.0895421, 49.2811621]]}, "properties": {"times": ["2025-01-04T02:36:30.215827", "2025-01-04T03:18:22.877698"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0895421, 49.2811621], [-123.0871703, 49.2811196]]}, "properties": {"times": ["2025-01-04T03:18:22.877698", "2025-01-04T04:00:15.539568"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0871703, 49.2811196], [-123.084791, 49.2810625]]}, "properties": {"times": ["2025-01-04T04:00:15.539568", "2025-01-04T04:42:08.201439"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.084791, 49.2810625], [-123.081295, 49.2810019]]}, "properties": {"times": ["2025-01-04T04:42:08.201439", "2025-01-04T05:24:00.863309"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.081295, 49.2810019], [-123.0799658, 49.2809892]]}, "properties": {"times": ["2025-01-04T05:24:00.863309", "2025-01-04T06:05:53.525180"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0799658, 49.2809892], [-123.0791769, 49.280921]]}, "properties": {"times": ["2025-01-04T06:05:53.525180", "2025-01-04T06:47:46.187050"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0791769, 49.280921], [-123.0790113, 49.2803984]]}, "properties": {"times": ["2025-01-04T06:47:46.187050", "2025-01-04T07:29:38.848921"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0790113, 49.2803984], [-123.077126, 49.2803821]]}, "properties": {"times": ["2025-01-04T07:29:38.848921", "2025-01-04T08:11:31.510791"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.077126, 49.2803821], [-123.074106, 49.2803286]]}, "properties": {"times": ["2025-01-04T08:11:31.510791", "2025-01-04T08:53:24.172662"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.074106, 49.2803286], [-123.0741337, 49.2794375]]}, "properties": {"times": ["2025-01-04T08:53:24.172662", "2025-01-04T09:35:16.834532"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0741337, 49.2794375], [-123.074106, 49.2803286]]}, "properties": {"times": ["2025-01-04T09:35:16.834532", "2025-01-04T10:17:09.496403"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.074106, 49.2803286], [-123.0741098, 49.2812812]]}, "properties": {"times": ["2025-01-04T10:17:09.496403", "2025-01-04T10:59:02.158273"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0741098, 49.2812812], [-123.0770539, 49.2812679]]}, "properties": {"times": ["2025-01-04T10:59:02.158273", "2025-01-04T11:40:54.820144"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0770539, 49.2812679], [-123.0771782, 49.2812708]]}, "properties": {"times": ["2025-01-04T11:40:54.820144", "2025-01-04T12:22:47.482014"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0771782, 49.2812708], [-123.0788424, 49.2812138]]}, "properties": {"times": ["2025-01-04T12:22:47.482014", "2025-01-04T13:04:40.143885"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0788424, 49.2812138], [-123.079174, 49.2811293]]}, "properties": {"times": ["2025-01-04T13:04:40.143885", "2025-01-04T13:46:32.805755"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.079174, 49.2811293], [-123.0799658, 49.2809892]]}, "properties": {"times": ["2025-01-04T13:46:32.805755", "2025-01-04T14:28:25.467626"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0799658, 49.2809892], [-123.081295, 49.2810019]]}, "properties": {"times": ["2025-01-04T14:28:25.467626", "2025-01-04T15:10:18.129496"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.081295, 49.2810019], [-123.084791, 49.2810625]]}, "properties": {"times": ["2025-01-04T15:10:18.129496", "2025-01-04T15:52:10.791367"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.084791, 49.2810625], [-123.0871703, 49.2811196]]}, "properties": {"times": ["2025-01-04T15:52:10.791367", "2025-01-04T16:34:03.453237"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0871703, 49.2811196], [-123.0895421, 49.2811621]]}, "properties": {"times": ["2025-01-04T16:34:03.453237", "2025-01-04T17:15:56.115108"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0895421, 49.2811621], [-123.0914914, 49.2811979]]}, "properties": {"times": ["2025-01-04T17:15:56.115108", "2025-01-04T17:57:48.776978"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0914914, 49.2811979], [-123.09344, 49.281232]]}, "properties": {"times": ["2025-01-04T17:57:48.776978", "2025-01-04T18:39:41.438849"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.09344, 49.281232], [-123.0954, 49.2812675]]}, "properties": {"times": ["2025-01-04T18:39:41.438849", "2025-01-04T19:21:34.100719"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0954, 49.2812675], [-123.097487, 49.2812961]]}, "properties": {"times": ["2025-01-04T19:21:34.100719", "2025-01-04T20:03:26.762590"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.097487, 49.2812961], [-123.097628, 49.2822537]]}, "properties": {"times": ["2025-01-04T20:03:26.762590", "2025-01-04T20:45:19.424460"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.097628, 49.2822537], [-123.099611, 49.2822899]]}, "properties": {"times": ["2025-01-04T20:45:19.424460", "2025-01-04T21:27:12.086331"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.099611, 49.2822899], [-123.102227, 49.282331]]}, "properties": {"times": ["2025-01-04T21:27:12.086331", "2025-01-04T22:09:04.748201"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.102227, 49.282331], [-123.099611, 49.2822899]]}, "properties": {"times": ["2025-01-04T22:09:04.748201", "2025-01-04T22:50:57.410072"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.099611, 49.2822899], [-123.097628, 49.2822537]]}, "properties": {"times": ["2025-01-04T22:50:57.410072", "2025-01-04T23:32:50.071942"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.097628, 49.2822537], [-123.097487, 49.2812961]]}, "properties": {"times": ["2025-01-04T23:32:50.071942", "2025-01-05T00:14:42.733813"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.097487, 49.2812961], [-123.0954, 49.2812675]]}, "properties": {"times": ["2025-01-05T00:14:42.733813", "2025-01-05T00:56:35.395683"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0954, 49.2812675], [-123.09344, 49.281232]]}, "properties": {"times": ["2025-01-05T00:56:35.395683", "2025-01-05T01:38:28.057554"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.09344, 49.281232], [-123.0914914, 49.2811979]]}, "properties": {"times": ["2025-01-05T01:38:28.057554", "2025-01-05T02:20:20.719424"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0914914, 49.2811979], [-123.0895421, 49.2811621]]}, "properties": {"times": ["2025-01-05T02:20:20.719424", "2025-01-05T03:02:13.381295"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0895421, 49.2811621], [-123.0871703, 49.2811196]]}, "properties": {"times": ["2025-01-05T03:02:13.381295", "2025-01-05T03:44:06.043165"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0871703, 49.2811196], [-123.084791, 49.2810625]]}, "properties": {"times": ["2025-01-05T03:44:06.043165", "2025-01-05T04:25:58.705036"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.084791, 49.2810625], [-123.081295, 49.2810019]]}, "properties": {"times": ["2025-01-05T04:25:58.705036", "2025-01-05T05:07:51.366906"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.081295, 49.2810019], [-123.0799658, 49.2809892]]}, "properties": {"times": ["2025-01-05T05:07:51.366906", "2025-01-05T05:49:44.028777"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0799658, 49.2809892], [-123.0791769, 49.280921]]}, "properties": {"times": ["2025-01-05T05:49:44.028777", "2025-01-05T06:31:36.690647"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0791769, 49.280921], [-123.0790113, 49.2803984]]}, "properties": {"times": ["2025-01-05T06:31:36.690647", "2025-01-05T07:13:29.352518"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0790113, 49.2803984], [-123.077126, 49.2803821]]}, "properties": {"times": ["2025-01-05T07:13:29.352518", "2025-01-05T07:55:22.014388"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.077126, 49.2803821], [-123.0771478, 49.2794777]]}, "properties": {"times": ["2025-01-05T07:55:22.014388", "2025-01-05T08:37:14.676259"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0771478, 49.2794777], [-123.0771748, 49.2785661]]}, "properties": {"times": ["2025-01-05T08:37:14.676259", "2025-01-05T09:19:07.338129"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}, {"type": "Feature", "geometry": {"type": "LineString", "coordinates": [[-123.0771748, 49.2785661], [-123.0771989, 49.2776634]]}, "properties": {"times": ["2025-01-05T09:19:07.338129", "2025-01-05T10:01:00"], "style": {"color": "blue", "weight": 3, "opacity": 100}}}]}, {
+                    pointToLayer: function (feature, latLng) {
+                        if (feature.properties.icon == 'marker') {
+                            if(feature.properties.iconstyle){
+                                return new L.Marker(latLng, {
+                                    icon: L.icon(feature.properties.iconstyle)});
+                            }
+                            //else
+                            return new L.Marker(latLng);
+                        }
+                        if (feature.properties.icon == 'circle') {
+                            if (feature.properties.iconstyle) {
+                                return new L.circleMarker(latLng, feature.properties.iconstyle)
+                                };
+                            //else
+                            return new L.circleMarker(latLng);
+                        }
+                        //else
+
+                        return new L.Marker(latLng);
+                    },
+                    style: function (feature) {
+                        return feature.properties.style;
+                    },
+                    onEachFeature: function(feature, layer) {
+                        if (feature.properties.popup) {
+                        layer.bindPopup(feature.properties.popup);
+                        }
+                        if (feature.properties.tooltip) {
+                        layer.bindTooltip(feature.properties.tooltip);
+                        }
+                    }
+                })
+
+            var timestamped_geo_json_883a36bc72d7be4cd7b987ea2795b63e = L.timeDimension.layer.geoJson(
+                geoJsonLayer,
+                {
+                    updateTimeDimension: true,
+                    addlastPoint: false,
+                    duration: undefined,
+                }
+            ).addTo(map_23d5aedd3574f9b48c8d05b484d5039a);
+        
+</script>
+</html>
