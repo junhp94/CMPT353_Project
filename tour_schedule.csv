@@ -1,5 +1,6 @@
 name,arrival,departure
 Start Location,09:00,09:00
+
 PressBox Pub,09:01,10:01
 Phở Don,10:02,11:02
 Le Petit Saigon,11:03,12:03
@@ -31,3 +32,4 @@ Off The Rail Tasting Room,09:01,10:01
 Hotel At The Waldorf,10:02,22:02
 Hotel (End of Day),22:04,09:00
 Vancouver Hack Space,09:01,10:01
+
