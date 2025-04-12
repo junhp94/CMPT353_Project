@@ -633,7 +633,7 @@ interesting_amenities = ['cafe', 'bbq', 'place_of_worship',
 
 chain_names = [
     "Starbucks", "Tim Hortons", "Tim_Hortons", "McDonald's", "Subway", "A&W", "Triple O's",
-    "Burger King", "Wendy's", "KFC", "Pizza Hut", "Domino's", "Dairy Queen",
+    "Burger King", "Wendy's", "KFC", "Pizza Hut", "Domino's", "Dairy Queen", "JJ Bean",
     "Popeyes", "Taco Bell", "Little Caesars", "Panera Bread", "Chipotle", "Five Guys", "Denny's", "IHOP",
     
     "Petro-Canada", "Chevron", "Shell", "Esso", "Husky", "7-Eleven", "Circle K",
