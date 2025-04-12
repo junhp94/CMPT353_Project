@@ -19,7 +19,7 @@ Built using data from OpenStreetMap and geospatial tools, this planner aims to c
 ---
 
 ## ❗Contributors
-- **Eric Li** - 301436381  
+- **Eric Li** (ewl5) - 301436381  
 - **Steven Duong** - 301552606
 - **Jun Hyeok Park** - 301461661
 
