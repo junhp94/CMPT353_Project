@@ -12,6 +12,7 @@ import networkx as nx
 from SPARQLWrapper import SPARQLWrapper, JSON
 from geopy.geocoders import Nominatim
 from datetime import datetime, timedelta
+from folium.plugins import TimestampedGeoJson
 
 geolocator = Nominatim(user_agent="CMPT353-Project")
 
@@ -641,15 +642,23 @@ def get_combined_graph(places, network_type):
 
 
 def create_tour_map(schedule, route):
-    map_center = [schedule[0]["lat"], schedule[0]["lon"]]
+    map_center = [schedule[0]['lat'], schedule[0]['lon']]
     tour_map = fl.Map(location=map_center, zoom_start=13)
+
+    # Create feature groups for layer control by amenity type.
+    fg_restaurants = fl.FeatureGroup(name="Restaurants")
+    fg_hotels = fl.FeatureGroup(name="Hotels")
+    fg_rentals = fl.FeatureGroup(name="Rentals")
+    fg_start = fl.FeatureGroup(name="Start Location")
+    fg_other = fl.FeatureGroup(name="Other")
 
     # Build a dictionary for hotels to group repeated visits.
     hotel_visits = {}
     for stop in schedule:
-        if stop["type"] == "hotel":
-            key = (round(stop["lat"], 6), round(stop["lon"], 6))
-            hotel_visits.setdefault(key, []).append(stop["day"])
+        if stop['type'] == "hotel":
+            key = (round(stop['lat'], 6), round(stop['lon'], 6))
+            hotel_visits.setdefault(key, []).append(stop['day'])
+
 
     for stop in schedule:
         popup_html = f"""
@@ -659,37 +668,95 @@ def create_tour_map(schedule, route):
          Arrival: {stop['arrival'].strftime('%I:%M %p')}<br>
          Departure: {stop['departure'].strftime('%I:%M %p')}
          """
-        # If this is a hotel, check if it is visited on multiple days.
-        if stop["type"] == "hotel":
-            key = (round(stop["lat"], 6), round(stop["lon"], 6))
-            days = hotel_visits.get(key, [])
-            if len(days) > 1:
-                # Append info about all visits.
-                popup_html += (
-                    f"<br><em>Visited on days: {', '.join(map(str, days))}</em>"
-                )
-        popup = fl.Popup(popup_html, max_width=250)
-        tooltip = f"Travel Time: {stop['travel_time']:.0f} min"
 
-        marker_color = "blue"
-        if stop["type"] == "restaurant":
-            marker_color = "orange"
-        elif stop["type"] == "hotel":
-            marker_color = "green"
-        elif stop["type"] == "rental":
-            marker_color = "black"
-        elif stop["name"] == "Start Location":
-            marker_color = "red"
+         # If this is a hotel, append info about repeated visits.
+         if stop['type'] == "hotel":
+             key = (round(stop['lat'], 6), round(stop['lon'], 6))
+             days = hotel_visits.get(key, [])
+             if len(days) > 1:
+                 popup_html += f"<br><em>Visited on days: {', '.join(map(str, days))}</em>"
 
-        fl.Marker(
-            location=[stop["lat"], stop["lon"]],
-            popup=popup,
-            tooltip=tooltip,
-            icon=fl.Icon(color=marker_color),
-        ).add_to(tour_map)
+         
+         popup = fl.Popup(popup_html, max_width=300)
+         tooltip = f"Travel Time: {stop['travel_time']:.0f} min"
 
-    # Use the computed street route for the polyline.
-    fl.PolyLine(locations=route, color="blue", weight=2.5, opacity=1).add_to(tour_map)
+         # Use FontAwesome icons for each type.
+         if stop['type'] == "restaurant":
+             icon = fl.Icon(color="orange", icon="cutlery", prefix="fa")
+         elif stop['type'] == "hotel":
+             icon = fl.Icon(color="green", icon="bed", prefix="fa")
+         elif stop['type'] == "rental":
+             icon = fl.Icon(color="black", icon="car", prefix="fa")
+         elif stop['name'] == "Start Location":
+             icon = fl.Icon(color="red", icon="play", prefix="fa")
+         else:
+             icon = fl.Icon(color="blue", icon="map-marker", prefix="fa")
+         
+         # Assign marker to an appropriate feature group.
+         if stop['type'] == "restaurant":
+             fg = fg_restaurants
+         elif stop['type'] == "hotel":
+             fg = fg_hotels
+         elif stop['type'] == "rental":
+             fg = fg_rentals
+         elif stop['name'] == "Start Location":
+             fg = fg_start
+         else:
+             fg = fg_other
+         
+         fl.Marker(
+             location=[stop['lat'], stop['lon']],
+             popup=popup,
+             tooltip=tooltip,
+             icon=icon
+         ).add_to(fg)
+    
+    fg_restaurants.add_to(tour_map)
+    fg_hotels.add_to(tour_map)
+    fg_rentals.add_to(tour_map)
+    fg_start.add_to(tour_map)
+    fg_other.add_to(tour_map)
+
+    fl.LayerControl().add_to(tour_map)
+
+    # Build animated route
+    line_features = []
+    t0 = schedule[0]['arrival']
+
+    total_seconds = (schedule[-1]['departure'] - t0).total_seconds()
+    num_segments = len(route) - 1 if len(route) > 1 else 1
+    interval = total_seconds / num_segments
+
+    for i in range(len(route) - 1):
+        feature = {
+            'type': 'Feature',
+            'geometry': {
+                'type': 'LineString',
+                'coordinates': [[route[i][1], route[i][0]], [route[i+1][1], route[i+1][0]]]
+            },
+            'properties': {
+                # Provide time intervals for the segment
+                'times': [
+                    (t0 + timedelta(seconds=i * interval)).isoformat(),
+                    (t0 + timedelta(seconds=(i+1) * interval)).isoformat()
+                ],
+                'style': {'color': 'blue', 'weight': 3, 'opacity': 100}
+            }
+        }
+        line_features.append(feature)
+    
+    if line_features:
+        ts_data = {
+            'type': 'FeatureCollection',
+            'features': line_features
+        }
+        TimestampedGeoJson(ts_data,
+                           period='PT1S',        
+                           transition_time=50, 
+                           auto_play=True,
+                           loop=False,
+                           add_last_point=False).add_to(tour_map)
+    
     return tour_map
 
 
@@ -735,7 +802,6 @@ def filter_popular_amenities(data, min_tags=5):
 
 regions = [
     "Metro Vancouver, British Columbia, Canada",
-    # "Fraser Valley, British Columbia, Canada"
     "Abbotsford, British Columbia, Canada",
     "Mission, British Columbia, Canada",
     "Bowen Island, British Columbia, Canada",
@@ -884,6 +950,8 @@ def main():
         if not hotels.empty or not housing.empty:
             # Combine hotels and housing
             lodging_points = pd.concat([housing, hotels], ignore_index=True)
+    else:
+        lodging_points = None
 
     if not restaurants.empty:
         updated_route_points = [route_points[0]]  # Start point remains the same

@@ -1,23 +1,35 @@
 name,arrival,departure
 Start Location,09:00,09:00
-Cineplex Cinemas Esplanade,09:04,10:04
-East Vancouver Brewing,10:05,11:05
-Aura,11:10,12:10
-Boston Pizza,12:11,13:11
-Simons,13:17,14:17
-Mr. Greek,14:18,15:18
-Vancouver Farmers Market,15:25,16:25
-Cineplex Cinemas & VIP,16:35,17:35
-Burnaby Artisan Farmers' Market,17:45,18:45
-Lord Stanley Suites On The Park,18:49,06:49
-Hotel (End of Day),06:50,09:00
-Indian Summer Festival,09:15,10:15
-Scallion's Bistro,10:16,11:16
-Bollywood Banquet Halls & Convention Centre,11:31,12:31
-Apollinia,12:32,13:32
-Cineplex Cinemas Abbotsford and VIP,14:01,15:01
-Aggarwal Sweets,15:02,16:02
-The Cinematheque,16:46,17:46
-Banquet Room,18:58,19:58
-Hotel (End of Day),19:59,09:00
-Scotiabank Theatre Vancouver,10:19,11:19
+
+PressBox Pub,09:01,10:01
+Phở Don,10:02,11:02
+Le Petit Saigon,11:03,12:03
+Phở Don,12:04,13:04
+Chatime,13:05,14:05
+Le Petit Saigon,14:06,15:06
+Luda Southern Dishes,15:07,16:07
+Hastings Branch,16:08,17:08
+Bo Laksa King's Bubbles & Bits,17:09,18:09
+Thailicious,18:10,19:10
+The Red Wagon Cafe,19:11,20:11
+Hotel (End of Day),20:12,09:00
+IPOH Asian House,09:01,10:01
+Atrium Hotel Vancouver,10:02,22:02
+Hotel (End of Day),22:04,09:00
+On Lok Restaurant & Wun Tun House,09:01,10:01
+The Red Wagon Cafe,10:02,11:02
+Parallel 49 Tasting Room & Beer Store,11:03,12:03
+On Lok Restaurant & Wun Tun House,12:04,13:04
+Princeton Pub,13:05,14:05
+Parallel 49 Tasting Room & Beer Store,14:06,15:06
+The Pie Shoppe,15:07,16:07
+Slow Hand Tasting Room,16:08,17:08
+Andina Tasting Lounge,17:09,18:09
+Callister Tasting Room,18:10,19:10
+Korean Community Centre,19:11,20:11
+Hotel (End of Day),20:13,09:00
+Off The Rail Tasting Room,09:01,10:01
+Hotel At The Waldorf,10:02,22:02
+Hotel (End of Day),22:04,09:00
+Vancouver Hack Space,09:01,10:01
+
