@@ -2,6 +2,7 @@
 #
 #   Eric Li 301436381
 #   Steven Duong 301552606
+#   Jun Hyeok Park 301461661
 #
 import pandas as pd
 import numpy as np
@@ -30,7 +31,7 @@ def input_field():
             print("Invalid input. Please enter a valid number.")
     
     # Ask for theme
-    themes = ["food", "nature", "history", "science", "art", "entertainment", "random"]
+    themes = ["food", "nature", "history", "science", "art", "entertainment", "bar crawl", "random"]
     while True:
         theme = input(f"Enter a theme ({', '.join(themes)}): ").strip().lower()
         if theme in themes:
@@ -131,7 +132,8 @@ def filter_amenities_by_theme(amenities, selected_theme):
         "science": ["research_institute", "science", "ATLAS_clean_room"],
         "art": ["arts_centre", "theatre", "studio"],
         "entertainment": ["cinema", "nightclub", "stripclub", "gambling", "casino", "marketplace", "spa", "events_venue", "internet_cafe", "lounge", "shop|clothes", "leisure", "Observation Platform", "photo_booth"],
-        "mode of travel": ["car_rental", "bicycle_rental", "car_sharing", "taxi", "bus_station", "ferry_terminal", "seaplane_terminal", "motorcycle_rental", "parking", "charging_station", "EVSE"]
+        "mode of travel": ["car_rental", "bicycle_rental", "car_sharing", "taxi", "bus_station", "ferry_terminal", "seaplane_terminal", "motorcycle_rental", "parking", "charging_station", "EVSE"],
+        "bar crawl": ["bar", "pub", "nightclub", "cocktail_bar", "brewpub", "wine_bar", "lounge", "sports_bar"]
     }
     
     if selected_theme in themes:
@@ -256,6 +258,7 @@ def get_rental(places):
     else:
         return pd.DataFrame()
 
+
 # Creates a daily schedule for the tour based on time constraints
 def daily_schedule(route_points, amenities, transportation, tour_length, lodging_points):
     # Predetermined average speeds for different modes of travel in km/h
@@ -289,7 +292,8 @@ def daily_schedule(route_points, amenities, transportation, tour_length, lodging
                   "lunch":     datetime(current_time.year, current_time.month, current_time.day, 13, 0),
                   "dinner":    datetime(current_time.year, current_time.month, current_time.day, 18, 0)}
     meals_taken = {"breakfast": False, "lunch": False, "dinner": False}
-
+    restaurants_count = 0
+    
     # Iterate through each stop (starting from index 1)
     for i in range(1, len(route_points)):
          if current_day >= tour_length:
@@ -337,6 +341,7 @@ def daily_schedule(route_points, amenities, transportation, tour_length, lodging
                            "lunch":     datetime(day_start.year, day_start.month, day_start.day, 13, 0),
                            "dinner":    datetime(day_start.year, day_start.month, day_start.day, 18, 0)}
              meals_taken = {"breakfast": False, "lunch": False, "dinner": False}
+             restaurants_count = 0
              current_time = day_start
              
              # Recalc travel from new day's start to next_point.
@@ -368,7 +373,7 @@ def daily_schedule(route_points, amenities, transportation, tour_length, lodging
 
          # check if time is near a meal time, currently set to be within 30min, and stop tour for a meal
          for meal, meal_target in meal_times.items():
-             if not meals_taken[meal]:
+             if not meals_taken[meal] and restaurants_count < 3:
                  if meal_target - timedelta(minutes=30) <= arrival_time <= meal_target + timedelta(minutes=30):
                      if amenity_type != "restaurant":
                          amenity_type = "restaurant"
@@ -376,6 +381,7 @@ def daily_schedule(route_points, amenities, transportation, tour_length, lodging
                          visit_time = timedelta(minutes=duration)
                      meals_taken[meal] = True
                      departure_time = arrival_time + visit_time
+                     restaurants_count += 1
                      break
 
          # Ensures tour stops at 9pm and ends at a hotel for last amenity
@@ -624,20 +630,37 @@ interesting_amenities = ['cafe', 'bbq', 'place_of_worship',
     'park', 'biergarten', 'casino', 'hunting_stand', 'shop|clothes', 'research_institute',
     'motorcycle_rental', "observation_platform", "monastery", "courthouse", "leisure", "seaplane_terminal", 
     "parking", "charging_station"]
+
+chain_names = [
+    "Starbucks", "Tim Hortons", "Tim_Hortons", "McDonald's", "Subway", "A&W", "Triple O's",
+    "Burger King", "Wendy's", "KFC", "Pizza Hut", "Domino's", "Dairy Queen",
+    "Popeyes", "Taco Bell", "Little Caesars", "Panera Bread", "Chipotle", "Five Guys", "Denny's", "IHOP",
     
+    "Petro-Canada", "Chevron", "Shell", "Esso", "Husky", "7-Eleven", "Circle K",
+    "Mobil", "Ultramar", "Costco Gas", "Super Save", "Fas Gas", "Co-op Gas",
+    
+    "Walmart", "Costco", "Real Canadian Superstore", "No Frills", "Safeway",
+    "Save-On-Foods", "FreshCo", "Shoppers Drug Mart", "London Drugs", "Loblaws",
+    "Canadian Tire", "Home Depot", "Best Buy", "IKEA", "Dollarama", "Metro",
+    "Sobeys", "Thrifty Foods", "Pharmasave",
+    
+    "RBC", "TD Canada Trust", "Scotiabank", "BMO", "CIBC", "HSBC",
+    "National Bank", "Coast Capital", "Vancity",
+    
+    "Rexall", "Guardian", "Pharmachoice"
+]
+
 def main():
     original_data = pd.read_json("amenities-vancouver.json.gz", compression="gzip", lines=True)
     data = original_data[~original_data["name"].isna()]
     data = data[data["amenity"].isin(interesting_amenities)]
-
+    data = data[~data["name"].isin(chain_names)]
     # Get inputs
     tour_length, theme, num_amenities, start_coords, transportation, want_rental, stay_hotel = input_field()
     
     if theme == 'random':
         # Filters out big chains
         data = data[data['amenity'] != 'fast_food']
-        data = data[data['name'] != 'Starbucks']
-        data = data[~data['name'].isin(['Tim Hortons', 'Tim_Hortons'])]
         popular_amenities = filter_popular_amenities(data,min_tags=5) # Popular amenities have 5 or more tags
     else:
         filtered_amenities = filter_amenities_by_theme(data, theme)
@@ -669,74 +692,49 @@ def main():
 
         amenities_per_day = num_amenities // tour_length  # Number of amenities per day
         day_index = 0  # Track amenities count per day
-        restaurant_count = 0  # Track how many restaurants added per day
-        
-        # Ensure that the rental is the closest to the starting point using haversine
+
+        # (Optionally, still add a rental if needed)
         if want_rental == 'yes':
             rentals["distance"] = rentals.apply(
                 lambda row: haversine(start_coords[0], start_coords[1], row["lat"], row["lon"]), axis=1
             )
-            
-            # Find the nearest rental
             nearest_rental = rentals.nsmallest(1, "distance").iloc[0]
-            # Insert the nearest rental at the start of route_points
             updated_route_points.append([nearest_rental["lat"], nearest_rental["lon"]])
             nearest_rental["type"] = "rental"
             updated_amenities = pd.concat([updated_amenities, nearest_rental.to_frame().T], ignore_index=True)
 
+        # Loop over route_points without forcing restaurants.
         for i in range(1, len(route_points)):
             updated_route_points.append(route_points[i])
 
+            # Simply add the corresponding amenity from nearest_amenities,
+            # if available, without forcing extra restaurant stops.
             if i < len(nearest_amenities):
                 updated_amenities = pd.concat([updated_amenities, nearest_amenities.iloc[[i]]], ignore_index=True)
 
             day_index += 1
 
-            # Ensure exactly 3 restaurants per day
-            if restaurant_count < 3:
-                last_point = route_points[i]
-
-                if not restaurants.empty:
-                    restaurants["distance"] = restaurants.apply(
-                        lambda row: haversine(last_point[0], last_point[1], row["lat"], row["lon"]), axis=1
-                    )
-                    nearest_restaurant = restaurants.nsmallest(1, "distance").iloc[0]
-
-                    updated_route_points.append([nearest_restaurant["lat"], nearest_restaurant["lon"]])
-                    nearest_restaurant["type"] = "restaurant"
-                    updated_amenities = pd.concat([updated_amenities, nearest_restaurant.to_frame().T], ignore_index=True)
-
-                    restaurant_count += 1
-
-            # End of the day: Reset counters and add a hotel
+            # End of the day: Reset counters and add a hotel if needed
             if day_index >= amenities_per_day:
-                restaurant_count = 0  # Reset restaurant count for next day
-                day_index = 0  # Reset amenity count for next day
-
-                if stay_hotel and not lodging_points.empty:  # Add hotel at the end of each day
-                    last_point = updated_route_points[-1]  # Get the last stop of the day
-
+                day_index = 0
+                if stay_hotel and not lodging_points.empty:
+                    last_point = updated_route_points[-1]
                     lodging_points["distance"] = lodging_points.apply(
                         lambda row: haversine(last_point[0], last_point[1], row["lat"], row["lon"]), axis=1
                     )
-
                     nearest_lodging = lodging_points.nsmallest(1, "distance").iloc[0]
                     updated_route_points.append([nearest_lodging["lat"], nearest_lodging["lon"]])
-
                     nearest_lodging["type"] = "hotel"
                     updated_amenities = pd.concat([updated_amenities, nearest_lodging.to_frame().T], ignore_index=True)
 
         route_points = updated_route_points
         nearest_amenities = updated_amenities
     
+    print("Creating Map... This could take a minute...")
     Graph = ox.graph_from_place(regions, network_type=transportation, simplify=True)
-    print("stage 0")
     G_undirected = Graph.to_undirected()
-    print("stage 1")
     largest_component = max(nx.connected_components(G_undirected), key=len)
-    print("stage 2")
     Graph = G_undirected.subgraph(largest_component).copy()
-    print("stage 3")
 
     schedule = daily_schedule(route_points, nearest_amenities, transportation, tour_length, lodging_points)
     

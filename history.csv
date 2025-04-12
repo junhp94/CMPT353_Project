@@ -1,0 +1,854 @@
+name,lat,lon,type,amenity,tags
+UBC Echo Chamber,49.2676114,-123.255111,history,history,{}
+2010 Olympic Cauldron,49.2893606,-123.1176596,history,history,{}
+Totem Pole,49.2739515,-123.1396747,history,history,{}
+Gastown Steam Clock,49.2843841,-123.10889,history,history,{}
+Original Fort Langley Site,49.1986153,-122.5939046,history,history,{}
+Steveston Fishermen's Memorial,49.1244956,-123.1945795,history,history,{}
+Empress of Japan Figurehead,49.302661,-123.1265235,history,history,{}
+The Pacific Bell and Bell Tower,49.266955,-123.2585002,history,history,{}
+Grade Class 2002,49.2704487,-123.254389,history,history,{}
+World's Tallest Tin Soldier,49.2003122,-122.9106177,history,history,{}
+City of Burnaby Heritage Site,49.2296004,-123.0197387,history,history,{}
+Vancouver City Hall,49.2605535,-123.1147395,history,history,{}
+Lord Stanley Statue,49.2977049,-123.1347748,history,history,{}
+Robert Burns Statue,49.2971819,-123.1346487,history,history,{}
+Lumberman's Arch,49.3025493,-123.130486,history,history,{}
+Cambie Bridge Ring Gear Monument,49.274294,-123.1170177,history,history,{}
+Chinatown Memorial Monument,49.279485,-123.1020487,history,history,{}
+"""Wait for Me Daddy"" War Memorial Sculpture",49.2010028,-122.9112548,history,history,{}
+The Portage,49.1396924,-122.6086037,history,history,{}
+Shanghai Alley Bell,49.2799625,-123.1052231,history,history,{}
+Reconciliation Pole,49.260037,-123.2488873,history,history,{}
+International Village Globe,49.2798515,-123.108462,history,history,{}
+MacCaud Memorial Cairn,49.0276319,-122.7851559,history,history,{}
+The Semiahmoo Trail,49.0687143,-122.8254826,history,history,{}
+Ladner Cenotaph,49.0881043,-123.0850833,history,history,{}
+Pioneer Japanese Fishermen,49.1213875,-123.1726999,history,history,{}
+The Britannia Shipyard Property,49.1212584,-123.1711468,history,history,{}
+The Completion of the Canadian Pacific Railway,49.2765495,-122.8567645,history,history,{}
+Former Site of King George High School 1914-1963,49.280719,-123.1255093,history,history,{}
+Rock Pile,49.3833868,-123.2489155,history,history,{}
+Telegraph Trail,49.1499962,-122.5942821,history,history,{}
+Engineering Cairn,49.2622038,-123.2506793,history,history,{}
+Great Trek Cairn,49.265734,-123.2535701,history,history,{}
+AIDS Memorial,49.2814699,-123.1403444,history,history,{}
+Helen Gregory MacGill,49.2907465,-123.0510627,history,history,{}
+Marpole Midden,49.2052605,-123.1380022,history,history,{}
+Semiahmoo Wagon Road 1873,49.052752,-122.8119636,history,history,{}
+West Coast Fishery,49.1248011,-123.1866059,history,history,{}
+Exploration of the Fraser River,49.2412176,-123.2270299,history,history,{}
+T33 Aircraft Crash Site Memorial,49.4056342,-123.195154,history,history,{}
+Survivor's Totem Pole,49.2817581,-123.104556,history,history,{}
+Coast Salish Welcome Figure,49.2777435,-122.9208665,history,history,{}
+Frederick Varley,49.3553846,-123.0144937,history,history,{}
+Monument to S.S. Beaver,49.1689384,-122.5732781,history,history,{}
+Master Toa Wong Commemorative Boulevard,49.2583836,-123.2152044,history,history,{}
+Steel Demonstration Structure,49.2493297,-123.0018945,history,history,{}
+Last Spanish Exploration,49.2733473,-123.2542341,history,history,{}
+Power House,49.2169333,-122.9617242,history,history,{}
+The Fairy Bridge,49.3453825,-123.0985487,history,history,{}
+Phillip Jackman,49.0603473,-122.4716149,history,history,{}
+Harvey Reginald MacMillan,49.2597797,-123.2482746,history,history,{}
+Japanese Canadian Internment,49.2816518,-123.0417144,history,history,{}
+Binning Residence,49.3402185,-123.1973154,history,history,{}
+Point Atkinson Lighthouse,49.3319567,-123.2635273,history,history,{}
+John Robson,49.2066158,-122.9109278,history,history,{}
+Terry Fox,49.2623924,-122.7806604,history,history,{}
+Jubilee Grove Arch,49.232471103978725,-123.01308566496787,history,history,{}
+Peace Arch International Monument,49.002091602110916,-122.75652952952913,history,history,{}
+Marker of Change,49.27401156940399,-123.09902293508556,history,history,{}
+Hovercraft,49.18002115000001,-123.18230944999998,history,history,{}
+Brew Kettle,49.261963378465694,-123.15383941680592,history,history,{}
+Sopron Gate,49.25989745329426,-123.24846092588733,history,history,{}
+Hallelujah Point Monument,49.29829352031918,-123.11974509681286,history,history,{}
+Chinatown Millennium Gate,49.28067015165921,-123.10529390643161,history,history,{}
+The Gates,49.26389929999999,-123.21590460000002,history,history,{}
+Ladner Memorial Clock,49.09109723005768,-123.0857422964441,history,history,{}
+Old Pump House,49.1137582,-122.9084978,history,history,{}
+1912 Mill Site,49.3611942,-123.140586,history,history,{}
+Cable Railway Loading Site,49.3655213,-123.145223,history,history,{}
+Abandoned Truck,49.3570852,-123.1576551,history,history,{}
+Burns Bog Ruins Area,49.1324676,-122.9213868,history,history,{}
+Vancouver Wireless Station,49.0849633,-123.0178984,history,history,{}
+Point Grey Battery,49.2690038,-123.2601395,history,history,{}
+Water Tower,49.1150887,-122.9049296,history,history,{}
+Silos,49.0219681,-122.473683,history,history,{}
+Widgeon Slough Cabin,49.3583832,-122.6331736,history,history,{}
+Donkey Spool,49.2808141,-122.5394043,history,history,{}
+Engineering Services,49.0843844,-123.0176923,history,history,{}
+Shields Log Dam,49.353437650000004,-123.1597501,history,history,{}
+Burner Base,49.286234306524385,-122.84297147028602,history,history,{}
+Old Mill Site,49.28616609922457,-122.84010466408827,history,history,{}
+Mill Remnants,49.3054064062273,-122.9487122992554,history,history,{}
+Campbell River Lumber Company ruins,49.0145690374375,-122.78200077335123,history,history,{}
+Old Polar Bear Exhibit,49.299169401427484,-123.13117463461613,history,history,{}
+North Pacific Lumber Company Barnet Mill Burner,49.29232674167266,-122.92526018567702,history,history,{}
+Langley Speedway,49.01895958567663,-122.64878989835589,history,history,{}
+Red Cedar Stump,49.164821143408965,-122.86228626139165,history,history,{}
+Glenrose Cannery Ruins,49.16166267093471,-122.93572182075762,history,history,{}
+Point Grey Battery,49.27008233266038,-123.25947517020097,history,history,{}
+Old Penguin Exhibit,49.29899577404357,-123.13100225199439,history,history,{}
+City of Vancouver Archives,49.2759765,-123.1427011,history,history,{}
+Britannia Shipyards National Historic Site,49.1207839,-123.1691426,history,history,{}
+Vancouver Police Museum,49.2820831,-123.098189,history,history,{}
+H. R. MacMillan Space Centre,49.2763502,-123.1449814,history,history,{}
+The Samson V Museum,49.1997034,-122.911952,history,history,{}
+Chinese Cultural Centre Museum,49.2797611,-123.10254,history,history,{}
+Bowen Island Historians Museum and Archive,49.3800162,-123.338824,history,history,{}
+Pacific Museum of Earth,49.2624508,-123.252342,history,history,{}
+Nature House at Red Barn,49.0147752,-122.655151,history,history,{}
+New Westminster Museum,49.2015657,-122.911416,history,history,{}
+Museum of Archaeology & Ethnology,49.2795251,-122.914436,history,history,{}
+Fraser River Discovery Centre,49.2004517,-122.9102069,history,history,{}
+S.P.A.R.C. Museum,49.248174,-122.807824,history,history,{}
+Fort Langley CN Station,49.17064,-122.5783415,history,history,{}
+PoCo Heritage Museum and Archives,49.2621548,-122.7799014,history,history,{}
+Mackin Heritage House,49.2385727,-122.861932,history,history,{}
+Deeley Motorcycle Exhibition,49.2680809,-123.0246744,history,history,{}
+Archery Museum,49.2289214,-122.892588,history,history,{}
+Ukama Gallery,49.2709662,-123.1362166,history,history,{}
+Jewish Museum and Archives of BC,49.2289343,-123.1175693,history,history,{}
+Pitt Meadows Museum General Store,49.2259615,-122.6893338,history,history,{}
+Canadian Lacrosse Hall of Fame,49.2016468,-122.9114741,history,history,{}
+BC Sports Hall of Fame and Museum,49.2774443,-123.1124427,history,history,{}
+Japanese Fishermen's Benevolent Society Building,49.125484,-123.1829191,history,history,{}
+Museum Of North Vancouver,49.3112814,-123.080481,history,history,{}
+Richmond Museum,49.1640377,-123.1410436,history,history,{}
+Chinese Canadian Museum,49.2806023,-123.1031452,history,history,{}
+Chinese Canadian Military Museum Society,49.2797974,-123.1026097,history,history,{}
+British Columbia Regimental Museum,49.2792829,-123.1108048,history,history,{}
+Museum of Vancouver,49.276331928262614,-123.14442319507705,history,history,{}
+Museum of Anthropology,49.269498306862104,-123.25939056662642,history,history,{}
+Beaty Biodiversity Museum,49.263213715766554,-123.25092583907792,history,history,{}
+Science World,49.27340745301848,-123.10364429041236,history,history,{}
+Anvil Centre,49.20177687086062,-122.91123286895814,history,history,{}
+Stewart Farmhouse,49.06507226865177,-122.84200913662745,history,history,{}
+Gulf of Georgia Cannery National Historic Site,49.12472497618969,-123.18694329545711,history,history,{}
+Bird Museum,49.09846617298561,-123.17843163556613,history,history,{}
+Canadian Historical Railroad Association,49.23850360000001,-122.86137060000001,history,history,{}
+Seine Net Loft,49.1208087756248,-123.1711597461941,history,history,{}
+Hastings Mill Park Museum,49.27281581333876,-123.18597076820724,history,history,{}
+Vancouver Maritime Museum,49.27751720909185,-123.1474979194312,history,history,{}
+London Heritage Farm,49.11435885931067,-123.15114319286795,history,history,{}
+Steveston Museum,49.12541347925415,-123.18296238272094,history,history,{}
+Inverholme Schoolhouse,49.126691282595345,-123.05674216268375,history,history,{}
+PoMo Museum,49.2792847,-122.8507662,history,history,{}
+Chinatown Storytelling Centre,49.28015145,-123.10083035,history,history,{}
+Roedde House Museum,49.28691456388257,-123.13212784971749,history,history,{}
+Lynn Canyon Ecology Centre,49.34292540124273,-123.02031379387618,history,history,{}
+White Rock Museum & Archives,49.02170569574733,-122.80743359310054,history,history,{}
+Museum of Surrey,49.10462686536697,-122.73222605492768,history,history,{}
+Surrey Archives,49.104501042564074,-122.73318230004041,history,history,{}
+Aldergrove Community Archives & Telephone Museum,49.060327449999996,-122.47192915,history,history,{}
+Irving House,49.207786355351026,-122.90626995175795,history,history,{}
+Cloverdale Station,49.103654212901034,-122.73380887011004,history,history,{}
+MONOVA: Archives of North Vancouver,49.33833751759063,-123.03724422185493,history,history,{}
+Douglas J. Husband Discovery Centre,49.08361526578136,-123.05819363100325,history,history,{}
+Nikkei National Museum & Cultural Centre,49.21757232452787,-122.96435868590015,history,history,{}
+Colbourne House,49.20641777937634,-123.14254372221968,history,history,{}
+Fort Langley,49.1677381892195,-122.57213933379268,history,history,{}
+Indian Residential School History and Dialogue Centre,49.26698664874622,-123.2537502849027,history,history,{}
+Haney House,49.21308445,-122.60208735,history,history,{}
+Maple Ridge Museum,49.21037775,-122.59756150000001,history,history,{}
+BC Golf Museum and Hall of Fame,49.26437455887849,-123.21549645405067,history,history,{}
+Port Moody Station Museum;Port Moody Station,49.27921262712648,-122.85072660911341,history,history,{}
+BC Farm Museum,49.168303667702084,-122.575493978208,history,history,{}
+Pitt Meadows Art Gallery,49.20181309780403,-122.68030130079221,history,history,{}
+Pitt Meadows Museum Hoffman,49.225733971966825,-122.68986858181201,history,history,{}
+The General Store,49.225956235616444,-122.689338829956,history,history,{}
+Canadian Museum of Flight,49.09919824424199,-122.62605787326152,history,history,{}
+Engine 374 Pavilion,49.27370585623873,-123.12123454801969,history,history,{}
+Cape Roger Curtis Lighthouse,49.339997,-123.4329117,history,history,{}
+West Vancouver Recreation Centre,49.3309878,-123.1702013,history,history,{}
+Lost Lagoon Nature House,49.2943999,-123.1378729,history,history,{}
+Victory Square Cenotaph,49.2824782,-123.109928,history,history,{}
+Memorial Park Obelisk,49.2311127,-123.0851125,history,history,{}
+Seymour Fish Hatchery,49.4373649,-122.9670831,history,history,{}
+Grouse Mountain Skyride Base,49.3722178,-123.0989948,history,history,{}
+Kirkland House,49.077813,-123.0786094,history,history,{}
+Iona Beach Park,49.21918,-123.2139445,history,history,{}
+Andy Slobodian Memorial,49.2022126,-123.117811,history,history,{}
+Miniature Railway,49.3019096,-123.1337742,history,history,{}
+Finn Slough (Tidal Community),49.1136634,-123.1142399,history,history,{}
+Nine O'Clock Gun,49.2980397,-123.117547,history,history,{}
+CK Choi Memorial Bell,49.2668272,-123.2576461,history,history,{}
+Rabindranath Tagore,49.2668391,-123.2580432,history,history,{}
+C.U.P.E Local 116,49.2695903,-123.2557608,history,history,{}
+War Memorial,49.3164345,-123.0724237,history,history,{}
+Fellowship Bell,49.2928297,-123.1306803,history,history,{}
+Hollow Tree,49.3069151,-123.1536164,history,history,{}
+Afghanistan War Memorial,49.1015418,-122.6366492,history,history,{}
+Landy Bannister 'Miracle Mile' statue,49.2835675,-123.0332387,history,history,{}
+George Vancouver,49.261194,-123.1139368,history,history,{}
+"G.G. McGeer, K.C.",49.2606834,-123.1137263,history,history,{}
+Windstorm Damage,49.3109211,-123.1489359,history,history,{}
+Japanese Canadian War Memorial,49.3010713,-123.1320424,history,history,{}
+Angel of Victory,49.285258,-123.111437,history,history,{}
+Terry Fox Memorial,49.2773377,-123.1137691,history,history,{}
+Grouse Grind Trailhead,49.3711988,-123.0983777,history,history,{}
+Vancouver Whale Watch,49.1244837,-123.1840048,history,history,{}
+F-86 Sabre Jet Crash Site Memorial,49.3676722,-123.0784253,history,history,{}
+Phoenix Art Workshop,49.1266488,-123.1823304,history,history,{}
+Francl Architecture,49.2695802,-123.1427277,history,history,{}
+Gay Village,49.2817994,-123.1333798,history,history,{}
+Deas Island Tunnel Plaque,49.119992,-123.0722874,history,history,{}
+Steveston Seabreeze Adventures,49.1235754,-123.1812285,history,history,{}
+The West End Sex Workers Memorial,49.2833432,-123.1340379,history,history,{}
+Harry Jerome,49.2982209,-123.1190655,history,history,{}
+Birks Clock,49.2851447,-123.1140076,history,history,{}
+Cenotaph,49.3795513,-123.333427,history,history,{}
+Queen Victoria Memorial,49.2971977,-123.133986,history,history,{}
+Rose Cole Yelton,49.2990879,-123.121252,history,history,{}
+The Battle of Ballantyne Pier,49.2917582,-123.0400265,history,history,{}
+Kanaka Creek Fish Fence,49.1992729,-122.5570593,history,history,{}
+Snake Hill,49.1889429,-122.8905009,history,history,{}
+The Pink Alley,49.2846556,-123.1138977,history,history,{}
+Goddess of Democracy,49.2679874,-123.251372,history,history,{}
+Honey Doughnuts & Goodies,49.3266818,-122.950121,history,history,{}
+Opa tree,49.4026365,-123.3598364,history,history,{}
+Wendy Poole Memorial,49.2842061,-123.099732,history,history,{}
+The Heart Has Its Own Memory,49.2851939,-123.102079,history,history,{}
+Samuel & Katherine Leshgold,49.2840296,-123.1064136,history,history,{}
+When Humans Bleed,49.2622871,-123.124585,history,history,{}
+George Alexander Burrows,49.2733421,-123.1548262,history,history,{}
+Warren Gamaliel Harding Memorial,49.299088,-123.1332596,history,history,{}
+Mehrdad Ashooian,49.2990166,-123.1341353,history,history,{}
+All Canadians for Accepting People From Every Walk of Life,49.328838,-123.1711599,history,history,{}
+Seafarers Plaque,49.3008794,-123.1170173,history,history,{}
+Ironworkers Memorial,49.2919032,-123.025988,history,history,{}
+Griffiths Memorial,49.2843639,-122.998745,history,history,{}
+Malcolm Lowry,49.3023703,-122.9545263,history,history,{}
+The Relief,49.2721894,-123.133701,history,history,{}
+Perry Douglas Roe,49.2765515,-122.862252,history,history,{}
+Dr. Charles Ritchie Symmes,49.2768008,-122.863032,history,history,{}
+Oregon Treaty Centennial Monument,49.0020864,-122.7553415,history,history,{}
+Ironworkers Memorial,49.2914969,-123.026412,history,history,{}
+Hastings Mill Commemorative,49.2858209,-123.0950197,history,history,{}
+Historical Photo Wall,49.2036515,-122.9047866,history,history,{}
+West Beach Observation Point,49.0245947,-122.8181416,history,history,{}
+Dr. David C Lam,49.2726377,-123.1252287,history,history,{}
+Boundary Bay Airport Cenotaph,49.0809121,-123.0087938,history,history,{}
+Fur press,49.1679877,-122.571355,history,history,{}
+The Bog at Riverside Cranberry Farm,49.162815,-122.4827794,history,history,{}
+Firminger,49.0243825,-122.8178526,history,history,{}
+Dan Winnick,49.2636783,-123.1027396,history,history,{}
+Kohima Epitaph,49.3006962,-123.1580538,history,history,{}
+Pauline Johnson Memorial,49.3016954,-123.156723,history,history,{}
+Komagata Maru Memorial,49.1403193,-122.8884337,history,history,{}
+Camosun Bog | xʷməm̓qʷe:m,49.2544087,-123.197639,history,history,{}
+Rene Savenye,49.058465,-122.8777013,history,history,{}
+"Grave of John ""Gassy Jack"" Deighton",49.2221232,-122.896863,history,history,{}
+Grave of Raymond Burr,49.222295,-122.8983098,history,history,{}
+Jubilee Grove,49.2322743,-123.0133696,history,history,{}
+Murrayville Cenotaph,49.0843532,-122.6302913,history,history,{}
+Andrew Slobodian,49.2032004,-123.117713,history,history,{}
+Surrey Cenotaph,49.1044869,-122.7328847,history,history,{}
+Nestor John Izowsky,49.0217387,-122.800783,history,history,{}
+Gordon Smith,49.0057763,-122.4693763,history,history,{}
+Gapyeong Stone Korean War Memorial,49.1002626,-122.6377189,history,history,{}
+Holy Redeemer Church,49.1689632,-122.5748841,history,history,{}
+Thomas Davis Coldicutt,49.0269078,-122.832785,history,history,{}
+Korean War Memorial,49.2284145,-123.0229909,history,history,{}
+The Central Park Story,49.2288319,-123.022602,history,history,{}
+Chief Skedans,49.2991349,-123.1207516,history,history,{}
+Ga'akstalas,49.2991868,-123.1207571,history,history,{}
+Thunderbird House Post,49.2992088,-123.1208487,history,history,{}
+Kakaso'Las,49.2992499,-123.1209187,history,history,{}
+Oscar Maltipi,49.2993236,-123.120892,history,history,{}
+Chief Wakas,49.2993202,-123.1207704,history,history,{}
+Beaver Crest,49.299372,-123.120777,history,history,{}
+Sky Chief,49.2992636,-123.1207594,history,history,{}
+Clyde McRae,49.3264378,-123.152445,history,history,{}
+The Sailors Memorial,49.3118299,-123.0868786,history,history,{}
+Belcarra Lookout,49.3028346,-122.920803,history,history,{}
+Cedar Stump (Firehall),49.3768339,-122.8902886,history,history,{}
+Seven Sisters Replantation,49.2994349,-123.144372,history,history,{}
+Fairy Forest,49.0357526,-122.7286635,history,history,{}
+Old Growth Cedar Stump,49.3386244,-122.7524227,history,history,{}
+B-25 Mitchell Bomber,49.47463,-122.6734537,history,history,{}
+Central Park Theatre,49.239557,-122.967771,history,history,{}
+The Home Bakery,49.2396149,-122.967429,history,history,{}
+Way Sang Yuen Wat Kee,49.2395247,-122.967441,history,history,{}
+The Burnaby Post,49.2394529,-122.967435,history,history,{}
+Treble Clef Phonographs,49.2394141,-122.967352,history,history,{}
+Royal Bank,49.2393378,-122.967441,history,history,{}
+Maywood - A Story of Growth,49.2242807,-123.0081611,history,history,{}
+David Gray Park,49.2164101,-123.0083886,history,history,{}
+Snowmobiles,49.3816825,-123.0784789,history,history,{}
+White Rock Sea Tours and Whale Watch Vancouver,49.0564728,-122.8717189,history,history,{}
+Learning House,49.239383,-122.9676293,history,history,{}
+The Forget Tower,49.2594303,-123.1013338,history,history,{}
+Port Coquitlam Cenotaph,49.2623815,-122.7809581,history,history,{}
+Port Coquitlam Legion #133 Cenotaph,49.2643294,-122.7803183,history,history,{}
+William R. Barge,49.0285403,-122.84297,history,history,{}
+John & Kathleen Bell,49.0345692,-122.845224,history,history,{}
+Wangarĩ Maathai,49.3240365,-122.9456327,history,history,{}
+Brock's Rock,49.016328,-122.7903588,history,history,{}
+John Robson,49.2065498,-122.9109059,history,history,{}
+William Henry Ladner,49.0910909,-123.0857354,history,history,{}
+H.A. Ungless,49.276513,-122.8572743,history,history,{}
+"G.H. ""Pete"" and Anna Rolston",49.1253586,-123.1809792,history,history,{}
+Heritage Hall Tower Clock,49.2573713,-123.100982,history,history,{}
+Andrew Stusiak,49.2748089,-123.0704094,history,history,{}
+Chester Johnson,49.1945345,-123.1777051,history,history,{}
+Dr. H. Gobind Khorana,49.2550466,-123.2325877,history,history,{}
+Marrisa Shen Memorial,49.2256626,-123.0127799,history,history,{}
+Street Cars Memorial,49.2510561,-123.0781067,history,history,{}
+"Community Arbour Day, Murrayville",49.1003999,-122.6391867,history,history,{}
+A Walk to Remember,49.0994707,-122.6350554,history,history,{}
+Local Government Management Association,49.1017068,-122.6367892,history,history,{}
+North Road,49.2764974,-122.8937533,history,history,{}
+Ryan,49.2412492,-122.4772553,history,history,{}
+Duke of Connaught High School 1912–1955,49.2072383,-122.9100989,history,history,{}
+Bulldozer,49.332536,-122.7330672,history,history,{}
+Dinosaurs,49.0898996,-122.485845,history,history,{}
+African Savannah,49.0923356,-122.49068,history,history,{}
+Asia,49.0908523,-122.4894469,history,history,{}
+North American Wilds,49.0912439,-122.4838448,history,history,{}
+South America/Australia,49.093748,-122.4861472,history,history,{}
+Picnic Area,49.0931972,-122.4873176,history,history,{}
+Arctic,49.0905347,-122.4856108,history,history,{}
+Donovan Harbour Park,49.2930648,-123.1337653,history,history,{}
+Timothy E. Jones,49.3902091,-122.9427619,history,history,{}
+Pitt Lake PIctographs,49.4442782,-122.5535593,history,history,{}
+Robert Burnaby,49.2902685,-122.9214915,history,history,{}
+Buntzen Lake Tunnel Memorial,49.3648254,-122.8554416,history,history,{}
+CPTA,49.3029577,-122.9206914,history,history,{}
+Belcarra Lookout Trail,49.3031353,-122.9188503,history,history,{}
+BCTF 100: Celebrating a Century,49.1668219,-122.8453598,history,history,{}
+Jack Walters Mechanized Silviculture,49.2713622,-122.5691326,history,history,{}
+B. G. Griffith Research Trees,49.292196,-122.552468,history,history,{}
+Peggy Helms,49.2821539,-122.5739342,history,history,{}
+Saint John Paul the Great,49.2417175,-123.1228003,history,history,{}
+Addington Point,49.2899466,-122.686371,history,history,{}
+Robert A. White Project,49.2980569,-122.701202,history,history,{}
+Janet Wright 1940-2012,49.2958266,-122.6889174,history,history,{}
+Mike Dal Santo,49.3839819,-123.0388784,history,history,{}
+Dr. Roy Strang,49.0473871,-122.8187614,history,history,{}
+Vancouver Christmas Market,49.2896416,-123.1173908,history,history,{}
+Treehouse,49.0350053,-122.7279677,history,history,{}
+1928 LaFrance Type T-70-6,49.3741384,-123.357652,history,history,{}
+Steam Donkey,49.4534863,-122.5513106,history,history,{}
+Port Coquitlam Heritage Marker - Rowland Lacrosse Box,49.2606933,-122.7790048,history,history,{}
+Buried Bulldozer,49.144911,-122.9308956,history,history,{}
+Magical Mailbox,49.381144,-123.3363803,history,history,{}
+Crease Unit,49.2458494,-122.8050511,history,history,{}
+Manhatten Apartments,49.2847209,-123.1244509,history,history,{}
+Glow Gardens Langley,49.1234749,-122.6231651,history,history,{}
+Pitt Lake PIctographs,49.4449504,-122.552634,history,history,{}
+Martini Town,49.0227494,-122.4721975,history,history,{}
+Barrett's View,49.3529621,-123.1782486,history,history,{}
+Maple Rdige Cenotaph,49.2192932,-122.6011321,history,history,{}
+Wilson Memorial,49.1683668,-122.58016,history,history,{}
+Trattle Memorial Maple Tree,49.1709223,-122.5868954,history,history,{}
+Charlie's Tree,49.1744832,-122.7093109,history,history,{}
+Rose Garden,49.28294703339268,-122.93395844001141,history,history,{}
+False Creek,49.27281917012412,-123.12514381060937,history,history,{}
+Britannia Icerink,49.27599116992234,-123.07062292536371,history,history,{}
+Vancouver Public Library,49.2796918252593,-123.11551898644387,history,history,{}
+Cleveland Dam,49.36021757610767,-123.11075962608155,history,history,{}
+Corn Maze,49.25055718769158,-122.70822323589456,history,history,{}
+Gordon MacMillan Southam Observatory,49.27545698872706,-123.14355925038097,history,history,{}
+Massey Theatre,49.215156747334206,-122.92696614364577,history,history,{}
+Capilano Suspension Bridge,49.34290135,-123.1151049,history,history,{}
+Ben Franklin,49.277753235261116,-123.14773568336271,history,history,{}
+Thunderbird Show Park,49.13127540373933,-122.54218284441666,history,history,{}
+Canada Place,49.288621358249216,-123.11135203522015,history,history,{}
+Honeybee Centre,49.1385517669798,-122.73395399488446,history,history,{}
+Capilano River Hatchery,49.35664871571121,-123.11012886693237,history,history,{}
+North Beach,49.32732395187707,-122.44567668478919,history,history,{}
+Waterslide,49.28650235,-123.14410335000001,history,history,{}
+Point Atkinson Lighthouse,49.33039254322796,-123.26458578582667,history,history,{}
+Rainbow Crosswalk,49.023859789422495,-122.80106455054464,history,history,{}
+Delta Nature Reserve,49.14220269969556,-122.92927681193243,history,history,{}
+Bell-Irving Fish Hatchery,49.21087447915093,-122.50729487515771,history,history,{}
+White Rock Community Cenotaph,49.02364618336054,-122.79847088646305,history,history,{}
+Kettle Creek Mine Coaster,49.282228556056275,-123.03665685962433,history,history,{}
+Friendship Garden,49.087964420905415,-123.05207889874539,history,history,{}
+Surrey Cenotaph,49.10450260000001,-122.73288420000002,history,history,{}
+The White Rock,49.01989303642216,-122.80249745861774,history,history,{}
+David Truman Memorial Bird Garden,49.100902393392175,-122.63814713725398,history,history,{}
+Brockton Point Totem Poles,49.299227268159854,-123.12116539686254,history,history,{}
+The Stop,49.2777533,-123.1449485,history,history,{}
+Poco Trail Mosaics,49.263786,-122.7835231,history,history,{}
+Poco Trail Mosaic,49.2631063,-122.7843832,history,history,{}
+Inukshuk,49.2843057,-123.143728,history,history,{}
+Birthplace of BC Art Gallery,49.1672143,-122.5810822,history,history,{}
+Four Boats Stranded,49.2832178,-123.120566,history,history,{}
+Four Boats Stranded,49.2828278,-123.119971,history,history,{}
+Four Boats Stranded,49.2826194,-123.120281,history,history,{}
+Playground of the Gods,49.283302,-122.935669,history,history,{}
+Eco Sculpture - Dragon,49.2536395,-122.9011968,history,history,{}
+The Birds,49.271391,-123.1062216,history,history,{}
+Ambassador of Peace,49.2284538,-123.0230068,history,history,{}
+The Crab,49.2760449,-123.144556,history,history,{}
+Girl In A Wetsuit,49.3026075,-123.1259323,history,history,{}
+Four Boats Stranded,49.2830107,-123.120891,history,history,{}
+Vivo Media Arts Centre,49.2678288,-123.1010309,history,history,{}
+Tower of Bauble,49.273232,-123.1025401,history,history,{}
+Digital Orca,49.2898174,-123.116709,history,history,{}
+Listen,49.3023586,-123.1480254,history,history,{}
+Dude Chilling Park sign,49.2637342,-123.0968372,history,history,{}
+Reclining Figure,49.263842,-123.0961492,history,history,{}
+Pacific Passage,49.1976912,-123.1739076,history,history,{}
+Flight (Spindle Whorl),49.1972777,-123.1771105,history,history,{}
+Engagement,49.2821685,-123.1411376,history,history,{}
+Search,49.293023,-123.133902,history,history,{}
+Rick Hansen,49.2620491,-123.120905,history,history,{}
+Joe Fortes Drinking Fountain,49.2855491,-123.142403,history,history,{}
+Human Structures Vancouver,49.2719249,-123.1098097,history,history,{}
+Water Work,49.2816804,-123.1130024,history,history,{}
+Royal Sweet Diamond,49.2812618,-123.1158358,history,history,{}
+Province Newspaper Memorial,49.2819517,-123.1103265,history,history,{}
+Gate to the Northwest Passage,49.2781334,-123.1449681,history,history,{}
+The Watch Seller,49.2731149,-123.0996959,history,history,{}
+Mind Crystal,49.2800083,-123.1138813,history,history,{}
+The Drop,49.2893873,-123.1142206,history,history,{}
+Home,49.2500846,-122.86216,history,history,{}
+Classical Toy Boat,49.2690804,-123.2572659,history,history,{}
+Jasper,49.2869661,-123.1287547,history,history,{}
+Simon Fraser,49.199745,-122.9114625,history,history,{}
+Musqueam Post,49.2653777,-123.2511237,history,history,{}
+Solar Bike Tree,49.2730765,-123.1026066,history,history,{}
+F Grass -Ai Wei Wei,49.289513,-123.1216843,history,history,{}
+Trans Am Totem,49.2761258,-123.1022741,history,history,{}
+SEI,49.1974551,-123.1396466,history,history,{}
+The Raven,49.194343,-123.181543,history,history,{}
+Cedar Connection,49.1943305,-123.1792622,history,history,{}
+Celebrating Flight,49.1943628,-123.1803571,history,history,{}
+Buoy,49.3116678,-123.085115,history,history,{}
+The Story of Fog Woman and Raven,49.1973504,-123.1781431,history,history,{}
+East Van Cross,49.2654348,-123.0776545,history,history,{}
+Abacus,49.2794172,-123.1052268,history,history,{}
+Momento (Poodle),49.2548901,-123.1012195,history,history,{}
+Flower Totems,49.2486548,-123.0732056,history,history,{}
+Peaceable Kingdom,49.2491637,-123.0753936,history,history,{}
+Passenger,49.0216099,-122.8075722,history,history,{}
+Killer Whale,49.2997147,-123.1304779,history,history,{}
+Chilliwack Antique House,49.280133,-123.1072141,history,history,{}
+Iag,49.2804954,-123.1063998,history,history,{}
+Triumph of the Technocrat,49.2852406,-123.1342018,history,history,{}
+The Swimmer,49.2769886,-123.1350036,history,history,{}
+Maltese Labyrinth,49.271031,-123.2498572,history,history,{}
+Spirits In A Landscape,49.285907,-123.1231115,history,history,{}
+Requiem for Yan,49.2805672,-123.1258144,history,history,{}
+Vancouver Corner,49.282658,-123.1099763,history,history,{}
+Sounds We No Longer Hear,49.2616112,-123.1140507,history,history,{}
+The Great Fire,49.2821372,-123.1107337,history,history,{}
+King Edward VII Fountain,49.2832215,-123.120676,history,history,{}
+Bird of Spring,49.2824778,-123.120738,history,history,{}
+The Four Elements,49.2845787,-123.1292931,history,history,{}
+Florentine Door & Wall No 3,49.2808714,-123.11245,history,history,{}
+Phoenix,49.2827136,-123.1097142,history,history,{}
+Nike,49.288323,-123.1188656,history,history,{}
+Love in the Rain,49.242617,-123.1160921,history,history,{}
+Builders,49.2853611,-123.1200364,history,history,{}
+Centennial Rocket,49.266028,-123.1153878,history,history,{}
+The throne of Nezahualcoyotl,49.2382851,-123.1338585,history,history,{}
+Harubang,49.3113296,-123.085661,history,history,{}
+Ladner Heron,49.0903455,-123.0596778,history,history,{}
+"Supernatural World: The Sea, The Land and The Sky",49.1935639,-123.1802861,history,history,{}
+Infinity Cycle,49.0233588,-122.8121064,history,history,{}
+Rostrum,49.0286473,-122.8024814,history,history,{}
+Holes in the Sky,49.0310237,-122.8120471,history,history,{}
+The Gray Whale Family,49.0292231,-122.801454,history,history,{}
+Grizlee,49.0163417,-122.7904235,history,history,{}
+Walking on Sunshine,49.0173154,-122.7921197,history,history,{}
+Public Service/Private Step,49.2868653,-123.1178888,history,history,{}
+Seal-maid,49.2672285,-123.1013595,history,history,{}
+Saxophone,49.2681278,-123.1011138,history,history,{}
+Wild Ride,49.2683911,-123.1016585,history,history,{}
+Spacious' as a Concept,49.2615395,-123.1005294,history,history,{}
+Berries and blue vines,49.2625559,-123.1006705,history,history,{}
+Ghia tree,49.2625484,-123.1004521,history,history,{}
+Vancouver Summer Fun,49.26345,-123.1016089,history,history,{}
+Fierce like tigers,49.2631296,-123.1018058,history,history,{}
+Sunday Afternoon,49.2616789,-123.1004854,history,history,{}
+Zhawenjigewin (Love in Anishinaabe),49.2630631,-123.1004926,history,history,{}
+The present is a gift,49.2623414,-123.1013995,history,history,{}
+Befriend Your Inner Demon,49.2635373,-123.1017014,history,history,{}
+Eagle Opens Up,49.2662846,-123.101609,history,history,{}
+In Loving Memory of Holden,49.2665756,-123.1010154,history,history,{}
+Stellars Jay,49.2673883,-123.1011829,history,history,{}
+Octo-maid,49.2672162,-123.1011114,history,history,{}
+Exhausting Machine,49.2706694,-123.0998442,history,history,{}
+Studio View,49.2668434,-123.1022173,history,history,{}
+Mermaid,49.2670101,-123.1015396,history,history,{}
+Guitarist,49.268129,-123.1012246,history,history,{}
+Lady Mermaid,49.2670568,-123.1010213,history,history,{}
+Stay yummy,49.2633291,-123.1016095,history,history,{}
+Knot Yourself,49.2708496,-123.098217,history,history,{}
+Holograph,49.2674582,-123.1015925,history,history,{}
+The jealous creator,49.260426,-123.1016131,history,history,{}
+Unity Tree,49.2748439,-122.800161,history,history,{}
+Knife Edge Two Piece,49.2414393,-123.1136561,history,history,{}
+Photo Session,49.2421518,-123.1124827,history,history,{}
+Black Eagle canoe,49.2401234,-123.1316279,history,history,{}
+Totem Poles,49.2405055,-123.1334363,history,history,{}
+Teamwork,49.038684,-122.734958,history,history,{}
+Under the Double Eagle & Elder Moon,49.0384493,-122.8178093,history,history,{}
+Simon Fraser,49.2093058,-123.1166999,history,history,{}
+Acoustic Anvil: A Small Weight to Forge the Sea,49.2675429,-123.1192684,history,history,{}
+Water #10,49.1847151,-123.1386454,history,history,{}
+Fushion,49.208698,-123.1421516,history,history,{}
+Water Sky Garden,49.1751482,-123.1500241,history,history,{}
+Winches,49.2719314,-123.1339405,history,history,{}
+Golden Tree,49.2105438,-123.1168419,history,history,{}
+Binding Spirit,49.0220891,-122.8090716,history,history,{}
+Supernatural Eye,49.0623962,-122.803348,history,history,{}
+Eagle and Salmon Carving,49.0080093,-123.1305018,history,history,{}
+Salmon Spindle Whorl,49.326292,-123.1377884,history,history,{}
+New Westminster Welcomes You,49.2019185,-122.943256,history,history,{}
+Westmount Park Woodcarving Signboard,49.2126181,-122.9536462,history,history,{}
+100,49.2675747,-123.1390502,history,history,{}
+"Protecting the Future, Serving the Present",49.185267,-122.8512641,history,history,{}
+George D. Kuhn,49.3083687,-123.0425034,history,history,{}
+Slow,49.2754843,-123.1140508,history,history,{}
+Joe Bustemente Trumpet,49.3097161,-123.080438,history,history,{}
+Edmonds Rising,49.2218165,-122.9447189,history,history,{}
+Moving Pictures,49.2766681,-123.1252237,history,history,{}
+Spring,49.2820877,-123.1220363,history,history,{}
+Frame - What do you see?,49.272617,-123.1869842,history,history,{}
+Roller,49.2736755,-123.092447,history,history,{}
+Nautika,49.2694625,-123.1078822,history,history,{}
+Surrey Columbian Centennial Totem Pole,49.1050532,-122.826618,history,history,{}
+Joy of Freedom,49.2814752,-123.1222337,history,history,{}
+Evergreen People,49.2772369,-122.8280146,history,history,{}
+Red Card,49.2792773,-123.1201456,history,history,{}
+Departure,49.2393178,-123.129438,history,history,{}
+Time Top,49.2725597,-123.115671,history,history,{}
+Project for a Public Works Yard,49.2727388,-123.0868787,history,history,{}
+The Firefighter,49.2731071,-123.0863524,history,history,{}
+The Search Engine,49.2644845,-122.9815416,history,history,{}
+The Avocado,49.279032,-122.9165672,history,history,{}
+Terry Fox,49.2789098,-122.916,history,history,{}
+Ernest Edward Sandall,49.0926655,-122.6638079,history,history,{}
+Anchor,49.2791671,-123.2336646,history,history,{}
+La Casa Gelato Mural,49.2769697,-123.0809106,history,history,{}
+Terry Fox Statue,49.2627783,-122.7488,history,history,{}
+Eyes on the Street,49.2707806,-123.103265,history,history,{}
+Working River,49.2003658,-123.1137858,history,history,{}
+Elephant,49.0894405,-122.6919187,history,history,{}
+moai,49.0892859,-122.6910657,history,history,{}
+The Shadow,49.2662475,-123.2507283,history,history,{}
+Shore to Shore,49.298936,-123.120544,history,history,{}
+Tuning Fork,49.2671461,-123.2563786,history,history,{}
+Musqueam Artist-Designed Crosswalk,49.2099239,-123.140498,history,history,{}
+Musqueam Artist-Designed Crosswalk,49.2098745,-123.1406727,history,history,{}
+Mosaic Creek,49.2732979,-123.0741776,history,history,{}
+Need,49.2889424,-123.1258981,history,history,{}
+"Koco, Brewers Park, August 11, 2019",49.2517944,-123.0659156,history,history,{}
+Mori,49.0834845,-122.5434628,history,history,{}
+A Tale of Two Children,49.2748786,-123.0917264,history,history,{}
+Spinning Chandelier,49.2740665,-123.1307869,history,history,{}
+Bay Bébé II,49.2276311,-123.0069274,history,history,{}
+Evangeline,49.2276305,-123.0068912,history,history,{}
+Erasmus Weathervane,49.2756872,-123.1307687,history,history,{}
+Blankets: stored,49.1908319,-122.8552695,history,history,{}
+Blankets: waiting,49.1908426,-122.855171,history,history,{}
+Blankets: in use,49.190844,-122.8550855,history,history,{}
+Bright Knights,49.1189975,-122.6907863,history,history,{}
+Eagle Calling,49.1406504,-122.8402982,history,history,{}
+Floraforms and Seeds of Change,49.1841634,-122.8472786,history,history,{}
+Continuum: From Seed to Shelter,49.1754994,-122.824456,history,history,{}
+Dancing Tower,49.1334368,-122.8470478,history,history,{}
+Kwomais: A Place of Vision,49.0268415,-122.8685022,history,history,{}
+Moments in Time: Cowgirl,49.1067873,-122.7350506,history,history,{}
+Moments in Time: Train Conductor,49.1049913,-122.7349003,history,history,{}
+Moments in Time: Farmer,49.1057423,-122.7350356,history,history,{}
+Kneeling in Remembrance,49.1045144,-122.7328847,history,history,{}
+Lingua Aqua,49.1595298,-122.8382409,history,history,{}
+Lance Corporal Arthur Thomas Fleetwood,49.1551634,-122.7792126,history,history,{}
+Nautilus,49.1907672,-122.8534225,history,history,{}
+Ribbon,49.0399629,-122.8180453,history,history,{}
+Seasons in the Park,49.1870695,-122.757243,history,history,{}
+Ribbon of Life,49.175813,-122.8444044,history,history,{}
+Redwood Forest Mysteries,49.0349014,-122.7264199,history,history,{}
+Talking Poles,49.1275292,-122.875928,history,history,{}
+Talking Poles,49.1249214,-122.875914,history,history,{}
+Skedans Grizzly Bear Pole,49.0033391,-122.7575228,history,history,{}
+Splash,49.1948027,-122.8011928,history,history,{}
+Water Guardians,49.1315875,-122.6952083,history,history,{}
+Water Guardians,49.1315194,-122.6952484,history,history,{}
+Water Guardians,49.131501,-122.6951442,history,history,{}
+The New Recruit,49.1623982,-122.6983299,history,history,{}
+The Rivers that Connect Us,49.104342,-122.7325067,history,history,{}
+The Train Arriving at the Station,49.0312788,-122.8016304,history,history,{}
+Tree of Knowledge,49.0348895,-122.8014542,history,history,{}
+water’s edge,49.0313122,-122.798306,history,history,{}
+We Are All Connected to This Land,49.1608178,-122.8460291,history,history,{}
+We Are All Connected to This Land,49.1608064,-122.8455294,history,history,{}
+Fraser River Stories,49.2092261,-123.1168627,history,history,{}
+Infinite Tire,49.2118345,-123.1068441,history,history,{}
+Ebb and Flow,49.209396,-123.1161508,history,history,{}
+Salish Gifts,49.2100365,-123.1164655,history,history,{}
+David Oppenheimer,49.2904309,-123.1460422,history,history,{}
+World Globe,49.2884051,-123.1155773,history,history,{}
+Air,49.3055488,-123.018765,history,history,{}
+Salmon Mural,49.2619214,-122.7812118,history,history,{}
+Original Salmon Mural,49.2620215,-122.7814495,history,history,{}
+Port Coqitlam Community Mosaic,49.2619905,-122.7799984,history,history,{}
+Pocoboo,49.2619697,-122.7827689,history,history,{}
+Port Coquitlam,49.2622313,-122.7820621,history,history,{}
+Days of Thunder,49.2617888,-122.7832829,history,history,{}
+History of the City of Port Coquitlam,49.2636662,-122.7806781,history,history,{}
+CPR,49.2634553,-122.7801971,history,history,{}
+The Birds,49.2713974,-123.1064762,history,history,{}
+Salmon Cycle,49.3362775,-123.0926476,history,history,{}
+Whale Rock Carving,49.0251108,-122.8350077,history,history,{}
+Continuity,49.2715929,-123.1907172,history,history,{}
+Frog,49.1944775,-122.8258597,history,history,{}
+Vancouver Novel,49.2718501,-123.1813625,history,history,{}
+The Eagle and The Dove,49.2297433,-123.0027545,history,history,{}
+Tick,49.2636932,-123.003621,history,history,{}
+Giants,49.2714666,-123.1329786,history,history,{}
+Weekend Chime,49.2823425,-123.12117,history,history,{}
+Ocean Commotion,49.2710517,-123.1337282,history,history,{}
+The Proud Yourh,49.2713674,-123.1203584,history,history,{}
+108 Steps,49.2432545,-123.0610862,history,history,{}
+Sopa SUR,49.2713644,-123.1460089,history,history,{}
+Brush With Illumination,49.2710551,-123.12282,history,history,{}
+Bird,49.2524326,-122.8650635,history,history,{}
+The Think-Gress,49.2519407,-122.8654513,history,history,{}
+Bold as Love,49.2527124,-122.8641708,history,history,{}
+Wildflower,49.2528735,-122.8645505,history,history,{}
+Progress,49.253055,-122.8645223,history,history,{}
+Writing to You,49.2791928,-123.1111891,history,history,{}
+Writing to You,49.2790832,-123.1110233,history,history,{}
+"Broken Column, (Pendulum)",49.2837996,-123.1195399,history,history,{}
+Curtained Skies,49.290247,-123.128975,history,history,{}
+Curtained Skies,49.2902275,-123.1290093,history,history,{}
+Curtained Skies,49.2902076,-123.1290435,history,history,{}
+Haida Eagle and Frog Totem Pole,49.2789539,-123.120968,history,history,{}
+Idea for a Trellis,49.2772034,-123.12973,history,history,{}
+Khenko,49.2715369,-123.1299779,history,history,{}
+House Post of qiyǝplenǝxʷ,49.2703389,-123.2537598,history,history,{}
+Wood for the People,49.2682895,-123.2560496,history,history,{}
+Man about to Plant Alfalfa,49.2610813,-123.2506644,history,history,{}
+Transcendence,49.2684398,-123.2574906,history,history,{}
+Three Forms,49.2679404,-123.255894,history,history,{}
+Mother and Child,49.2639599,-123.246954,history,history,{}
+inukshuk,49.0367629,-122.8426046,history,history,{}
+Viking head,49.2778714,-122.9707292,history,history,{}
+Davie,49.2873485,-123.1419766,history,history,{}
+Water Words,49.1740898,-123.1811546,history,history,{}
+Spectrum of Emotions,49.2020934,-123.0268478,history,history,{}
+Dreaming of Coexistence,49.2025295,-123.0291592,history,history,{}
+The Regular,49.2025555,-123.0293074,history,history,{}
+Home To All / Your Usual Suspects,49.2025438,-123.0296462,history,history,{}
+Hak Chu/Pak Chu,49.2415744,-122.9707822,history,history,{}
+Capturing the View,49.2886967,-123.1188975,history,history,{}
+The Cow,49.0074827,-123.0476998,history,history,{}
+Anchor,49.2062648,-123.1504304,history,history,{}
+The Meeting,49.0284564,-122.8014853,history,history,{}
+The Wonderful Year We Fell In Love,49.02981,-122.8008842,history,history,{}
+Eagle Descending,49.3799969,-123.333762,history,history,{}
+Succession II,49.2127301,-122.9510995,history,history,{}
+Spirit of Our Ancestors On The Land,49.2871979,-123.122359,history,history,{}
+Heartland,49.275492,-122.8500405,history,history,{}
+Stitching Our History,49.28242,-122.8298543,history,history,{}
+Portrait of a City,49.2777722,-122.8500265,history,history,{}
+Canada 150 Mosaic Mural,49.2831175,-122.8308173,history,history,{}
+Illuminations,49.2765642,-122.8570148,history,history,{}
+The River Giver of Life,49.2790091,-122.838751,history,history,{}
+Morse Code,49.2799389,-122.8486383,history,history,{}
+Coming and Going,49.2777625,-122.8453295,history,history,{}
+Footprints,49.2761199,-122.8287585,history,history,{}
+Play,49.2986941,-122.8394791,history,history,{}
+A Prayer for the Return of Abundance,49.2789627,-122.8338774,history,history,{}
+Service,49.2820313,-122.8281128,history,history,{}
+Easthill Park Mural,49.2867838,-122.8708551,history,history,{}
+Buoy Bench,49.2804752,-122.8485679,history,history,{}
+Canoe,49.2778405,-122.8457591,history,history,{}
+Junction,49.2780041,-122.8380854,history,history,{}
+Mother and Child on a Bike,49.277355,-122.8282849,history,history,{}
+Moraine Train,49.2770982,-122.8274384,history,history,{}
+Together,49.1632977,-123.1448934,history,history,{}
+Journey,49.2844355,-122.8314314,history,history,{}
+Movement: The Search for the Perfect Form,49.2832053,-122.8312726,history,history,{}
+Saymahmit,49.2840771,-122.8329409,history,history,{}
+The Queen's Glass Tie,49.2776734,-122.8586364,history,history,{}
+Tidal Train,49.2822383,-122.8293704,history,history,{}
+Tidal Windfall,49.2834676,-122.8236588,history,history,{}
+Trial by Stone,49.2786674,-122.850185,history,history,{}
+Welh Aynexw Nseyxnitm (The Guardian Spirits),49.2821841,-122.8297615,history,history,{}
+Vietnamese Boat People Memorial,49.2570687,-123.0899378,history,history,{}
+LHEW'QUM,49.2788038,-122.8392674,history,history,{}
+Knight,49.2708454,-123.0789062,history,history,{}
+slugs,49.2715506,-123.093611,history,history,{}
+Chub Creek,49.2626433,-123.0085267,history,history,{}
+Untitled,49.2608318,-123.12254,history,history,{}
+Welcome Pole,49.3126425,-122.9268199,history,history,{}
+FARIO FOST,49.2726076,-123.0973457,history,history,{}
+Who's Got the Umbrella?,49.3268926,-122.9504759,history,history,{}
+Cypress Eagle,49.3482989,-123.2223161,history,history,{}
+Large Ship Dock Cleat,49.3116898,-123.0733683,history,history,{}
+Ornamentum,49.2631182,-122.9979026,history,history,{}
+Tree Snag,49.3272399,-123.1530963,history,history,{}
+Watermark,49.3128934,-123.0801408,history,history,{}
+Shaggin’ Wagon,49.1957596,-123.1851342,history,history,{}
+Grizzly,49.3178026,-123.0721264,history,history,{}
+The Camel,49.3201408,-123.0721564,history,history,{}
+Sky Harbour,49.320206,-123.0731144,history,history,{}
+Ancient Sun,49.3207564,-123.0731862,history,history,{}
+The Chief,49.320219,-123.0735529,history,history,{}
+AT HOME,49.3216869,-123.056923,history,history,{}
+Dance With Me,49.2019155,-123.0257499,history,history,{}
+Furry Glitch,49.2020009,-123.0262092,history,history,{}
+We Can't Do It Alone,49.2019522,-123.0259296,history,history,{}
+Entangled,49.2020234,-123.0263814,history,history,{}
+Wake Up,49.2020588,-123.026627,history,history,{}
+LegWork,49.2021255,-123.0270432,history,history,{}
+The People Power Revolution,49.2021551,-123.0272494,history,history,{}
+Ur Not There,49.2021866,-123.0274695,history,history,{}
+A Bouquet,49.2022128,-123.0276527,history,history,{}
+Golden Hour Run,49.2023604,-123.0284042,history,history,{}
+River Woman,49.2025061,-123.0290756,history,history,{}
+Photo Booth Friends,49.2025523,-123.0294429,history,history,{}
+Where You Will Find Me,49.2026372,-123.0302823,history,history,{}
+Everything is Connected,49.2028271,-123.0308662,history,history,{}
+Tempête,49.2028584,-123.0310073,history,history,{}
+Buzzing Symmetry: A Reverence for the Sacred Dance of Bees and Geometric Harmony,49.2028816,-123.0311473,history,history,{}
+A Love Letter to the Moon,49.2028984,-123.0312684,history,history,{}
+Totoltecayotl,49.2029281,-123.031462,history,history,{}
+Water is life,49.2030153,-123.0319269,history,history,{}
+La Yacumama,49.2030912,-123.0322904,history,history,{}
+Water: Connecting Roots,49.2031184,-123.0324005,history,history,{}
+Interdependence,49.2031994,-123.032763,history,history,{}
+Personal Canal,49.203228,-123.0329047,history,history,{}
+Under the sun,49.2032901,-123.0332861,history,history,{}
+Emily Carr And Friend,49.2654295,-123.1387418,history,history,{}
+Osprey Towers,49.2650612,-123.0089579,history,history,{}
+Whale Vertebra,49.3274156,-123.1542419,history,history,{}
+Typha,49.1763694,-123.1505387,history,history,{}
+Hupakwanum: The Chief's Treasure Box,49.1753458,-123.1528852,history,history,{}
+Dream of the River,49.116984,-123.1585855,history,history,{}
+Timekeepers,49.3126419,-123.0800608,history,history,{}
+YOU ARE HERE,49.3201799,-123.0924284,history,history,{}
+We Found Love Crosswalk,49.2074437,-122.9051486,history,history,{}
+Our Children Again Crosswalk,49.2081298,-122.9038676,history,history,{}
+Orcas in the City,49.3739088,-123.2726989,history,history,{}
+Through The Looking Glass,49.3127943,-123.0804774,history,history,{}
+Streams of Consciousness,49.3127932,-123.0803846,history,history,{}
+Nebula Garden,49.3130733,-123.0791013,history,history,{}
+Dialogue,49.3267795,-123.158252,history,history,{}
+Canadian Flag Garden,49.00339240519249,-122.75732303184031,history,history,{}
+Giant Checkerboard,49.25909699284362,-123.24742713737608,history,history,{}
+LightShed,49.291385700000006,-123.12335640000002,history,history,{}
+Marking High Tide,49.271890106185644,-123.12464367317202,history,history,{}
+Waiting for Lowtide,49.27181098928573,-123.12361829571171,history,history,{}
+Rainbow Crosswalk,49.1860115,-122.8516505,history,history,{}
+Totem Poles,49.01845313868012,-122.79664631068746,history,history,{}
+217.5 Arc x 13,49.27990703592338,-123.13975437277736,history,history,{}
+A-maze-ing Laughter,49.287591566481865,-123.14193927100345,history,history,{}
+Walking Figures – Cambie at Broadway,49.26255390672378,-123.11454106513773,history,history,{}
+The Stop,49.268316024071716,-123.11029648082221,history,history,{}
+True North Tower,49.26609506666667,-123.24444516666668,history,history,{}
+Millennial Time Machine,49.26751696578988,-123.25450814409446,history,history,{}
+Multiples of Three,49.1669836850944,-122.79644838174488,history,history,{}
+Knots,49.27968337710034,-122.84998262414899,history,history,{}
+Pacific Spiral,49.27287987154651,-123.1261600766052,history,history,{}
+Call of the Siren,49.13520417509871,-122.85641305476484,history,history,{}
+Circulation,49.04617764980851,-122.75662990771895,history,history,{}
+Circulation,49.04650108808643,-122.75541869665008,history,history,{}
+Fleetwood Mosaics,49.155337,-122.78113345000001,history,history,{}
+Golden Ears Way Eagle,49.1757334103703,-122.73277490307895,history,history,{}
+Terra Incognita,49.0324785,-122.8662755,history,history,{}
+Teamwork,49.038685050000005,-122.734958,history,history,{}
+Tree of Knowledge,49.034888949999996,-122.80145420000001,history,history,{}
+Compass Rose,49.31189277280652,-123.0867849146978,history,history,{}
+Cathedral,49.31166219568947,-123.08593291835192,history,history,{}
+Welcome Figures,49.312114799999996,-123.08668935000001,history,history,{}
+Gnomon,49.147981454178584,-122.78101817481748,history,history,{}
+Cadenza,49.279843150000005,-123.11996815000002,history,history,{}
+Clouds,49.28036879647955,-123.12297977373639,history,history,{}
+Coopers Mews,49.2736614237573,-123.11595751387411,history,history,{}
+Dichroic Vancouver,49.27975615146018,-123.1234179158888,history,history,{}
+Evangeline and Flowers,49.291587809965186,-123.13114615311788,history,history,{}
+Finger Paint,49.27368,-123.12705224999999,history,history,{}
+Gaslight,49.281554400000005,-123.11212714999999,history,history,{}
+GRANtable,49.275203555267204,-123.13207247295875,history,history,{}
+Life Under the Marquee,49.27692442508616,-123.12880892473048,history,history,{}
+Line of Work,49.289993434122536,-123.11791229434397,history,history,{}
+Rainbow Crosswalk,49.18590925727466,-122.85167540643141,history,history,{}
+Rainbow Crosswalk,49.186097149999995,-122.85163589999999,history,history,{}
+The Sappers Were Here,49.22417465000001,-122.89083864999999,history,history,{}
+Unlimited Growth Increases the Divide,49.2814967,-123.11211775,history,history,{}
+The Golden Tree,49.0546093,-122.3291658,history,history,{}
+Clayburn Brick Plant,49.08277905146324,-122.25816541585476,history,history,{}
+Abbotsford Sports Hall of Fame,49.0615884,-122.3244289,history,history,{}
+Trethewey House,49.0437570050771,-122.3050329803864,history,history,{}
+Heritage Gallery,49.043547399999994,-122.3051513,history,history,{}
+Gur Sikh Temple,49.0510494962064,-122.30722144697484,history,history,{}
+Joey's Playhouse,49.043420289032746,-122.30489172500633,history,history,{}
+Mennonite Heritage Museum,49.03490395257693,-122.33608352597106,history,history,{}
+Clayburn Schoolhouse Museum,49.08049539974516,-122.26126562755522,history,history,{}
+Bakerview Ecodairy,49.0279876,-122.2648052,history,history,{}
+Play Abby,49.0402184,-122.2774917,history,history,{}
+Valley Wake Park,49.025837,-122.3466072,history,history,{}
+Countdown Escape Rooms,49.049926,-122.2908745,history,history,{}
+Those Who Died in Soviet Union Prisons and Labour Camps,49.0530539,-122.33822,history,history,{}
+Civic Workers Memorial,49.0527974,-122.3285844,history,history,{}
+CF-101 Voodoo,49.0202881,-122.3869012,history,history,{}
+Abbotsford Cenotaph,49.0530671,-122.328891,history,history,{}
+Royal Canadian Air Force Association Memorial,49.0533499,-122.3288843,history,history,{}
+Jane Swan Memorial,49.0623812,-122.3257242,history,history,{}
+Santa Village,49.0485186,-122.3121256,history,history,{}
+Dave Holmberg,49.0495812,-122.359575,history,history,{}
+"J.A. ""Spud"" Murphy",49.0483441,-122.3302941,history,history,{}
+Silverbrook U-catch Trout Farm,49.0267603,-122.4274613,history,history,{}
+Police Only,49.0616936,-122.3802796,history,history,{}
+Farmville,49.0092112,-122.3163248,history,history,{}
+School Area,49.0094386,-122.3172166,history,history,{}
+International Friendship Garden & Cultural Gateway,49.0544940453354,-122.32901080155742,history,history,{}
+Mini Golf,49.03846349644605,-122.22327973053682,history,history,{}
+Abbotsford Police Memorial,49.053067077874694,-122.32898564357164,history,history,{}
+Abbotsford Fire Rescue Service Memorial,49.053075109468686,-122.3287974380522,history,history,{}
+Terror at Tanglebank,49.07761976783009,-122.39667268992024,history,history,{}
+Tuscan Farm Gardens,49.126918901126494,-122.38357139710715,history,history,{}
+Unity,49.0535269,-122.3288962,history,history,{}
+Valley Feed Bag bench,49.048782,-122.3042782,history,history,{}
+Stream of Dreams,49.0420788,-122.3043045,history,history,{}
+Raspberries,49.0356406,-122.3375632,history,history,{}
+Salmon Monument,49.0335582,-122.292848,history,history,{}
+The Page Turner,49.043062,-122.3008814,history,history,{}
+Three Men Telling Tall Tales Bench 1999,49.0491529,-122.2902052,history,history,{}
+Games Legacy,49.0457739,-122.2878072,history,history,{}
+Cartoon Map,49.0487688,-122.2891869,history,history,{}
+Expressions,49.0478988,-122.2904894,history,history,{}
+Baseball,49.0486962,-122.2915555,history,history,{}
+Cry for Africa,49.0511778,-122.3115905,history,history,{}
+STRAUSS AND GALLO WATCHING THE FARM,49.0488691,-122.2886721,history,history,{}
+Karl's Meats,49.0494648,-122.2892041,history,history,{}
+Indo-Canadian Meat Shop,49.0500839,-122.3347082,history,history,{}
+Non-Slip,49.0460146,-122.2914095,history,history,{}
+Mill Lake 1908,49.05046,-122.288805,history,history,{}
+Valley Farm Life Mid 1900's,49.024029,-122.2649438,history,history,{}
+There are so Many Reasons...,49.0473964,-122.2885004,history,history,{}
+"for men may come, and men may go, but I go on forever",49.0493132,-122.2899786,history,history,{}
+i-Lead Abby,49.0493641,-122.2898392,history,history,{}
+Gosling's Truck,49.047888,-122.2902682,history,history,{}
+Thunderbird Square,49.053225265311376,-122.32887703546398,history,history,{}
+Welcome,49.045701617891496,-122.28968427580232,history,history,{}
+Rainbow Crosswalk,49.029539470823075,-122.28540603376408,history,history,{}
+Wrecked Car,49.2551795,-122.4170078,history,history,{}
+New Gymnasium,49.13924982874871,-122.28557304305681,history,history,{}
+Girl's Dormitory,49.1388834008638,-122.28392125449979,history,history,{}
+The Agricultural Buildings,49.139567083356596,-122.2865822831412,history,history,{}
+Old Gymnasium,49.139442084220775,-122.28587680339308,history,history,{}
+St. Mary's Auto Shop,49.1379274497453,-122.28703898352904,history,history,{}
+Mission Museum,49.1354712,-122.3047067,history,history,{}
+Powerhouse at Stave Falls Visitor Centre,49.228698404579355,-122.35607649380805,history,history,{}
+St. Mary's Bell,49.1381111948092,-122.28569367002312,history,history,{}
+"Mission ""Rise"" Youth Mural",49.1340969,-122.3034001,history,history,{}
+Two salmon,49.1960837,-122.4077597,history,history,{}
+Wolf Clan Crest,49.1956603,-122.4074243,history,history,{}
+Wolf Clan Crest,49.1963424,-122.4079876,history,history,{}
+The Frog,49.1959497,-122.4076479,history,history,{}
+Mountain goat and first sunrise,49.1958086,-122.4075359,history,history,{}
+Raven and the Sun,49.1962147,-122.4078741,history,history,{}
+Stave Bear,49.266081,-122.3649331,history,history,{}
+Oliver Street,49.13253728234295,-122.34242738700597,history,history,{}
+Oliver Street,49.13326895,-122.3418594,history,history,{}
+Oliver Street,49.13308529307801,-122.34198920329048,history,history,{}

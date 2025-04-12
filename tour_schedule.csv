@@ -1,33 +1,88 @@
 name,arrival,departure
 Start Location,09:00,09:00
-PressBox Pub,09:01,10:01
-Phở Don,10:02,11:02
-Le Petit Saigon,11:03,12:03
-Phở Don,12:04,13:04
-Chatime,13:05,14:05
-Le Petit Saigon,14:06,15:06
-Luda Southern Dishes,15:07,16:07
-Hastings Branch,16:08,17:08
-Bo Laksa King's Bubbles & Bits,17:09,18:09
-Thailicious,18:10,19:10
-The Red Wagon Cafe,19:11,20:11
-Hotel (End of Day),20:12,09:00
-IPOH Asian House,09:01,10:01
-Atrium Hotel Vancouver,10:02,22:02
-Hotel (End of Day),22:04,09:00
-On Lok Restaurant & Wun Tun House,09:01,10:01
-The Red Wagon Cafe,10:02,11:02
-Parallel 49 Tasting Room & Beer Store,11:03,12:03
-On Lok Restaurant & Wun Tun House,12:04,13:04
-Princeton Pub,13:05,14:05
-Parallel 49 Tasting Room & Beer Store,14:06,15:06
-The Pie Shoppe,15:07,16:07
-Slow Hand Tasting Room,16:08,17:08
-Andina Tasting Lounge,17:09,18:09
-Callister Tasting Room,18:10,19:10
-Korean Community Centre,19:11,20:11
-Hotel (End of Day),20:13,09:00
-Off The Rail Tasting Room,09:01,10:01
-Hotel At The Waldorf,10:02,22:02
-Hotel (End of Day),22:04,09:00
-Vancouver Hack Space,09:01,10:01
+PNE - Hastings & Windermere,09:02,10:02
+PressBox Pub,10:08,11:08
+Le Petit Saigon,11:12,12:12
+Chatime,12:13,13:13
+Luda Southern Dishes,13:15,14:15
+Hastings Branch,14:16,15:16
+Bo Laksa King's Bubbles & Bits,15:17,16:17
+Thailicious,16:19,17:19
+The Red Wagon Cafe,17:22,18:22
+Jackalope's Neighborhood Dive,18:23,19:23
+IPOH Asian House,19:24,20:24
+Atrium Hotel Vancouver,20:36,08:36
+Hotel (End of Day),08:37,09:00
+On Lok Restaurant & Wun Tun House,09:13,10:13
+Parallel 49 Tasting Room & Beer Store,10:15,11:15
+Princeton Pub,11:19,12:19
+The Pie Shoppe,12:21,13:21
+Slow Hand Tasting Room,13:22,14:22
+Andina Tasting Lounge,14:23,15:23
+Callister Tasting Room,15:29,16:29
+Korean Community Centre,16:32,17:32
+Earnest Ice Cream,17:33,18:33
+Off The Rail Tasting Room,18:36,19:36
+Hotel At The Waldorf,19:38,07:38
+Hotel (End of Day),07:39,09:00
+Vancouver Hack Space,09:05,10:05
+Downlow Chicken Shack,10:08,11:08
+Britianna Sushi,11:11,12:11
+The Reef,12:12,13:12
+Five Elements,13:13,14:13
+Moja Coffee,14:14,15:14
+Kulinarya Filipino Eatery,15:15,16:15
+VPL Britannia Branch,16:16,17:16
+Turk's,17:17,18:17
+Famoso,18:20,19:20
+Hotel At The Waldorf,19:32,07:32
+Hotel (End of Day),07:50,09:00
+Sake Maki Sushi,09:13,10:13
+Tandoori Palace,10:14,11:14
+Tatsu Japanese Bistro,11:15,12:15
+Chinese Grace Mennonite Church,12:16,13:16
+La Mezcaleria,13:17,14:17
+Federico's Supper Club,14:18,15:18
+Spade,15:20,16:20
+Belgian Fries,16:21,17:21
+Prado Cafe,17:22,18:22
+Siddhartha's Indian Kitchen,18:23,19:23
+Hotel At The Waldorf,19:43,07:43
+Hotel (End of Day),08:07,09:00
+Sushi Ville,09:20,10:20
+Cafe Deux Soleils,10:21,11:21
+Tangent Cafe,11:22,12:22
+Addis Cafe,12:23,13:23
+Harambe,13:24,14:24
+JJ Bean,14:25,15:25
+Cabrito - Tapas Bebidas,15:26,16:26
+Jamjar Folk Lebanese Food,16:27,17:27
+St Augustine's,17:28,18:28
+Hon's Wonton House,18:29,19:29
+Hotel At The Waldorf,19:53,07:53
+Hotel (End of Day),08:19,09:00
+Broadway Station Sushi,09:25,10:25
+Commercial Sushi,10:26,11:26
+Jamaican Pizza Jerk,11:27,12:27
+Naruto Sushi,12:29,13:29
+Bandidas Taqueria,13:30,14:30
+Gojo Little Africa Cafe,14:31,15:31
+Bakery Sate,15:32,16:32
+Little Free Library,16:33,17:33
+House of Dosas,17:39,18:39
+Po Kong,18:46,19:46
+Cassandra Hotel,20:23,08:23
+Hotel (End of Day),08:24,09:00
+VPL Kensington Branch,09:38,10:38
+Phở Thái Hóa,10:40,11:40
+Jarrito Loco Tacos,11:44,12:44
+Green Lettuce,12:46,13:46
+Vegan Pizza House,13:50,14:50
+Zamzam Grill,14:53,15:53
+Excellent Dim Sum King Restaurant,15:54,16:54
+Happy Family Restaurant,16:55,17:55
+Western Lake,17:56,18:56
+Chau Veggie Express,19:02,20:02
+Cassandra Hotel,20:25,08:25
+Hotel (End of Day),08:57,09:00
+Amay's House,09:22,10:22
