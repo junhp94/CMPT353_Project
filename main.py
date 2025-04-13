@@ -17,6 +17,12 @@ from folium.plugins import TimestampedGeoJson
 
 geolocator = Nominatim(user_agent="CMPT353-Project")
 
+# Constants
+MIN_LAT = 49.0053233
+MAX_LAT = 49.4598489
+MIN_LON = -123.4772643
+MAX_LON = -122.0016829
+
 
 def input_field():
     # Ask user how long their tour is
@@ -73,8 +79,15 @@ def input_field():
         location = geolocator.geocode(address)
         if location:
             start_lat, start_lon = float(location.latitude), float(location.longitude)
-            break
-        print("Invalid address. Please try again.")
+
+            if (MIN_LAT <= start_lat <= MAX_LAT) and (MIN_LON <= start_lon <= MAX_LON):
+                break
+            else:
+                print(
+                    f"Address is outside the allowed area (must be between {MIN_LAT}-{MAX_LAT}°N, {MIN_LON}-{MAX_LON}°W)."
+                )
+        else:
+            print("Invalid address. Please try again.")
 
     # Ask for mode of transportation
     transport_modes = ["walk", "drive", "bike"]
