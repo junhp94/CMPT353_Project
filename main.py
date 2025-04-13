@@ -17,12 +17,6 @@ from folium.plugins import TimestampedGeoJson
 
 geolocator = Nominatim(user_agent="CMPT353-Project")
 
-# Constants
-MIN_LAT = 49.0053233
-MAX_LAT = 49.4598489
-MIN_LON = -123.4772643
-MAX_LON = -122.0016829
-
 
 def input_field():
     # Ask user how long their tour is
@@ -38,7 +32,16 @@ def input_field():
             print("Invalid input. Please enter a valid number.")
 
     # Ask for theme
-    themes = ["food", "nature", "history", "science", "art", "entertainment", "random"]
+    themes = [
+        "food",
+        "nature",
+        "history",
+        "science",
+        "art",
+        "entertainment",
+        "bar crawl",
+        "random",
+    ]
     while True:
         theme = input(f"Enter a theme ({', '.join(themes)}): ").strip().lower()
         if theme in themes:
@@ -70,15 +73,8 @@ def input_field():
         location = geolocator.geocode(address)
         if location:
             start_lat, start_lon = float(location.latitude), float(location.longitude)
-
-            if (MIN_LAT <= start_lat <= MAX_LAT) and (MIN_LON <= start_lon <= MAX_LON):
-                break
-            else:
-                print(
-                    f"Address is outside the allowed area (must be between {MIN_LAT}-{MAX_LAT}°N, {MIN_LON}-{MAX_LON}°W)."
-                )
-        else:
-            print("Invalid address. Please try again.")
+            break
+        print("Invalid address. Please try again.")
 
     # Ask for mode of transportation
     transport_modes = ["walk", "drive", "bike"]
@@ -154,15 +150,15 @@ def find_nearest_amenities(amenities, start_coords, num_amenities):
 
         amenities_copy["distance"] = amenities_copy.apply(
             lambda row: haversine(
-                current_location[0], current_location[1], row["lat"], row["lon"]),axis=1,
+                current_location[0], current_location[1], row["lat"], row["lon"]
+            ),
+            axis=1,
         )
-        # Finds the 30th nearest amenity
-        sorted_amenities = amenities_copy.nsmallest(10, "distance")
-        nearest_index = min(9, len(sorted_amenities) - 1)
-        nearest_amenity = sorted_amenities.iloc[nearest_index]
+        nearest_amenity = amenities_copy.nsmallest(1, "distance").iloc[0]
 
         route.append(nearest_amenity)
         current_location = (nearest_amenity["lat"], nearest_amenity["lon"])
+
         amenities_copy = amenities_copy.drop(nearest_amenity.name)
 
     return pd.DataFrame(route)
@@ -170,16 +166,71 @@ def find_nearest_amenities(amenities, start_coords, num_amenities):
 
 def filter_amenities_by_theme(amenities, selected_theme):
     themes = {
-        "nature": ["park", "watering_place", "fountain", "ranger_station", "hunting_stand", "observation_platform", "water_point"],
-        "food": ["cafe", "bbq", "restaurant", "pub", "bar", "food_court", "ice_cream", "juice_bar", "bistro", "biergarten"],
+        "nature": [
+            "park",
+            "watering_place",
+            "fountain",
+            "ranger_station",
+            "hunting_stand",
+            "observation_platform",
+            "water_point",
+        ],
+        "food": [
+            "cafe",
+            "bbq",
+            "restaurant",
+            "pub",
+            "bar",
+            "food_court",
+            "ice_cream",
+            "juice_bar",
+            "bistro",
+            "biergarten",
+        ],
         "history": ["place_of_worship", "monastery", "courthouse", "townhall", "clock"],
         "science": ["research_institute", "science", "ATLAS_clean_room"],
         "art": ["arts_centre", "theatre", "studio"],
-        "entertainment": ["cinema", "nightclub", "stripclub", "gambling", "casino", "marketplace", "spa", "events_venue", "internet_cafe", "lounge", "shop|clothes", "leisure", "Observation Platform", "photo_booth"],
-        "mode of travel": ["car_rental", "bicycle_rental", "car_sharing", "taxi", "bus_station", "ferry_terminal", "seaplane_terminal", "motorcycle_rental", "parking", "charging_station", "EVSE"],
-        "bar crawl": ["bar", "pub", "nightclub", "cocktail_bar", "brewpub", "wine_bar", "lounge", "sports_bar"]
+        "entertainment": [
+            "cinema",
+            "nightclub",
+            "stripclub",
+            "gambling",
+            "casino",
+            "marketplace",
+            "spa",
+            "events_venue",
+            "internet_cafe",
+            "lounge",
+            "shop|clothes",
+            "leisure",
+            "Observation Platform",
+            "photo_booth",
+        ],
+        "mode of travel": [
+            "car_rental",
+            "bicycle_rental",
+            "car_sharing",
+            "taxi",
+            "bus_station",
+            "ferry_terminal",
+            "seaplane_terminal",
+            "motorcycle_rental",
+            "parking",
+            "charging_station",
+            "EVSE",
+        ],
+        "bar crawl": [
+            "bar",
+            "pub",
+            "nightclub",
+            "cocktail_bar",
+            "brewpub",
+            "wine_bar",
+            "lounge",
+            "sports_bar",
+        ],
     }
-    
+
     if selected_theme in themes:
         relevant_amenities = themes[selected_theme]
         return amenities[amenities["amenity"].isin(relevant_amenities)]
@@ -270,7 +321,9 @@ def get_restaurants(places):
 def get_rental(places):
 
     df_list = []
-    tags = { "amenity": ["car_rental", "bicycle_rental", "bus_station", "motorcycle_rental"] }
+    tags = {
+        "amenity": ["car_rental", "bicycle_rental", "bus_station", "motorcycle_rental"]
+    }
 
     for place in places:
         print(f"Retrieving rentals for {place}...")
@@ -307,7 +360,9 @@ def get_rental(places):
 
 
 # Creates a daily schedule for the tour based on time constraints
-def daily_schedule(route_points, amenities, transportation, tour_length, lodging_points):
+def daily_schedule(
+    route_points, amenities, transportation, tour_length, lodging_points
+):
     # Predetermined average speeds for different modes of travel in km/h
     speeds = {"walk": 5, "bike": 15, "drive": 50}
 
@@ -349,6 +404,7 @@ def daily_schedule(route_points, amenities, transportation, tour_length, lodging
         ),
     }
     meals_taken = {"breakfast": False, "lunch": False, "dinner": False}
+    restaurants_count = 0
 
     # Iterate through each stop (starting from index 1)
     for i in range(1, len(route_points)):
@@ -415,6 +471,7 @@ def daily_schedule(route_points, amenities, transportation, tour_length, lodging
                 ),
             }
             meals_taken = {"breakfast": False, "lunch": False, "dinner": False}
+            restaurants_count = 0
             current_time = day_start
 
             # Recalc travel from new day's start to next_point.
@@ -448,7 +505,7 @@ def daily_schedule(route_points, amenities, transportation, tour_length, lodging
 
         # check if time is near a meal time, currently set to be within 30min, and stop tour for a meal
         for meal, meal_target in meal_times.items():
-            if not meals_taken[meal]:
+            if not meals_taken[meal] and restaurants_count < 3:
                 if (
                     meal_target - timedelta(minutes=30)
                     <= arrival_time
@@ -460,6 +517,7 @@ def daily_schedule(route_points, amenities, transportation, tour_length, lodging
                         visit_time = timedelta(minutes=duration)
                     meals_taken[meal] = True
                     departure_time = arrival_time + visit_time
+                    restaurants_count += 1
                     break
 
         # Ensures tour stops at 9pm and ends at a hotel for last amenity
@@ -556,7 +614,8 @@ def get_combined_graph(places, network_type):
 
 
 def create_tour_map(schedule, route):
-    map_center = [schedule[0]['lat'], schedule[0]['lon']]
+
+    map_center = [schedule[0]["lat"], schedule[0]["lon"]]
     tour_map = fl.Map(location=map_center, zoom_start=13)
 
     # Create feature groups for layer control by amenity type.
@@ -569,10 +628,9 @@ def create_tour_map(schedule, route):
     # Build a dictionary for hotels to group repeated visits.
     hotel_visits = {}
     for stop in schedule:
-        if stop['type'] == "hotel":
-            key = (round(stop['lat'], 6), round(stop['lon'], 6))
-            hotel_visits.setdefault(key, []).append(stop['day'])
-
+        if stop["type"] == "hotel":
+            key = (round(stop["lat"], 6), round(stop["lon"], 6))
+            hotel_visits.setdefault(key, []).append(stop["day"])
 
     for stop in schedule:
         popup_html = f"""
@@ -582,49 +640,46 @@ def create_tour_map(schedule, route):
          Arrival: {stop['arrival'].strftime('%I:%M %p')}<br>
          Departure: {stop['departure'].strftime('%I:%M %p')}
          """
+        # If this is a hotel, append info about repeated visits.
+        if stop["type"] == "hotel":
+            key = (round(stop["lat"], 6), round(stop["lon"], 6))
+            days = hotel_visits.get(key, [])
+            if len(days) > 1:
+                popup_html += (
+                    f"<br><em>Visited on days: {', '.join(map(str, days))}</em>"
+                )
 
-         # If this is a hotel, append info about repeated visits.
-         if stop['type'] == "hotel":
-             key = (round(stop['lat'], 6), round(stop['lon'], 6))
-             days = hotel_visits.get(key, [])
-             if len(days) > 1:
-                 popup_html += f"<br><em>Visited on days: {', '.join(map(str, days))}</em>"
+        popup = fl.Popup(popup_html, max_width=300)
+        tooltip = f"Travel Time: {stop['travel_time']:.0f} min"
 
-         
-         popup = fl.Popup(popup_html, max_width=300)
-         tooltip = f"Travel Time: {stop['travel_time']:.0f} min"
+        # Use FontAwesome icons for each type.
+        if stop["type"] == "restaurant":
+            icon = fl.Icon(color="orange", icon="cutlery", prefix="fa")
+        elif stop["type"] == "hotel":
+            icon = fl.Icon(color="green", icon="bed", prefix="fa")
+        elif stop["type"] == "rental":
+            icon = fl.Icon(color="black", icon="car", prefix="fa")
+        elif stop["name"] == "Start Location":
+            icon = fl.Icon(color="red", icon="play", prefix="fa")
+        else:
+            icon = fl.Icon(color="blue", icon="map-marker", prefix="fa")
 
-         # Use FontAwesome icons for each type.
-         if stop['type'] == "restaurant":
-             icon = fl.Icon(color="orange", icon="cutlery", prefix="fa")
-         elif stop['type'] == "hotel":
-             icon = fl.Icon(color="green", icon="bed", prefix="fa")
-         elif stop['type'] == "rental":
-             icon = fl.Icon(color="black", icon="car", prefix="fa")
-         elif stop['name'] == "Start Location":
-             icon = fl.Icon(color="red", icon="play", prefix="fa")
-         else:
-             icon = fl.Icon(color="blue", icon="map-marker", prefix="fa")
-         
-         # Assign marker to an appropriate feature group.
-         if stop['type'] == "restaurant":
-             fg = fg_restaurants
-         elif stop['type'] == "hotel":
-             fg = fg_hotels
-         elif stop['type'] == "rental":
-             fg = fg_rentals
-         elif stop['name'] == "Start Location":
-             fg = fg_start
-         else:
-             fg = fg_other
-         
-         fl.Marker(
-             location=[stop['lat'], stop['lon']],
-             popup=popup,
-             tooltip=tooltip,
-             icon=icon
-         ).add_to(fg)
-    
+        # Assign marker to an appropriate feature group.
+        if stop["type"] == "restaurant":
+            fg = fg_restaurants
+        elif stop["type"] == "hotel":
+            fg = fg_hotels
+        elif stop["type"] == "rental":
+            fg = fg_rentals
+        elif stop["name"] == "Start Location":
+            fg = fg_start
+        else:
+            fg = fg_other
+
+        fl.Marker(
+            location=[stop["lat"], stop["lon"]], popup=popup, tooltip=tooltip, icon=icon
+        ).add_to(fg)
+
     fg_restaurants.add_to(tour_map)
     fg_hotels.add_to(tour_map)
     fg_rentals.add_to(tour_map)
@@ -635,42 +690,44 @@ def create_tour_map(schedule, route):
 
     # Build animated route
     line_features = []
-    t0 = schedule[0]['arrival']
+    t0 = schedule[0]["arrival"]
 
-    total_seconds = (schedule[-1]['departure'] - t0).total_seconds()
+    total_seconds = (schedule[-1]["departure"] - t0).total_seconds()
     num_segments = len(route) - 1 if len(route) > 1 else 1
     interval = total_seconds / num_segments
 
     for i in range(len(route) - 1):
         feature = {
-            'type': 'Feature',
-            'geometry': {
-                'type': 'LineString',
-                'coordinates': [[route[i][1], route[i][0]], [route[i+1][1], route[i+1][0]]]
-            },
-            'properties': {
-                # Provide time intervals for the segment
-                'times': [
-                    (t0 + timedelta(seconds=i * interval)).isoformat(),
-                    (t0 + timedelta(seconds=(i+1) * interval)).isoformat()
+            "type": "Feature",
+            "geometry": {
+                "type": "LineString",
+                "coordinates": [
+                    [route[i][1], route[i][0]],
+                    [route[i + 1][1], route[i + 1][0]],
                 ],
-                'style': {'color': 'blue', 'weight': 3, 'opacity': 100}
-            }
+            },
+            "properties": {
+                # Provide time intervals for the segment
+                "times": [
+                    (t0 + timedelta(seconds=i * interval)).isoformat(),
+                    (t0 + timedelta(seconds=(i + 1) * interval)).isoformat(),
+                ],
+                "style": {"color": "blue", "weight": 3, "opacity": 100},
+            },
         }
         line_features.append(feature)
-    
+
     if line_features:
-        ts_data = {
-            'type': 'FeatureCollection',
-            'features': line_features
-        }
-        TimestampedGeoJson(ts_data,
-                           period='PT1S',        
-                           transition_time=50, 
-                           auto_play=True,
-                           loop=False,
-                           add_last_point=False).add_to(tour_map)
-    
+        ts_data = {"type": "FeatureCollection", "features": line_features}
+        TimestampedGeoJson(
+            ts_data,
+            period="PT1S",
+            transition_time=50,
+            auto_play=True,
+            loop=False,
+            add_last_point=False,
+        ).add_to(tour_map)
+
     return tour_map
 
 
@@ -721,45 +778,150 @@ regions = [
     "Bowen Island, British Columbia, Canada",
 ]
 
-interesting_amenities = ['cafe', 'bbq', 'place_of_worship', 
-    'restaurant', 'pub', 'community_centre', 'public_building', 'cinema', 'theatre',
-    'ferry_terminal', 'bar', 'library', 'car_rental',
-    'car_sharing', 'bicycle_rental', 'public_bookcase',
-    'university', 'dojo', 'food_court', 'seaplane terminal', 'arts_centre',
-    'ice_cream', 'fountain',
-    'photo_booth', 'nightclub', 'social_facility', 'taxi',
-    'bus_station', 'clock', 'marketplace', 'stripclub',
-    'gambling', 'family_centre', 'townhall',
-    'bistro', 'playground', 'boat_rental', 'spa', 'events_venue', 'science', 
-    'ATLAS_clean_room', 'juice_bar', 'internet_cafe', 'social_centre', 'EVSE', 'studio',
-    'ranger_station', 'watering_place', 'lounge', 'water_point',
-    'Observation Platform', 'housing co-op', 'gym',
-    'park', 'biergarten', 'casino', 'hunting_stand', 'shop|clothes', 'research_institute',
-    'motorcycle_rental', "observation_platform", "monastery", "courthouse", "leisure", "seaplane_terminal", 
-    "parking", "charging_station"]
+interesting_amenities = [
+    "cafe",
+    "bbq",
+    "place_of_worship",
+    "restaurant",
+    "pub",
+    "community_centre",
+    "public_building",
+    "cinema",
+    "theatre",
+    "ferry_terminal",
+    "bar",
+    "library",
+    "car_rental",
+    "car_sharing",
+    "bicycle_rental",
+    "public_bookcase",
+    "university",
+    "dojo",
+    "food_court",
+    "seaplane terminal",
+    "arts_centre",
+    "ice_cream",
+    "fountain",
+    "photo_booth",
+    "nightclub",
+    "social_facility",
+    "taxi",
+    "bus_station",
+    "clock",
+    "marketplace",
+    "stripclub",
+    "gambling",
+    "family_centre",
+    "townhall",
+    "bistro",
+    "playground",
+    "boat_rental",
+    "spa",
+    "events_venue",
+    "science",
+    "ATLAS_clean_room",
+    "juice_bar",
+    "internet_cafe",
+    "social_centre",
+    "EVSE",
+    "studio",
+    "ranger_station",
+    "watering_place",
+    "lounge",
+    "water_point",
+    "Observation Platform",
+    "housing co-op",
+    "gym",
+    "park",
+    "biergarten",
+    "casino",
+    "hunting_stand",
+    "shop|clothes",
+    "research_institute",
+    "motorcycle_rental",
+    "observation_platform",
+    "monastery",
+    "courthouse",
+    "leisure",
+    "seaplane_terminal",
+    "parking",
+    "charging_station",
+]
 
 chain_names = [
-    "Starbucks", "Tim Hortons", "Tim_Hortons", "McDonald's", "Subway", "A&W", "Triple O's",
-    "Burger King", "Wendy's", "KFC", "Pizza Hut", "Domino's", "Dairy Queen", "JJ Bean",
-    "Popeyes", "Taco Bell", "Little Caesars", "Panera Bread", "Chipotle", "Five Guys", "Denny's", "IHOP",
-    
-    "Petro-Canada", "Chevron", "Shell", "Esso", "Husky", "7-Eleven", "Circle K",
-    "Mobil", "Ultramar", "Costco Gas", "Super Save", "Fas Gas", "Co-op Gas",
-    
-    "Walmart", "Costco", "Real Canadian Superstore", "No Frills", "Safeway",
-    "Save-On-Foods", "FreshCo", "Shoppers Drug Mart", "London Drugs", "Loblaws",
-    "Canadian Tire", "Home Depot", "Best Buy", "IKEA", "Dollarama", "Metro",
-    "Sobeys", "Thrifty Foods", "Pharmasave",
-    
-    "RBC", "TD Canada Trust", "Scotiabank", "BMO", "CIBC", "HSBC",
-    "National Bank", "Coast Capital", "Vancity",
-    
-    "Rexall", "Guardian", "Pharmachoice"
+    "Starbucks",
+    "Tim Hortons",
+    "Tim_Hortons",
+    "McDonald's",
+    "Subway",
+    "A&W",
+    "Triple O's",
+    "Burger King",
+    "Wendy's",
+    "KFC",
+    "Pizza Hut",
+    "Domino's",
+    "Dairy Queen",
+    "JJ Bean",
+    "Popeyes",
+    "Taco Bell",
+    "Little Caesars",
+    "Panera Bread",
+    "Chipotle",
+    "Five Guys",
+    "Denny's",
+    "IHOP",
+    "Petro-Canada",
+    "Chevron",
+    "Shell",
+    "Esso",
+    "Husky",
+    "7-Eleven",
+    "Circle K",
+    "Mobil",
+    "Ultramar",
+    "Costco Gas",
+    "Super Save",
+    "Fas Gas",
+    "Co-op Gas",
+    "Walmart",
+    "Costco",
+    "Real Canadian Superstore",
+    "No Frills",
+    "Safeway",
+    "Save-On-Foods",
+    "FreshCo",
+    "Shoppers Drug Mart",
+    "London Drugs",
+    "Loblaws",
+    "Canadian Tire",
+    "Home Depot",
+    "Best Buy",
+    "IKEA",
+    "Dollarama",
+    "Metro",
+    "Sobeys",
+    "Thrifty Foods",
+    "Pharmasave",
+    "RBC",
+    "TD Canada Trust",
+    "Scotiabank",
+    "BMO",
+    "CIBC",
+    "HSBC",
+    "National Bank",
+    "Coast Capital",
+    "Vancity",
+    "Rexall",
+    "Guardian",
+    "Pharmachoice",
 ]
 
 
 def main():
-    original_data = pd.read_json("amenities-vancouver.json.gz", compression="gzip", lines=True)
+    original_data = pd.read_json(
+        "amenities-vancouver.json.gz", compression="gzip", lines=True
+    )
     data = original_data[~original_data["name"].isna()]
     data = data[data["amenity"].isin(interesting_amenities)]
     data = data[~data["name"].isin(chain_names)]
@@ -777,13 +939,11 @@ def main():
     if theme == "random":
         # Filters out big chains
         data = data[data["amenity"] != "fast_food"]
-        data = data[~data["name"].isin(chain_names)]
         popular_amenities = filter_popular_amenities(
             data, min_tags=5
         )  # Popular amenities have 5 or more tags
     else:
-        filtered_content = filter_amenities_by_theme(data, theme)
-        filtered_amenities = filtered_content["filtered_amenities"]
+        filtered_amenities = filter_amenities_by_theme(data, theme)
         popular_amenities = filter_popular_amenities(
             filtered_amenities, min_tags=5
         )  # Popular amenities have 5 or more tags
@@ -818,9 +978,8 @@ def main():
 
         amenities_per_day = num_amenities // tour_length  # Number of amenities per day
         day_index = 0  # Track amenities count per day
-        restaurant_count = 0  # Track how many restaurants added per day
 
-        # Ensure that the rental is the closest to the starting point using haversine
+        # (Optionally, still add a rental if needed)
         if want_rental == "yes":
             rentals["distance"] = rentals.apply(
                 lambda row: haversine(
@@ -828,19 +987,19 @@ def main():
                 ),
                 axis=1,
             )
-
-            # Find the nearest rental
             nearest_rental = rentals.nsmallest(1, "distance").iloc[0]
-            # Insert the nearest rental at the start of route_points
             updated_route_points.append([nearest_rental["lat"], nearest_rental["lon"]])
             nearest_rental["type"] = "rental"
             updated_amenities = pd.concat(
                 [updated_amenities, nearest_rental.to_frame().T], ignore_index=True
             )
 
+        # Loop over route_points without forcing restaurants.
         for i in range(1, len(route_points)):
             updated_route_points.append(route_points[i])
 
+            # Simply add the corresponding amenity from nearest_amenities,
+            # if available, without forcing extra restaurant stops.
             if i < len(nearest_amenities):
                 updated_amenities = pd.concat(
                     [updated_amenities, nearest_amenities.iloc[[i]]], ignore_index=True
@@ -848,54 +1007,21 @@ def main():
 
             day_index += 1
 
-            # Ensure exactly 3 restaurants per day
-            if restaurant_count < 3:
-                last_point = route_points[i]
-
-                if not restaurants.empty:
-                    restaurants["distance"] = restaurants.apply(
-                        lambda row: haversine(
-                            last_point[0], last_point[1], row["lat"], row["lon"]
-                        ),
-                        axis=1,
-                    )
-                    nearest_restaurant = restaurants.nsmallest(1, "distance").iloc[0]
-
-                    updated_route_points.append(
-                        [nearest_restaurant["lat"], nearest_restaurant["lon"]]
-                    )
-                    nearest_restaurant["type"] = "restaurant"
-                    updated_amenities = pd.concat(
-                        [updated_amenities, nearest_restaurant.to_frame().T],
-                        ignore_index=True,
-                    )
-
-                    restaurant_count += 1
-
-            # End of the day: Reset counters and add a hotel
+            # End of the day: Reset counters and add a hotel if needed
             if day_index >= amenities_per_day:
-                restaurant_count = 0  # Reset restaurant count for next day
-                day_index = 0  # Reset amenity count for next day
-
-                if (
-                    stay_hotel and not lodging_points.empty
-                ):  # Add hotel at the end of each day
-                    last_point = updated_route_points[
-                        -1
-                    ]  # Get the last stop of the day
-
+                day_index = 0
+                if stay_hotel and not lodging_points.empty:
+                    last_point = updated_route_points[-1]
                     lodging_points["distance"] = lodging_points.apply(
                         lambda row: haversine(
                             last_point[0], last_point[1], row["lat"], row["lon"]
                         ),
                         axis=1,
                     )
-
                     nearest_lodging = lodging_points.nsmallest(1, "distance").iloc[0]
                     updated_route_points.append(
                         [nearest_lodging["lat"], nearest_lodging["lon"]]
                     )
-
                     nearest_lodging["type"] = "hotel"
                     updated_amenities = pd.concat(
                         [updated_amenities, nearest_lodging.to_frame().T],
@@ -905,14 +1031,11 @@ def main():
         route_points = updated_route_points
         nearest_amenities = updated_amenities
 
+    print("Creating Map... This could take a minute...")
     Graph = ox.graph_from_place(regions, network_type=transportation, simplify=True)
-    print("stage 0")
     G_undirected = Graph.to_undirected()
-    print("stage 1")
     largest_component = max(nx.connected_components(G_undirected), key=len)
-    print("stage 2")
     Graph = G_undirected.subgraph(largest_component).copy()
-    print("stage 3")
 
     schedule = daily_schedule(
         route_points, nearest_amenities, transportation, tour_length, lodging_points
